@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Materialize - Navbar</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <a href="#" class="brand-logo"><img class="responsive-img" src="img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">Início</a></li>
+                    <li><a href="#" class="black-text">Sobre</a></li>
+                    <li>
+                        <a class="dropdown-trigger black-text" data-target="dropdown-menu" href="#">
+              Contatos <i class="material-icons right">arrow_drop_down</i>
+            </a>
+                    </li>
+                </ul>
+
+                <!-- Dropdown -->
+                <ul id="dropdown-menu" class="dropdown-content">
+                    <li><a href="#" class="black-text">Telefone</a></li>
+                    <li><a href="#" class="black-text">E-mail</a></li>
+                    <li class="divider"></li>
+                    <li><a href="#" class="black-text">Redes sociais</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="#">Início</a></li>
+        <li><a href="#">Sobre</a></li>
+        <li><a href="#">Contatos</a></li>
+    </ul>
+
+    <!-- Alunos -->
+    <div class="container">
+        <div class="quadrado">
+            <div class="row square" id="alunos">
+                <div class="col s12 m12 l6 ">
+                    <h1>4<br> Alunos ativos</h1>
+                </div>
+                <div class="col s12 m12 l6 ">
+                    <img class="responsive-img" src="img/user.png" alt="">
+                </div>
+            </div>
+            <div class="col s12 m12 l12 right-align baixoQuadrado">
+                <p>Adicionar novo aluno</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- LISTA -->
+    <div class="container">
+        <div class="blue">
+
+        </div>
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

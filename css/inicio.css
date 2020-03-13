@@ -1,0 +1,24 @@
+#alunos {
+    margin-top: 50px;
+}
+
+#alunos h1 {
+    color: white;
+    font-weight: bold;
+    margin-top: 91px;
+    margin-left: 13px;
+}
+
+.quadrado {
+    background-color: #FF7E00;
+}
+
+.baixoQuadrado {
+    background-color: #B45300;
+    color: white;
+}
+
+.baixoQuadrado p {
+    margin-right: 15px;
+    font-weight: bold;
+}
