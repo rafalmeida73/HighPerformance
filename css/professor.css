@@ -1,25 +1,13 @@
-* {
-    box-sizing: border-box;
-}
-
-ul {
-    list-style-type: none;
-}
-
-body {
-    font-family: "Lato", sans-serif;
-}
-
-* {
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .wrapper {
     background-color: white;
     width: 100vw;
     height: 70vh;
     display: flex;
+    margin-bottom: 50px;
+}
+
+#calendario {
+    margin-bottom: 150px;
 }
 
 .calendar {
@@ -33,7 +21,6 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
     padding: 40px 30px;
     text-align: center;
     background-color: #FF7E00;
@@ -102,4 +89,34 @@ body {
 #month {
     font-size: 30px;
     font-weight: 500;
+}
+
+#alunosAtivos p {
+    margin-top: 40px;
+    color: black;
+    font-weight: bold;
+}
+
+#alunosAtivos {
+    margin-top: 100px;
+}
+
+#alunosAtivos button {
+    margin-top: 154px;
+    margin-bottom: 31px;
+    background: #FF7E00;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+#alunosAtivos button:hover {
+    color: black;
+    border: black;
+    background-color: white;
+}
+
+#footer {
+    background-color: #FF7E00;
 }
