@@ -1,0 +1,65 @@
+body {
+    background-color: #D9D9D9;
+}
+
+#alunos {
+    margin-top: 50px;
+}
+
+#alunos h1 {
+    color: white;
+    font-weight: bold;
+    margin-top: 91px;
+    margin-left: 13px;
+}
+
+.quadrado {
+    background-color: #FF7E00;
+}
+
+.quadrado h1 {
+    width: 100%;
+}
+
+.baixoQuadrado {
+    background-color: #B45300;
+    color: white;
+    font-weight: bold;
+}
+
+#lista p {
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+#alunosAtivos p,
+form {
+    margin-top: 40px;
+    color: black;
+}
+
+#alunosAtivos {
+    margin-top: 20px;
+}
+
+#alunosAtivos button {
+    margin-left: 443px;
+    width: 100%;
+    margin-top: 154px;
+    margin-bottom: 31px;
+    background: #FF7E00;
+    border-radius: 50px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+#alunosAtivos button:hover {
+    color: black;
+    border: black;
+    background-color: white;
+}
+
+#footer {
+    background-color: #FF7E00;
+}
