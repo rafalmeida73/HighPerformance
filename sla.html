@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Chamada</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/alunos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <a href="#" class="brand-logo"><img class="responsive-img" src="img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">Home</a></li>
+                    <li><a href="#" class="black-text">Professor</a></li>
+                    <li><a href="#" class="black-text">Crie</a></li>
+                    <li><a href="#" class="black-text">Caléndario</a></li>
+                    <li><a href="#" class="black-text">Controle</a></li>
+                    <li><a href="#" class="black-text">Treino</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="#" class="black-text">Home</a></li>
+        <li><a href="#" class="black-text">Professor</a></li>
+        <li><a href="#" class="black-text">Crie</a></li>
+        <li><a href="#" class="black-text">Caléndario</a></li>
+        <li><a href="#" class="black-text">Controle</a></li>
+        <li><a href="#" class="black-text">Treino</a></li>
+    </ul>
+
+    <div class="container">
+        <div class="quadrado">
+            <div class="row square" id="alunos">
+                <div class="col s12 m12 l6 ">
+                    <h1>1<br> Alunos ativos</h1>
+                </div>
+                <div class="col s12 m12 l6 ">
+                    <img class="responsive-img" src="img/user.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

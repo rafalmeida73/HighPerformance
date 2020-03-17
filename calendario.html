@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="css/calendario.css">
+    <title>Document</title>
+</head>
+
+<body onload="renderDate()">
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <a href="#" class="brand-logo"><img class="responsive-img" src="img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="#" class="black-text">Home</a></li>
+                    <li><a href="#" class="black-text">Professor</a></li>
+                    <li><a href="#" class="black-text">Crie</a></li>
+                    <li><a href="#" class="black-text">Caléndario</a></li>
+                    <li><a href="#" class="black-text">Controle</a></li>
+                    <li><a href="#" class="black-text">Treino</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="#" class="black-text">Home</a></li>
+        <li><a href="#" class="black-text">Professor</a></li>
+        <li><a href="#" class="black-text">Crie</a></li>
+        <li><a href="#" class="black-text">Caléndario</a></li>
+        <li><a href="#" class="black-text">Controle</a></li>
+        <li><a href="#" class="black-text">Treino</a></li>
+    </ul>
+
+    <!-- CALENDARIO -->
+    <div id="calendario">
+        <div class="wrapper">
+            <div class="calendar">
+                <div class="month">
+                    <div class="prev" onclick="moveDate('prev')">
+                        <span>&#10094;</span>
+                    </div>
+                    <div>
+                        <h2 id="month"></h2>
+                        <p id="date_str"></p>
+                    </div>
+                    <div class="next" onclick="moveDate('next')">
+                        <span>&#10095;</span>
+                    </div>
+                </div>
+                <div class="weekdays">
+                    <div>Seg</div>
+                    <div>Ter</div>
+                    <div>Qua</div>
+                    <div>Qui</div>
+                    <div>Sex</div>
+                    <div>Sab</div>
+                    <div>Dom</div>
+                </div>
+                <div class="days">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lista dos alunos -->
+    <div class="container " id="alunosAtivos">
+        <div>
+            <div class="row">
+                <div class="col s4 m4 l4 center-align">
+                    <img class="responsive-img " src="img/avatar.png" alt="avatar do usuario">
+                </div>
+
+                <div class="col s4 m4 l4 center-align">
+                    <p>Aula de musculação</p>
+                </div>
+
+                <div class="col s4 m4 l4 center-align">
+                    <p>Horario: 8:30</p>
+                </div>
+                <div class="col s4 m4 l12 right-align">
+                    <button>REMOVER ALUNO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="page-footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer Content</h5>
+                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="./js/calendario.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="./js/main.js"></script>
+</body>
+
+</html>

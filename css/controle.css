@@ -1,0 +1,38 @@
+h1 {
+    font-weight: bold;
+    margin-left: 10vh;
+}
+
+#alunos {
+    margin-top: 50px;
+}
+
+#alunos h2 {
+    color: white;
+    font-weight: bold;
+    margin-top: 91px;
+    margin-left: 13px;
+}
+
+.quadrado {
+    background-color: #FF7E00;
+}
+
+.quadrado2 {
+    background-color: #588F27;
+}
+
+.baixoQuadrado {
+    background-color: #33691E;
+    color: white;
+    font-weight: bold;
+}
+
+.quadrado2 h2 {
+    padding-top: 50px;
+}
+
+#footer {
+    background-color: #FF7E00;
+    margin-top: 100px;
+}
