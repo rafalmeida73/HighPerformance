@@ -1,17 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="shortcut icon" href="img/Iconlogo.png" type="image/x-icon">
+    <title>Treino</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/alunos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="css/crie.css">
-    <title>Crie</title>
 </head>
 
-<body onload="renderDate()">
+<body>
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #ffffff white">
@@ -45,64 +48,9 @@
     </ul>
 
     <!-- TITULO -->
-    <div class="col s11 m6 l5">
-        <h1>Crie</h1>
+    <div class="col s11 m6 l5 titulo">
+        <h1>Treino</h1>
     </div>
-
-    <!-- CALENDARIO -->
-    <div id="calendario">
-        <div class="wrapper">
-            <div class="calendar">
-                <div class="month">
-                    <div class="prev" onclick="moveDate('prev')">
-                        <span>&#10094;</span>
-                    </div>
-                    <div>
-                        <h2 id="month"></h2>
-                        <p id="date_str"></p>
-                    </div>
-                    <div class="next" onclick="moveDate('next')">
-                        <span>&#10095;</span>
-                    </div>
-                </div>
-                <div class="weekdays">
-                    <div>Seg</div>
-                    <div>Ter</div>
-                    <div>Qua</div>
-                    <div>Qui</div>
-                    <div>Sex</div>
-                    <div>Sab</div>
-                    <div>Dom</div>
-                </div>
-                <div class="days">
-
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lista dos alunos -->
-    <div class="container " id="alunosAtivos">
-        <div>
-            <div class="row">
-                <div class="col s4 m4 l4 center-align">
-                    <img class="responsive-img " src="img/avatar.png" alt="avatar do usuario">
-                </div>
-
-                <div class="col s4 m4 l4 center-align">
-                    <p>Aula de musculação</p>
-                </div>
-
-                <div class="col s4 m4 l4 center-align">
-                    <p>Horario: 8:30</p>
-                </div>
-                <div class="col s4 m4 l12 right-align">
-                    <button>REMOVER ALUNO</button>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <!-- FOOTER -->
     <footer class="page-footer" id="footer">
@@ -132,7 +80,10 @@
     </footer>
 
 
-    <script src="./js/calendario.js"></script>
+
+
+
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="./js/main.js"></script>
