@@ -1,89 +1,98 @@
-#banner{
-  background-color: #D9D9D9;
+#banner {
+    background-color: #D9D9D9;
 }
 
-#banner h1{
-  margin-top: 30%;
-  color: #FF7E00;
-  font-weight: bolder;
-}
-#banner p{
-  color: black;
-  font-size: 20px;
-}
-#banner button{
-  background: #FF7E00;
-  border-radius: 50px;
-  float: right;
-  border: none;
-  width: 150px;
-  color: white;
-  height: 30px;
-  margin-top: 30px;
-  font-weight: bolder;
-  margin-bottom: 41px;
+#banner img {
+    margin-top: 50px;
 }
 
-#banner button:hover{
-  color: black;
-  border: black;
-  background-color: white;
+#banner h1 {
+    margin-top: 30%;
+    color: #FF7E00;
+    font-weight: bolder;
 }
 
-#beneficios h4{
-  font-weight: bolder;
-  width: 100%;
-  font-size: 30px;
-}
-#beneficios img{
-  margin-top: 80px;
+#banner p {
+    color: black;
+    font-size: 20px;
 }
 
-#ilustracao{
-  margin-top: 131px;
+#banner button {
+    background: #FF7E00;
+    border-radius: 50px;
+    float: right;
+    border: none;
+    width: 150px;
+    color: white;
+    height: 30px;
+    margin-top: 30px;
+    font-weight: bolder;
+    margin-bottom: 41px;
 }
 
-#ilustracao span{
-  font-weight: bolder;
+#banner button:hover {
+    color: black;
+    border: black;
+    background-color: white;
 }
 
-#ilustracao h6{
-  margin: 100px 103px 0 0 ; 
-  width: 100%;
-  font-size: 30px;
-}
-#ilustracao p{
-  font-size: 18px;
-  margin-top: 39px;
-  padding-bottom: 32px;
-  margin-right: 71px;
+#beneficios h4 {
+    font-weight: bolder;
+    width: 100%;
+    font-size: 30px;
 }
 
-.square{
-  border:3px solid #FF7E00;
+#beneficios img {
+    margin-top: 80px;
 }
 
-#ilustracao button{
-  background: #FF7E00;
-  float: right;
-  border: none;
-  width: 150px;
-  color: white;
-  height: 30px;
-  margin-top: 50px;
-  font-weight: bolder;
+#ilustracao {
+    margin-top: 131px;
 }
 
-#ilustracao button:hover{
-  color: black;
-  border: black;
-  background-color: white;
-}
-#forum h2{
-  padding-top: 65px;
-  font-weight: 600;
+#ilustracao span {
+    font-weight: bolder;
 }
 
-#footer{
-  background-color: #FF7E00;
+#ilustracao h6 {
+    margin: 100px 103px 0 0;
+    width: 100%;
+    font-size: 30px;
+}
+
+#ilustracao p {
+    font-size: 18px;
+    margin-top: 39px;
+    padding-bottom: 32px;
+    margin-right: 71px;
+}
+
+.square {
+    border: 3px solid #FF7E00;
+}
+
+#ilustracao button {
+    background: #FF7E00;
+    float: right;
+    border: none;
+    width: 150px;
+    color: white;
+    height: 30px;
+    margin-top: 50px;
+    font-weight: bolder;
+}
+
+#ilustracao button:hover {
+    color: black;
+    border: black;
+    background-color: white;
+}
+
+#forum h2 {
+    padding-top: 65px;
+    font-weight: 600;
+}
+
+#footer {
+    background-color: #FF7E00;
 }
