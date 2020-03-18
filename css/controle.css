@@ -50,3 +50,19 @@ h1 {
 #footer a {
     font-weight: 500;
 }
+
+#footer img {
+    height: 80px;
+}
+
+a[href="#top"] {
+    padding: 10px;
+    top: 90%;
+    right: 40px;
+    display: none;
+    font-size: 30px;
+}
+
+a[href="#top"]:hover {
+    text-decoration: none;
+}

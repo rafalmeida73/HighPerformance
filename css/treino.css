@@ -1,58 +1,6 @@
-#sobre p {
-    font-size: 24px;
-    text-align: center;
-    margin-top: 112px;
-}
-
-#sobre span {
+.titulo h1 {
     font-weight: bold;
-}
-
-#tituloTime h2 {
-    font-weight: 450;
-}
-
-#time img {
-    border-radius: 20px;
-}
-
-#time {
-    margin: 70px 0;
-}
-
-#time p {
-    color: rgb(29, 33, 41);
-    font-weight: 700;
-    font-size: 16px;
-}
-
-#time span {
-    color: rgb(29, 33, 41);
-    font-size: 14px;
-}
-
-#tituloBtn h2 {
-    color: rgb(29, 33, 41);
-    font-size: 24px;
-    line-height: 32px;
-}
-
-#btn button {
-    background: #FF7E00;
-    border-radius: 50px;
-    border: none;
-    width: 200px;
-    color: white;
-    height: 30px;
-    margin-top: 30px;
-    font-weight: bolder;
-    margin-bottom: 41px;
-}
-
-#btn button:hover {
-    color: black;
-    border: 1px solid black;
-    background-color: white;
+    margin-left: 10vh;
 }
 
 #footer {
