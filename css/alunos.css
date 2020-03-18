@@ -40,6 +40,10 @@
     font-weight: bold;
 }
 
+.listaAluno {
+    display: none;
+}
+
 #alunosAtivos p,
 form {
     margin-top: 40px;
@@ -51,8 +55,6 @@ form {
 }
 
 #alunosAtivos button {
-    margin-left: 120px;
-    width: 100%;
     margin-top: 154px;
     margin-bottom: 31px;
     background: #FF7E00;
@@ -100,4 +102,19 @@ a[href="#top"] {
 
 a[href="#top"]:hover {
     text-decoration: none;
+}
+
+@media(max-width:460px) {
+    #lista h5 {
+        display: none;
+    }
+    .listaAluno {
+        display: inline-block;
+        font-weight: bold;
+        font-size: 23px;
+        padding-top: 20px;
+    }
+    #alunosAtivos button {
+        margin-left: 25px;
+    }
 }
