@@ -98,18 +98,3 @@ a[href="#top"] {
 a[href="#top"]:hover {
     text-decoration: none;
 }
-
-@media(max-width:460px) {
-    #lista h5 {
-        display: none;
-    }
-    .listaAluno {
-        display: inline-block;
-        font-weight: bold;
-        font-size: 23px;
-        padding-top: 20px;
-    }
-    #alunosAtivos button {
-        margin-left: 25px;
-    }
-}
