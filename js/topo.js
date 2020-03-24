@@ -12,3 +12,8 @@ $(document).ready(function() {
         return false;
     });
 });
+
+// tooltipped
+$(document).ready(function() {
+    $('.tooltipped').tooltip();
+});

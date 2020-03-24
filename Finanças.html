@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/Iconlogo.png" type="image/x-icon">
+    <title>Alunos</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./css/financas.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <a href="index.html" class="brand-logo"><img class="responsive-img" src="img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="index.html" class="black-text">Home</a></li>
+                    <li><a href="alunos.html" class="orange-text">Alunos</a></li>
+                    <li><a href="crie.html" class="black-text">Crie</a></li>
+                    <li><a href="controle.html" class="black-text">Controle</a></li>
+                    <li><a href="treino.html" class="black-text">Treino</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="index.html" class="black-text">Home</a></li>
+        <li><a href="alunos.html" class="orange-text">Alunos</a></li>
+        <li><a href="crie.html" class="black-text">Crie</a></li>
+        <li><a href="controle.html" class="black-text">Controle</a></li>
+        <li><a href="treino.html" class="black-text">Treino</a></li>
+    </ul>
+
+
+    <div id="card-widgets">
+        <div class="row">
+            <div class="col s12 m4 l4">
+                <ul id="task-card" class="collection with-header">
+                    <li class="collection-header teal accent-4">
+                        <h4 class="task-card-title">My Task</h4>
+                        <p class="task-card-date">Sept 16, 2017</p>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task1" />
+                        <label for="task1">Create Mobile App UI.
+            <a href="#" class="secondary-content">
+              <span class="ultra-small">Today</span>
+            </a>
+          </label>
+                        <span class="task-cat cyan">Mobile App</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task2" />
+                        <label for="task2">Check the new API standerds.
+            <a href="#" class="secondary-content">
+              <span class="ultra-small">Monday</span>
+            </a>
+          </label>
+                        <span class="task-cat red accent-2">Web API</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task3" checked="checked" />
+                        <label for="task3">Check the new Mockup of ABC.
+            <a href="#" class="secondary-content">
+              <span class="ultra-small">Wednesday</span>
+            </a>
+          </label>
+                        <span class="task-cat teal accent-4">Mockup</span>
+                    </li>
+                    <li class="collection-item dismissable">
+                        <input type="checkbox" id="task4" checked="checked" disabled="disabled" />
+                        <label for="task4">I did it !</label>
+                        <span class="task-cat deep-orange accent-2">Mobile App</span>
+                    </li>
+                </ul>
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer class="page-footer" id="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">HIGH PERFORMANCE</h5>
+                            <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <ul>
+                                <li><a class="white-text text-lighten-3" href="index.html">Home</a></li>
+                                <li><a class="white-text text-lighten-3" href="alunos.html">Alunos</a></li>
+                                <li><a class="white-text text-lighten-3" href="crie.html">Crie</a></li>
+                                <li><a class="white-text text-lighten-3" href="controle.html">Controle</a></li>
+                                <li><a class="white-text text-lighten-3" href="treino.html">Treino</a></li>
+                            </ul>
+                        </div>
+                        <div class="col l1 s4 right">
+                            <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="img/up.png" alt="Voltar ao topo"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-copyright">
+                    <div class="container white-text">
+                        © 2020 High Performance Copyright
+                        <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at LogoMakr.com</a>
+                    </div>
+                </div>
+            </footer>
+
+
+
+
+
+
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+            <script src="./js/main.js"></script>
+            <script src="./js/topo.js"></script>
+</body>
+
+</html>

@@ -12,23 +12,10 @@
     font-weight: 450;
 }
 
-#time img {
-    border-radius: 20px;
-}
-
-#time {
-    margin: 70px 0;
-}
-
 #time p {
     color: rgb(29, 33, 41);
     font-weight: 700;
     font-size: 16px;
-}
-
-#time span {
-    color: rgb(29, 33, 41);
-    font-size: 14px;
 }
 
 #tituloBtn h2 {
@@ -37,22 +24,50 @@
     line-height: 32px;
 }
 
-#btn button {
-    background: #FF7E00;
-    border-radius: 50px;
-    border: none;
-    width: 200px;
-    color: white;
-    height: 30px;
-    margin-top: 30px;
-    font-weight: bolder;
-    margin-bottom: 41px;
+#password {
+    margin-top: 12px;
 }
 
-#btn button:hover {
-    color: black;
-    border: 1px solid black;
-    background-color: white;
+
+/* label color */
+
+#form .input-field label {
+    color: #000;
+}
+
+
+/* label focus color */
+
+#form .input-field input[type=text]:focus+label {
+    color: #000;
+}
+
+
+/* label underline focus color */
+
+#form .input-field input[type=text]:focus {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
+#form .input-field input[type=email]:focus {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
+#form textarea:focus {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
+
+/* valid color */
+
+
+/* icon prefix focus color */
+
+#form .input-field .prefix.active {
+    color: #ff7e00;
 }
 
 #footer {
@@ -85,4 +100,54 @@ a[href="#top"] {
 
 a[href="#top"]:hover {
     text-decoration: none;
+}
+
+#profile-card .card-image {
+    height: 150px;
+}
+
+#profile-card .card-profile-image {
+    width: 70px;
+    position: absolute;
+    top: 110px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+#profile-card .btn-move-up {
+    position: relative;
+    top: -40px;
+    right: -18px;
+    margin-right: 10px !important;
+}
+
+#profile-card .card-content p {
+    font-size: 1.2rem;
+    margin: 10px 0 12px;
+}
+
+.card-move-up .move-up {
+    padding: 20px;
+}
+
+.black-overlay {
+    background-color: rgba(0, 0, 0, 0.42) !important;
+}
+
+.bg-image-1 {
+    background-image: url("../../images/cards/macbook.png");
+    width: 100%;
+    background-size: cover;
+}
+
+.bg-image-2 {
+    background-image: url("../../images/cards/iphone.png");
+    width: 100%;
+    background-size: cover;
+}
+
+.bg-image-3 {
+    background-image: url("../../images/cards/applewatch.png");
+    width: 100%;
+    background-size: cover;
 }
