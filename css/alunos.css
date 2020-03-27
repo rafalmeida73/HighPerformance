@@ -98,3 +98,12 @@ a[href="#top"] {
 a[href="#top"]:hover {
     text-decoration: none;
 }
+
+@media (max-width:600px) {
+    .listaAluno {
+        display: block;
+    }
+    #lista h5 {
+        display: none;
+    }
+}
