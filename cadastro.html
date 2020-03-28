@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/Iconlogo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro</title>
+    <!-- Compiled and minified CSS -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="css/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<body>
+
+    <div class="logout">
+        <div class="row">
+            <div class="col s12 m6 l5" id="cadastroContainer">
+                <img class="responsive-img logo" src="img/logo.png" alt="">
+                <h1>Cadastro</h1>
+
+                <p>Faça seu cadastro, entre na plataforma e monitore seus alunos.</p>
+
+                <div class="cadastro">
+                    <div class="input-field">
+                        <a href="login.html">
+                            <p class=" waves-effect waves-light black-text cad" type="submit" name="action">
+                                <i class="material-icons">arrow_back</i>Já sou cadastrado</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m6 l7">
+                <form id="form">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" class="validate">
+                        <label for="name">Nome</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" class="validate">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password" type="password" class="validate">
+                        <label for="password">Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="passwordAgain" type="password" class="validate">
+                        <label for="passwordAgain"> Repetir Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <a href="alunos.html">
+                            <span class="btn waves-effect waves-light">
+                                <i class="material-icons">lock_open</i> Cadastrar
+                            </span>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
