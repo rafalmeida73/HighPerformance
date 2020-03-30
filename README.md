@@ -10,4 +10,4 @@
 
 ## :computer: Deploy no Heroku
 
-https://highperformance.herokuapp.com/index.html
+<a href="https://highperformance.herokuapp.com/index.html" target="_blank">High Performance</a>

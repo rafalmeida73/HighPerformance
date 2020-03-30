@@ -20,7 +20,7 @@
     font-size: 20px;
 }
 
-#banner button {
+#banner a {
     background: #FF7E00;
     border-radius: 50px;
     float: right;
@@ -32,9 +32,10 @@
     font-weight: bolder;
     margin-bottom: 41px;
     cursor: pointer;
+    text-align: center;
 }
 
-#banner button:hover {
+#banner a:hover {
     color: black;
     border: black;
     background-color: white;
@@ -75,7 +76,7 @@
     border: 3px solid #FF7E00;
 }
 
-#ilustracao button {
+#ilustracao a {
     background: #FF7E00;
     float: right;
     border: none;
@@ -85,9 +86,10 @@
     margin-top: 50px;
     font-weight: bolder;
     cursor: pointer;
+    text-align: center;
 }
 
-#ilustracao button:hover {
+#ilustracao a:hover {
     color: black;
     border: 1px solid black;
     background-color: white;
