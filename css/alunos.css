@@ -58,6 +58,7 @@ form {
     color: white;
     font-weight: bolder;
     padding: 6px;
+    cursor: pointer;
 }
 
 #alunosAtivos button:hover {

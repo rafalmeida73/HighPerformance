@@ -113,6 +113,7 @@
     color: white;
     font-weight: bolder;
     padding: 7px;
+    cursor: pointer;
 }
 
 #alunosAtivos button:hover {
