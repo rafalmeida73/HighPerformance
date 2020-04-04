@@ -104,6 +104,11 @@
     margin-top: 100px;
 }
 
+#alunosAtivos i {
+    margin-top: 40px;
+    cursor: pointer;
+}
+
 #alunosAtivos button {
     margin-top: 154px;
     margin-bottom: 31px;
