@@ -72,6 +72,10 @@
     margin-right: 71px;
 }
 
+#ilustracao img {
+    margin-top: 60px;
+}
+
 .square {
     border: 3px solid #FF7E00;
 }
@@ -209,4 +213,10 @@ a[href="#top"] {
 
 a[href="#top"]:hover {
     text-decoration: none;
+}
+
+@media (max-width:600px) {
+    #tituloCarrosel h2 {
+        font-size: 35px;
+    }
 }
