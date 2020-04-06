@@ -1,22 +1,6 @@
 <svg width="893" height="580" viewBox="0 0 893 580" fill="none" xmlns="http://www.w3.org/2000/svg">
 <style>
-#bar1 {
-    animation: mover 5s infinite;
-}
-
-#bar2 {
-    animation: mover 5s infinite;
-}
-
-#bar3 {
-    animation: mover 5s infinite;
-}
-
-#bar4 {
-    animation: mover 5s infinite;
-}
-
-#bar5 {
+#bar1,#bar2,#bar3,#bar4,#bar5 {
     animation: mover 5s infinite;
 }
 
