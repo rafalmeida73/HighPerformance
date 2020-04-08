@@ -1,24 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="img/Iconlogo.png" type="image/x-icon">
-    <title>Finanças</title>
+    <link rel="shortcut icon" href="../../img/Iconlogo.png" type="image/x-icon">
+    <title>Alunos</title>
     <!-- Compiled and minified CSS -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="./css/financas.css">
+    <link rel="stylesheet" href="alunos.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
 </head>
 
 <body>
+
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #ffffff white">
                 <!-- Logo -->
-                <a href="index.html" class="brand-logo"><img class="responsive-img" src="img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                <a href="../index/index.html" class="brand-logo"><img class="responsive-img" src="../../img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
                 </a>
 
                 <!-- Ícone para abrir no Mobile -->
@@ -27,11 +28,11 @@
                 </a>
 
                 <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li><a href="index.html" class="black-text">Home</a></li>
-                    <li><a href="alunos.html" class="black-text">Alunos</a></li>
-                    <li><a href="crie.html" class="black-text">Crie</a></li>
-                    <li><a href="controle.html" class="orange-text">Controle</a></li>
-                    <li><a href="treino.html" class="black-text">Treino</a></li>
+                    <li><a href="../index/index.html" class="black-text">Home</a></li>
+                    <li><a href="#" class="orange-text">Alunos</a></li>
+                    <li><a href="../crie/crie.html" class="black-text">Crie</a></li>
+                    <li><a href="../controle/controle.html" class="black-text">Controle</a></li>
+                    <li><a href="../treino/treino.html" class="black-text">Treino</a></li>
                 </ul>
             </div>
         </nav>
@@ -39,44 +40,32 @@
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="index.html" class="black-text">Home</a></li>
-        <li><a href="alunos.html" class="black-text">Alunos</a></li>
-        <li><a href="crie.html" class="black-text">Crie</a></li>
-        <li><a href="controle.html" class="orange-text">Controle</a></li>
-        <li><a href="treino.html" class="black-text">Treino</a></li>
+        <li><a href="../index/index.html" class="black-text">Home</a></li>
+        <li><a href="#" class="orange-text">Alunos</a></li>
+        <li><a href="../crie/crie.html" class="black-text">Crie</a></li>
+        <li><a href="../controle/controle.html" class="black-text">Controle</a></li>
+        <li><a href="../treino/treino.html" class="black-text">Treino</a></li>
     </ul>
 
 
-    <div class="row" id="grafico">
-        <div class="col s12 m12 l8">
-            <canvas id="myChart" width="400" height="300"></canvas>
-        </div>
-
-        <div class="col s12 m12 l4">
-            <div class="cards">
-
-                <div class="card">
-                    <div>
-                        <i class="material-icons background-round mt-5">attach_money</i>
-                    </div>
-                    <div class="right-align">
-                        <h5 class="white-text">R$ 8.900,00</h5>
-                        <p class="white-text">Total</p>
-                    </div>
+    <!-- Alunos -->
+    <div class="container">
+        <div class="quadrado">
+            <div class="row square" id="alunos">
+                <div class="col s12 m12 l6 ">
+                    <h2>1<br> Alunos ativos</h2>
                 </div>
-                <div class="card2">
-                    <div>
-                        <i class="material-icons background-round mt-5">timeline</i>
-                    </div>
-                    <div class="right-align">
-                        <h5 class="white-text">%10</h5>
-                        <p class="white-text">Crescimento</p>
-                    </div>
+                <div class="col s12 m12 l6 ">
+                    <img class="responsive-img" src="../../img/user.png" alt="Alunos ativos">
                 </div>
+            </div>
+            <div class="col s12 m12 l12 right-align baixoQuadrado">
+                <p>ADICIONAR NOVO ALUNO</p>
             </div>
         </div>
     </div>
 
+    <!-- INICIO DA LISTA -->
     <div class="container" id="lista">
         <div class="#ffffff white" style="border-bottom: 2px solid black;">
             <div class="row">
@@ -111,7 +100,7 @@
                     </div>
 
                     <div class="col s2 m3 l3 center-align">
-                        <h5>Pagamento</h5>
+                        <h5>Presença</h5>
                     </div>
                     <div class="col s12 m3 l3 center-align listaAluno">
                         <p>TODOS ALUNOS</p>
@@ -122,11 +111,12 @@
         </div>
     </div>
 
+    <!-- Lista dos alunos -->
     <div class="container " id="alunosAtivos">
         <div>
             <div class="row">
                 <div class="col s12 m3 l3 center-align">
-                    <img class="responsive-img " src="img/avatar.png" alt="avatar do usuario">
+                    <img class="responsive-img " src="../../img/avatar.png" alt="avatar do usuario">
                 </div>
 
                 <div class="col s12 m3 l3 center-align">
@@ -141,19 +131,18 @@
                     <form action="#">
                         <p>
                             <label>
-                        <input type="checkbox" />
-                        <span class="black-text">Pago</span>
-                      </label>
+                                <input type="checkbox" />
+                                <span class="black-text">Presente</span>
+                            </label>
                         </p>
                     </form>
+                </div>
+                <div class="col l12 m12 s12 center-align">
+                    <button>REMOVER ALUNO</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
 
 
     <!-- FOOTER -->
@@ -166,32 +155,32 @@
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
-                        <li><a class="white-text text-lighten-3" href="index.html">Home</a></li>
-                        <li><a class="white-text text-lighten-3" href="alunos.html">Alunos</a></li>
-                        <li><a class="white-text text-lighten-3" href="crie.html">Crie</a></li>
-                        <li><a class="white-text text-lighten-3" href="controle.html">Controle</a></li>
-                        <li><a class="white-text text-lighten-3" href="treino.html">Treino</a></li>
+                        <li><a class="white-text text-lighten-3" href="../index/index.html">Home</a></li>
+                        <li><a class="white-text text-lighten-3" href="#">Alunos</a></li>
+                        <li><a class="white-text text-lighten-3" href="../crie/crie.html">Crie</a></li>
+                        <li><a class="white-text text-lighten-3" href="../controle/controle.html">Controle</a></li>
+                        <li><a class="white-text text-lighten-3" href="../treino/treino.html">Treino</a></li>
                     </ul>
                 </div>
                 <div class="col l1 s4 right">
-                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="img/up.png" alt="Voltar ao topo"></a>
+                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="../../img/up.png" alt="Voltar ao topo"></a>
                 </div>
             </div>
         </div>
         <div class="footer-copyright">
             <div class="container white-text">
                 © 2020 High Performance Copyright
-                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at LogoMakr.com</a>
+                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at
+                    LogoMakr.com</a>
             </div>
         </div>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="./js/main.js"></script>
-    <script src="./js/topo.js"></script>
-    <script src="./js/finacas.js"></script>
+    <script src="../../js/main.js"></script>
+    <script src="../../js/topo.js"></script>
 </body>
 
 </html>
