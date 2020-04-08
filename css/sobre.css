@@ -60,12 +60,6 @@
     box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-
-/* valid color */
-
-
-/* icon prefix focus color */
-
 #form .input-field .prefix.active {
     color: #ff7e00;
 }
@@ -128,26 +122,4 @@ a[href="#top"]:hover {
 
 .card-move-up .move-up {
     padding: 20px;
-}
-
-.black-overlay {
-    background-color: rgba(0, 0, 0, 0.42) !important;
-}
-
-.bg-image-1 {
-    background-image: url("../../images/cards/macbook.png");
-    width: 100%;
-    background-size: cover;
-}
-
-.bg-image-2 {
-    background-image: url("../../images/cards/iphone.png");
-    width: 100%;
-    background-size: cover;
-}
-
-.bg-image-3 {
-    background-image: url("../../images/cards/applewatch.png");
-    width: 100%;
-    background-size: cover;
 }
