@@ -1,14 +1,13 @@
 {
     "name": "High Performance",
     "short_name": "High Performance",
+    "theme_color": "#FFFF",
+    "background_color": "#FFFF",
+    "display": "standalone",
+    "start_url": "/",
     "icons": [{
         "src": "/img/iconLogo144.png",
-        "sizes": "144x144"
-    }],
-    "display": "standalone",
-    "scope": "/",
-    "start_url": "./?homescreen=true",
-    "orientation": "portrait",
-    "theme_color": "#FFFF",
-    "background_color": "#FFFF"
+        "sizes": "144x144",
+        "type": "image/png"
+    }]
 }
