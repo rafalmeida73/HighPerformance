@@ -289,4 +289,11 @@ a[href="#top"]:hover {
     #banner img {
         margin-top: 0;
     }
+    #ilustracao h6 {
+        font-size: 25px;
+    }
+    #ilustracao p {
+        font-size: 18px;
+        margin-right: 25px;
+    }
 }

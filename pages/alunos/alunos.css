@@ -18,6 +18,7 @@
 
 .quadrado h2 {
     width: 100%;
+    margin-top: 150px;
 }
 
 .baixoQuadrado {
@@ -106,5 +107,11 @@ a[href="#top"]:hover {
     }
     #lista h5 {
         display: none;
+    }
+    .quadrado {
+        margin-bottom: 80px;
+    }
+    .quadrado h2 {
+        font-size: 38px;
     }
 }
