@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1 viewport-fit=cover" />
     <link rel="shortcut icon" href="../../img/Iconlogo.png" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -13,11 +13,6 @@
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="manifest" href="manifest.json" />
-    <script>
-        if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('./js/sw.js')
-        }
-    </script>
 </head>
 
 <body>
@@ -324,6 +319,11 @@
     <script src="../../js/topo.js"></script>
     <script src="../../js/carrousel.js"></script>
     <script src="../../js/pwa.dev.min.js"></script>
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('./js/sw.js')
+        }
+    </script>
 </body>
 
 </html>
