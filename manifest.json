@@ -2,8 +2,8 @@
     "name": "High Performance",
     "short_name": "High Performance",
     "icons": [{
-        "src": "/img/icon192.png",
-        "sizes": "192x192"
+        "src": "/img/iconLogo.png",
+        "sizes": "400x278"
     }],
     "display": "standalone",
     "scope": "/",
