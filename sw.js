@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 var CACHE_NAME = 'static-v1';
 
 self.addEventListener('install', function(event) {
@@ -9,9 +7,9 @@ self.addEventListener('install', function(event) {
                 '/',
                 '/index.html',
                 '/styles.css',
-                '/app.js',
+                '/js/main.js',
+                '/js/topo.js',
                 '/manifest.js',
-                '/vendor.js',
             ]);
         })
     )
