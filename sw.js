@@ -7,8 +7,6 @@ self.addEventListener('install', function(event) {
                 '/',
                 '/index.html',
                 '/styles.css',
-                '/js/main.js',
-                '/js/topo.js',
                 '/manifest.js',
             ]);
         })
