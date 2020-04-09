@@ -5,7 +5,7 @@
 }
 
 #banner img {
-    margin-top: 7vh;
+    margin-top: 15vh;
 }
 
 #banner h1 {
@@ -285,5 +285,8 @@ a[href="#top"]:hover {
 @media (max-width:600px) {
     #tituloCarrosel h2 {
         font-size: 35px;
+    }
+    #banner img {
+        margin-top: 0;
     }
 }
