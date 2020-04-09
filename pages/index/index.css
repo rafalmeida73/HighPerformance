@@ -287,14 +287,3 @@ a[href="#top"]:hover {
         font-size: 35px;
     }
 }
-
-
-/* PWA */
-
-.pwa__alert {
-    background: orange;
-    color: white;
-    text-align: center;
-    padding: 0.5em;
-    display: none;
-}

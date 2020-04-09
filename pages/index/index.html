@@ -12,7 +12,12 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="manifest" href="../../manifest.json">
+    <link rel="manifest" href="../../manifest.json" />
+    <script>
+        if (navigator.serviceWorker) {
+            navigator.serviceWorker.register('../../js/sw.js')
+        }
+    </script>
 </head>
 
 <body>
@@ -280,7 +285,6 @@
         </a>
     </div>
 
-
     <!-- FOOTER -->
     <footer class="page-footer" id="footer">
         <div class="container">
@@ -295,7 +299,7 @@
                         <li><a class="white-text text-lighten-3" href="../sobre/sobre.html">Sobre</a></li>
                         <li><a class="white-text text-lighten-3" href="../entrar/login.html">Entrar</li>
                         <li><a class="white-text text-lighten-3" href="../cadastro/cadastro.html">Registrar</a></li>
-                        <li><a class="white-text text-lighten-3" href="../cadastro/cadastro.html">Registrar</a></li>
+                        <li class="pwa__alert"><a class="white-text text-lighten-3 pwa__alert__btn">Adicionar a tela inicial</a></li>
                     </ul>
                 </div>
                 <div class="col l1 s4 right">
@@ -310,10 +314,6 @@
                     LogoMakr.com</a>
             </div>
         </div>
-        <div class="pwa__alert">
-            <button class="pwa__alert__btn">Adicionar a tela principal</button>
-        </div>
-
     </footer>
 
 
@@ -323,7 +323,7 @@
     <script src="../../js/main.js"></script>
     <script src="../../js/topo.js"></script>
     <script src="../../js/carrousel.js"></script>
-
+    <script src="../../js/pwa.dev.min.js"></script>
 </body>
 
 </html>
