@@ -1,0 +1,20 @@
+{
+    "short_name": "High Performance",
+    "name": "High Performance",
+    "icons": [{
+            "src": "/img/icon192.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/img/icon512.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "start_url": "/?utm=pwa",
+    "background_color": "#FFFF",
+    "display": "fullscreen",
+    "orientation": "portrait",
+    "theme_color": "#FFFF"
+}
