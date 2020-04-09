@@ -1,8 +1,8 @@
 {
     "name": "High Performance",
     "short_name": "High Performance",
-    "theme_color": "#FFFF",
-    "background_color": "#FFFF",
+    "theme_color": "#ffffff",
+    "background_color": "#ffffff",
     "display": "standalone",
     "start_url": "/",
     "icons": [{
