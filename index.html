@@ -320,11 +320,16 @@
     <script src="../../js/carrousel.js"></script>
     <script src="../../js/pwa.dev.min.js"></script>
     <script>
-        if (navigator.serviceWorker) {
-            navigator.serviceWorker.register('./js/sw.js')
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('/sw.js')
+                .then(function() {
+                    console.log('service worker registered');
+                })
+                .catch(function() {
+                    console.warn('service worker failed');
+                });
         }
     </script>
-    <script src="./js/pwa.js"></script>
 </body>
 
 </html>
