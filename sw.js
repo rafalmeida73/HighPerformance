@@ -1,13 +1,12 @@
-var CACHE_NAME = 'static-v1';
+/* eslint-disable */
+
+var CACHE_NAME = 'static-v2';
 
 self.addEventListener('install', function(event) {
     event.waitUntil(
         caches.open(CACHE_NAME).then(function(cache) {
             return cache.addAll([
-                '/',
-                '/index.html',
-                '/styles.css',
-                '/manifest.js',
+                'index.html',
             ]);
         })
     )

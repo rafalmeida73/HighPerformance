@@ -32,11 +32,11 @@
 }
 
 #banner img {
-    padding-top: 6vh;
+    padding-top: 2vh;
 }
 
 #banner h1 {
-    padding-top: 80px;
+    padding-top: 30px;
     margin-top: 30%;
     color: #FF7E00;
     font-weight: bolder;
@@ -154,16 +154,9 @@
 }
 
 #ilustracao h6 {
-    margin: 100px 103px 0 0;
+    margin: 100px 103px 100px 0;
     width: 100%;
     font-size: 30px;
-}
-
-#ilustracao p {
-    font-size: 18px;
-    margin-top: 39px;
-    padding-bottom: 32px;
-    margin-right: 71px;
 }
 
 #ilustracao img {

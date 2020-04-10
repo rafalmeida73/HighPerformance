@@ -17,12 +17,12 @@
     <link rel="manifest" href="/manifest.json">
     <script>
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/sw.js')
+            navigator.serviceWorker.register('sw.js')
                 .then(function() {
                     console.log('service worker registered');
                 })
                 .catch(function() {
-                    console.warn('service worker failed');
+                    console.log('service worker failed');
                 });
         }
     </script>
@@ -148,9 +148,8 @@
         <div class="col s12 m12 l5 left-align">
             <div class="square center-align">
                 <h6>COMECE <span>AGORA</span> A USAR<br> O <span>HIGH PERFORMANCE</span></h6>
-                <p class="right-align">Cadastre-se<br> e comece a usar!</p>
             </div>
-            <a href="../cadastro/cadastro.html">Se inscrever</a>
+            <a href="../cadastro/cadastro.html">Cadastre-se</a>
         </div>
 
         <div class="col s12 m12 l7 left-align">
