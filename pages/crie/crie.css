@@ -192,6 +192,6 @@ a[href="#top"]:hover {
     }
     .loader img {
         margin-top: 0;
-        max-height: fit-content;
+        max-height: 100vh;
     }
 }
