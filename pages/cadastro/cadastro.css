@@ -117,4 +117,16 @@ form .btn:hover {
         margin-top: 0;
         max-height: 100vh;
     }
+    .logout {
+        margin: 0 0;
+        height: 580px;
+        max-height: 100vh;
+    }
+    .logo {
+        margin-top: 40px;
+    }
+    form .btn {
+        background-color: #ff7e00;
+        width: 257px;
+    }
 }

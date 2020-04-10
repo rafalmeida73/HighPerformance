@@ -309,6 +309,10 @@ a[href="#top"]:hover {
     #banner img {
         margin-top: 0;
     }
+    #banner h1 {
+        margin-top: 40%;
+        font-size: 44px;
+    }
     #ilustracao h6 {
         font-size: 25px;
     }
