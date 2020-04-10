@@ -98,6 +98,6 @@ form .btn:hover {
 @media (max-width:600px) {
     .loader img {
         margin-top: 0;
-        width: 300px;
+        max-height: fit-content;
     }
 }

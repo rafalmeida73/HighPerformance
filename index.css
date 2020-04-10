@@ -318,4 +318,8 @@ a[href="#top"]:hover {
         font-size: 18px;
         margin-right: 25px;
     }
+    .loader img {
+        margin-top: 0;
+        max-height: fit-content;
+    }
 }
