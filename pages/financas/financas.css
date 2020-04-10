@@ -13,6 +13,11 @@
     animation-fill-mode: forwards;
 }
 
+.loader img {
+    margin-top: 80px;
+    width: 400px;
+}
+
 @keyframes fadeOut {
     100% {
         opacity: 0;
@@ -126,5 +131,9 @@ a[href="#top"]:hover {
     }
     #lista h5 {
         display: none;
+    }
+    .loader img {
+        margin-top: 0;
+        width: 300px;
     }
 }

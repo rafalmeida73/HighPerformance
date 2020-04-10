@@ -13,6 +13,11 @@
     animation-fill-mode: forwards;
 }
 
+.loader img {
+    margin-top: 80px;
+    width: 400px;
+}
+
 @keyframes fadeOut {
     100% {
         opacity: 0;
@@ -88,4 +93,11 @@ form .btn:hover {
 
 .bannerimg {
     margin-top: 20vh;
+}
+
+@media (max-width:600px) {
+    .loader img {
+        margin-top: 0;
+        width: 300px;
+    }
 }

@@ -13,6 +13,11 @@
     animation-fill-mode: forwards;
 }
 
+.loader img {
+    margin-top: 80px;
+    width: 400px;
+}
+
 @keyframes fadeOut {
     100% {
         opacity: 0;
@@ -50,4 +55,11 @@ a[href="#top"] {
 
 a[href="#top"]:hover {
     text-decoration: none;
+}
+
+@media (max-width:600px) {
+    .loader img {
+        margin-top: 0;
+        width: 300px;
+    }
 }
