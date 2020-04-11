@@ -152,7 +152,7 @@ a[href="#top"]:hover {
 }
 
 @media (max-width:600px) {
-    #sobre img {
+    #ilustracao {
         margin: 80px 0;
     }
     .loader img {
