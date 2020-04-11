@@ -1,6 +1,6 @@
 .loader {
     position: fixed;
-    z-index: 99;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
@@ -56,6 +56,7 @@ body {
 
 .cadastro .cad {
     font-weight: bold;
+    background: none;
 }
 
 .cadastro i {
@@ -82,6 +83,7 @@ form span:hover {
 form .btn {
     background-color: #ff7e00;
     border-radius: 8px;
+    width: 591px;
 }
 
 form .btn:hover {
@@ -123,10 +125,12 @@ form .btn:hover {
         max-height: 100vh;
     }
     .logo {
-        margin-top: 40px;
+        margin-top: 10vh;
+    }
+    form {
+        padding-top: 25px;
     }
     form .btn {
-        background-color: #ff7e00;
-        width: 257px;
+        width: 87%;
     }
 }

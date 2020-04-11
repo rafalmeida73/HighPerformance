@@ -1,6 +1,6 @@
 .loader {
     position: fixed;
-    z-index: 99;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
@@ -123,11 +123,17 @@ a[href="#top"]:hover {
     text-decoration: none;
 }
 
-#profile-card .card-image {
+#profile-card .card-image,
+#profile-card2 .card-image,
+#profile-card3 .card-image,
+#profile-card4 .card-image {
     height: 150px;
 }
 
-#profile-card .card-profile-image {
+#profile-card .card-profile-image,
+#profile-card2 .card-profile-image,
+#profile-card3 .card-profile-image,
+#profile-card4 .card-profile-image {
     width: 70px;
     position: absolute;
     top: 110px;
@@ -135,14 +141,20 @@ a[href="#top"]:hover {
     cursor: pointer;
 }
 
-#profile-card .btn-move-up {
+#profile-card .btn-move-up,
+#profile-card2 .btn-move-up,
+#profile-card3 .btn-move-up,
+#profile-card4 .btn-move-up {
     position: relative;
     top: -40px;
     right: -18px;
     margin-right: 10px !important;
 }
 
-#profile-card .card-content p {
+#profile-card .card-content p,
+#profile-card2 .card-content p,
+#profile-card3 .card-content p,
+#profile-card4 .card-content p {
     font-size: 1.2rem;
     margin: 10px 0 12px;
 }

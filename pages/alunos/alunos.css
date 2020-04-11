@@ -1,6 +1,6 @@
 .loader {
     position: fixed;
-    z-index: 99;
+    z-index: 999;
     top: 0;
     left: 0;
     width: 100%;
@@ -150,5 +150,11 @@ a[href="#top"]:hover {
     }
     #alunos h2 {
         margin-top: 40px;
+    }
+}
+
+@media (max-width:443px) {
+    .quadrado h2 {
+        font-size: 34px;
     }
 }
