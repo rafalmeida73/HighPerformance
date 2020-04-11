@@ -164,11 +164,15 @@ a[href="#top"]:hover {
 }
 
 @media (max-width:600px) {
-    #ilustracao {
-        margin: 80px 0;
+    #ilustracao img {
+        margin: 25vh 0;
     }
     .loader img {
         margin-top: 0;
+        max-height: 100vh;
+    }
+    #sobre {
+        height: 100vh;
         max-height: 100vh;
     }
 }
