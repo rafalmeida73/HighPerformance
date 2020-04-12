@@ -120,6 +120,8 @@ form .btn:hover {
         max-height: 100vh;
     }
     .logout {
+        background: none;
+        box-shadow: none;
         margin: 0 0;
         height: 580px;
         max-height: 100vh;
