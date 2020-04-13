@@ -6,26 +6,6 @@
     "display": "fullscreen",
     "start_url": "https://highperformance.herokuapp.com/",
     "icons": [{
-            "src": "img/icon-16x16.png",
-            "sizes": "16x16",
-            "type": "image/png"
-        },
-        {
-            "src": "img/icon-32x32.png",
-            "sizes": "32x32",
-            "type": "image/png"
-        },
-        {
-            "src": "img/icon-57x57.png",
-            "sizes": "57x57",
-            "type": "image/png"
-        },
-        {
-            "src": "img/icon-60x60.png",
-            "sizes": "60x60",
-            "type": "image/png"
-        },
-        {
             "src": "img/icon-72x72.png",
             "sizes": "72x72",
             "type": "image/png"
