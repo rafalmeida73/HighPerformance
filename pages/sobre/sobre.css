@@ -25,18 +25,85 @@
     }
 }
 
+#sobre {
+    height: 100vh;
+    max-height: 100vh;
+}
+
 #sobre p {
     font-size: 24px;
     text-align: center;
-    margin-top: 112px;
+    margin-top: 30vh;
 }
 
 #sobre span {
     font-weight: bold;
 }
 
+svg {
+    margin: 17vh 0;
+    max-width: 90vh;
+}
+
+#bola1,
+#icon1,
+#iconbike {
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+    -webkit-transform-origin: 60% 50%;
+    transform-origin: 60% 50%;
+}
+
+#bike:hover #icon1,
+#bike:hover #iconbike {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#bike:hover #bola1,
+#bike:hover #metade1 {
+    opacity: 0;
+}
+
+#bola2,
+#icon2 {
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+    -webkit-transform-origin: 50% 70%;
+    transform-origin: 50% 70%;
+}
+
+#halter:hover #icon2 {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#halter:hover #bola2,
+#halter:hover #metade2 {
+    opacity: 0;
+}
+
+#bola3,
+#icon3 {
+    -webkit-transition: 300ms all;
+    transition: 300ms all;
+    -webkit-transform-origin: 50% 60%;
+    transform-origin: 50% 60%;
+}
+
+#grafico:hover #icon3 {
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+}
+
+#grafico:hover #bola3,
+#grafico:hover #metade3 {
+    opacity: 0;
+}
+
 #tituloTime h2 {
     font-weight: 450;
+    margin-bottom: 10vh;
 }
 
 #time p {
@@ -164,8 +231,8 @@ a[href="#top"]:hover {
 }
 
 @media (max-width:600px) {
-    #ilustracao img {
-        margin: 25vh 0;
+    svg {
+        margin: 30vh 0;
     }
     .loader img {
         margin-top: 0;
@@ -174,5 +241,11 @@ a[href="#top"]:hover {
     #sobre {
         height: 100vh;
         max-height: 100vh;
+    }
+}
+
+@media (max-width:320px) {
+    #sobre p {
+        margin-top: 20vh;
     }
 }
