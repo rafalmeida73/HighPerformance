@@ -109,6 +109,9 @@ form .btn:hover {
     #cadastroContainer h1 {
         font-size: 30px;
     }
+    #cadastroContainer img {
+        max-width: 100%;
+    }
     form {
         padding-top: 20vh;
     }

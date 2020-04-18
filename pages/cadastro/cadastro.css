@@ -111,7 +111,7 @@ form .btn:hover {
     box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-#form .input-field.prefix.active {
+#form .input-field .prefix.active {
     color: #ff7e00;
 }
 

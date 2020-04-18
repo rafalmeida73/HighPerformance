@@ -42,12 +42,12 @@
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input id="cel" type="number" class="validate">
+                        <input type="text" class="form-control" onkeypress="$(this).mask('(00) 0000-00009')">
                         <label for="cel">Celular</label>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="date" class="datepicker">
+                        <input type="text" class="form-control" onkeypress="$(this).mask('00/00/0000')">
                         <label for="password">Data Nasc.</label>
                     </div>
                     <div class="input-field">
@@ -61,7 +61,9 @@
             </div>
         </div>
     </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../../js/loader.js"></script>
 </body>
