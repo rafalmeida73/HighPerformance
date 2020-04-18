@@ -242,6 +242,9 @@ a[href="#top"]:hover {
         height: 100vh;
         max-height: 100vh;
     }
+    #sobre p {
+        margin-top: 20vh;
+    }
 }
 
 @media (max-width:320px) {
