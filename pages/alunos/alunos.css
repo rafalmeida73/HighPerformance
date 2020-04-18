@@ -127,6 +127,9 @@ a[href="#top"] {
 a[href="#top"]:hover {
     text-decoration: none;
 }
+a#addAluno {
+    color: white;
+}
 
 @media (max-width:600px) {
     .listaAluno {
