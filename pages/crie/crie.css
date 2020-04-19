@@ -25,6 +25,10 @@
     }
 }
 
+#aulas {
+    margin-bottom: 154px;
+}
+
 .wrapper {
     margin-top: 80px;
     margin-bottom: 50px;
@@ -138,8 +142,8 @@
 }
 
 #alunosAtivos button {
-    margin-top: 154px;
-    margin-bottom: 31px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     background: #FF7E00;
     border-radius: 50px;
     border: none;
@@ -200,5 +204,9 @@ a[href="#top"]:hover {
     }
     .calendar {
         margin-top: 36px;
+    }
+    #alunosAtivos button {
+        margin-top: 0;
+        margin-bottom: 50px;
     }
 }
