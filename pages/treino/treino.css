@@ -28,7 +28,8 @@
 #perfil {
     border: 1px solid #ddd;
     border-bottom: none;
-    margin-top: 15vh;
+    margin-top: 20vh;
+    margin-bottom: 25vh;
 }
 
 #perfil img {
@@ -88,5 +89,9 @@ a[href="#top"]:hover {
     .loader img {
         margin-top: 0;
         max-height: 100vh;
+    }
+    #perfil {
+        margin-top: 10vh;
+        margin-bottom: 26vh;
     }
 }

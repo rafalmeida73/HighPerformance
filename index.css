@@ -39,7 +39,7 @@
 
 #banner h1 {
     padding-top: 30px;
-    margin-top: 30%;
+    margin-top: 20vh;
     color: #FF7E00;
     font-weight: bolder;
 }
@@ -62,6 +62,7 @@
     margin-bottom: 41px;
     cursor: pointer;
     text-align: center;
+    transition: 0.5s;
 }
 
 #banner a:hover {
@@ -180,6 +181,7 @@
     font-weight: bolder;
     cursor: pointer;
     text-align: center;
+    transition: 0.5s;
 }
 
 #ilustracao a:hover {

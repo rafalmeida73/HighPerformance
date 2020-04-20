@@ -208,5 +208,6 @@ a[href="#top"]:hover {
     #alunosAtivos button {
         margin-top: 0;
         margin-bottom: 50px;
+        transition: 0.5s;
     }
 }

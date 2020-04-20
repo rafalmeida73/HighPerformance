@@ -87,6 +87,7 @@ form {
     font-weight: bolder;
     padding: 6px;
     cursor: pointer;
+    transition: 0.5s;
 }
 
 #alunosAtivos button:hover {
@@ -127,6 +128,7 @@ a[href="#top"] {
 a[href="#top"]:hover {
     text-decoration: none;
 }
+
 a#addAluno {
     color: white;
 }
