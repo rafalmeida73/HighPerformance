@@ -66,22 +66,9 @@ form .btn:hover {
     color: black;
 }
 
-#form .input-field input[type=date]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
-
+#form .input-field input[type=date]:focus,
+#form .input-field input[type=email]:focus,
 #form .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
-
-#form .input-field input[type=email]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
-
-#form .input-field input[type=number]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;
 }

@@ -53,11 +53,7 @@ form .btn:hover {
     color: black;
 }
 
-#form .input-field input[type=password]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
-
+#form .input-field input[type=password]:focus,
 #form .input-field input[type=email]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;

@@ -139,11 +139,7 @@ svg {
 
 /* label underline focus color */
 
-#form .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
-
+#form .input-field input[type=text]:focus,
 #form .input-field input[type=email]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;
@@ -228,6 +224,10 @@ a[href="#top"]:hover {
 
 .card-move-up .move-up {
     padding: 20px;
+}
+
+#btnCv {
+    background-color: rgba(0, 0, 0, 0.87);
 }
 
 @media (max-width:600px) {
