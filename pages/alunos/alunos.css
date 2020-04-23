@@ -58,42 +58,15 @@
     margin-right: 10px;
 }
 
-#lista p {
-    margin-left: 20px;
+p {
     font-weight: bold;
+    margin-top: 80px;
 }
 
-.listaAluno {
-    display: none;
-}
-
-#alunosAtivos p,
-form {
-    margin-top: 40px;
-    color: black;
-}
-
-#alunosAtivos {
-    margin-top: 20px;
-}
-
-#alunosAtivos button {
-    margin-top: 154px;
-    margin-bottom: 31px;
-    background: #FF7E00;
-    border-radius: 50px;
-    border: none;
-    color: white;
-    font-weight: bolder;
-    padding: 6px;
-    cursor: pointer;
-    transition: 0.5s;
-}
-
-#alunosAtivos button:hover {
-    color: black;
-    background-color: white;
-    border: black 1px solid;
+#btnExport {
+    background-color: #ff7e00;
+    margin-top: 80px;
+    margin-bottom: 100px;
 }
 
 #footer {
@@ -133,13 +106,11 @@ a#addAluno {
     color: white;
 }
 
+tr {
+    cursor: pointer;
+}
+
 @media (max-width:600px) {
-    .listaAluno {
-        display: block;
-    }
-    #lista h5 {
-        display: none;
-    }
     .quadrado {
         margin-bottom: 80px;
     }
@@ -155,6 +126,15 @@ a#addAluno {
     }
     #alunos h2 {
         margin-top: 40px;
+    }
+    #description {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width:992px) {
+    #description {
+        padding-top: 100px;
     }
 }
 

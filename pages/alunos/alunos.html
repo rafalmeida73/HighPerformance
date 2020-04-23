@@ -68,84 +68,81 @@
 
     <!-- INICIO DA LISTA -->
     <div class="container" id="lista">
-        <div class="#ffffff white" style="border-bottom: 2px solid black;">
-            <div class="row">
+        <div class="col s12 m12 l12 left-align">
+            <p>Alunos</p>
 
-                <div>
-
-                    <div class="col s12 m12 l12 left-align">
-                        <p>Alunos</p>
-
-                        <div class="nav-wrapper">
-                            <form>
-                                <div class="input-field">
-                                    <input id="search" type="search" required placeholder="Pesquisar">
-                                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                                    <i class="material-icons">close</i>
-                                </div>
-                            </form>
-                        </div>
-
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required placeholder="Pesquisar">
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
                     </div>
-
-                    <div class="col s2 m3 l3 center-align">
-                        <h5>Foto</h5>
-                    </div>
-
-                    <div class="col s2 m3 l3 center-align">
-                        <h5>Nome</h5>
-                    </div>
-
-                    <div class="col s3 m3 l3 center-align">
-                        <h5>Telefone</h5>
-                    </div>
-
-                    <div class="col s2 m3 l3 center-align">
-                        <h5>Presença</h5>
-                    </div>
-                    <div class="col s12 m3 l3 center-align listaAluno">
-                        <p>TODOS ALUNOS</p>
-                    </div>
-
-                </div>
+                </form>
             </div>
+
         </div>
     </div>
 
     <!-- Lista dos alunos -->
-    <div class="container " id="alunosAtivos">
-        <div>
-            <a href="../treino/treino.html">
-                <div class="row">
-                    <div class="col s12 m3 l3 center-align">
-                        <img class="responsive-img " src="../../img/avatar.png" alt="avatar do usuario">
-                    </div>
+    <div class="container">
+        <div class="col s12 m12 l12">
+            <table class="responsive-table highlight centered" id="exportar">
+                <thead>
+                    <tr>
+                        <th id="description">Imagem</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Presença</th>
+                    </tr>
+                </thead>
 
-                    <div class="col s12 m3 l3 center-align">
-                        <p>José</p>
-                    </div>
-
-                    <div class="col s12 m3 l3 center-align">
-                        <p>0800545145</p>
-                    </div>
-
-                    <div class="col s12 m3 l3 center-align">
-                        <form action="#">
-                            <p>
-                                <label>
-                                <input type="checkbox" />
+                <tbody>
+                    <tr data-url="../treino/treino.html">
+                        <td><img src="../../img/avatar.png" alt=""></td>
+                        <td>José</td>
+                        <td>0800545145</td>
+                        <td>
+                            <label>
+                                 <input type="checkbox" />
                                 <span class="black-text">Presente</span>
-                            </label>
-                            </p>
-                        </form>
-                    </div>
-                    <div class="col l12 m12 s12 center-align">
-                        <button>REMOVER ALUNO</button>
-                    </div>
-                </div>
-            </a>
+                        </label>
+                        </td>
+                    </tr>
+
+                    <tr data-url="../treino/treino.html">
+                        <td><img src="../../img/avatar.png" alt=""></td>
+                        <td>José</td>
+                        <td>0800545145</td>
+                        <td>
+                            <label>
+                                 <input type="checkbox" />
+                                <span class="black-text">Presente</span>
+                        </label>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col l12 m12 s12 center-align">
+                <ul id="dropdown2" class="dropdown-content">
+                    <li>
+                        <a href="#!" id="pdf" class="black-text">PDF</a>
+                    </li>
+                    <li>
+                        <a href="#!" id="csv" class="black-text">CSV</a>
+                    </li>
+                </ul>
+                <a class="btn dropdown-trigger" href="#!" data-target="dropdown2" id="btnExport">Exportar para<i class="material-icons right" >arrow_drop_down</i></a>
+            </div>
+        </div>
+    </div>
+
+
 
 
     <!-- FOOTER -->
@@ -184,6 +181,10 @@
     <script src="../../js/main.js"></script>
     <script src="../../js/topo.js"></script>
     <script src="../../js/loader.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf@1.5.3/dist/jspdf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.4.4/dist/jspdf.plugin.autotable.min.js"></script>
+    <script src="../../js/tableHTMLExport.js"></script>
+    <script src="../../js/exportar.js"></script>
 </body>
 
 </html>
