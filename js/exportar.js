@@ -1,19 +1,30 @@
-$("#pdf").on("click", function() {
-    $("#exportar").tableHTMLExport({
-        type: 'pdf',
-        filename: 'alunos.pdf'
-    });
-});
-$("#csv").on("click", function() {
-    $("#exportar").tableHTMLExport({
-        type: 'csv',
-        filename: 'alunos.csv'
-    });
+function dowloadDoc() {
+    html2canvas($("#tabledata")[0], {
+        onrendered: function(canvas) {
+            var data = canvas.toDataURL();
+            var docDefinition = {
+                content: [{
+                    image: data,
+                    width: 500
+                }]
+            };
+            pdfMake.createPdf(docDefinition).download("alunos.pdf");
+        }
+    })
+}
+
+// EXCEL
+$("#csv").click(function() {
+    $(".table").table2excel({
+        exclude: ".noExl",
+        name: "Alunos",
+        filename: "alunos"
+    })
 });
 
 // Link para tr
 $(document).ready(function() {
-    $('table tr').click(function() {
+    $('table').click(function() {
         window.location = $(this).data('url');
         returnfalse;
     });

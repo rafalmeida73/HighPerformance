@@ -128,13 +128,15 @@ tr {
         margin-top: 40px;
     }
     #description {
-        padding-top: 100px;
+        margin-top: 41px;
+        margin-bottom: 44px;
     }
 }
 
 @media (max-width:992px) {
     #description {
-        padding-top: 100px;
+        margin-top: 41px;
+        margin-bottom: 44px;
     }
 }
 
