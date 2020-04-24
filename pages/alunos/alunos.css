@@ -127,17 +127,6 @@ tr {
     #alunos h2 {
         margin-top: 40px;
     }
-    #description {
-        margin-top: 41px;
-        margin-bottom: 44px;
-    }
-}
-
-@media (max-width:992px) {
-    #description {
-        margin-top: 41px;
-        margin-bottom: 44px;
-    }
 }
 
 @media (max-width:443px) {
