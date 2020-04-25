@@ -136,4 +136,10 @@ a[href="#top"]:hover {
         margin-top: 0;
         max-height: 100vh;
     }
+    #grafico {
+        margin-bottom: 120px;
+    }
+    canvas {
+        margin-bottom: 20vh;
+    }
 }
