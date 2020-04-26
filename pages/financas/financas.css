@@ -26,6 +26,7 @@
 }
 
 #grafico {
+    height: 100vh;
     margin-top: 100px;
     margin-bottom: 80px;
 }
@@ -140,6 +141,6 @@ a[href="#top"]:hover {
         margin-bottom: 120px;
     }
     canvas {
-        margin-bottom: 20vh;
+        margin-bottom: 30vh;
     }
 }
