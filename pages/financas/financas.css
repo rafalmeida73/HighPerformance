@@ -26,9 +26,9 @@
 }
 
 #grafico {
-    height: 100vh;
+    height: 100%;
     margin-top: 100px;
-    margin-bottom: 80px;
+    margin-bottom: 20vh;
 }
 
 .cards {
@@ -81,15 +81,12 @@
 }
 
 #lista {
+    margin-right: 100px;
     margin-bottom: 100px;
 }
 
 #tabledata {
     margin-bottom: 200px;
-}
-
-.listaAluno {
-    display: none;
 }
 
 #alunosAtivos {
@@ -132,9 +129,6 @@ a[href="#top"]:hover {
 }
 
 @media (max-width:600px) {
-    .listaAluno {
-        display: block;
-    }
     #lista h5 {
         display: none;
     }
@@ -148,7 +142,10 @@ a[href="#top"]:hover {
     canvas {
         margin-bottom: 30vh;
     }
-    lista {
-        margin-top: 80px;
+    #lista {
+        margin-bottom: 100px;
+    }
+    #tabledata {
+        margin-bottom: 200px;
     }
 }
