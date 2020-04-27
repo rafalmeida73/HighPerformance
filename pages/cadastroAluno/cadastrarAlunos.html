@@ -42,7 +42,7 @@
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input type="text" class="form-control" onkeypress="$(this).mask('(00) 00000-0009')">
+                        <input type="tel" name="telefone" id="telefone" pattern="\([0-9]{2}\)[\s][0-9]{4}-[0-9]{4,5}" onkeypress="$(this).mask('(00) 0000-00009')" />
                         <label for="cel">Celular</label>
                     </div>
                     <div class="input-field">
