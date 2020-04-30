@@ -309,37 +309,41 @@
             <div class="col s12 m12 l6">
                 <div>
                     <div class="row">
-                        <form class="col s12">
+                        <form class="col s12" id="formValidate" method="POST" action="">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
-                                    <input id="name" type="text" class="validate">
+                                    <input name="name" id="name" type="text" data-error=".errorTxt1">
                                     <label for="name">Nome</label>
+                                    <div class="errorTxt1 right-align"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">email</i>
-                                    <input id="email" type="email" class="validate">
+                                    <input name="email" id="email" type="email" data-error=".errorTxt2">
                                     <label for="email">E-mail</label>
+                                    <div class="errorTxt2 right-align"></div>
                                 </div>
                             </div>
 
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">question_answer</i>
-                                    <textarea id="message" class="materialize-textarea validate" length="120"></textarea>
+                                    <textarea name="msg" id="textarea2" class="materialize-textarea" data-length="250" data-error=".errorTxt3"></textarea>
                                     <label for="message">Mensagem</label>
+                                    <div class="errorTxt3 right-align"></div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="file-field input-field">
                                     <div class="btn" id="btnCv">
                                         <span>Currículo</span>
-                                        <input type="file">
+                                        <input type="file" name="file" data-error=".errorTxt4" accept="image/x-eps,application/pdf">
                                     </div>
                                     <div class="file-path-wrapper">
-                                        <input class="file-path validate" type="text" placeholder="Arquivo em pdf, doc, entre outros.">
+                                        <input name="file" class="file-path validate" type="text" placeholder="Arquivo em pdf.">
+                                        <div class="errorTxt4 right-align"></div>
                                     </div>
                                 </div>
                             </div>
@@ -400,6 +404,16 @@
     <script src="../../js/main.js"></script>
     <script src="../../js/topo.js"></script>
     <script src="../../js/loader.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('input#input_text, textarea#textarea2').characterCounter();
+        });
+    </script>
+
+    <!-- Validar form -->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="../../js/messages_pt_BR.js"></script>
+    <script src="../../js/formSobre.js"></script>
 </body>
 
 </html>

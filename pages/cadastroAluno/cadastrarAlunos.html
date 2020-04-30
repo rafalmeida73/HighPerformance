@@ -29,33 +29,34 @@
                 <h1>Cadastrar novo aluno</h1>
             </div>
             <div class="col s12 m12 l6">
-                <form id="form">
+                <form class="formValidate" id="formValidate" method="POST" action="../alunos/alunos.html">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" class="validate">
+                        <input name="name" id="name" type="text" data-error=".errorTxt1">
                         <label for="name">Nome</label>
+                        <div class="errorTxt1 right-align "></div>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" class="validate">
+                        <input name="email" id="email" type="email" data-error=".errorTxt2">
                         <label for="email">E-mail</label>
+                        <div class="errorTxt2 right-align "></div>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input attrname="telephone1" type="tel" id="tel">
+                        <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
                         <label for="tel">Celular</label>
+                        <div class="errorTxt3 right-align "></div>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">date_range</i>
-                        <input type="date" class="form-control">
-                        <label for="password">Data Nasc.</label>
+                        <input name="data" type="date" class="form-control" data-error=".errorTxt4">
+                        <label for="date">Data Nasc.</label>
+                        <div class="errorTxt4 right-align"></div>
                     </div>
                     <div class="input-field">
-                        <a href="../alunos/alunos.html">
-                            <span class="btn waves-effect waves-light">
-                                <i class="material-icons">done</i> Cadastrar
-                            </span>
-                        </a>
+                        <button class="btn waves-effect waves-light right submit" type="submit" name="action">Cadastrar
+                      </button>
                     </div>
                 </form>
             </div>
@@ -66,6 +67,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="../../js/loader.js"></script>
+
+    <!-- Validar form -->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="../../js/messages_pt_BR.js"></script>
+    <script src="../../js/formCadastroAluno.js"></script>
 
     <!-- Mascarar telefone -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>

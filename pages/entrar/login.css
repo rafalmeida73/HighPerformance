@@ -43,12 +43,14 @@ form sapn:hover {
     background-color: white;
 }
 
-form .btn {
+#btn {
     background-color: #ff7e00;
     border-radius: 8px;
+    font-weight: bold;
+    width: 100%;
 }
 
-form .btn:hover {
+#btn:hover {
     background-color: white;
     color: black;
 }
@@ -65,6 +67,10 @@ form .btn:hover {
 
 #form .input-field .prefix.active {
     color: #ff7e00;
+}
+
+.error {
+    color: red;
 }
 
 .logo {

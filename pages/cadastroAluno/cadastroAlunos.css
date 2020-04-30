@@ -51,14 +51,15 @@ body {
 }
 
 form {
-    margin-top: 15vh;
+    margin-top: 10vh;
 }
 
 form .btn {
-    margin-top: 50px;
+    margin-top: 20px;
     background-color: #ff7e00;
     border-radius: 8px;
     width: 100%;
+    font-weight: bold
 }
 
 form .btn:hover {
@@ -66,19 +67,29 @@ form .btn:hover {
     color: black;
 }
 
-#form .input-field input[type=date]:focus,
-#form .input-field input[type=email]:focus,
-#form .input-field input[type=tel]:focus,
-#form .input-field input[type=text]:focus {
+#formValidate .input-field input[type=date]:focus,
+#formValidate .input-field input[type=email]:focus,
+#formValidate .input-field input[type=tel]:focus,
+#formValidate .input-field input[type=text]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-#form .input-field .prefix.active {
+
+/* .input-field input[type=text].invalid {
+    border-bottom: 1px solid red;
+    box-shadow: 0 1px 0 0 red;
+} */
+
+.error {
+    color: red;
+}
+
+#formValidate .input-field .prefix.active {
     color: #ff7e00;
 }
 
-#form .input-field label {
+#formValidate .input-field label {
     color: #000;
 }
 
@@ -101,7 +112,7 @@ form .btn:hover {
         max-width: 100%;
     }
     form {
-        padding-top: 20vh;
+        padding-top: 25vh;
     }
     form .btn {
         width: 100%;
