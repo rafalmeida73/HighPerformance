@@ -2,7 +2,9 @@ $("#form").validate({
     rules: {
         name: {
             required: true,
+            maxlength: 100,
             minlength: 5,
+            minWords: 2
         },
         email: {
             required: true,
