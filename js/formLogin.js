@@ -6,7 +6,6 @@ $("#form").validate({
         },
         senha: {
             required: true,
-            minlength: 5
         },
     },
     errorElement: 'div',
