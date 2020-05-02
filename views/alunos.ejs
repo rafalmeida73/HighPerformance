@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Alunos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/alunos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/alunos/alunos.html" />
+</head>
+
+<body>
+    <div class="center-align loader">
+        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
+    </div>
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="#" class="orange-text">Alunos</a></li>
+                    <li><a href="/home" class="black-text">Crie</a></li>
+                    <li><a href="/home/financas" class="black-text">Finanças</a></li>
+                    <li><a href="/" class="black-text">Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="#" class="orange-text">Alunos</a></li>
+        <li><a href="/home" class="black-text">Crie</a></li>
+        <li><a href="/home/financas" class="black-text">Finanças</a></li>
+        <li><a href="/" class="black-text">Sair</a></li>
+    </ul>
+
+
+    <!-- Alunos -->
+    <div class="container">
+        <div class="quadrado">
+            <div class="row square" id="alunos">
+                <div class="col s12 m12 l6 ">
+                    <h2>2 Alunos ativos</h2>
+                </div>
+                <div class="col s12 m12 l6 ">
+                    <img class="responsive-img" src="/img/user.png" alt="Alunos ativos">
+                </div>
+            </div>
+            <div class="col s12 m12 l12 right-align baixoQuadrado">
+                <a id="addAluno" href="../cadastroAluno/cadastrarAlunos.html">ADICIONAR NOVO ALUNO</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- INICIO DA LISTA -->
+    <div class="container" id="lista">
+        <div class="col s12 m12 l12 left-align">
+            <p>Alunos</p>
+
+            <div class="nav-wrapper">
+                <form>
+                    <div class="input-field">
+                        <input id="search" type="search" required placeholder="Pesquisar">
+                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Lista dos alunos -->
+    <div class="container">
+        <div class="col s12 m12 l12">
+            <table class="highlight centered table" id="tabledata">
+                <thead>
+                    <tr>
+                        <th>Imagem</th>
+                        <th>Nome</th>
+                        <th>Telefone</th>
+                        <th>Meta</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr data-url="/home/treino">
+                        <td><img src="/img/avatar.png" alt="Foto José"></td>
+                        <td>José</td>
+                        <td>0800545145</td>
+                        <td>32 km</td>
+                    </tr>
+
+                    <tr data-url="../treino/treino.html">
+                        <td><img src="/img/avatar.png" alt="Foto José"></td>
+                        <td>José</td>
+                        <td>0800545145</td>
+                        <td>32 km</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col l12 m12 s12 center-align">
+                <ul id="dropdown2" class="dropdown-content">
+                    <li>
+                        <a onclick="dowloadDoc()" id="pdf" class="black-text">PDF</a>
+                    </li>
+                    <li>
+                        <a href="#!" id="csv" class="black-text">Excel</a>
+                    </li>
+                </ul>
+                <a class="btn dropdown-trigger" href="#!" data-target="dropdown2" id="btnExport">Exportar para<i class="material-icons right" >arrow_drop_down</i></a>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- FOOTER -->
+    <footer class="page-footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">HIGH PERFORMANCE</h5>
+                    <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <ul>
+                        <li><a class="white-text text-lighten-3" href="#">Alunos</a></li>
+                        <li><a class="white-text text-lighten-3" href="/home">Crie</a></li>
+                        <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
+                        <li><a class="white-text text-lighten-3" href="/">Sair</a></li>
+                    </ul>
+                </div>
+                <div class="col l1 s4 right">
+                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container white-text">
+                © 2020 High Performance Copyright
+                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at
+                    LogoMakr.com</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/topo.js"></script>
+
+    <!-- PDF -->
+    <script src="https://cdn.jsdelivr.net/npm/pdfmake@0.1.65/build/pdfmake.min.js"></script>
+    <script src="/js/loader.js"></script>
+    <script src="/js/html2canvas.min.js"></script>
+    <script src="/js/exportar.js"></script>
+
+    <!-- EXCEL -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery-table2excel@1.1.1/dist/jquery.table2excel.min.js"></script>
+</body>
+
+</html>

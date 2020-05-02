@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Cadastro</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
+    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
+</head>
+
+<body>
+    <div class="center-align loader">
+        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
+    </div>
+
+    <div class="logout">
+        <div class="row">
+            <div class="col s12 m12 l5" id="cadastroContainer">
+                <a href="/">
+                    <img class="responsive-img logo" src="/img/logo.png" alt="High Performance">
+                </a>
+                <h1>Cadastro</h1>
+
+                <p>Faça seu cadastro, entre na plataforma e monitore seus alunos.</p>
+
+                <div class="cadastro">
+                    <div class="input-field">
+                        <a href="/login">
+                            <p class=" waves-effect waves-light black-text cad" type="submit" name="action">
+                                <i class="material-icons">arrow_back</i>Já sou cadastrado</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col s12 m12 l7">
+                <form id="form", action="/cadastro" method="POST">
+                    <div class="input-field">
+                        <i class="material-icons prefix">account_circle</i>
+                        <input id="name" type="text" name="nome" class="validate">
+                        <label for="nome">Nome</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">email</i>
+                        <input id="email" type="email" name="email" class="validate">
+                        <label for="email">E-mail</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">call</i>
+                        <input id="cel" type="number" name="cel" class="validate">
+                        <label for="cel">Celular</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="password" type="password" name="password" class="validate">
+                        <label for="password">Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">lock_outline</i>
+                        <input id="passwordAgain" type="password" name="passwordAgain" class="validate">
+                        <label for="passwordAgain"> Repetir Senha</label>
+                    </div>
+                    <div class="input-field">
+                        <a href="/alunos">
+                            <button class="btn waves-effect waves-light" type="submit">
+                                <i class="material-icons">lock_open</i> CADASTRAR
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="/js/loader.js"></script>
+</body>
+
+</html>

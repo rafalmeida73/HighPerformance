@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Crie</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/crie.css">
+    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/crie/crie.html" />
+</head>
+
+<body>
+    <div class="center-align loader">
+        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
+    </div>
+
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="/home/alunos" class="black-text">Alunos</a></li>
+                    <li><a href="#" class="orange-text">Crie</a></li>
+                    <li><a href="/home/financas" class="black-text">Finanças</a></li>
+                    <li><a href="/" class="black-text">Sair</a></li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="/home/alunos" class="black-text">Alunos</a></li>
+        <li><a href="#" class="orange-text">Crie</a></li>
+        <li><a href="/home/financas" class="black-text">Finanças</a></li>
+        <li><a href="/" class="black-text">Sair</a></li>
+    </ul>
+
+    <!-- Lista dos alunos -->
+    <div id="aulas">
+        <div class="aulasContainer">
+            <div class="container">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">assignment_ind</i> 19/04/2020
+                            <span class="new badge orange" data-badge-caption="aulas">2</span>
+                        </div>
+                        <div class="collapsible-body"><span>
+                            <div class="col s12 m12 l12">
+                                <table class="highlight centered table responsive-table" id="tabledata">
+                                    <thead>
+                                        <tr>
+                                            <th id="marginTh">Imagem</th>
+                                            <th>Nome</th>
+                                            <th>Aula</th>
+                                            <th>Horario</th>
+                                            <th>Contato</th>
+                                            <th>Remover</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr data-url="../treino/treino.html">
+                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                            <td>José</td>
+                                            <td>Musculação</td>
+                                            <td>8:30</td>
+                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
+                                            <td><a href="#" class="black-text">Remover aluno</a></td>
+                                        </tr>
+
+                                        <tr data-url="../treino/treino.html">
+                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                            <td>José</td>
+                                            <td>Musculação</td>
+                                            <td>8:30</td>
+                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
+                                            <td><a href="#" class="black-text">Remover aluno</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="container">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">assignment_ind</i> 19/04/2020
+                            <span class="new badge orange" data-badge-caption="aulas">2</span>
+                        </div>
+                        <div class="collapsible-body"><span>
+                            <div class="col s12 m12 l12">
+                                <table class="highlight centered table responsive-table" id="tabledata">
+                                    <thead>
+                                        <tr>
+                                            <th id="marginTh">Imagem</th>
+                                            <th>Nome</th>
+                                            <th>Aula</th>
+                                            <th>Horario</th>
+                                            <th>Contato</th>
+                                            <th>Remover</th>
+                                        </tr>
+                                    </thead>
+
+                                    <tbody>
+                                        <tr data-url="../treino/treino.html">
+                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                            <td>José</td>
+                                            <td>Musculação</td>
+                                            <td>8:30</td>
+                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
+                                            <td><a href="#" class="black-text">Remover aluno</a></td>
+                                        </tr>
+
+                                        <tr data-url="../treino/treino.html">
+                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                            <td>José</td>
+                                            <td>Musculação</td>
+                                            <td>8:30</td>
+                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
+                                            <td><a href="#" class="black-text">Remover aluno</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Lista dos alunos -->
+            <div class="container">
+                <ul class="collapsible">
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">assignment_ind</i> 19/04/2020
+                            <span class="new badge orange" data-badge-caption="aulas">2</span>
+                        </div>
+                        <div class="collapsible-body"><span>
+                        <div class="col s12 m12 l12">
+                            <table class="highlight centered table responsive-table" id="tabledata">
+                                <thead>
+                                    <tr>
+                                        <th id="marginTh">Imagem</th>
+                                        <th>Nome</th>
+                                        <th>Aula</th>
+                                        <th>Horario</th>
+                                        <th>Contato</th>
+                                        <th>Remover</th>
+                                    </tr>
+                                </thead>
+
+                                <tbody>
+                                    <tr data-url="../treino/treino.html">
+                                        <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                        <td>José</td>
+                                        <td>Musculação</td>
+                                        <td>8:30</td>
+                                        <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                data-tooltip="Enviar SMS">contact_mail</i></td>
+                                        <td><a href="#" class="black-text">Remover aluno</a></td>
+                                    </tr>
+
+                                    <tr data-url="../treino/treino.html">
+                                        <td><img src="/img/avatar.png" alt="Foto José"></td>
+                                        <td>José</td>
+                                        <td>Musculação</td>
+                                        <td>8:30</td>
+                                        <td> <i class="material-icons prefix tooltipped" data-position="bottom"
+                                                data-tooltip="Enviar SMS">contact_mail</i></td>
+                                        <td><a href="#" class="black-text">Remover aluno</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- Adicionar aluno -->
+        <div class="container " id="alunosAtivos">
+            <div class="col s12 m4 l12 center-align">
+                <button>Adicionar aluno</button>
+            </div>
+        </div>
+
+
+
+        <!-- FOOTER -->
+        <footer class="page-footer" id="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col l6 s12">
+                        <h5 class="white-text">HIGH PERFORMANCE</h5>
+                        <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
+                    </div>
+                    <div class="col l4 offset-l2 s12">
+                        <ul>
+                            <li><a class="white-text text-lighten-3" href="/home/alunos">Alunos</a></li>
+                            <li><a class="white-text text-lighten-3" href="">Crie</a></li>
+                            <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
+                            <li><a class="white-text text-lighten-3" href="/">Sair</a></li>
+                        </ul>
+                    </div>
+                    <div class="col l1 s4 right">
+                        <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container white-text">
+                    © 2020 High Performance Copyright
+                    <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at
+                    LogoMakr.com</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+        <script src="/js/main.js"></script>
+        <script src="/js/topo.js"></script>
+        <script src="/js/loader.js"></script>
+        <script src="/js/crie.js"></script>
+</body>
+
+</html>
