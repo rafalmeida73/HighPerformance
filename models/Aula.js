@@ -1,6 +1,6 @@
-let Atividade = (sequelize, DataTypes) => {
+let Aula = (sequelize, DataTypes) => {
     return sequelize.define(
-        'Atividade',
+        'Aula',
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -19,21 +19,23 @@ let Atividade = (sequelize, DataTypes) => {
             treinadores_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-                references: 'treinadores', // <<< Note, its table's name, not object name
-                referencesKey: 'id' // <<< Note, its a column name
-          },
-            alunos_id: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-                references: 'alunos', // <<< Note, its table's name, not object name
-                referencesKey: 'id' // <<< Note, its a column name
+
+            },
+            data_aula: {
+                type: DataTypes.DATE,
+                allowNull: true
+            },
+            observacoes: {
+                type: DataTypes.STRING(45),
+                allowNull: true
             }
+
         },{
-            tableName: "atividades",
+            tableName: "aulas",
             timestamps: false
         }
 
     );
 }
 
-module.exports = Atividade;
+module.exports = Aula;

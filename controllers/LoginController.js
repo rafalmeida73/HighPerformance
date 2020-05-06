@@ -42,6 +42,10 @@ module.exports = {
       //Redirecionar o usuario para a rota home
       res.redirect('/home')
 
-  }
+  },
+  logout:(req,res) => {
+        req.session.destroy();
+        res.redirect('/login')
+    }
 }
 

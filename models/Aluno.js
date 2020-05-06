@@ -1,5 +1,5 @@
-let Aluno = (sequelize, DataTypes) => {
-    return sequelize.define(
+const Aluno = (sequelize, DataTypes) => {
+    const Aluno = sequelize.define(
         'Aluno',
         {
             id: {
@@ -12,15 +12,13 @@ let Aluno = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            email: {
+            telefone: {
                 type: DataTypes.STRING,
                 allowNull: false
             },
             treinadores_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-                references: 'treinadores', // <<< Note, its table's name, not object name
-                referencesKey: 'id' // <<< Note, its a column name
           }
         },{
             tableName: "alunos",
@@ -28,6 +26,14 @@ let Aluno = (sequelize, DataTypes) => {
         }
 
     );
+
+    Aluno.associate = (modelos) =>{
+        Aluno.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
+        Aluno.belongsToMany(modelos.Aula, {foreignKey:'aulas_id', as: 'aula', through: modelos.AulaHasAluno})
+    }
+
+
+    return Aluno;
 }
 
 module.exports = Aluno;

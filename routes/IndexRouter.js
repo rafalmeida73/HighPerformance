@@ -17,6 +17,6 @@ router.get('/home/treino',VerificaUsuárioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuárioLogado, LoginController.showFinancas);
 router.get('/login', LoginController.showLogin);
 router.post('/login', LoginController.login);
-
+router.get('/logout', LoginController.logout);
 
 module.exports = router;
