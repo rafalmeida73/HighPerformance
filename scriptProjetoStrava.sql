@@ -34,7 +34,7 @@ CREATE TABLE aulas (
     horario VARCHAR(45)
 );
 
-CREATE TABLE alunos_has_atividades (
+CREATE TABLE aulas_has_alunos (
     aulas_id INT,
     alunos_id INT,
     FOREIGN KEY (aulas_id) REFERENCES aulas(id)
@@ -78,7 +78,7 @@ VALUES
 	('Bike', '50k', 2, '2020-05-10','13:00'),
     ('Bike', '20k', 2, '2020-05-10','13:00');
     
-INSERT INTO alunos_has_atividades (aulas_id, alunos_id)
+INSERT INTO aulas_has_alunos (aulas_id, alunos_id)
 
 VALUES 
 	(1, 3),

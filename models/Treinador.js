@@ -1,5 +1,5 @@
 let Treinador = (sequelize, DataTypes) => {
-    return sequelize.define(
+    let Treinador =  sequelize.define(
         'Treinador',
         {
             id: {
@@ -29,6 +29,8 @@ let Treinador = (sequelize, DataTypes) => {
         }
 
     );
+
+    return Treinador;
 }
 
 module.exports = Treinador;

@@ -1,5 +1,5 @@
 let Presenca = (sequelize, DataTypes) => {
-    return sequelize.define(
+    const Presenca =  sequelize.define(
         'Presenca',
         {
             id: {
@@ -23,7 +23,18 @@ let Presenca = (sequelize, DataTypes) => {
             timestamps: false
         }
 
+       
+
     );
+
+    Presenca.associate = (modelos) =>{
+        Presenca.belongsTo(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno'}),
+        Presenca.belongsTo(modelos.Aula, {foreignKey:'aulas_id', as: 'aula'})
+    }
+
+
+
+    return Presenca;
 }
 
 module.exports = Presenca;

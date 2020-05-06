@@ -2,6 +2,12 @@ let AulaHasAluno = (sequelize, DataTypes) => {
     return sequelize.define(
         'AulaHasAluno',
         {
+            id: {
+                type: DataTypes.INTEGER,
+                primaryKey: true,
+                autoIncrement: true,
+                allowNull:false
+            },
             aulas_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
@@ -9,11 +15,11 @@ let AulaHasAluno = (sequelize, DataTypes) => {
             alunos_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-            },
+            }
         
 
         },{
-            tableName: "presenca",
+            tableName: "aulas_has_alunos",
             timestamps: false
         }
 

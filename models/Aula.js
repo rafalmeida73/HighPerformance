@@ -1,5 +1,5 @@
 let Aula = (sequelize, DataTypes) => {
-    return sequelize.define(
+    const Aula = sequelize.define(
         'Aula',
         {
             id: {
@@ -36,6 +36,12 @@ let Aula = (sequelize, DataTypes) => {
         }
 
     );
+    Aula.associate = (modelos) =>{
+        Aula.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
+        Aula.belongsToMany(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno', through: modelos.AulaHasAluno})
+    }
+
+    return Aula;
 }
 
 module.exports = Aula;
