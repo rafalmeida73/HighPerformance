@@ -1,4 +1,4 @@
-const { sequelize, Treinador } = require('../models');
+const { sequelize, Treinador, Aluno, Aula, Presenca} = require('../models');
 const bcrypt = require('bcrypt')
 
 module.exports = {
@@ -9,6 +9,7 @@ module.exports = {
       res.render("crie");
     },
     showAlunos:(req,res) =>{
+
       res.render("alunos");
     },
     showTreino:(req,res)=>{

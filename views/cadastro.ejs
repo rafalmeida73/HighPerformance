@@ -19,6 +19,37 @@
         <img src="/img/bike.svg" alt="Loader" class="responsive-img">
     </div>
 
+    <div class="navbar-fixed">
+        <nav>
+            <div class="nav-wrapper #ffffff white">
+                <!-- Logo -->
+                <a href="#" class="brand-logo"><img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+                </a>
+
+                <!-- Ícone para abrir no Mobile -->
+                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                    <i class="material-icons black-text">menu</i>
+                </a>
+
+                <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a href="/" class="black-text">Home</a></li>
+                    <li><a href="/sobre" class="black-text">Sobre</a></li>
+                    <li><a href="/login" class="black-text" aria-label="Entrar">Entrar</a></li>
+                    <li><a href="#" class="orange-text">Registrar</a></li>
+                </ul>
+
+            </div>
+        </nav>
+    </div>
+
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="/" class="black-text">Home</a></li>
+        <li><a href="/sobre" class="black-text">Sobre</a></li>
+        <li><a href="/login" class="black-text">Entrar</a></li>
+        <li><a href="#" class="orange-text">Registrar</a></li>
+    </ul>
+
     <div class="logout">
         <div class="row">
             <div class="col s12 m12 l5" id="cadastroContainer">
@@ -40,38 +71,33 @@
             </div>
 
             <div class="col s12 m12 l7">
-                <form id="form", action="/cadastro" method="POST">
+                <form id="form" action="/cadastro" method="POST">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
-                        <input id="name" type="text" name="nome" class="validate">
-                        <label for="nome">Nome</label>
+                        <input id="name" type="text" name="nome" class="validate" placeholder="Nome Completo">
+                        
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">email</i>
-                        <input id="email" type="email" name="email" class="validate">
-                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" class="validate", placeholder="Digite um email válido">
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input id="cel" type="number" name="cel" class="validate">
-                        <label for="cel">Celular</label>
+                        <input id="cel" type="number" name="celular" class="validate" placeholder="Digite seu telefone (com DDD)">
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input id="password" type="password" name="password" class="validate">
-                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="senha" class="validate" placeholder="Digite uma senha">
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input id="passwordAgain" type="password" name="passwordAgain" class="validate">
-                        <label for="passwordAgain"> Repetir Senha</label>
+                        <input id="passwordAgain" type="password" name="repSenha" class="validate" placeholder="Repita a senha">
                     </div>
                     <div class="input-field">
-                        <a href="/alunos">
-                            <button class="btn waves-effect waves-light" type="submit">
+
+                            <button type="submit" class="btn waves-effect waves-light" type="submit">
                                 <i class="material-icons">lock_open</i> CADASTRAR
                             </button>
-                        </a>
                     </div>
                 </form>
             </div>
