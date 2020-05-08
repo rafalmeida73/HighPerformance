@@ -1,13 +1,7 @@
 let AulaHasAluno = (sequelize, DataTypes) => {
-    return sequelize.define(
+    AulaHasAluno =  sequelize.define(
         'AulaHasAluno',
         {
-            id: {
-                type: DataTypes.INTEGER,
-                primaryKey: true,
-                autoIncrement: true,
-                allowNull:false
-            },
             aulas_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
@@ -23,7 +17,16 @@ let AulaHasAluno = (sequelize, DataTypes) => {
             timestamps: false
         }
 
+        
+
     );
+
+    AulaHasAluno.associate = (modelos) =>{
+        AulaHasAluno.belongsTo(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno'}),
+        AulaHasAluno.belongsTo(modelos.Aula, {foreignKey:'aulas_id', as: 'aula'})
+    }
+
+    return AulaHasAluno;
 }
 
 module.exports = AulaHasAluno;

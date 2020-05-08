@@ -35,6 +35,7 @@ CREATE TABLE contatos (
 CREATE TABLE alunos (
 	id INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL, 
+    img VARCHAR(45),
     email VARCHAR (100) NOT NULL, 
     telefone VARCHAR (45) NOT NULL, 
     treinadores_id INT,
@@ -50,7 +51,7 @@ CREATE TABLE aulas (
     treinadores_id INT,
     FOREIGN KEY (treinadores_id) REFERENCES treinadores(id)
     ON DELETE CASCADE,
-    data_aula DATE,
+    data_aula VARCHAR(45),
     horario VARCHAR(45)
 );
 
@@ -91,21 +92,22 @@ VALUES
 	('Rafael Santana', 'rafael@email.com','999999999', '$2b$10$gabZ48YuFts8C64vhE0jy.GBOUi5ZeZbzkD5O1BK0a46WNvPiOOLK'),
     ('Roni Cleber', 'roni@email.com','999999999', '$2b$10$iXZN2CUh2NNudnv.4k8xT.C4VviqJ4p.tqvMetObTNg3DaqliVyDO');
 
-INSERT INTO alunos (nome, email, telefone, treinadores_id)
+INSERT INTO alunos (nome, img, email, telefone, treinadores_id)
 
 VALUES
-    ('Paulo Ernesto', 'paulo@email.com', '999999999', 1),
-	('Diogo', 'diogo@email.com', '888888888', 1),
-	('Rafael Santana', 'rafael@email.com', '777777777', 2),
-    ('Roni Cleber', 'roni@email.com', '666666666', 3);
+    ('Paulo Ernesto','/img/paulo.png', 'paulo@email.com', '999999999', 1),
+	('Diogo','/img/diogo.png', 'diogo@email.com', '888888888', 1),
+	('Rafael Santana','/img/rafael.jpg', 'rafael@email.com', '777777777', 2),
+    ('Roni Cleber','/img/roni.png', 'roni@email.com', '666666666', 3);
 
 INSERT INTO aulas (nome, observacoes, treinadores_id, data_aula, horario )
 
 VALUES
-    ('Corrida', '5k', 1, '2020-05-10','13:00'),
-	('Corrida', '20k', 1, '2020-05-10','13:00'),
-	('Bike', '50k', 2, '2020-05-10','13:00'),
-    ('Bike', '20k', 2, '2020-05-10','13:00');
+    ('Corrida', '5k', 1, '05/08/2020','13:00'),
+	('Corrida', '20k', 1, '05/10/2020','13:00'),
+	('Bike', '50k', 1, '05/08/2020','19:00'),
+    ('Bike', '20k', 2, '05/07/2020','13:00'),
+    ('Bike', '20k', 3, '04/06/2020','13:00');
     
 INSERT INTO aulas_has_alunos (aulas_id, alunos_id)
 

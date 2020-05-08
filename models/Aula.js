@@ -22,10 +22,10 @@ let Aula = (sequelize, DataTypes) => {
 
             },
             data_aula: {
-                type: DataTypes.DATE,
+                type: DataTypes.STRING,
                 allowNull: true
             },
-            observacoes: {
+            horario: {
                 type: DataTypes.STRING(45),
                 allowNull: true
             }

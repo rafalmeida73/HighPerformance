@@ -5,18 +5,58 @@ module.exports = {
     showLogin: (req, res)=>{
 		res.render("login");
     },
-    showCrie: (req,res) =>{
-      res.render("crie");
+    showCrie: async(req,res) =>{
+
+      let user = req.session.usuario;
+
+
+      const aulas = await Aula.findAll({
+        where:{
+          treinadores_id:user.id
+        },
+        
+        include:
+      [
+        {
+          model:Aluno,
+          as:'aluno'
+        },
+
+      ]
+    });
+
+
+    let datas = await Aula.findAll({
+      where:{
+        treinadores_id:user.id
+      },
+      group: ['data_aula'],
+      attributes: ['data_aula', [sequelize.fn('COUNT', 'data_aula'), 'count']],
+      raw: true,
+
+  })
+      
+    
+
+  console.log(aulas);
+  
+     
+      res.render("crie",{user, aulas, datas});
+
+
     },
     showAlunos:(req,res) =>{
+      let user = req.session.usuario;
 
-      res.render("alunos");
+      res.render("alunos", {user});
     },
     showTreino:(req,res)=>{
-      res.render("treino");
+      let user = req.session.usuario;
+      res.render("treino", {user} );
     },
     showFinancas:(req,res)=>{
-      res.render("financas");
+      let user = req.session.usuario;
+      res.render("financas", {user});
     },
     login: async (req,res) =>{
       // Lendo as info do body

@@ -12,6 +12,9 @@ const Aluno = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
+            img: {
+                type: DataTypes.STRING
+            },
             email: {
                 type: DataTypes.STRING,
                 allowNull: false

@@ -14,10 +14,11 @@
 </head>
 
 <body>
+    
     <div class="center-align loader">
         <img src="/img/bike.svg" alt="Loader" class="responsive-img">
     </div>
-
+    <header>
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #ffffff white">
@@ -31,6 +32,12 @@
                 </a>
 
                 <ul id="navbar-items" class="right hide-on-med-and-down">
+                    <li><a class="black-text" href="#">
+                        <div class="responsive-img">
+                          <!-- <img class="responsive-img" src=""> -->
+                          <b><%= user.nome %></b>
+                        </div>
+                      </a></li>
                     <li><a href="/home/alunos" class="black-text">Alunos</a></li>
                     <li><a href="#" class="orange-text">Crie</a></li>
                     <li><a href="/home/financas" class="black-text">Finanças</a></li>
@@ -42,21 +49,29 @@
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
+        <li><a class="black-text" href="#">
+            <div class="responsive-img">
+              <!-- <img class="responsive-img" src=""> -->
+              <b><%= user.nome %></b>
+            </div>
+          </a></li>
         <li><a href="/home/alunos" class="black-text">Alunos</a></li>
         <li><a href="#" class="orange-text">Crie</a></li>
         <li><a href="/home/financas" class="black-text">Finanças</a></li>
         <li><a href="/logout" class="black-text">Sair</a></li>
     </ul>
-
+    </header>
     <!-- Lista dos alunos -->
     <div id="aulas">
         <div class="aulasContainer">
+
+            <% for (data of datas) { %>
             <div class="container">
                 <ul class="collapsible">
                     <li>
                         <div class="collapsible-header">
-                            <i class="material-icons">assignment_ind</i> 19/04/2020
-                            <span class="new badge orange" data-badge-caption="aulas">2</span>
+                            <i class="material-icons">assignment_ind</i> <p><%= data.data_aula %></p>
+                            <span class="new badge orange" data-badge-caption="aulas"><%= data.count %></span>
                         </div>
                         <div class="collapsible-body"><span>
                             <div class="col s12 m12 l12">
@@ -72,26 +87,24 @@
                                         </tr>
                                     </thead>
 
+                                    <% for(aula of aulas) { %>
+                                    <% if (aula.data_aula == data.data_aula ) { %>
                                     <tbody>
-                                        <tr data-url="../treino/treino.html">
-                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                            <td>José</td>
-                                            <td>Musculação</td>
-                                            <td>8:30</td>
+                                        <% for (aluno of aula.aluno) { %>
+                                            <tr data-url="../treino/treino.html">
+                                            <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto José"></td>
+                                            <td><%= aluno.nome %></td>
+                                            <td><%= aula.nome %></td>
+                                            <td><%= aula.horario %></td>
                                             <td> <i class="material-icons prefix tooltipped" data-position="bottom"
                                                     data-tooltip="Enviar SMS">contact_mail</i></td>
                                             <td><a href="#" class="black-text">Remover aluno</a></td>
                                         </tr>
+                                        <% } %>
+                                        <% } %>
+                                        <% } %>
 
-                                        <tr data-url="../treino/treino.html">
-                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                            <td>José</td>
-                                            <td>Musculação</td>
-                                            <td>8:30</td>
-                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
-                                            <td><a href="#" class="black-text">Remover aluno</a></td>
-                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
@@ -100,112 +113,12 @@
                     </li>
                 </ul>
             </div>
-
-            <div class="container">
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header">
-                            <i class="material-icons">assignment_ind</i> 19/04/2020
-                            <span class="new badge orange" data-badge-caption="aulas">2</span>
-                        </div>
-                        <div class="collapsible-body"><span>
-                            <div class="col s12 m12 l12">
-                                <table class="highlight centered table responsive-table" id="tabledata">
-                                    <thead>
-                                        <tr>
-                                            <th id="marginTh">Imagem</th>
-                                            <th>Nome</th>
-                                            <th>Aula</th>
-                                            <th>Horario</th>
-                                            <th>Contato</th>
-                                            <th>Remover</th>
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr data-url="../treino/treino.html">
-                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                            <td>José</td>
-                                            <td>Musculação</td>
-                                            <td>8:30</td>
-                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
-                                            <td><a href="#" class="black-text">Remover aluno</a></td>
-                                        </tr>
-
-                                        <tr data-url="../treino/treino.html">
-                                            <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                            <td>José</td>
-                                            <td>Musculação</td>
-                                            <td>8:30</td>
-                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
-                                            <td><a href="#" class="black-text">Remover aluno</a></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Lista dos alunos -->
-            <div class="container">
-                <ul class="collapsible">
-                    <li>
-                        <div class="collapsible-header">
-                            <i class="material-icons">assignment_ind</i> 19/04/2020
-                            <span class="new badge orange" data-badge-caption="aulas">2</span>
-                        </div>
-                        <div class="collapsible-body"><span>
-                        <div class="col s12 m12 l12">
-                            <table class="highlight centered table responsive-table" id="tabledata">
-                                <thead>
-                                    <tr>
-                                        <th id="marginTh">Imagem</th>
-                                        <th>Nome</th>
-                                        <th>Aula</th>
-                                        <th>Horario</th>
-                                        <th>Contato</th>
-                                        <th>Remover</th>
-                                    </tr>
-                                </thead>
-
-                                <tbody>
-                                    <tr data-url="../treino/treino.html">
-                                        <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                        <td>José</td>
-                                        <td>Musculação</td>
-                                        <td>8:30</td>
-                                        <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                data-tooltip="Enviar SMS">contact_mail</i></td>
-                                        <td><a href="#" class="black-text">Remover aluno</a></td>
-                                    </tr>
-
-                                    <tr data-url="../treino/treino.html">
-                                        <td><img src="/img/avatar.png" alt="Foto José"></td>
-                                        <td>José</td>
-                                        <td>Musculação</td>
-                                        <td>8:30</td>
-                                        <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                data-tooltip="Enviar SMS">contact_mail</i></td>
-                                        <td><a href="#" class="black-text">Remover aluno</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </span>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
+            <% } %>
+            
         <!-- Adicionar aluno -->
         <div class="container " id="alunosAtivos">
             <div class="col s12 m4 l12 center-align">
-                <button>Adicionar aluno</button>
+                <button>Adicionar aula</button>
             </div>
         </div>
 
