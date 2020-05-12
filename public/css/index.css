@@ -213,6 +213,7 @@
 #carrossel hr {
     width: 110px;
     color: white;
+    margin-bottom: 20px;
 }
 
 #carrossel span {
@@ -222,6 +223,7 @@
 }
 
 #carrossel section {
+    height: 300px;
     border: 1px solid #CCCCCC;
     padding: 15px 5px;
     border-radius: 10px;

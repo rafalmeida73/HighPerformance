@@ -6,39 +6,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
-    <link rel="shortcut icon" href="img/Iconlogo.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="apple-touch-icon" sizes="180x180" href="img/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
     <link rel=”canonical” href="https://highperformance.herokuapp.com" />
-    <link rel="manifest" href="/manifest.json">
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('sw.js')
-                .then(function() {
-                    console.log('service worker registered');
-                })
-                .catch(function() {
-                    console.log('service worker failed');
-                });
-        }
-    </script>
+    <link rel="manifest" href="/js/pwa.webmanifest">
 </head>
 
 <body>
     <div class="center-align loader">
-        <img src="img/bike.svg" alt="Loader" class="responsive-img">
+        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
     </div>
 
     <div class="navbar-fixed">
         <nav>
             <div class="nav-wrapper #ffffff white">
                 <!-- Logo -->
-                <a href="#" class="brand-logo"><img class="responsive-img" src="../../img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
-                </a>
+                <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
 
                 <!-- Ícone para abrir no Mobile -->
                 <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
@@ -46,10 +34,10 @@
                 </a>
 
                 <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li><a href="#" class="orange-text">Home</a></li>
-                    <li><a href="./pages/sobre/sobre.html" class="black-text">Sobre</a></li>
-                    <li><a href="../pages/entrar/login.html" class="black-text" aria-label="Entrar">Entrar</a></li>
-                    <li><a href="../pages/cadastro/cadastro.html" class="black-text">Registrar</a></li>
+                    <li><a href="/" class="orange-text">Home</a></li>
+                    <li><a href="/sobre" class="black-text">Sobre</a></li>
+                    <li><a href="/login" class="black-text" aria-label="Entrar">Entrar</a></li>
+                    <li><a href="/cadastro" class="black-text">Registrar</a></li>
                 </ul>
 
             </div>
@@ -58,22 +46,22 @@
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="#" class="orange-text">Home</a></li>
-        <li><a href="../pages/sobre/sobre.html" class="black-text">Sobre</a></li>
-        <li><a href="../pages/entrar/login.html" class="black-text">Entrar</a></li>
-        <li><a href="../pages/cadastro/cadastro.html" class="black-text">Registrar</a></li>
+        <li><a href="/" class="orange-text">Home</a></li>
+        <li><a href="/sobre" class="black-text">Sobre</a></li>
+        <li><a href="/login" class="black-text">Entrar</a></li>
+        <li><a href="/cadastro.html" class="black-text">Registrar</a></li>
     </ul>
 
     <!-- BANNER -->
     <div class="row" id="banner">
         <div class="col s12 m6 l5">
-            <img class="responsive-img" src="../../img/imagem.png" alt="" width="1000vh">
+            <img class="responsive-img" src="/img/imagem.png" alt="" width="1000vh">
         </div>
         <div class="col s12 m6 l7">
             <h1 class="right-align">MONITORE <br> SEUS ALUNOS</h1>
             <p class="right-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
             </p>
-            <a href="./pages/sobre/sobre.html">Saber mais</a>
+            <a href="/sobre">Saber mais</a>
         </div>
     </div>
 
@@ -149,11 +137,11 @@
             <div class="square center-align">
                 <h6>COMECE <span>AGORA</span> A USAR<br> O <span>HIGH PERFORMANCE</span></h6>
             </div>
-            <a href="./pages/cadastro/cadastro.html">Registre-se</a>
+            <a href="/cadastro">Registre-se</a>
         </div>
 
         <div class="col s12 m12 l7 left-align">
-            <img src="../../img/ilustracao.svg" alt="Ilustracao" class="responsive-img">
+            <img src="/img/ilustracao.svg" alt="Ilustracao" class="responsive-img">
         </div>
     </div>
 
@@ -166,130 +154,45 @@
     <div class="carousel" id="carrossel">
         <a class="carousel-item center-align" href="#one!">
             <section>
-                <img src="../../img/avatar.png" alt="Depoimento 1">
+                <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
         </a>
         <a class="carousel-item center-align" href="#two!">
             <section>
-                <img src="../../img/avatar.png" alt="Depoimento 1">
+                <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
         </a>
         <a class="carousel-item center-align" href="#three!">
             <section>
-                <img src="../../img/avatar.png" alt="Depoimento 1">
+                <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
         </a>
         <a class="carousel-item center-align" href="#four!">
             <section>
-                <img src="../../img/avatar.png" alt="Depoimento 1">
+                <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
         </a>
         <a class="carousel-item center-align" href="#five!">
             <section>
-                <img src="../../img/avatar.png" alt="Depoimento 1">
+                <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -306,14 +209,14 @@
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
-                        <li><a class="white-text text-lighten-3" href="#">Home</a></li>
-                        <li><a class="white-text text-lighten-3" href="../pages/sobre/sobre.html">Sobre</a></li>
-                        <li><a class="white-text text-lighten-3" href="../pages/entrar/login.html" aria-label="Entrar">Entrar</li>
-                        <li><a class="white-text text-lighten-3" href="../pages/cadastro/cadastro.html">Registrar</a></li>
+                        <li><a class="white-text text-lighten-3" href="/">Home</a></li>
+                        <li><a class="white-text text-lighten-3" href="/sobre">Sobre</a></li>
+                        <li><a class="white-text text-lighten-3" href="/login" aria-label="Entrar">Entrar</li>
+                        <li><a class="white-text text-lighten-3" href="/cadastro">Registrar</a></li>
                     </ul>
                 </div>
                 <div class="col l1 s4 right">
-                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="../../img/up.png" alt="Voltar ao topo"></a>
+                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
                 </div>
             </div>
         </div>
@@ -330,21 +233,12 @@
     <!-- Compiled and minified JavaScript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="../../js/main.js"></script>
-    <script src="../../js/topo.js"></script>
-    <script src="../../js/carrousel.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('./sw.js')
-                .then(function() {
-                    console.log('service worker registered');
-                })
-                .catch(function() {
-                    console.warn('service worker failed');
-                });
-        }
-    </script>
-    <script src="js/loader.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/topo.js"></script>
+    <script src="/js/carrousel.js"></script>
+    <script src="/js/loader.js"></script>
+    <script src="/js/pwa.js"></script>
+    <script src="/js/status.js"></script>
 </body>
 
 </html>
