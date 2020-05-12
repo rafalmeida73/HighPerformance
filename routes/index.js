@@ -6,8 +6,8 @@ const navRouter = require('../controllers/navRouter')
 /* GET home page. */
 router.get('/', navRouter.showIndex);
 router.get('/sobre', navRouter.showSobre);
-router.get('/login', navRouter.showLogin);
-router.get('/cadastro', navRouter.showCadastro);
+router.post('/login', navRouter.showLogin);
+router.post('/cadastro', navRouter.showCadastro);
 router.get('/alunos', navRouter.showAlunos);
 router.get('/crie', navRouter.showCrie);
 router.get('/financas', navRouter.showFinancas);
