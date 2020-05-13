@@ -14,19 +14,8 @@
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="apple-touch-icon" href="/img/icon-192x192.png">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com"/>
-    <link rel="manifest" href="../manifest.json">
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/js/sw.js')
-                .then(function() {
-                    console.log('service worker registered');
-                })
-                .catch(function() {
-                    console.log('service worker failed');
-                });
-        }
-    </script>
+    <link rel=”canonical” href="https://highperformance.herokuapp.com" />
+    <link rel="manifest" href="/js/pwa.webmanifest">
 </head>
 
 <body>
@@ -72,7 +61,7 @@
         </div>
         <div class="col s12 m6 l7">
             <h1 class="right-align">MONITORE <br> SEUS ALUNOS</h1>
-            <p class="right-align">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+            <p class="right-align">O site High Performance é voltado para educadores físicos que desejam gerenciar dados do alunos que usam o aplicativo de monitoramento Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros benefícios.
             </p>
             <a href="./pages/sobre/sobre.html">Saber mais</a>
         </div>
@@ -164,29 +153,13 @@
             <h2>DEPOIMENTOS</h2>
         </div>
     </div>
+
     <div class="carousel" id="carrossel">
         <a class="carousel-item center-align" href="#one!">
             <section>
                 <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -196,23 +169,6 @@
                 <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -222,23 +178,6 @@
                 <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -248,23 +187,6 @@
                 <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -274,23 +196,6 @@
                 <img src="/img/avatar.png" alt="Depoimento 1">
                 <h5>JOÃO</h5>
                 <p>Educador Físico</p>
-                <div class="rating">
-                    <input type="radio" name="star" id="star1"><label for="star1">
-
-                    </label>
-                    <input type="radio" name="star" id="star2"><label for="star2">
-
-                    </label>
-                    <input type="radio" name="star" id="star3"><label for="star3">
-
-                    </label>
-                    <input type="radio" name="star" id="star4"><label for="star4">
-
-                    </label>
-                    <input type="radio" name="star" id="star5"><label for="star5">
-
-                    </label>
-                </div>
                 <hr>
                 <span>Muito legal recomendei para todos os meus amigos!</span>
             </section>
@@ -334,18 +239,9 @@
     <script src="/js/main.js"></script>
     <script src="/js/topo.js"></script>
     <script src="/js/carrousel.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('/js/sw.js')
-                .then(function() {
-                    console.log('service worker registered');
-                })
-                .catch(function() {
-                    console.warn('service worker failed');
-                });
-        }
-    </script>
     <script src="/js/loader.js"></script>
+    <script src="/js/pwa.js"></script>
+    <script src="/js/status.js"></script>
 </body>
 
 </html>

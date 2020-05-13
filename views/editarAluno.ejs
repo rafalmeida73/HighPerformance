@@ -27,47 +27,48 @@
 
             <div class="col s12 m12 l6">
                 <form id="form" id="form" method="POST" action="../alunos/alunos.html">
-                    <div class="input-field">
-                        <i class="material-icons prefix">account_circle</i>
-                        <input name="name" id="name" type="text" data-error=".errorTxt1">
-                        <label for="name">Nome</label>
-                        <div class="errorTxt1 right-align"></div>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">email</i>
-                        <input name="email" id="email" type="email" data-error=".errorTxt2">
-                        <label for="email">E-mail</label>
-                        <div class="errorTxt2 right-align"></div>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">call</i>
-                        <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
-                        <label for="cel">Celular</label>
-                        <div class="errorTxt3 right-align"></div>
-                    </div>
-                    <div class="input-field">
-                        <i class="material-icons prefix">date_range</i>
-                        <input name="date" id="date" type="date" class="form-control" data-error=".errorTxt4">
-                        <label for="password">Data Nasc.</label>
-                        <div class="errorTxt4 right-align"></div>
-                    </div>
-                    <div class="row">
-                        <div class="col s12 m6 l6">
-                            <div class="input-field">
-                                <a href="../alunos/alunos.html">
-                                    <span class="btn waves-effect waves-light">
-                                 Cancelar
-                                </span>
-                                </a>
+                    <form id="form" id="form" method="GET" action="/alunos">
+                        <div class="input-field">
+                            <i class="material-icons prefix">account_circle</i>
+                            <input name="name" id="name" type="text" data-error=".errorTxt1">
+                            <label for="name">Nome</label>
+                            <div class="errorTxt1 right-align"></div>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">email</i>
+                            <input name="email" id="email" type="email" data-error=".errorTxt2">
+                            <label for="email">E-mail</label>
+                            <div class="errorTxt2 right-align"></div>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">call</i>
+                            <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
+                            <label for="cel">Celular</label>
+                            <div class="errorTxt3 right-align"></div>
+                        </div>
+                        <div class="input-field">
+                            <i class="material-icons prefix">date_range</i>
+                            <input name="date" id="date" type="date" class="form-control" data-error=".errorTxt4">
+                            <label for="password">Data Nasc.</label>
+                            <div class="errorTxt4 right-align"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 m6 l6">
+                                <div class="input-field">
+                                    <a href="/alunos">
+                                        <span class="btn waves-effect waves-light">
+                                     Cancelar
+                                    </span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col s12 m6 l6">
+                                <div class="input-field">
+                                    <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Entrar</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="col s12 m6 l6">
-                            <div class="input-field">
-                                <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Entrar</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                    </form>
             </div>
         </div>
     </div>
