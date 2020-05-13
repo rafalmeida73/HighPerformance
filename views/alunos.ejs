@@ -22,7 +22,7 @@
         <nav>
             <div class="nav-wrapper #ffffff white">
                 <!-- Logo -->
-                <a href="/alunos" class="brand-logo">
+                <a href="/home/alunos" class="brand-logo">
                     <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
                 </a>
 
@@ -32,10 +32,18 @@
                 </a>
 
                 <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li><a href="/alunos" class="orange-text">Alunos</a></li>
-                    <li><a href="/crie" class="black-text">Crie</a></li>
-                    <li><a href="/financas" class="black-text">Finanças</a></li>
-                    <li><a href="/" class="black-text">Sair</a></li>
+                    <li>
+                        <a class="black-text" href="#">
+                            <div class="responsive-img">
+                                <!-- <img class="responsive-img" src=""> -->
+                                <b><%= user.nome %></b>
+                            </div>
+                        </a>
+                    </li>
+                    <li><a href="#" class="orange-text">Alunos</a></li>
+                    <li><a href="/home" class="black-text">Crie</a></li>
+                    <li><a href="/home/financas" class="black-text">Finanças</a></li>
+                    <li><a href="/logout" class="black-text">Sair</a></li>
                 </ul>
             </div>
         </nav>
@@ -43,10 +51,18 @@
 
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="/alunos" class="orange-text">Alunos</a></li>
-        <li><a href="/crie" class="black-text">Crie</a></li>
-        <li><a href="/financas" class="black-text">Finanças</a></li>
-        <li><a href="/" class="black-text">Sair</a></li>
+        <li>
+            <a class="black-text" href="#">
+                <div class="responsive-img">
+                    <!-- <img class="responsive-img" src=""> -->
+                    <b><%= user.nome %></b>
+                </div>
+            </a>
+        </li>
+        <li><a href="#" class="orange-text">Alunos</a></li>
+        <li><a href="/home" class="black-text">Crie</a></li>
+        <li><a href="/home/financas" class="black-text">Finanças</a></li>
+        <li><a href="/logout" class="black-text">Sair</a></li>
     </ul>
 
 
@@ -62,7 +78,7 @@
                 </div>
             </div>
             <div class="col s12 m12 l12 right-align baixoQuadrado">
-                <a id="addAluno" href="/cadastroAluno">ADICIONAR NOVO ALUNO</a>
+                <a id="addAluno" href="../cadastroAluno/cadastrarAlunos.html">ADICIONAR NOVO ALUNO</a>
             </div>
         </div>
     </div>
@@ -99,14 +115,14 @@
                 </thead>
 
                 <tbody>
-                    <tr data-url="/treino">
+                    <tr data-url="/home/treino">
                         <td><img src="/img/avatar.png" alt="Foto José"></td>
                         <td>José</td>
                         <td>0800545145</td>
                         <td>32 km</td>
                     </tr>
 
-                    <tr data-url="/treino">
+                    <tr data-url="../treino/treino.html">
                         <td><img src="/img/avatar.png" alt="Foto José"></td>
                         <td>José</td>
                         <td>0800545145</td>
@@ -146,10 +162,10 @@
                 </div>
                 <div class="col l4 offset-l2 s12">
                     <ul>
-                        <li><a class="white-text text-lighten-3" href="/">Alunos</a></li>
-                        <li><a class="white-text text-lighten-3" href="/crie">Crie</a></li>
-                        <li><a class="white-text text-lighten-3" href="/financas">Finanças</a></li>
-                        <li><a class="white-text text-lighten-3" href="/">Sair</a></li>
+                        <li><a class="white-text text-lighten-3" href="#">Alunos</a></li>
+                        <li><a class="white-text text-lighten-3" href="/home">Crie</a></li>
+                        <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
+                        <li><a class="white-text text-lighten-3" href="/logout">Sair</a></li>
                     </ul>
                 </div>
                 <div class="col l1 s4 right">

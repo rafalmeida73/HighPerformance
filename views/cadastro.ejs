@@ -19,6 +19,14 @@
         <img src="/img/bike.svg" alt="Loader" class="responsive-img">
     </div>
 
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="/" class="black-text">Home</a></li>
+        <li><a href="/sobre" class="black-text">Sobre</a></li>
+        <li><a href="/login" class="black-text">Entrar</a></li>
+        <li><a href="#" class="orange-text">Registrar</a></li>
+    </ul>
+
     <div class="logout">
         <div class="row">
             <div class="col s12 m12 l5" id="cadastroContainer">
@@ -40,7 +48,7 @@
             </div>
 
             <div class="col s12 m12 l7">
-                <form id="form" method="GET" action="/alunos">
+                <form id="form" action="/home/alunos" method="POST">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
                         <input name="name" id="name" type="text" data-error=".errorTxt1">
@@ -78,7 +86,6 @@
             </div>
         </div>
     </div>
-
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
