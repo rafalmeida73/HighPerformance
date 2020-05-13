@@ -8,4 +8,4 @@
 
 <br>
 
-## :computer: <a href="https://highperformance.herokuapp.com/index.html" target="_blank">Deploy no Heroku</a>
+## :computer: <a href="https://highperformance.herokuapp.com" target="_blank">Deploy no Heroku</a>
