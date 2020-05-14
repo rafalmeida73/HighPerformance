@@ -146,7 +146,7 @@
                                     <i class="material-icons">code</i><a href="<%= membro.site %>" class="black-text" target="_blank" rel="noopener">GitHub</a></p>
                                 <p>
                                     <i class="material-icons">email</i>
-                                    <%= membro.email %>
+                                    <a href="mailto:<%= membro.email %>?subject=Contato%20High%20Performance" class="black-text"><%= membro.email %></a>  
                                 </p>
                             </div>
                             <div class="card-reveal">
@@ -162,7 +162,7 @@
                                     <i class="material-icons">code</i><a href="<%= membro.site %>" class="black-text" target="_blank" rel="noopener">GitHub</a></p>
                                 <p>
                                     <i class="material-icons">email</i>
-                                    <%= membro.email %>
+                                    <a href="mailto:<%= membro.email %>?subject=Contato%20High%20Performance" class="black-text"><%= membro.email %></a>  
                                 </p>
                                 <p>
                                 </p>
@@ -289,6 +289,11 @@
     <script src="/js/main.js"></script>
     <script src="/js/topo.js"></script>
     <script src="/js/loader.js"></script>
+
+     <!-- Validar form -->
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
+    <script src="/js/messages_pt_BR.js"></script>
+    <script src="/js/formSobre.js"></script>
 </body>
 
 </html>
