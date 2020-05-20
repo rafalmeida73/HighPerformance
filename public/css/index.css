@@ -174,19 +174,23 @@
     background: #FF7E00;
     float: right;
     border: none;
-    width: 150px;
-    color: white;
-    height: 30px;
-    margin-top: 50px;
+    /* width: 130px; */
+    /* color: white; */
+    /* height: 30px; */
+    /* line-height: 30px; */
+    margin-top: -39px;
     font-weight: bolder;
     cursor: pointer;
-    text-align: center;
-    transition: 0.5s;
+    /* text-align: center; */
+    /* transition: 0.5s; */
+    border-radius: 13px;
+    margin-right: 10px;
+    /* margin-bottom: 9px; */
 }
 
 #ilustracao a:hover {
-    color: black;
-    border: 1px solid black;
+    color: #ff7e00;
+    border: 1px solid #ff7e00;
     background-color: white;
 }
 

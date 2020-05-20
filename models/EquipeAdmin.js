@@ -1,6 +1,5 @@
 let EquipeAdmin = (sequelize, DataTypes) => {
-    let EquipeAdmin =  sequelize.define(
-        'EquipeAdmin',
+    return sequelize.define('EquipeAdmin',
         {
             id: {
                 type: DataTypes.INTEGER,
@@ -45,8 +44,7 @@ let EquipeAdmin = (sequelize, DataTypes) => {
         }
 
     );
-
-    return EquipeAdmin;
+    
 }
 
 module.exports = EquipeAdmin;
