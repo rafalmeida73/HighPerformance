@@ -6,8 +6,9 @@ module.exports = {
     index: (req, res)=>{
 		res.render("index");
     },
-    sobre: async(req, res)=>{
+    sobre:async (req, res)=>{
       let equipe = await EquipeAdmin.findAll();
+      console.log(equipe)
           
 		  res.render("sobre", {equipe});
     },
@@ -27,15 +28,17 @@ module.exports = {
     },
 
     storeCadastro: async(req, res) =>{
-        let {nome, email, celular, senha, repSenha} = req.body;
+        let {name, email, cel, senha, repSenha} = req.body;
         // res.send(req.body)
+        console.log('passei aqui => ' + name +' '+email+' '+cel+' '+senha+' '+repSenha)
         if (senha !== repSenha){
           return res.render('cadastro', {error: "As senhas devem ser iguais"});
+          console.log('passei aqui error')
         }else{
 
         let hashPassword = bcrypt.hashSync(senha, 10);
 
-        await Treinador.create({nome, email,telefone:celular, senha:hashPassword});
+        await Treinador.create({nome:name, email,telefone:cel, senha:hashPassword});
         res.redirect('/login');
         }
     },

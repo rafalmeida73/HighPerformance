@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<%- include('partials/head') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
-    <meta name="theme-color" content="#ffffff">
-    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>HIGH PERFORMANCE</title>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="/css/index.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="apple-touch-icon" href="/img/icon-192x192.png">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com" />
-    <link rel="manifest" href="/js/pwa.webmanifest">
+    <link rel="canonical" href="https://highperformance.herokuapp.com" />
+    <link rel="stylesheet" href="/css/index.css">  
 </head>
 
 <body>
+    
     <div class="center-align loader">
         <img src="/img/bike.svg" alt="Loader" class="responsive-img">
     </div>
@@ -63,7 +50,7 @@
             <h1 class="right-align">MONITORE <br> SEUS ALUNOS</h1>
             <p class="right-align">O site High Performance é voltado para educadores físicos que desejam gerenciar dados do alunos que usam o aplicativo de monitoramento Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros benefícios.
             </p>
-            <a href="./pages/sobre/sobre.html">Saber mais</a>
+            <a href="/sobre">Saber mais</a>
         </div>
     </div>
 
@@ -135,14 +122,14 @@
 
     <!-- ILUSTRACO -->
     <div class="row" id="ilustracao">
-        <div class="col s12 m12 l5 left-align">
+        <div class="col s12 m6 l5 left-align">
             <div class="square center-align">
                 <h6>COMECE <span>AGORA</span> A USAR<br> O <span>HIGH PERFORMANCE</span></h6>
             </div>
-            <a href="./pages/cadastro/cadastro.html">Cadastre-se</a>
+            <a class="waves-effect waves-light btn-small" href="/cadastro">Cadastre-se</a>
         </div>
 
-        <div class="col s12 m12 l7 left-align">
+        <div class="col s12 m6 l7 left-align">
             <img src="/img/ilustracao.svg" alt="Ilustracao" class="responsive-img">
         </div>
     </div>
@@ -213,9 +200,9 @@
                 <div class="col l4 offset-l2 s12">
                     <ul>
                         <li><a class="white-text text-lighten-3" href="#">Home</a></li>
-                        <li><a class="white-text text-lighten-3" href="../pages/sobre/sobre.html">Sobre</a></li>
-                        <li><a class="white-text text-lighten-3" href="../pages/entrar/login.html" aria-label="Entrar">Entrar</li>
-                        <li><a class="white-text text-lighten-3" href="../pages/cadastro/cadastro.html">Registrar</a></li>
+                        <li><a class="white-text text-lighten-3" href="/sobre">Sobre</a></li>
+                        <li><a class="white-text text-lighten-3" href="/login" aria-label="Entrar">Entrar</li>
+                        <li><a class="white-text text-lighten-3" href="/cadastro">Registrar</a></li>
                     </ul>
                 </div>
                 <div class="col l1 s4 right">

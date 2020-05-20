@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+    <%- include('partials/head') %>  
 
-<head>
-    <title>Cadastro</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Site voltado para educadores físicos gerenciar dados do alunos que utilizam o aplicativo Strava. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.">
-    <link rel="shortcut icon" href="/img/Iconlogo.png" type="image/x-icon">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/cadastro.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
 </head>
 
@@ -28,13 +18,14 @@
     </ul>
 
     <div class="logout">
+
+
         <div class="row">
             <div class="col s12 m12 l5" id="cadastroContainer">
                 <a href="/">
                     <img class="responsive-img logo" src="/img/logo.png" alt="High Performance">
                 </a>
                 <h1>Cadastro</h1>
-
                 <p>Faça seu cadastro, entre na plataforma e monitore seus alunos.</p>
 
                 <div class="cadastro">
@@ -63,20 +54,20 @@
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
-                        <label for="tel">Celular</label>
+                        <input name="cel" attrname="telephone1" type="tel" id="cel" data-error=".errorTxt3">
+                        <label for="cel">Celular</label>
                         <div class="errorTxt3 right-align "></div>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input name="senha" id="password" type="password" data-error=".errorTxt4">
-                        <label for="password">Senha</label>
+                        <input name="senha" id="senha" type="password" data-error=".errorTxt4">
+                        <label for="senha">Senha</label>
                         <div class="errorTxt4 right-align "></div>
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input name="senha2" id="passwordAgain" type="password" data-error=".errorTxt5">
-                        <label for="passwordAgain"> Repetir Senha</label>
+                        <input name="repSenha" id="repSenha" type="password" data-error=".errorTxt5">
+                        <label for="repSenha"> Repetir Senha</label>
                         <div class="errorTxt5 right-align "></div>
                     </div>
                     <div class="input-field">
