@@ -74,7 +74,7 @@ form sapn:hover {
 }
 
 .logo {
-    padding-top: 200px;
+    padding-top: 50px;
 }
 
 #login h1 {
@@ -99,7 +99,7 @@ form sapn:hover {
 }
 
 .bannerimg {
-    margin-top: 20vh;
+    margin-top: 50px;
 }
 
 @media (max-width:600px) {

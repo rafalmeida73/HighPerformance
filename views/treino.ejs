@@ -1,60 +1,11 @@
-    <%- include('partials/head') %>  
-
-    <link rel="stylesheet" href="/css/treino.css">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/treino/treino.html" />
-</head>
-
+        <%- include('partials/header') %>
+        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/treino/treino.html" />
+        <link rel="stylesheet" href="/css/treino.css">
+    </head>
 <body>
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
-
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper #ffffff white">
-                <!-- Logo -->
-                <a href="/home/alunos" class="brand-logo">
-                    <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
-                </a>
-
-                <!-- Ícone para abrir no Mobile -->
-                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
-                    <i class="material-icons black-text">menu</i>
-                </a>
-
-                <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li>
-                        <a class="black-text" href="#">
-                            <div class="responsive-img">
-                                <!-- <img class="responsive-img" src=""> -->
-                                <b><%= user.nome %></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li><a href="/home/alunos" class="orange-text">Alunos</a></li>
-                    <li><a href="/home" class="black-text">Crie</a></li>
-                    <li><a href="/home/financas" class="black-text">Finanças</a></li>
-                    <li><a href="/logout" class="black-text">Sair</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-    <!-- Menu Mobile -->
-    <ul id="mobile-navbar" class="sidenav">
-        <li>
-            <a class="black-text" href="#">
-                <div class="responsive-img">
-                    <!-- <img class="responsive-img" src=""> -->
-                    <b><%= user.nome %></b>
-                </div>
-            </a>
-        </li>
-        <li><a href="/home/alunos" class="orange-text">Alunos</a></li>
-        <li><a href="/home" class="black-text">Crie</a></li>
-        <li><a href="/home/financas" class="black-text">Finanças</a></li>
-        <li><a href="/logout" class="black-text">Sair</a></li>
-    </ul>
+    
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %>
 
     <div class="container">
         <div id="perfil">
@@ -148,21 +99,6 @@
     </footer>
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/topo.js"></script>
-    <script src="/js/loader.js"></script>
-    <script src="/js/treino.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('.collapsible').collapsible();
-        });
-        $(document).ready(function() {
-            $('select').formSelect();
-        });
-    </script>
-</body>
-
-</html>
+    <script src="../../js/treino.js"></script>
+    
+    <%- include('partials/footer') %>

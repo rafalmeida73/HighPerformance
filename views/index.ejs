@@ -1,45 +1,11 @@
-<%- include('partials/head') %>
-
-    <link rel="canonical" href="https://highperformance.herokuapp.com" />
-    <link rel="stylesheet" href="/css/index.css">  
-</head>
-
+        <%- include('partials/header') %>
+        <link rel="canonical" href="https://highperformance.herokuapp.com" />
+        <link rel="stylesheet" href="/css/index.css">
+    </head>
 <body>
     
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
-
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper #ffffff white">
-                <!-- Logo -->
-                <a href="#" class="brand-logo"><img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
-                </a>
-
-                <!-- Ícone para abrir no Mobile -->
-                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
-                    <i class="material-icons black-text">menu</i>
-                </a>
-
-                <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li><a href="/" class="orange-text">Home</a></li>
-                    <li><a href="/sobre" class="black-text">Sobre</a></li>
-                    <li><a href="/login" class="black-text" aria-label="Entrar">Entrar</a></li>
-                    <li><a href="/cadastro" class="black-text">Registrar</a></li>
-                </ul>
-
-            </div>
-        </nav>
-    </div>
-
-    <!-- Menu Mobile -->
-    <ul id="mobile-navbar" class="sidenav">
-        <li><a href="/" class="orange-text">Home</a></li>
-        <li><a href="/sobre" class="black-text">Sobre</a></li>
-        <li><a href="/login" class="black-text">Entrar</a></li>
-        <li><a href="/cadastro" class="black-text">Registrar</a></li>
-    </ul>
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %> 
 
     <!-- BANNER -->
     <div class="row" id="banner">
@@ -219,16 +185,5 @@
         </div>
     </footer>
 
-
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/main.js"></script>
-    <script src="/js/topo.js"></script>
-    <script src="/js/carrousel.js"></script>
-    <script src="/js/loader.js"></script>
-    <script src="/js/pwa.js"></script>
-    <script src="/js/status.js"></script>
-</body>
-
-</html>
+    <%- include('partials/footer') %>
+    

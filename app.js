@@ -20,11 +20,16 @@ app.use(session({secret:'segredos'}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use((req, res, next) => {  
+  res.locals.user = req.session.usuario || null
+  console.log('=======================> locals ' +  JSON.stringify(res.locals.user))
+  next()
+})
+
 app.use('/', IndexRouter);
 
-
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
+app.use(function(req, res, next) {  
   next(createError(404));
 });
 

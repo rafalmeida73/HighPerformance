@@ -7,24 +7,22 @@ module.exports = {
 		res.render("index");
     },
     sobre:async (req, res)=>{
-      let equipe = await EquipeAdmin.findAll();
-      console.log(equipe)
-          
+      let equipe = await EquipeAdmin.findAll();          
 		  res.render("sobre", {equipe});
     },
 
     facaParte: async(req,res)=>{
       let {nome, email, file, message} = req.body;
-
-  
-      
       await Contato.create({nome, email,docs:file, mensagem:message});
-
       res.redirect('/sobre');
     },
     
     showCadastro: (req,res) => {
       res.render('cadastro');
+    },
+
+    showCadastroAluno: (req,res) => {
+      res.render('cadastrarAlunos');
     },
 
     storeCadastro: async(req, res) =>{

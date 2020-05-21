@@ -1,25 +1,12 @@
-    <%- include('partials/head') %>  
-
-    <link rel="stylesheet" href="/css/cadastro.css">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
-</head>
-
+        <%- include('partials/header') %>
+        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
+        <link rel="stylesheet" href="/css/cadastro.css">
+    </head>
 <body>
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
-
-    <!-- Menu Mobile -->
-    <ul id="mobile-navbar" class="sidenav">
-        <li><a href="/" class="black-text">Home</a></li>
-        <li><a href="/sobre" class="black-text">Sobre</a></li>
-        <li><a href="/login" class="black-text">Entrar</a></li>
-        <li><a href="#" class="orange-text">Registrar</a></li>
-    </ul>
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %>    
 
     <div class="logout">
-
-
         <div class="row">
             <div class="col s12 m12 l5" id="cadastroContainer">
                 <a href="/">
@@ -66,8 +53,8 @@
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">lock_outline</i>
-                        <input name="repSenha" id="repSenha" type="password" data-error=".errorTxt5">
                         <label for="repSenha"> Repetir Senha</label>
+                        <input name="repSenha" id="repSenha" type="password" data-error=".errorTxt5">                        
                         <div class="errorTxt5 right-align "></div>
                     </div>
                     <div class="input-field">
@@ -78,20 +65,4 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/loader.js"></script>
-
-    <!-- Validar form -->
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/additional-methods.min.js"></script>
-    <script src="/js/messages_pt_BR.js"></script>
-    <script src="/js/formCadastro.js"></script>
-
-    <!-- Mascarar telefone -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-masker/1.1.0/vanilla-masker.min.js"></script>
-    <script src="/js/maskTel.js"></script>
-</body>
-
-</html>
+    <%- include('partials/footer') %>

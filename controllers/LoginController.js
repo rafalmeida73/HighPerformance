@@ -35,10 +35,6 @@ module.exports = {
         })
 
 
-
-        console.log(aulas);
-
-
         res.render("crie", { user, aulas, datas });
 
 
@@ -76,7 +72,7 @@ module.exports = {
         }
 
         // Setar uma session com o usuario
-        req.session.usuario = user;
+        req.session.usuario = user;        
 
         //Redirecionar o usuario para a rota home
         res.redirect('/home')

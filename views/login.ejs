@@ -1,13 +1,11 @@
-    <%- include('partials/head') %>  
-        
-    <link rel="canonical" href="https://highperformance.herokuapp.com/pages/entrar/login.html" />
-    <link rel="stylesheet" href="/css/login.css">
-</head>
-
+        <%- include('partials/header') %>
+        <link rel="canonical" href="https://highperformance.herokuapp.com/pages/entrar/login.html" />
+        <link rel="stylesheet" href="/css/login.css">
+    </head>
 <body>
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
+    
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %> 
 
     <div class="row">
 
@@ -20,14 +18,16 @@
             <form id="form" action="/login" method="POST">
                 <div class="input-field">
                     <i class="material-icons prefix">account_circle</i>
-                    <input name="email" id="email" type="email" data-error=".errorTxt1">
+
                     <label for="email">E-mail</label>
+                    <input name="email" id="email" type="email" data-error=".errorTxt1">                    
+
                     <div class="errorTxt1 right-align"></div>
                 </div>
                 <div class="input-field">
                     <i class="material-icons prefix">lock_outline</i>
-                    <input name="senha" id="senha" type="password" data-error=".errorTxt2">
                     <label for="senha">Senha</label>
+                    <input name="senha" id="senha" type="password" data-error=".errorTxt2">                    
                     <div class="errorTxt2 right-align"></div>
                 </div>
                 <div class="input-field">
@@ -50,14 +50,6 @@
         </div>
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="/js/loader.js"></script>
 
-    <!-- Validar form -->
-    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.15.0/jquery.validate.min.js"></script>
-    <script src="/js/messages_pt_BR.js"></script>
-    <script src="/js/formLogin.js"></script>
-</body>
+    <%- include('partials/footer') %>
 
-</html>

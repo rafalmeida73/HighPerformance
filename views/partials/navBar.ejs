@@ -1,0 +1,72 @@
+
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper #ffffff white">
+            <!-- Logo -->
+            <a href="#" class="brand-logo"><img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+            </a>
+
+            <!-- Ícone para abrir no Mobile -->
+            <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
+                <i class="material-icons black-text">menu</i>
+            </a>
+
+            <% if(user) { %>
+
+            <ul id="navbar-items" class="right hide-on-med-and-down">
+                <li>
+                    <a class="black-text" href="#">
+                        <div class="responsive-img">
+                            <!-- <img class="responsive-img" src=""> -->
+                            <b><%= user.nome %></b>
+                        </div>
+                    </a>
+                </li>
+                <li><a href="/home/alunos" class="orange-text">Alunos</a></li>
+                <li><a href="/home" class="black-text">Crie</a></li>
+                <li><a href="/home/financas" class="black-text">Finanças</a></li>
+                <li><a href="/logout" class="black-text">Sair</a></li>
+            </ul>
+
+            <% } else { %>
+
+            <ul id="navbar-items" class="right hide-on-med-and-down">
+                <li><a href="/" class="orange-text">Home</a></li>
+                <li><a href="/sobre" class="black-text">Sobre</a></li>
+                <li><a href="/login" class="black-text" aria-label="Entrar">Entrar</a></li>
+                <li><a href="/cadastro" class="black-text">Registrar</a></li>
+            </ul>
+
+            <% } %> 
+
+        </div>
+    </nav>
+</div>
+
+<% if(!user) { %>
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="/" class="orange-text">Home</a></li>
+        <li><a href="/sobre" class="black-text">Sobre</a></li>
+        <li><a href="/login" class="black-text">Entrar</a></li>
+        <li><a href="/cadastro" class="black-text">Registrar</a></li>
+    </ul>
+<% } else { %>
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li>
+            <a class="black-text" href="#">
+                <div class="responsive-img">
+                    <!-- <img class="responsive-img" src=""> -->
+                    <b><%= user.img %></b>
+                    <b><%= user.nome %></b>
+                </div>
+            </a>
+            <hr>
+        </li>
+        <li><a href="#" class="orange-text">Alunos</a></li>
+        <li><a href="/home" class="black-text">Crie</a></li>
+        <li><a href="/home/financas" class="black-text">Finanças</a></li>
+        <li><a href="/logout" class="black-text">Sair</a></li>
+    </ul>
+<% } %> 
