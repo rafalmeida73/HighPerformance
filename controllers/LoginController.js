@@ -35,10 +35,6 @@ module.exports = {
         })
 
 
-
-        console.log(aulas);
-
-
         res.render("crie", { user, aulas, datas });
 
 

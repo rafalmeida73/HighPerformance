@@ -1,8 +1,4 @@
 
-
-
-
-
 <div class="navbar-fixed">
     <nav>
         <div class="nav-wrapper #ffffff white">
@@ -47,10 +43,30 @@
     </nav>
 </div>
 
-<!-- Menu Mobile -->
-<ul id="mobile-navbar" class="sidenav">
-    <li><a href="/" class="orange-text">Home</a></li>
-    <li><a href="/sobre" class="black-text">Sobre</a></li>
-    <li><a href="/login" class="black-text">Entrar</a></li>
-    <li><a href="/cadastro" class="black-text">Registrar</a></li>
-</ul>
+<% if(!user) { %>
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li><a href="/" class="orange-text">Home</a></li>
+        <li><a href="/sobre" class="black-text">Sobre</a></li>
+        <li><a href="/login" class="black-text">Entrar</a></li>
+        <li><a href="/cadastro" class="black-text">Registrar</a></li>
+    </ul>
+<% } else { %>
+    <!-- Menu Mobile -->
+    <ul id="mobile-navbar" class="sidenav">
+        <li>
+            <a class="black-text" href="#">
+                <div class="responsive-img">
+                    <!-- <img class="responsive-img" src=""> -->
+                    <b><%= user.img %></b>
+                    <b><%= user.nome %></b>
+                </div>
+            </a>
+            <hr>
+        </li>
+        <li><a href="#" class="orange-text">Alunos</a></li>
+        <li><a href="/home" class="black-text">Crie</a></li>
+        <li><a href="/home/financas" class="black-text">Finanças</a></li>
+        <li><a href="/logout" class="black-text">Sair</a></li>
+    </ul>
+<% } %> 

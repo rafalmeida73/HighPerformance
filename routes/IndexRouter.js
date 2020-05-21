@@ -23,6 +23,7 @@ const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
 router.get('/', IndexController.index);
 router.get('/sobre', IndexController.sobre);
 router.get('/cadastro', IndexController.showCadastro);
+router.get('/cadastrarAlunos', IndexController.showCadastroAluno);
 router.post('/cadastro', IndexController.storeCadastro);
 router.post('/sobre', IndexController.facaParte);
 
