@@ -3,7 +3,7 @@
     <nav>
         <div class="nav-wrapper #ffffff white">
             <!-- Logo -->
-            <a href="#" class="brand-logo"><img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
+            <a href="/#" class="brand-logo"><img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;"></a>
             </a>
 
             <!-- Ícone para abrir no Mobile -->
@@ -22,8 +22,8 @@
                         </div>
                     </a>
                 </li>
-                <li><a href="/home/alunos" class="orange-text">Alunos</a></li>
-                <li><a href="/home" class="black-text">Crie</a></li>
+                <li><a href="/home" class="black-text">Agenda</a></li>
+                <li><a href="/home/alunos" class="black-text">Alunos</a></li>
                 <li><a href="/home/financas" class="black-text">Finanças</a></li>
                 <li><a href="/logout" class="black-text">Sair</a></li>
             </ul>
@@ -31,7 +31,7 @@
             <% } else { %>
 
             <ul id="navbar-items" class="right hide-on-med-and-down">
-                <li><a href="/" class="orange-text">Home</a></li>
+                <li><a href="/" class="black-text">Home</a></li>
                 <li><a href="/sobre" class="black-text">Sobre</a></li>
                 <li><a href="/login" class="black-text" aria-label="Entrar">Entrar</a></li>
                 <li><a href="/cadastro" class="black-text">Registrar</a></li>
@@ -46,7 +46,7 @@
 <% if(!user) { %>
     <!-- Menu Mobile -->
     <ul id="mobile-navbar" class="sidenav">
-        <li><a href="/" class="orange-text">Home</a></li>
+        <li><a href="/" class="black-text">Home</a></li>
         <li><a href="/sobre" class="black-text">Sobre</a></li>
         <li><a href="/login" class="black-text">Entrar</a></li>
         <li><a href="/cadastro" class="black-text">Registrar</a></li>
@@ -64,8 +64,8 @@
             </a>
             <hr>
         </li>
-        <li><a href="#" class="orange-text">Alunos</a></li>
-        <li><a href="/home" class="black-text">Crie</a></li>
+        <li><a href="/home" class="black-text">Agenda</a></li>
+        <li><a href="#" class="black-text">Alunos</a></li>
         <li><a href="/home/financas" class="black-text">Finanças</a></li>
         <li><a href="/logout" class="black-text">Sair</a></li>
     </ul>
