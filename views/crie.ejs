@@ -7,6 +7,15 @@
     
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
+<div class="container">
+    <div class="col s12 m12 l12 quadrado">
+        <div id="alunos"><h2>Aulas agendadas</h2></div>                                    
+    </div>
+    <div class="col s12 m12 l12 baixoQuadrado">
+        <i class="material-icons">assignment_ind</i>
+        <a id="addAluno" href="/cadastrarAlunos">ADICIONAR NOVO AULA</a>          
+    </div>
+
 
     <!-- Lista dos alunos -->
     <div id="aulas">
@@ -64,46 +73,5 @@
                     </ul>
                 </div>
                 <% } %>
-
-                    <!-- Adicionar aluno -->
-                    <div class="container " id="alunosAtivos">
-                        <div class="col s12 m4 l12 center-align">
-                            <button>Adicionar aula</button>
-                        </div>
-                    </div>
-
-
-
-                    <!-- FOOTER -->
-                    <footer class="page-footer" id="footer">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col l6 s12">
-                                    <h5 class="white-text">HIGH PERFORMANCE</h5>
-                                    <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
-                                </div>
-                                <div class="col l4 offset-l2 s12">
-                                    <ul>
-                                        <li><a class="white-text text-lighten-3" href="">Agenda</a></li>
-                                        <li><a class="white-text text-lighten-3" href="/home/alunos">Alunos</a></li>
-                                        <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
-                                        <li><a class="white-text text-lighten-3" href="/logout">Sair</a></li>
-                                        <li><a class="white-text text-lighten-3" href="/depoimento">Nos avalie</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col l1 s4 right">
-                                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="footer-copyright">
-                            <div class="container white-text">
-                                © 2020 High Performance Copyright
-                                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at
-                    LogoMakr.com</a>
-                            </div>
-                        </div>
-                    </footer>
-
-
+</div>
     <%- include('partials/footer') %>
