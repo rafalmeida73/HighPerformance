@@ -6,34 +6,30 @@ module.exports = {
         res.render("login");
     },
     showCrie: async(req, res) => {
-
         let user = req.session.usuario;
-
-
         const aulas = await Aula.findAll({
             where: {
                 treinadores_id: user.id
             },
-
             include: [{
                     model: Aluno,
                     as: 'aluno'
                 },
-
             ]
         });
 
+        let datas = await Aula.findAll()
+        // let datas = await Aula.findAll({
+        //     where: {
+        //         treinadores_id: user.id
+        //     },
+        //     group: ['data_aula'],
+        //     attributes: ['data_aula', [sequelize.fn('COUNT', 'data_aula'), 'count']],
+        //     raw: true,
 
-        let datas = await Aula.findAll({
-            where: {
-                treinadores_id: user.id
-            },
-            group: ['data_aula'],
-            attributes: ['data_aula', [sequelize.fn('COUNT', 'data_aula'), 'count']],
-            raw: true,
+        // })
 
-        })
-
+        console.log(aulas)
 
         res.render("crie", { user, aulas, datas });
 
