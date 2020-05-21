@@ -32,6 +32,7 @@ router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/treino',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
+router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
 router.get('/login', LoginController.showLogin);
 router.post('/login', LoginController.login);
 router.get('/logout', LoginController.logout);

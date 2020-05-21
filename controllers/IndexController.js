@@ -16,6 +16,10 @@ module.exports = {
       await Contato.create({nome, email,docs:file, mensagem:message});
       res.redirect('/sobre');
     },
+
+    depoimentos:async (req, res)=>{
+		  res.render("depoimentos");
+    },
     
     showCadastro: (req,res) => {
       res.render('cadastro');

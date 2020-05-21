@@ -1,0 +1,58 @@
+<%- include('partials/header') %>
+<link rel="canonical" href="https://highperformance.herokuapp.com/pages/entrar/login.html" />
+<link rel="stylesheet" href="/css/depoimentos.css">
+</head>
+<body>
+
+<%- include('partials/navBar') %>
+<%- include('partials/bikeGif') %> 
+
+<div class="row">
+
+<div class="col s12 m11 l5" id="login">
+    <!-- <a href="/">
+        <img class="responsive-img logo" src="/img/logo.png" alt="High Performance">
+    </a> -->
+    <h1>Deixe o seu depoimento</h1>
+
+    <form id="form" action="/login" method="POST">
+      <div class="center-align">
+        <img src="/img/avatar.png" alt="nome" >
+
+      </div>
+
+        <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <label for="email">Nome</label>
+            <input name="nome" id="nome" type="text">                    
+        </div>
+
+        <div class="input-field">
+            <i class="material-icons prefix">gavel</i>
+            <label for="email">Profisão</label>
+            <input name="job" id="job" type="text">                    
+        </div>
+
+        <div class="row">
+          <div class="input-field col s12">
+              <i class="material-icons prefix">question_answer</i>
+              <textarea name="msg" id="textarea2" class="materialize-textarea" data-length="100"></textarea>
+              <label for="textarea2">Mensagem</label>
+          </div>
+      </div>
+        
+        <div class="input-field">
+            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Entrar</button>
+        </div>
+    </form>
+</div>
+
+<div class="col s12 m l7">
+    <img class="responsive-img bannerimg" src="/img/opniao.png" alt="Banner Login">
+</div>
+</div>
+
+
+<%- include('partials/footer') %>
+<%- include('partials/footer') %>
+
