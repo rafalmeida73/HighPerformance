@@ -1,98 +1,39 @@
-    <%- include('partials/head') %>
-
-    <link rel="stylesheet" href="/css/alunos.css">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/alunos/alunos.html" />
-</head>
-
+        <%- include('partials/header') %>
+        <link rel="stylesheet" href="/css/alunos.css">
+        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/alunos/alunos.html" />
+    </head>
 <body>
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper #ffffff white">
-                <!-- Logo -->
-                <a href="/home/alunos" class="brand-logo">
-                    <img class="responsive-img" src="/img/logo.png" alt="Logo da Pagina" style="width: 300px;">
-                </a>
 
-                <!-- Ícone para abrir no Mobile -->
-                <a href="#" data-target="mobile-navbar" class="sidenav-trigger">
-                    <i class="material-icons black-text">menu</i>
-                </a>
-
-                <ul id="navbar-items" class="right hide-on-med-and-down">
-                    <li>
-                        <a class="black-text" href="#">
-                            <div class="responsive-img">
-                                <!-- <img class="responsive-img" src=""> -->
-                                <b><%= user.nome %></b>
-                            </div>
-                        </a>
-                    </li>
-                    <li><a href="#" class="orange-text">Alunos</a></li>
-                    <li><a href="/home" class="black-text">Crie</a></li>
-                    <li><a href="/home/financas" class="black-text">Finanças</a></li>
-                    <li><a href="/logout" class="black-text">Sair</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-
-    <!-- Menu Mobile -->
-    <ul id="mobile-navbar" class="sidenav">
-        <li>
-            <a class="black-text" href="#">
-                <div class="responsive-img">
-                    <!-- <img class="responsive-img" src=""> -->
-                    <b><%= user.nome %></b>
-                </div>
-            </a>
-        </li>
-        <li><a href="#" class="orange-text">Alunos</a></li>
-        <li><a href="/home" class="black-text">Crie</a></li>
-        <li><a href="/home/financas" class="black-text">Finanças</a></li>
-        <li><a href="/logout" class="black-text">Sair</a></li>
-    </ul>
-
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %>
 
     <!-- Alunos -->
     <div class="container">
-        <div class="quadrado">
-            <div class="row square" id="alunos">
-                <div class="col s12 m12 l6 ">
-                    <h2>2 Alunos ativos</h2>
+        <div class="col s12 m12 l12 quadrado">
+            <div id="alunos"><h2>Alunos ativos</h2></div>                                    
+        </div>
+        <div class="col s12 m12 l12 baixoQuadrado">
+            <i class="material-icons">person_add</i>
+            <a id="addAluno" href="../cadastroAluno/cadastrarAlunos.html">ADICIONAR NOVO ALUNO</a>          
+        </div>
+
+        <!-- INICIO DA LISTA -->
+        <div class="container" id="lista">
+            <div class="col s12 m12 l12 left-align">        
+                <div class="nav-wrapper">
+                    <form>                        
+                        <div class="input-field">
+                            <input id="search" type="search" required placeholder="Pesquisar Alunos">
+                            <label class="label-icon" for="search"><i class="material-icons">search</i></label>
+                            <!-- <i class="material-icons">close</i> -->
+                        </div>
+                    </form>
                 </div>
-                <div class="col s12 m12 l6 ">
-                    <img class="responsive-img" src="/img/user.png" alt="Alunos ativos">
-                </div>
-            </div>
-            <div class="col s12 m12 l12 right-align baixoQuadrado">
-                <a id="addAluno" href="../cadastroAluno/cadastrarAlunos.html">ADICIONAR NOVO ALUNO</a>
             </div>
         </div>
-    </div>
 
-    <!-- INICIO DA LISTA -->
-    <div class="container" id="lista">
-        <div class="col s12 m12 l12 left-align">
-            <p>Alunos</p>
-
-            <div class="nav-wrapper">
-                <form>
-                    <div class="input-field">
-                        <input id="search" type="search" required placeholder="Pesquisar">
-                        <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                        <i class="material-icons">close</i>
-                    </div>
-                </form>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Lista dos alunos -->
-    <div class="container">
+        <br/>
+        <!-- Lista dos alunos -->
         <div class="col s12 m12 l12">
             <table class="highlight centered table" id="tabledata">
                 <thead>
@@ -121,9 +62,8 @@
                 </tbody>
             </table>
         </div>
-    </div>
 
-    <div class="container">
+
         <div class="row">
             <div class="col l12 m12 s12 center-align">
                 <ul id="dropdown2" class="dropdown-content">
@@ -136,14 +76,12 @@
                 </ul>
                 <a class="btn dropdown-trigger" href="#!" data-target="dropdown2" id="btnExport">Exportar para<i class="material-icons right" >arrow_drop_down</i></a>
             </div>
-        </div>
+        </div>       
+        
     </div>
 
-
-
-
-    <!-- FOOTER -->
-    <footer class="page-footer" id="footer">
+     <!-- FOOTER -->
+     <footer class="page-footer" id="footer">
         <div class="container">
             <div class="row">
                 <div class="col l6 s12">
@@ -159,7 +97,8 @@
                     </ul>
                 </div>
                 <div class="col l1 s4 right">
-                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
+                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left"
+                        data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
                 </div>
             </div>
         </div>

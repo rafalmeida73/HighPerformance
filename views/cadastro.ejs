@@ -1,25 +1,12 @@
-    <%- include('partials/head') %>  
-
-    <link rel="stylesheet" href="/css/cadastro.css">
-    <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
-</head>
-
+        <%- include('partials/header') %>
+        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
+        <link rel="stylesheet" href="/css/cadastro.css">
+    </head>
 <body>
-    <div class="center-align loader">
-        <img src="/img/bike.svg" alt="Loader" class="responsive-img">
-    </div>
-
-    <!-- Menu Mobile -->
-    <ul id="mobile-navbar" class="sidenav">
-        <li><a href="/" class="black-text">Home</a></li>
-        <li><a href="/sobre" class="black-text">Sobre</a></li>
-        <li><a href="/login" class="black-text">Entrar</a></li>
-        <li><a href="#" class="orange-text">Registrar</a></li>
-    </ul>
+    <%- include('partials/navBar') %>
+    <%- include('partials/bikeGif') %>    
 
     <div class="logout">
-
-
         <div class="row">
             <div class="col s12 m12 l5" id="cadastroContainer">
                 <a href="/">
