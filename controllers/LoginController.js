@@ -29,16 +29,18 @@ module.exports = {
 
         // })
 
-        console.log(aulas)
+   
 
         res.render("crie", { user, aulas, datas });
 
 
     },
-    showAlunos: (req, res) => {
+    showAlunos: async(req, res) => {
         let user = req.session.usuario;
+        
+        let alunos = await Aluno.findAll()
 
-        res.render("alunos", { user });
+        res.render("alunos", { user, alunos });
     },
     showTreino: (req, res) => {
         let user = req.session.usuario;
@@ -48,6 +50,21 @@ module.exports = {
         let user = req.session.usuario;
         res.render("financas", { user });
     },
+    search: async(req, res) => {
+		let busca = req.query.q;
+		if (busca) {
+			let result = await Aluno.findAll(
+                {
+                    where: {
+                        nome: busca
+                    }
+                });
+            
+			return res.render('alunos', { alunos: result});
+		} else {
+			return res.redirect('/home/alunos');
+		}
+	},
     login: async(req, res) => {
         // Lendo as info do body
         const { email, senha } = req.body;

@@ -149,3 +149,8 @@ tr {
         font-size: 34px;
     }
 }
+
+#foto-aluno {
+    height: 70px;
+    border-radius: 50%;
+}

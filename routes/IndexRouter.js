@@ -30,6 +30,7 @@ router.post('/sobre', IndexController.facaParte);
 router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
+router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
