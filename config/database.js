@@ -1,11 +1,16 @@
 require('dotenv').config()
 
 module.exports = {
-    username : process.env.DB_USER,
-    password : process.env.DB_PASS,
-    database : process.env.DB_NAME,
-    host     : process.env.DB_HOST,
-    port     : process.env.DB_PORT,
-    dialect  : "mysql"
+    username : "high@high",
+    password : "@Senha1234",
+    database : "projeto_strava",
+    host     : "high.mysql.database.azure.com",
+    port     : "3306",
+    dialect  : "mysql",
+    "ssl": true,
+    "dialectOptions": {
+       "ssl": {
+          "require": true
+       }
+     }
 }
-
