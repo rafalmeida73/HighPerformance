@@ -1,5 +1,7 @@
-const { sequelize, Treinador, Aluno, Aula, Presenca } = require('../models');
+const { Treinador, Aluno, Aula, Presenca } = require('../models');
 const bcrypt = require('bcrypt')
+const Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 module.exports = {
     showLogin: (req, res) => {
@@ -56,7 +58,9 @@ module.exports = {
 			let result = await Aluno.findAll(
                 {
                     where: {
-                        nome: busca
+                        nome: {
+                            [Op.substring]: busca
+                        }
                     }
                 });
             
