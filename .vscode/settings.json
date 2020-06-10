@@ -1,8 +1,0 @@
-{
- "appService.zipIgnorePattern": [
-  "node_modules{,/**}",
-  ".vscode{,/**}"
- ],
- "appService.defaultWebAppToDeploy": "/subscriptions/f3376276-a32d-476f-a844-517132230227/resourceGroups/ProjetoDh/providers/Microsoft.Web/sites/highperformancedh",
- "appService.deploySubpath": "."
-}

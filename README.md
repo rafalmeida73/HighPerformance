@@ -3,9 +3,9 @@
 </h1>
 
 <h3 align="center">
-   Projeto voltado para educadores físicos gerenciar dados do alunos utilizando a API do Strava. Conseguindo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros.
+   O site High Performance é voltado para educadores físicos que desejam gerenciar dados dos seus alunos de uma maneira simples. Conseguingo assim, organizar suas finanças, agendas, monitoramento dos alunos e outros benefícios.
 </h3>
 
 <br>
 
-## :computer: <a href="https://highperformance.herokuapp.com" target="_blank">Deploy no Heroku</a>
+## :computer: <a href="https://highperformancedh.azurewebsites.net" target="_blank">Deploy no Heroku</a>

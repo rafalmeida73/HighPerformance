@@ -2,3 +2,4 @@ node_modules
 roadmap.todo
 .env
 testes
+.vscode
