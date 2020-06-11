@@ -68,7 +68,7 @@ module.exports = {
         if (aluno) {
 			res.render("treino", {aluno});
 		} else {
-			res.send("não encontrado")
+			res.render("404")
 		}
     },
     editarAlunos: async (req, res) => {
@@ -83,9 +83,25 @@ module.exports = {
         if (aluno) {
 			res.render("editarAluno", {aluno});
 		} else {
-			res.send("não encontrado")
+			res.render("404")
 		}
 
+    },
+    showUpdateAlunos: async (req, res) => {
+        let {nome, email, telefone, meta } = req.body
+        let edicao = await Aluno.update({
+            nome,
+            email,
+            telefone,
+            meta,
+        },{
+            where: {
+                id: req.params.id
+            }
+        })
+
+        
+		return res.redirect('/home/alunos');
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;

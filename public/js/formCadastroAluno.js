@@ -13,7 +13,7 @@ $("#formValidate").validate({
         meta: {
             required: true,
         },
-        cel: {
+        telefone: {
             required: true,
         }
     },
