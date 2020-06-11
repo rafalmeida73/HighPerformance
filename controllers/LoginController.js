@@ -33,6 +33,12 @@ module.exports = {
 
         res.render("alunos", { user, alunos });
     },
+    showCadastroAluno: (req,res) => {
+        res.render('cadastrarAlunos');
+    },
+    showNovaAula: (req,res) => {
+        res.render('novaAula');
+    },  
     showTreino: (req, res) => {
         let user = req.session.usuario;
         res.render("treino", { user });

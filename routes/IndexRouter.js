@@ -24,12 +24,13 @@ const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
 router.get('/', IndexController.index);
 router.get('/sobre', IndexController.sobre);
 router.get('/cadastro', IndexController.showCadastro);
-router.get('/cadastrarAlunos', IndexController.showCadastroAluno);
 router.post('/cadastro', IndexController.storeCadastro);
 router.post('/sobre', upload.single('file'), IndexController.facaParte);
 
 router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
+router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
+router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/alunos/editar',VerificaUsuarioLogado, LoginController.editarAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);

@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
+<link rel="stylesheet" href="/css/cadastroAlunos.css">
+</head>
+<body>
+
+<%- include('partials/bikeGif') %> 
+
+<div class="cadastro">
+<div class="row">
+    <div class="col s12 m12 l6 center-align" id="cadastroContainer">
+        <a href="/home/">
+            <img class="responsive-img logo" src="../../img/icon512.png" alt="High Performance">
+        </a>
+        <h1>Cadastrar nova aula</h1>
+    </div>
+    <div class="col s12 m12 l6">
+        <form class="formValidate" id="formValidate" method="POST" action="/home/novaAula">
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="name" id="name" type="text" data-error=".errorTxt1">
+                <label for="name">Nome</label>
+                <div class="errorTxt1 right-align "></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">email</i>
+                <input name="email" id="email" type="email" data-error=".errorTxt2">
+                <label for="email">E-mail</label>
+                <div class="errorTxt2 right-align "></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">call</i>
+                <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
+                <label for="tel">Celular</label>
+                <div class="errorTxt3 right-align "></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input name="data" type="date" class="form-control" data-error=".errorTxt4">
+                <label for="date">Data Nasc.</label>
+                <div class="errorTxt4 right-align"></div>
+            </div>
+            <div class="input-field">
+                <button class="btn waves-effect waves-light right submit" type="submit" name="action">Cadastrar
+              </button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<%- include('partials/footer') %>

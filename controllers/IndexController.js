@@ -51,9 +51,7 @@ module.exports = {
       res.render('cadastro');
     },
 
-    showCadastroAluno: (req,res) => {
-      res.render('cadastrarAlunos');
-    },
+    
 
     storeCadastro: async(req, res) =>{
         let {name, email, cel, senha, repSenha} = req.body;
