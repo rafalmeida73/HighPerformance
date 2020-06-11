@@ -37,6 +37,10 @@ module.exports = {
         let user = req.session.usuario;
         res.render("treino", { user });
     },
+    editarAlunos: (req, res) => {
+        let user = req.session.usuario;
+        res.render("editarAluno", { user });
+    },
     showFinancas: (req, res) => {
         let user = req.session.usuario;
         res.render("financas", { user });
