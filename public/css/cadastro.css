@@ -45,8 +45,8 @@ body {
 #cadastroContainer h1 {
     font-size: 30px;
     font-weight: bold;
-    margin-bottom: 40px;
-    padding-top: 15vh;
+    margin: 0;
+    padding-top: 20px;
 }
 
 .cadastro p {
@@ -61,10 +61,6 @@ body {
 .cadastro i {
     margin-right: 18px;
     color: #ff7e00;
-}
-
-form {
-    margin-top: 80px;
 }
 
 form span {
@@ -127,9 +123,7 @@ form .btn:hover {
     .logo {
         margin-top: 10vh;
     }
-    form {
-        padding-top: 20vh;
-    }
+    
     form .btn {
         width: 87%;
     }
