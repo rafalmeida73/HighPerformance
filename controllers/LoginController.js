@@ -20,18 +20,7 @@ module.exports = {
             ]
         });
 
-        let datas = await Aula.findAll()
-        // let datas = await Aula.findAll({
-        //     where: {
-        //         treinadores_id: user.id
-        //     },
-        //     group: ['data_aula'],
-        //     attributes: ['data_aula', [sequelize.fn('COUNT', 'data_aula'), 'count']],
-        //     raw: true,
-
-        // })
-
-   
+        let datas = await Aula.findAll()  
 
         res.render("crie", { user, aulas, datas });
 
@@ -80,12 +69,14 @@ module.exports = {
 
         // Verificar se existe usuario com email passado
         if (!user) {
-            res.redirect('/login?error=1');
+            req.flash('menssage', 'Email não cadastrado!')
+            res.redirect('/login');
         }
 
         // Validar a senha passada via post contra a guardada no banco
         if (!bcrypt.compareSync(senha, user.senha)) {
-            res.redirect('/login?error=1');
+            req.flash('menssage', 'Senha Inválida!')
+            res.redirect('/login');
         }
 
         // Setar uma session com o usuario

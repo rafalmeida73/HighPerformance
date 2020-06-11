@@ -4,14 +4,15 @@ const multer = require('multer');
 const path = require('path');
 let storage = multer.diskStorage ({
     destination: (req, file, cb) =>{
-        cb(null, path.join('docs', 'enviados'));
+        //cb(null, path.join('docs', 'enviados'));
+        cb(null, 'curriculos');
     },
     filename: (req, file, cb) =>{
-        cb(null, file.originalname);
-
-    }
+        cb(null, file.originalname)
+        req.nomeAquivo = file.originalname        
+   }
 });
-let upload = multer({ storage: storage})
+let upload = multer({storage})
 
 
 const IndexController = require('../controllers/IndexController');
@@ -25,7 +26,7 @@ router.get('/sobre', IndexController.sobre);
 router.get('/cadastro', IndexController.showCadastro);
 router.get('/cadastrarAlunos', IndexController.showCadastroAluno);
 router.post('/cadastro', IndexController.storeCadastro);
-router.post('/sobre', IndexController.facaParte);
+router.post('/sobre', upload.single('file'), IndexController.facaParte);
 
 router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);

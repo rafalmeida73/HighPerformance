@@ -9,6 +9,16 @@
 
     <!-- SOBRE -->
     <div id="sobre">
+        <% if(menssage != '') { %>
+         <div class="row">
+            <div class="col s12 m12 l6">
+                <div class="card-panel teal lighten-2" style="color: white;font-size: 17px;">
+                    A <em><strong>HIGH PERFORMANCE</strong></em> agradece o interesse! Aguarde que faremos contato pelo email <em><%- menssage%></em> informado.
+                </div>
+            </div>
+        </div>  
+        
+        <% } %>
         <div class="row">
             <div class="col s12 m12 l6">
                 <p>Com o <span>High Performance</span> você pode monitorar todos os dados do seus alunos que estão utilizando o aplicativo <img src="/img/strava.png" alt="">, marcar aulas, ter um gestão dos seus pagamentos, lista de presença, entre outros.
@@ -152,13 +162,13 @@
             <div class="col s12 m12 l6">
                 <div>
                     <div class="row">
-                        <form action="/sobre" id="formValidate" class="col s12" method="POST">
+                        <form action="/sobre" id="formValidate" class="col s12" method="POST" enctype="multipart/form-data">
                             <div class="row">
                                 <div class="input-field col s12">
                                     <i class="material-icons prefix">account_circle</i>
                                     <input name="name" id="name" type="text" data-error=".errorTxt1">
                                     <label for="name">Nome</label>
-                                    <div class="errorTxt1 right-align"></div>
+                                    <div class="errorTxt1 right-align"></div>  
                                 </div>
                             </div>
                             <div class="row">

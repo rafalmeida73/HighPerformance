@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+const flash = require('connect-flash')
 
 var IndexRouter = require('./routes/IndexRouter');
 
@@ -25,9 +26,11 @@ app.use(session({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(flash())
 app.use((req, res, next) => {  
   res.locals.user = req.session.usuario || null
-  console.log('=======================> locals ' +  JSON.stringify(res.locals.user))
+  res.locals.menssage = req.flash('menssage') || false
+  //console.log('=======================> locals ' +  JSON.stringify(res.locals.user))
   next()
 })
 
