@@ -35,5 +35,8 @@ img{
         margin-top: 0;
         max-height: 100vh;
     }
+    #erro{
+        margin-top: 25vh;
+    }
     
     }

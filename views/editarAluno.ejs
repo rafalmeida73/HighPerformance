@@ -1,21 +1,23 @@
-<%- include('partials/header') %>
+<%- include('./partials/header') %>
         <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
         <link rel="stylesheet" href="/css/editarAluno.css">
     </head>
 <body>
     
     
-<%- include('partials/navBar') %>
-<%- include('partials/bikeGif') %> 
+<%- include('./partials/navBar') %>
+<div class="center-align loader">
+    <img src="/img/bike.svg" alt="Loader" class="responsive-img">
+</div> 
 
     <div class="aluno">
         <div class="container" id="aluno">
             <div class="col s12 m12 l12 center-align">
-                <img src="<%= aluno.img %>" alt="<%= aluno.nome %>" class="responsive-img">
+                <img src="<%= aluno.img %>" alt="<%=aluno.nome%>" class="responsive-img">
             </div>
 
             <div class="col s12 m12 l6">
-                <form id="form" id="form" action="/home/alunos/editar/<%= aluno.id %>?_method=PUT" method="post">
+                <form id="form" id="form" action="/home/alunos/editar/<%=aluno.id%>" method="post">
                     <form id="form" id="form" method="GET" action="/alunos">
                         <div class="input-field">
                             <i class="material-icons prefix">account_circle</i>
@@ -31,8 +33,8 @@
                         </div>
                         <div class="input-field">
                             <i class="material-icons prefix">call</i>
-                            <input name="telefone" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3" value="<%= aluno.telefone %>">
-                            <label for="telefone">Celular</label>
+                            <input name="telefone" type="tel" id="tel" data-error=".errorTxt3" value="<%= aluno.telefone %>">
+                            <label for="telefone">Telefone</label>
                             <div class="errorTxt3 right-align"></div>
                         </div>
                         <div class="input-field">
@@ -44,7 +46,7 @@
                         <div class="row">
                             <div class="col s12 m6 l6">
                                 <div class="input-field">
-                                    <a href="/home/alunos">
+                                    <a href="/home/alunos/editar/<%= aluno.id %>">
                                         <span class="btn waves-effect waves-light">
                                      Cancelar
                                     </span>
@@ -62,5 +64,5 @@
         </div>
     </div>
 
-
-    <%- include('partials/footer') %>>
+    <%- include('./partials/footer') %>
+    <%- include('partials/rodape') %>

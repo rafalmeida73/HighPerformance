@@ -76,11 +76,20 @@ form sapn:hover {
     padding-top: 50px;
 }
 
+#login{
+    margin-top: 15vh;
+}
+
 #login h1 {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
     padding-top: 20px;
+}
+
+#imgLogin{
+    max-height: 100%;
+    max-width: 100%;
 }
 
 .cadastro p {
@@ -114,5 +123,11 @@ form sapn:hover {
     }
     form .btn {
         width: 89%;
+    }
+    #login{
+        margin-top: 10vh;
+    }
+    #imgLogin{
+        margin-top: 15vh;
     }
 }
