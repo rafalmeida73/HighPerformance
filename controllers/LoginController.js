@@ -36,16 +36,56 @@ module.exports = {
     showCadastroAluno: (req,res) => {
         res.render('cadastrarAlunos');
     },
+    showNovoAluno: async (req,res) => {
+        // Capturar as info enviadas pelo usuário
+       let {nome, email, telefone, meta } = req.body
+        let img = `/img/${req.file.originalname}`;
+
+       const resultado = await Aluno.create({
+        img,
+        nome,
+        email,
+        telefone,
+        meta
+       })
+       console.log(resultado)
+		// Redirecionar o usuário para a lista de alunos
+		return res.redirect("/home/alunos");
+    },
     showNovaAula: (req,res) => {
         res.render('novaAula');
     },  
-    showTreino: (req, res) => {
+    showTreino: async (req, res) => {
         let user = req.session.usuario;
-        res.render("treino", { user });
+
+
+       let aluno = await Aluno.findOne({
+           where:{
+               id: req.params.id
+           }
+       })
+
+        if (aluno) {
+			res.render("treino", {aluno});
+		} else {
+			res.send("não encontrado")
+		}
     },
-    editarAlunos: (req, res) => {
+    editarAlunos: async (req, res) => {
         let user = req.session.usuario;
-        res.render("editarAluno", { user });
+        
+        let aluno = await Aluno.findOne({
+            where:{
+                id: req.params.id
+            }
+        })
+
+        if (aluno) {
+			res.render("editarAluno", {aluno});
+		} else {
+			res.send("não encontrado")
+		}
+
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;

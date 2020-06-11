@@ -11,12 +11,13 @@
         <div id="perfil">
             <div class="row">
                 <div class="col s12 m6 l3">
-                    <img src="/img/avatar.png" alt="">
+                    <img src="<%= aluno.img %>" alt="">
                 </div>
 
                 <div class="col s12 m6 l9 left-align">
-                    <h4>João</h4>
-                    <P>São Paulo, SP</P>
+                    <h4>
+                        <%= aluno.nome %>
+                    </h4>
                 </div>
             </div>
 
@@ -25,15 +26,10 @@
                     <li>
                         <div class="collapsible-header"><i class="material-icons">add</i>Mais informações</div>
                         <div class="collapsible-body">
-                            <p>E-mail: joao@gmail.com</p>
-                            <p>Celular: 11 89564534</p>
-                            <p>Id Strava: 45454</p>
-                            <P>Cidade: São Paulo</P>
-                            <p>Estado: SP</p>
-                            <P>Sexo: Masculino</P>
-                            <p>Data Nasc: 29/03/1997</p>
+                            <p>E-mail: <%= aluno.email %></p>
+                            <p>Telefone: <%= aluno.telefone %></p>
                             <p>
-                                <a href="/home/alunos/editar" class="black-text"><i class="material-icons">create</i>Editar dados</a>
+                                <a href="/home/alunos/editar/<%=aluno.id%>" class="black-text"><i class="material-icons">create</i>Editar dados</a>
                             </p>
                             <p><a href="#" class="black-text"><i class="material-icons">delete</i>Remover aluno</a></p>
                         </div>

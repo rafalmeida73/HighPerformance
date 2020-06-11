@@ -10,7 +10,7 @@
     <div class="aluno">
         <div class="container" id="aluno">
             <div class="col s12 m12 l12 center-align">
-                <img src="/../img/avatar.png" alt="avatar do aluno" class="responsive-img">
+                <img src="<%= aluno.img %>" alt="<%= aluno.nome %>" class="responsive-img">
             </div>
 
             <div class="col s12 m12 l6">
@@ -18,7 +18,7 @@
                     <form id="form" id="form" method="GET" action="/alunos">
                         <div class="input-field">
                             <i class="material-icons prefix">account_circle</i>
-                            <input name="name" id="name" type="text" data-error=".errorTxt1">
+                            <input name="name" id="name" type="text" data-error=".errorTxt1" placeholder="<%= aluno.nome %>">
                             <label for="name">Nome</label>
                             <div class="errorTxt1 right-align"></div>
                         </div>

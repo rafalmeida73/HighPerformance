@@ -53,7 +53,7 @@ form {
     margin-top: 10vh;
 }
 
-form .btn {
+#btnSubmit{
     margin-top: 20px;
     background-color: #ff7e00;
     border-radius: 8px;
