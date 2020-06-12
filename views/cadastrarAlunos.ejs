@@ -6,25 +6,14 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
-    <div class="cadastro">
-        <div class="row">
-            <div class="col s12 m12 l6 center-align" id="cadastroContainer">
-                <a href="/home/alunos">
-                    <img class="responsive-img logo" src="../../img/icon512.png" alt="High Performance">
-                </a>
-                <h1>Cadastrar novo aluno</h1>
-            </div>
-            <div class="col s12 m12 l6">
-                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos">
-                    <div class="file-field input-field">
-                        <div class="btn">
-                          <span>File</span>
-                          <input name="img"type="file">
-                        </div>
-                        <div class="file-path-wrapper">
-                          <input name="img" class="file-path validate" type="text">
-                        </div>
-                      </div>
+    <div class="cadastro" style="margin: 30px;padding: 10px;">
+        <h1 style="text-align:center;font-weight:bold;margin:0;">Cadastrar Aluno</H1>
+        <div class="row" style="text-align: center;">
+            <div class="col s12 m12">
+                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data" style="margin: 30px;padding: 0;">
+                    <input type="file" id="imgUser" name="imgUser" accept="image/*" style="display: none;">
+                    <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance"
+                        style="cursor:pointer;width:300px; border-radius: 50%;border: 1px solid;height:300px;margin-bottom:30px;">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
                         <input name="nome" id="nome" type="text" data-error=".errorTxt1">
@@ -50,11 +39,32 @@
                         <div class="errorTxt4 right-align"></div>
                     </div>
                     <div class="input-field">
-                        <button class="btn waves-effect waves-light right submit" type="submit" name="action" id="btnSubmit">Cadastrar</button>
+                        <button class="btn waves-effect waves-light right submit" type="submit" name="action"
+                            id="btnSubmit">Cadastrar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+
+    <script>
+        let inserirImagem =  document.getElementById('inseriImagem')
+        let imagemUser = document.getElementById('imgUser')
+        inserirImagem.addEventListener('click', ()=>imagemUser.click())
+
+        var loadFile = function(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('inseriImagem');
+                output.src = reader.result;
+                console.log(output.src)
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+              
+        imagemUser.addEventListener('change',loadFile)           
+        
+
+    </script>
 
     <%- include('partials/footer') %>

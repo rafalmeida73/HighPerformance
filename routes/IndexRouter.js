@@ -2,18 +2,27 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+
 let storage = multer.diskStorage ({
+    
     destination: (req, file, cb) =>{
-        //cb(null, path.join('docs', 'enviados'));
-        cb(null, 'curriculos');
+        var regex = /image\//;
+        console.log('===================> '+file.mimetype)
+        console.log('===================> '+ regex.test(file.mimetype))                
+        if ( regex.test(file.mimetype)) {
+             cb(null, 'public/img');
+        } else {
+            cb(null, 'curriculos');
+        }
+            
     },
     filename: (req, file, cb) =>{
         cb(null, file.originalname)
         req.nomeAquivo = file.originalname        
    }
 });
-let upload = multer({storage})
-
+let upload =multer({ storage })
+let uploadImg =multer({storage})
 
 
 const IndexController = require('../controllers/IndexController');
@@ -32,7 +41,8 @@ router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
-router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, upload.single("img"), LoginController.showNovoAluno);
+
+router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, uploadImg.single('imgUser'), LoginController.showNovoAluno)
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.editarAlunos);
 router.put('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.showUpdateAlunos);
