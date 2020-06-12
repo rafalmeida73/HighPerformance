@@ -117,8 +117,6 @@ module.exports = {
             }
         })
         
-
-   
         res.redirect('/home/alunos');
    
     },
