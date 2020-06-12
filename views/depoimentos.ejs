@@ -8,7 +8,7 @@
 <%- include('partials/bikeGif') %> 
 
 <div class="row">
-
+<div id="colDepoimento">
 <div class="col s12 m11 l5" id="login">
     <!-- <a href="/">
         <img class="responsive-img logo" src="/img/logo.png" alt="High Performance">
@@ -16,10 +16,15 @@
     <h1>Deixe o seu depoimento</h1>
 
     <form id="form" action="/login" method="POST">
-      <div class="center-align">
-        <img src="/img/avatar.png" alt="nome" >
-
-      </div>
+        <div class="file-field input-field">
+            <div class="btn orange">
+              <span>Imagem</span>
+              <input name="img"type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input name="img" class="file-path validate" type="text">
+            </div>
+          </div>
 
         <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
@@ -42,7 +47,7 @@
       </div>
         
         <div class="input-field">
-            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Entrar</button>
+            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Enviar</button>
         </div>
     </form>
 </div>
@@ -51,8 +56,10 @@
     <img class="responsive-img bannerimg" src="/img/opniao.png" alt="Banner Login">
 </div>
 </div>
+</div>
 
 
 <%- include('partials/footer') %>
-<%- include('partials/footer') %>
+<%- include('partials/rodape') %>
+
 

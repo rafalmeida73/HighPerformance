@@ -86,13 +86,15 @@ module.exports = {
         })
 
         if (aluno) {
+            console.log(aluno)
 			res.render("editarAluno", {aluno});
 		} else {
 			res.render("404")
 		}
 
     },
-    showUpdateAlunos: async (req, res) => {
+    UpdateAlunos: async (req, res) => {
+        let id = req.params.id;
         let {nome, email, telefone, meta } = req.body
         let edicao = await Aluno.update({
             nome,
@@ -101,12 +103,27 @@ module.exports = {
             meta,
         },{
             where: {
-                id: req.params.id
+                id,
             }
         })
 
+        if(edicao == 1){
+            res.redirect('/home/alunos');
+        } else {
+			res.render("404")
+		}
+
+    },
+    DeleteAlunos: async (req, res) => {
+        let id = req.params.id;
+        let resultado = await Aluno.destroy({
+            where:{
+                id
+            }
+        })
         
-		return res.redirect('/home/alunos');
+        res.redirect('/home/alunos');
+   
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;
