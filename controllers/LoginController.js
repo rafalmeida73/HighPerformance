@@ -113,13 +113,14 @@ module.exports = {
         let id = req.params.id;
         let resultado = await Aluno.destroy({
             where:{
-                id,
+                id
             }
         })
-
-       
-        res.redirect('/home/alunos');
         
+
+   
+        res.redirect('/home/alunos');
+   
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;
