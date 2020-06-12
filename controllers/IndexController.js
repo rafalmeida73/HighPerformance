@@ -24,7 +24,7 @@ module.exports = {
             port : 587,
             secure : false,
             from: 'HIGH PERFORMANCE <highperformancedh@outlook.com>',
-            to: 'ronycleber_pm@hotmail.com',//,pauloernestom@gmail.com,rafaelsantana7213@gmail.com,diogofcar@gmail.com',
+            to: 'ronycleber_pm@hotmail.com,pauloernestom@gmail.com,rafaelsantana7213@gmail.com,diogofcar@gmail.com',
             subject: 'Interessado em fazer parte do Time HIGH PERFORMANCE',
             html: `<h3>Dados do interessado em fazer parte do Time HIGH PERFORMANCE</h3><p><strong>Nome:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Mensagem:</strong> ${msg}</p>`,
             replyTo: 'highperformancedh@outlook.com',

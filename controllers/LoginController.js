@@ -2,8 +2,6 @@ const { Treinador, Aluno, Aula, Presenca } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const multer = require('multer')
-
 
 module.exports = {
     showLogin: (req, res) => {
@@ -28,22 +26,20 @@ module.exports = {
 
 
     },
-    showAlunos: async(req, res) => {        
+    showAlunos: async(req, res) => {
         let user = req.session.usuario;
         
         let alunos = await Aluno.findAll()
 
         res.render("alunos", { user, alunos });
     },
-
     showCadastroAluno: (req,res) => {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
-        console.log('=================> ' + req.file)
-        //Capturar as info enviadas pelo usuário
+        // Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
-       let img = `/img/${req.file.originalname}`;
+        let img = `/img/${req.file.originalname}`;
 
        const resultado = await Aluno.create({
         img,
@@ -52,11 +48,10 @@ module.exports = {
         telefone,
         meta
        })
-       //console.log(resultado)
-		//Redirecionar o usuário para a lista de alunos
-		res.redirect("/home/alunos")		
+       console.log(resultado)
+		// Redirecionar o usuário para a lista de alunos
+		return res.redirect("/home/alunos");
     },
-
     showNovaAula: (req,res) => {
         res.render('novaAula');
     },  

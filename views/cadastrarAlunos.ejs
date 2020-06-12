@@ -6,7 +6,25 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
-
+    <div class="cadastro">
+        <div class="row">
+            <div class="col s12 m12 l6 center-align" id="cadastroContainer">
+                <a href="/home/alunos">
+                    <img class="responsive-img logo" src="../../img/icon512.png" alt="High Performance">
+                </a>
+                <h1>Cadastrar novo aluno</h1>
+            </div>
+            <div class="col s12 m12 l6">
+                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos">
+                    <div class="file-field input-field">
+                        <div class="btn">
+                          <span>File</span>
+                          <input name="img"type="file">
+                        </div>
+                        <div class="file-path-wrapper">
+                          <input name="img" class="file-path validate" type="text">
+                        </div>
+                      </div>
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
                         <input name="nome" id="nome" type="text" data-error=".errorTxt1">
@@ -32,11 +50,11 @@
                         <div class="errorTxt4 right-align"></div>
                     </div>
                     <div class="input-field">
-                        <button class="btn waves-effect waves-light right submit" type="submit" name="action"
-                            id="btnSubmit">Cadastrar</button>
+                        <button class="btn waves-effect waves-light right submit" type="submit" name="action" id="btnSubmit">Cadastrar</button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
 
+    <%- include('partials/footer') %>
