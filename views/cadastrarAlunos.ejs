@@ -6,14 +6,7 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
-    <div class="cadastro" style="margin: 30px;padding: 10px;">
-        <h1 style="text-align:center;font-weight:bold;margin:0;">Cadastrar Aluno</H1>
-        <div class="row" style="text-align: center;">
-            <div class="col s12 m12">
-                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data" style="margin: 30px;padding: 0;">
-                    <input type="file" id="imgUser" name="imgUser" accept="image/*" style="display: none;">
-                    <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance"
-                        style="cursor:pointer;width:300px; border-radius: 50%;border: 1px solid;height:300px;margin-bottom:30px;">
+
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
                         <input name="nome" id="nome" type="text" data-error=".errorTxt1">
@@ -47,24 +40,3 @@
         </div>
     </div>
 
-    <script>
-        let inserirImagem =  document.getElementById('inseriImagem')
-        let imagemUser = document.getElementById('imgUser')
-        inserirImagem.addEventListener('click', ()=>imagemUser.click())
-
-        var loadFile = function(event) {
-            var reader = new FileReader();
-            reader.onload = function(){
-                var output = document.getElementById('inseriImagem');
-                output.src = reader.result;
-                console.log(output.src)
-            }
-            reader.readAsDataURL(event.target.files[0]);
-        }
-              
-        imagemUser.addEventListener('change',loadFile)           
-        
-
-    </script>
-
-    <%- include('partials/footer') %>
