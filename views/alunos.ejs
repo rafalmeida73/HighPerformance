@@ -1,6 +1,6 @@
         <%- include('partials/header') %>
         <link rel="stylesheet" href="/css/alunos.css">
-        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/alunos/alunos.html" />
+        <link rel=”canonical” href="https://highperformancedh.azurewebsites.net"/>
     </head>
 <body>
 
@@ -19,18 +19,19 @@
 
         <!-- INICIO DA LISTA -->
         <div class="container" id="lista">
+            <div class="row">
             <div class="col s12 m12 l12 left-align">        
                 <div class="nav-wrapper">
-                    <form action="/busca" method="get">                        
+                    <form action="/busca" method="get" id="formBuscaAluno">                        
                         <div class="input-field">
                             <input id="search" type="text" name="q" placeholder="Pesquisar Alunos" autocomplete="off">
-                            <button type="submit" class="label-icon" for="search"><i class="material-icons">search</i> Buscar</button>
                             <!-- <i class="material-icons">close</i> -->
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+    </div>
 
         <br/>
         <!-- Lista dos alunos -->
@@ -48,11 +49,11 @@
                 
                 <tbody>
                     <% for (aluno of alunos) { %>
-                    <tr data-url="/home/treino">
-                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto <%= aluno.nome %>"></td>
+                    <tr data-url="/home/treino/<%= aluno.id %>">
+                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto <%= aluno.nome %>" width="130" height="130"></td>
                         <td><%= aluno.nome %></td>
                         <td><%= aluno.telefone %></td>
-                        <td>32 km</td>
+                        <td><%= aluno.meta%> km</td>
                     </tr>
                     <% } %>
                 </tbody>
@@ -75,5 +76,7 @@
         </div>       
         
     </div>
+    
     <%- include('partials/footer') %>
+    <%- include('partials/rodape') %>
    

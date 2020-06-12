@@ -36,16 +36,90 @@ module.exports = {
     showCadastroAluno: (req,res) => {
         res.render('cadastrarAlunos');
     },
+    showNovoAluno: async (req,res) => {
+        // Capturar as info enviadas pelo usuário
+       let {nome, email, telefone, meta } = req.body
+        let img = `/img/${req.file.originalname}`;
+
+       const resultado = await Aluno.create({
+        img,
+        nome,
+        email,
+        telefone,
+        meta
+       })
+       console.log(resultado)
+		// Redirecionar o usuário para a lista de alunos
+		return res.redirect("/home/alunos");
+    },
     showNovaAula: (req,res) => {
         res.render('novaAula');
     },  
-    showTreino: (req, res) => {
+    showTreino: async (req, res) => {
         let user = req.session.usuario;
-        res.render("treino", { user });
+
+
+       let aluno = await Aluno.findOne({
+           where:{
+               id: req.params.id
+           }
+       })
+
+        if (aluno) {
+			res.render("treino", {aluno});
+		} else {
+			res.render("404")
+		}
     },
-    editarAlunos: (req, res) => {
+    editarAlunos: async (req, res) => {
         let user = req.session.usuario;
-        res.render("editarAluno", { user });
+        
+        let aluno = await Aluno.findOne({
+            where:{
+                id: req.params.id
+            }
+        })
+
+        if (aluno) {
+            console.log(aluno)
+			res.render("editarAluno", {aluno});
+		} else {
+			res.render("404")
+		}
+
+    },
+    UpdateAlunos: async (req, res) => {
+        let id = req.params.id;
+        let {nome, email, telefone, meta } = req.body
+        let edicao = await Aluno.update({
+            nome,
+            email,
+            telefone,
+            meta,
+        },{
+            where: {
+                id,
+            }
+        })
+
+        if(edicao == 1){
+            res.redirect('/home/alunos');
+        } else {
+			res.render("404")
+		}
+
+    },
+    DeleteAlunos: async (req, res) => {
+        let id = req.params.id;
+        let resultado = await Aluno.destroy({
+            where:{
+                id,
+            }
+        })
+
+       
+        res.redirect('/home/alunos');
+        
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;

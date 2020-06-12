@@ -1,15 +1,20 @@
 $("#form").validate({
     rules: {
-        name: {
+        nome: {
+            required: true,
             maxlength: 100,
             minlength: 5,
             minWords: 2
         },
         email: {
+            required: true,
             email: true
         },
-        date: {
-            date: true
+        meta: {
+            required: true,
+        },
+        telefone: {
+            required: true,
         }
     },
     errorElement: 'div',

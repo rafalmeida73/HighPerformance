@@ -15,6 +15,7 @@ let storage = multer.diskStorage ({
 let upload = multer({storage})
 
 
+
 const IndexController = require('../controllers/IndexController');
 const LoginController = require('../controllers/LoginController');
 const VerificaUsuarioLogado = require('../middlewares/VerificaUsuarioLogado');
@@ -31,10 +32,13 @@ router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
+router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, upload.single("img"), LoginController.showNovoAluno);
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
-router.get('/home/alunos/editar',VerificaUsuarioLogado, LoginController.editarAlunos);
+router.get('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.editarAlunos);
+router.post('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.UpdateAlunos);
+router.delete('/home/alunos/delete/:id',VerificaUsuarioLogado, LoginController.DeleteAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);
-router.get('/home/treino',VerificaUsuarioLogado, LoginController.showTreino);
+router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
 router.get('/login', LoginController.showLogin);

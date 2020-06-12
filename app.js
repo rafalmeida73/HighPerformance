@@ -4,7 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
-const flash = require('connect-flash')
+const flash = require('connect-flash');
+var methodOverride = require('method-override');
 
 var IndexRouter = require('./routes/IndexRouter');
 
@@ -35,6 +36,7 @@ app.use((req, res, next) => {
 })
 
 app.use('/', IndexRouter);
+app.use(methodOverride('_method'));
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {  

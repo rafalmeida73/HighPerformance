@@ -10,11 +10,10 @@ $("#formValidate").validate({
             required: true,
             email: true
         },
-        data: {
+        meta: {
             required: true,
-            date: true
         },
-        cel: {
+        telefone: {
             required: true,
         }
     },

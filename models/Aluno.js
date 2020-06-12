@@ -23,7 +23,7 @@ const Aluno = (sequelize, DataTypes) => {
                 type: DataTypes.STRING,
                 allowNull: false
             },
-            treinadores_id: {
+            meta: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
           }
@@ -35,7 +35,6 @@ const Aluno = (sequelize, DataTypes) => {
     );
 
     Aluno.associate = (modelos) =>{
-        Aluno.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
         Aluno.belongsToMany(modelos.Aula, {foreignKey:'aulas_id', as: 'aula', through: modelos.AulaHasAluno})
     }
 
