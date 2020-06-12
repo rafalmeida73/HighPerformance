@@ -60,10 +60,6 @@ i.material-icons {
     margin-right: 3px;
 }
 
-#formBuscaAluno .input-field input[type=text]:focus {
-    border-bottom: 1px solid #ff7e00;
-    box-shadow: 0 1px 0 0 #ff7e00;
-}
 .baixoQuadrado {
     background-color: #ff7e00;
     color: white;
@@ -129,6 +125,9 @@ tr {
 }
 
 @media (max-width:600px) {
+    .quadrado {
+        margin-bottom: 80px;
+    }
     .quadrado h2 {
         font-size: 38px;
     }
@@ -148,13 +147,8 @@ tr {
     .quadrado h2 {
         font-size: 34px;
     }
-
-    #foto-aluno {
-        width: 100px;
-        height: 100px;
-    }
 }
 
 #foto-aluno {
-    border-radius: 100px;
+    height: 70px;
 }

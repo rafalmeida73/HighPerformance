@@ -17,7 +17,7 @@ $("#form").validate({
             required: true,
             minlength: 5
         },
-        repSenha: {
+        senha2: {
             required: true,
             minlength: 5,
             equalTo: "#password"

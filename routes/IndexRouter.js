@@ -45,8 +45,7 @@ router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showC
 router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, uploadImg.single('imgUser'), LoginController.showNovoAluno)
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.editarAlunos);
-router.post('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.UpdateAlunos);
-router.delete('/home/alunos/delete/:id',VerificaUsuarioLogado, LoginController.DeleteAlunos);
+router.put('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.showUpdateAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);

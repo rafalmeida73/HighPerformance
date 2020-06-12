@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
 const flash = require('connect-flash');
-var methodOverride = require('method-override');
+const methodOverride = require('method-override');
 
 var IndexRouter = require('./routes/IndexRouter');
 

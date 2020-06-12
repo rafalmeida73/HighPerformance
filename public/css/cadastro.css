@@ -46,7 +46,7 @@ body {
     font-size: 30px;
     font-weight: bold;
     margin: 0;
-    padding-top: 30vh;
+    padding-top: 20px;
 }
 
 .cadastro p {
@@ -61,11 +61,6 @@ body {
 .cadastro i {
     margin-right: 18px;
     color: #ff7e00;
-}
-
-#formCadastro{
-    margin-top: 5vh;
-    max-height: 100%;
 }
 
 form span {
@@ -132,8 +127,4 @@ form .btn:hover {
     form .btn {
         width: 87%;
     }
-    #cadastroContainer h1 {
-        padding-top: 5vh;
-    }
-    
 }
