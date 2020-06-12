@@ -8,4 +8,4 @@
 
 <br>
 
-## :computer: <a href="https://highperformancedh.azurewebsites.net" target="_blank">Deploy no Azure</a>
+## :computer: <a href="https://highperformancedh.azurewebsites.net" target="_blank">Deploy no Heroku</a>
