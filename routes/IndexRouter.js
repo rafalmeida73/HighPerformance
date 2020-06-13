@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const methodOverride = require('method-override')
 
 let storage = multer.diskStorage ({
     
@@ -46,6 +47,7 @@ router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, uploadImg.single('im
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.editarAlunos);
 router.put('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.showUpdateAlunos);
+router.delete('/home/alunos/deletar/:id',VerificaUsuarioLogado, LoginController.showDeleteAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);

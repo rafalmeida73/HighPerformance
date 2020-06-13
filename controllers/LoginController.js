@@ -93,20 +93,30 @@ module.exports = {
 
     },
     showUpdateAlunos: async (req, res) => {
-        let {nome, email, telefone, meta } = req.body
+        let {nome, email, telefone, meta, metaFeita } = req.body
         let edicao = await Aluno.update({
             nome,
             email,
             telefone,
             meta,
+            metaFeita
         },{
             where: {
                 id: req.params.id
             }
-        })
+        });
 
         
 		return res.redirect('/home/alunos');
+    },
+    showDeleteAlunos: async (req, res) => {3
+        let resultado = await Aluno.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        
+        return res.redirect('/home/alunos')
     },
     showFinancas: (req, res) => {
         let user = req.session.usuario;

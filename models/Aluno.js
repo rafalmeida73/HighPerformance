@@ -26,6 +26,10 @@ const Aluno = (sequelize, DataTypes) => {
             meta: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
+          },
+          metaFeita: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
           }
         },{
             tableName: "alunos",

@@ -31,7 +31,23 @@
                             <p>
                                 <a href="/home/alunos/editar/<%=aluno.id%>" class="black-text"><i class="material-icons">create</i>Editar dados</a>
                             </p>
-                            <p><a href="#" class="black-text"><i class="material-icons">delete</i>Remover aluno</a></p>
+                            <a class="waves-effect waves-light btn red modal-trigger" href="#modal1">Deletar aluno</a>
+
+                            <div id="modal1" class="modal">
+                                <div class="modal-content center-align">
+                                  <h4>Tem certeza que deseja excluir <%= aluno.nome %></h4>
+                                  <p>Ao clicar em confirmar o aluno vai ser removido definitivamente do sistema!</p>
+                                </div>
+                                <div class="modal-footer">
+                                    
+                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat red-text">
+                                      <form action="/home/alunos/deletar/<%=aluno.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                                          <button id="btnRemover" class="white-text" type="submit">Confirmar</button>
+                                      </form>
+                                  </a>
+                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
+                                </div>
+                              </div>
                         </div>
                     </li>
                 </ul>
@@ -48,53 +64,21 @@
             <div class="col s12 m12 l6 left-align" id="subtitulo">
                 <p>Esta semana</p>
             </div>
-            <div class="col s12 m12 l6">
-                <canvas id="myChart"></canvas>
-            </div>
 
             <div class="center-align" id="meta">
                 <div class="row">
                     <div class="col s12 m6 l6">
-                        <h4>Meta: 38km </h4>
+                        <h4>Meta: <%= aluno.meta %> km </h4>
                     </div>
                     <div class="col s12 m6 l6">
-                        <h4>Meta restante: 10%</h4>
+                        <h4>Meta restante: <%= aluno.metaFeita%> km</h4>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- FOOTER -->
-    <footer class="page-footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">HIGH PERFORMANCE</h5>
-                    <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <ul>
-                        <li><a class="white-text text-lighten-3" href="/home/alunos">Alunos</a></li>
-                        <li><a class="white-text text-lighten-3" href="/home">Crie</a></li>
-                        <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
-                        <li><a class="white-text text-lighten-3" href="/logout">Sair</a></li>
-                    </ul>
-                </div>
-                <div class="col l1 s4 right">
-                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container white-text">
-                © 2020 High Performance Copyright
-                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at LogoMakr.com</a>
-            </div>
-        </div>
-    </footer>
-
-
     <script src="../../js/treino.js"></script>
     
     <%- include('partials/footer') %>
+    <%- include('partials/rodape') %>

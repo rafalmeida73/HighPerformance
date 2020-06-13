@@ -77,6 +77,12 @@ p {
     margin-top: 80px;
 }
 
+
+#formSearch .input-field input[type=text]:focus {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
 #btnExport {
     background-color: #ff7e00;
     margin-top: 80px;
@@ -146,6 +152,9 @@ tr {
 @media (max-width:443px) {
     .quadrado h2 {
         font-size: 34px;
+    }
+    a#addAluno {
+        width: 100%;
     }
 }
 

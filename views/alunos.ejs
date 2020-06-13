@@ -20,7 +20,7 @@
                 </div>
                 <div class="col s12 m6">
                     <div class="nav-wrapper">                        
-                        <form action="/busca" method="get">
+                        <form id="formSearch" action="/busca" method="get">
                             <div class="input-field">
                                 <input id="search" type="text" name="q" placeholder="Pesquisar Alunos" autocomplete="off">
                             </div>                            
@@ -47,7 +47,7 @@
                 <tbody>
                     <% for (aluno of alunos) { %>
                     <tr data-url="/home/treino/<%= aluno.id %>">
-                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto <%= aluno.nome %>" style="width:115px;height:115px;border-radius:50%;"></td>
+                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto <%= aluno.nome %>" style="width:80px;height:80px;border-radius:50%;"></td>
                         <td><%= aluno.nome %></td>
                         <td><%= aluno.telefone %></td>
                         <td><%= aluno.meta%> km</td>
@@ -75,4 +75,5 @@
     </div>
     
     <%- include('partials/footer') %>
+    <%- include('partials/rodape') %>
    
