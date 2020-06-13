@@ -59,7 +59,7 @@ module.exports = {
         mensagem,
        })
        
-		res.redirect("/home")	
+		res.redirect("/index")	
     },
     
     showCadastro: (req,res) => {
