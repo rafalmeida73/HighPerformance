@@ -6,14 +6,13 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
-    <div class="cadastro" style="margin: 30px;padding: 10px;">
+    <div class="cadastro" style="padding: 7px;">
         <h1 style="text-align:center;font-weight:bold;margin:0;">Cadastrar Aluno</H1>
         <div class="row" style="text-align: center;">
             <div class="col s12 m12">
-                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data" style="margin: 30px;padding: 0;">
+                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data">
                     <input type="file" id="imgUser" name="imgUser" accept="image/*" style="display: none;">
-                    <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance"
-                        style="cursor:pointer;width:300px; border-radius: 50%;border: 1px solid;height:300px;margin-bottom:30px;">
+                    <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance">
                     <div class="input-field">
                         <i class="material-icons prefix">account_circle</i>
                         <input name="nome" id="nome" type="text" data-error=".errorTxt1">
