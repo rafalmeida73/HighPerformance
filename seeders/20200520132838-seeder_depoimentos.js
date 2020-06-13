@@ -8,21 +8,29 @@ module.exports = {
         'depoimentos', 
         [
           {
-            depoimento: 'Dolore labore est deserunt esse do reprehenderit.',
-            treinadores_id: 1,
+            img: '/img/diogo.png',
+            nome: 'Diogo',
+            profissao: 'Educador físico',
+            mensagem: 'Dolore labore est deserunt esse do reprehenderit.'
           },
           {
-            depoimento: 'Dolore labore est deserunt esse do reprehenderit.',
-            treinadores_id: 3,
+            img: '/img/paulo.png',
+            nome: 'Paulo',
+            profissao: 'Educador físico',
+            mensagem: 'Dolore labore est deserunt esse do reprehenderit.'
           },
           {
-            depoimento: 'Dolore labore est deserunt esse do reprehenderit.',
-            treinadores_id: 2,
+            img: '/img/rafael.jpg',
+            nome: 'Rafael',
+            profissao: 'Educador físico',
+            mensagem: 'Dolore labore est deserunt esse do reprehenderit.'
           },
           {
-            depoimento: 'Dolore labore est deserunt esse do reprehenderit.',
-            treinadores_id: 4,
-          },
+            img: '/img/roni.png',
+            nome: 'Diogo',
+            profissao: 'Educador físico',
+            mensagem: 'Dolore labore est deserunt esse do reprehenderit.'
+          }
           
         ], {});
 

@@ -6,10 +6,12 @@ const bcrypt = require('bcrypt')
 
 module.exports = {
     index: (req, res)=>{
-		res.render("index");
+      let depoimento = await Depoimento.findAll();
+      res.render("index", {depoimento});
     },
     sobre:async (req, res)=>{
       let equipe = await EquipeAdmin.findAll();
+      
 		  res.render("sobre", {equipe});		 
     },
 
