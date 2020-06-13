@@ -11,19 +11,18 @@ module.exports = {
             autoIncrement: true,
             allowNull:false
         },
-        depoimento: {
-            type: Sequelize.STRING(300),
+        nome: {
+            type: Sequelize.STRING(100),
             allowNull: false
         },
-        treinadores_id:{
-          type:Sequelize.INTEGER,
-          references:{
-            model:'treinadores',
-            key:'id'
-          },
-          onUpdate:'CASCADE',
-          onDelete:'CASCADE'
-        }
+        profissao: {
+            type: Sequelize.STRING(50),
+            allowNull: false
+        },
+        mensagem: {
+          type: Sequelize.STRING(100),
+          allowNull: false
+      },
     });
   },
 
