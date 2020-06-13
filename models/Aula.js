@@ -28,6 +28,10 @@ let Aula = (sequelize, DataTypes) => {
             horario: {
                 type: DataTypes.STRING(45),
                 allowNull: true
+            },
+            status: {
+                type: DataTypes.STRING(45),
+                allowNull: true
             }
 
         },{
