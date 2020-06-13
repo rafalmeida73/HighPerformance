@@ -1,4 +1,4 @@
-$("#form").validate({
+$("#formCad").validate({
     rules: {
         name: {
             required: true,
@@ -17,7 +17,7 @@ $("#form").validate({
             required: true,
             minlength: 5
         },
-        senha2: {
+        repSenha: {
             required: true,
             minlength: 5,
             equalTo: "#password"

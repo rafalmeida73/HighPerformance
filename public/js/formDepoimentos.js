@@ -12,9 +12,12 @@ $("#formDepoimentos").validate({
      job: {
          required: true,
      },
+     telefone: {
+         required: true,
+     },
      msg: {
          required: true,
-     }
+     },
  },
  errorElement: 'div',
  errorPlacement: function(error, element) {
