@@ -64,10 +64,10 @@ form .btn:hover {
     color: black;
 }
 
-#formValidate .input-field input[type=date]:focus,
-#formValidate .input-field input[type=email]:focus,
-#formValidate .input-field input[type=tel]:focus,
-#formValidate .input-field input[type=text]:focus {
+#formCad .input-field input[type=date]:focus,
+#formCad .input-field input[type=email]:focus,
+#formCad .input-field input[type=tel]:focus,
+#formCad .input-field input[type=text]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;
 }
@@ -76,11 +76,11 @@ form .btn:hover {
     color: red;
 }
 
-#formValidate .input-field .prefix.active {
+#formCad .input-field .prefix.active {
     color: #ff7e00;
 }
 
-#formValidate .input-field label {
+#formCad .input-field label {
     color: #000;
 }
 

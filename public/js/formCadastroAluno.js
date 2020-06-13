@@ -1,6 +1,9 @@
-$("#formValidate").validate({
+$("#formCad").validate({
     rules: {
-        name: {
+        imgUser: {
+            required: true,
+        },
+        nome: {
             required: true,
             maxlength: 100,
             minlength: 5,
@@ -10,12 +13,12 @@ $("#formValidate").validate({
             required: true,
             email: true
         },
+        telefone: {
+            required: true,
+        },
         meta: {
             required: true,
         },
-        telefone: {
-            required: true,
-        }
     },
     errorElement: 'div',
     errorPlacement: function(error, element) {
