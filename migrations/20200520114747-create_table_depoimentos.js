@@ -11,6 +11,10 @@ module.exports = {
             autoIncrement: true,
             allowNull:false
         },
+        img: {
+          type: Sequelize.STRING(100),
+          allowNull: false
+      },
         nome: {
             type: Sequelize.STRING(100),
             allowNull: false
@@ -20,7 +24,7 @@ module.exports = {
             allowNull: false
         },
         mensagem: {
-          type: Sequelize.STRING(100),
+          type: Sequelize.STRING(300),
           allowNull: false
       },
     });
