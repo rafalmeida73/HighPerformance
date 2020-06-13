@@ -108,51 +108,17 @@
     </div>
 
     <div class="carousel" id="carrossel">
+        <% for (depoimento of depoimentos) { %>
         <a class="carousel-item center-align" href="#one!">
             <section>
-                <img src="/img/avatar.png" alt="Depoimento 1">
-                <h5>JOÃO</h5>
-                <p>Educador Físico</p>
+                <img src="<%= depoimento.img %>" alt="Depoimento 1" width="100" height="100">
+                <h5><%= depoimento.nome %></h5>
+                <p><%= depoimento.profissao %></p>
                 <hr>
-                <span>Muito legal recomendei para todos os meus amigos!</span>
+                <span><%= depoimento.mensagem%></span>
             </section>
         </a>
-        <a class="carousel-item center-align" href="#two!">
-            <section>
-                <img src="/img/avatar.png" alt="Depoimento 1">
-                <h5>JOÃO</h5>
-                <p>Educador Físico</p>
-                <hr>
-                <span>Muito legal recomendei para todos os meus amigos!</span>
-            </section>
-        </a>
-        <a class="carousel-item center-align" href="#three!">
-            <section>
-                <img src="/img/avatar.png" alt="Depoimento 1">
-                <h5>JOÃO</h5>
-                <p>Educador Físico</p>
-                <hr>
-                <span>Muito legal recomendei para todos os meus amigos!</span>
-            </section>
-        </a>
-        <a class="carousel-item center-align" href="#four!">
-            <section>
-                <img src="/img/avatar.png" alt="Depoimento 1">
-                <h5>JOÃO</h5>
-                <p>Educador Físico</p>
-                <hr>
-                <span>Muito legal recomendei para todos os meus amigos!</span>
-            </section>
-        </a>
-        <a class="carousel-item center-align" href="#five!">
-            <section>
-                <img src="/img/avatar.png" alt="Depoimento 1">
-                <h5>JOÃO</h5>
-                <p>Educador Físico</p>
-                <hr>
-                <span>Muito legal recomendei para todos os meus amigos!</span>
-            </section>
-        </a>
+        <% } %>
     </div>
 
     <!-- FOOTER -->

@@ -52,7 +52,7 @@ router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
-router.post('/cadastrarDepoimento',VerificaUsuarioLogado, IndexController.showNovoDepoimento)
+router.post('/cadastrarDepoimento',VerificaUsuarioLogado, uploadImg.single('inputOpnion'), IndexController.showNovoDepoimento);
 router.get('/login', LoginController.showLogin);
 router.post('/login', LoginController.login);
 router.get('/logout', LoginController.logout);

@@ -8,6 +8,9 @@ let Depoimento = (sequelize, DataTypes) => {
                 autoIncrement: true,
                 allowNull:false
             },
+            img: {
+                type: DataTypes.STRING
+            },
             nome: {
                 type: DataTypes.STRING,
                 allowNull: false

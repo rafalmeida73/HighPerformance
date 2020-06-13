@@ -9,12 +9,12 @@ $("#formDepoimentos").validate({
          minlength: 5,
          minWords: 2
      },
-     job: {
+     profissao: {
          required: true,
      },
-     msg: {
+     mensagem: {
          required: true,
-     }
+     },
  },
  errorElement: 'div',
  errorPlacement: function(error, element) {
