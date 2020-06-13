@@ -32,11 +32,9 @@ body {
 
 .cadastro {
     background-color: #f0f0f5;
-    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);
-    margin: 20vh 50px;
-    height: 580px;
+    box-shadow: 0 0 100px rgba(0, 0, 0, 0.1);    
     border-radius: 10px;
-    margin-top: 15vh;
+    margin-top: 15px;
 }
 
 #cadastroContainer img {
@@ -50,7 +48,7 @@ body {
 }
 
 form {
-    margin-top: 10vh;
+    margin-top: 15px;
 }
 
 #btnSubmit{
@@ -74,12 +72,6 @@ form .btn:hover {
     box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-
-/* .input-field input[type=text].invalid {
-    border-bottom: 1px solid red;
-    box-shadow: 0 1px 0 0 red;
-} */
-
 .error {
     color: red;
 }
@@ -96,7 +88,7 @@ form .btn:hover {
     .loader img {
         margin-top: 0;
         max-height: 100vh;
-    }
+}
     .cadastro {
         background: none;
         box-shadow: none;
@@ -110,10 +102,30 @@ form .btn:hover {
     #cadastroContainer img {
         max-width: 100%;
     }
-    form {
-        padding-top: 25vh;
-    }
+    
     form .btn {
         width: 100%;
     }
+}
+
+img#inseriImagem {
+    cursor: pointer;
+    width: 300px;
+    border-radius: 50%;
+    border: 1px solid;
+    height: 300px;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 600px) 
+{
+    .cadastro h1 {
+        font-size: 30px;
+    }
+
+    img#inseriImagem{
+        width: 200px;
+        height: 200px;
+    }
+
 }
