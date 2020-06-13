@@ -32,6 +32,7 @@ let Aula = (sequelize, DataTypes) => {
             status: {
                 type: DataTypes.STRING(45),
                 allowNull: true
+            }
 
         },{
             tableName: "aulas",
