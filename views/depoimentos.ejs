@@ -15,34 +15,37 @@
     </a> -->
     <h1>Deixe o seu depoimento</h1>
 
-    <form id="form" action="/login" method="POST">
-      <div class="center-align">
-        <img src="/img/avatar.png" alt="nome" >
-
-      </div>
-
+    <form id="formDepoimentos" method="POST" action="/cadastrarDepoimento" enctype="multipart/form-data">
+        <div class="input-field center-align">
+            <input type="file" id="inputOpnion" name="inputOpnion" accept="image/*" style="display: none;" data-error=".errorTxt1">
+            <img id="imgOpniao" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance" width="100" height="100">
+            <div class="errorTxt1"></div>
+        </div>
         <div class="input-field">
             <i class="material-icons prefix">account_circle</i>
             <label for="email">Nome</label>
-            <input name="nome" id="nome" type="text">                    
+            <input name="nome" id="nome" type="text" data-error=".errorTxt2">  
+            <div class="errorTxt2 right-align"></div>                  
         </div>
 
         <div class="input-field">
             <i class="material-icons prefix">gavel</i>
             <label for="email">Profisão</label>
-            <input name="job" id="job" type="text">                    
+            <input name="job" id="job" type="text" data-error=".errorTxt3">  
+            <div class="errorTxt3 right-align"></div>                  
         </div>
 
         <div class="row">
           <div class="input-field col s12">
               <i class="material-icons prefix">question_answer</i>
-              <textarea name="msg" id="textarea2" class="materialize-textarea" data-length="100"></textarea>
+              <textarea name="msg" id="msg" class="materialize-textarea" data-length="100" data-error=".errorTxt4"></textarea>
               <label for="textarea2">Mensagem</label>
+              <div class="errorTxt4 right-align"></div>
           </div>
       </div>
         
         <div class="input-field">
-            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Entrar</button>
+            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Enviar</button>
         </div>
     </form>
 </div>
@@ -52,7 +55,25 @@
 </div>
 </div>
 
+<script>
+    let imagemOpniao =  document.getElementById('imgOpniao')
+    let input = document.getElementById('inputOpnion')
+    imagemOpniao.addEventListener('click', ()=>input.click())
 
-<%- include('partials/footer') %>
+    var loadFile = function(event) {
+        var reader = new FileReader();
+        reader.onload = function(){
+            var output = document.getElementById('imgOpniao');
+            output.src = reader.result;
+            console.log(output.src)
+        }
+        reader.readAsDataURL(event.target.files[0]);
+    }
+          
+    input.addEventListener('change',loadFile)           
+    
+
+</script>
+
 <%- include('partials/footer') %>
 

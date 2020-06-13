@@ -43,7 +43,10 @@ module.exports = {
       
     },
 
-    depoimentos:async (req, res)=>{
+    depoimentos: (req, res)=>{
+		  res.render("depoimentos");
+    },
+    showNovoDepoimento:async (req, res)=>{
 		  res.render("depoimentos");
     },
     
