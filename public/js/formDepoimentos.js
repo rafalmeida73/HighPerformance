@@ -9,13 +9,10 @@ $("#formDepoimentos").validate({
          minlength: 5,
          minWords: 2
      },
-     job: {
+     profissao: {
          required: true,
      },
-     telefone: {
-         required: true,
-     },
-     msg: {
+     mensagem: {
          required: true,
      },
  },

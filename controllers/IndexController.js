@@ -1,4 +1,4 @@
-const { Treinador, EquipeAdmin, Contato } = require('../models')
+const { Treinador, EquipeAdmin, Contato, Depoimento } = require('../models')
 const nodemailer = require('nodejs-nodemailer-outlook')
 const path = require('path')
 const bcrypt = require('bcrypt')
@@ -46,8 +46,18 @@ module.exports = {
     depoimentos: (req, res)=>{
 		  res.render("depoimentos");
     },
-    showNovoDepoimento:async (req, res)=>{
-		  res.render("depoimentos");
+    showNovoDepoimento: async (req, res)=>{
+      let {nome, profissao, mensagem} = req.body;
+      let img = `/img/${req.file.originalname}`;
+
+      const resultado = await Depoimento.create({
+        img,
+        nome,
+        profissao,
+        mensagem,
+       })
+       
+		res.redirect("/home")	
     },
     
     showCadastro: (req,res) => {
