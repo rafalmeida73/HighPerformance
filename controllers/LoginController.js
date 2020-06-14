@@ -61,6 +61,25 @@ module.exports = {
         let alunos = await Aluno.findAll();
         res.render('novaAula', { alunos });
     },  
+
+    criarNovaAula: async (req,res) =>{
+        let treinadores_id = req.session.usuario.id;
+        let {nome, observacoes, aluno_id, data_aula, horario} = req.body;
+        console.log(req.body);
+        
+        const resultado = await Aula.create({
+            nome,
+            observacoes,
+            treinadores_id,
+            aluno_id,
+            data_aula,
+            horario,
+            status: 'a'
+           })
+        
+        console.log(resultado)
+        res.send(resultado)
+    },
     showTreino: async (req, res) => {
         let user = req.session.usuario;
 

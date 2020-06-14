@@ -40,6 +40,7 @@ router.post('/sobre', upload.single('file'), IndexController.facaParte);
 
 router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula);
+router.post('/home/novaAula',VerificaUsuarioLogado, LoginController.criarNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
 
