@@ -10,7 +10,7 @@
 <div class="row">
     <div class="col s12 m12 l6 center-align" id="cadastroContainer">
         <a href="/home/">
-            <img class="responsive-img logo" src="../../img/icon512.png" alt="High Performance">
+            <img class="responsive-img logo" src="/img/icon512.png" alt="High Performance">
         </a>
         <h1>Cadastrar nova aula</h1>
     </div>
@@ -23,21 +23,32 @@
                 <div class="errorTxt1 right-align "></div>
             </div>
             <div class="input-field">
-                <i class="material-icons prefix">email</i>
+                <i class="material-icons prefix">directions_run</i>
                 <input name="email" id="email" type="email" data-error=".errorTxt2">
                 <label for="email">Meta</label>
                 <div class="errorTxt2 right-align "></div>
             </div>
             <div class="input-field">
-                <i class="material-icons prefix">call</i>
-                <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
-                <label for="tel">Aluno</label>
-                <div class="errorTxt3 right-align "></div>
-            </div>
+                <i class="material-icons prefix">account_circle</i>
+                <select>
+                    
+                  <option value="" disabled selected>Aluno </option>
+                  <% for(aluno of alunos) { %>
+                  <option value="<%= aluno.id %>"><%= aluno.nome %></option>
+                <% } %>
+                </select>
+
+            </div>      
             <div class="input-field">
                 <i class="material-icons prefix">date_range</i>
                 <input name="data" type="date" class="form-control" data-error=".errorTxt4">
                 <label for="date">Data</label>
+                <div class="errorTxt4 right-align"></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">access_time</i>
+                <input name="time" type="time" class="form-control" data-error=".errorTxt4">
+                <label for="time">Horário</label>
                 <div class="errorTxt4 right-align"></div>
             </div>
             <div class="input-field">

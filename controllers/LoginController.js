@@ -57,8 +57,9 @@ module.exports = {
 		res.redirect("/home/alunos")		
     },
 
-    showNovaAula: (req,res) => {
-        res.render('novaAula');
+    showNovaAula: async (req,res) => {
+        let alunos = await Aluno.findAll();
+        res.render('novaAula', { alunos });
     },  
     showTreino: async (req, res) => {
         let user = req.session.usuario;
