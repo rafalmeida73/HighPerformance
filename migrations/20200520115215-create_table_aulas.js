@@ -35,7 +35,11 @@ module.exports = {
         horario: {
             type: Sequelize.STRING(45),
             allowNull: true
-        }
+        },
+        status: {
+          type: Sequelize.STRING(45),
+          allowNull: true
+      }
 
     });
   },
