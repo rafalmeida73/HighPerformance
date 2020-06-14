@@ -30,6 +30,10 @@ const Aluno = (sequelize, DataTypes) => {
           metaFeita: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
+          },
+            treinadores_id: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
           }
         },{
             tableName: "alunos",
@@ -39,6 +43,7 @@ const Aluno = (sequelize, DataTypes) => {
     );
 
     Aluno.associate = (modelos) =>{
+        Aluno.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
         Aluno.belongsToMany(modelos.Aula, {foreignKey:'aulas_id', as: 'aula', through: modelos.AulaHasAluno})
     }
 
