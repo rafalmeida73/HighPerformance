@@ -148,14 +148,14 @@ module.exports = {
     },
     showFinancas: async (req, res) => {
         let user = req.session.usuario;
-        let financa = await Financa.findAll(
+        let financas = await Financa.findAll(
             {
                 where: {
                     treinadores_id: user.id
                 }
             });
-            console.log(financa)
-        res.render("financas", {user,financa});
+            console.log(financas)
+        res.render("financas", {user,financas});
     },
     search: async(req, res) => {
         let user = req.session.usuario;

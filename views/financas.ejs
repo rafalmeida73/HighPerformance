@@ -7,8 +7,9 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
-
+    <% for (financa of financas) { %>
     <h1>oi <%=financa.jane%></h1>
+    <% } %>
     <div class="row" id="grafico">
         <div class="col s12 m12 l8">
             <canvas id="myChart" width="400" height="300"></canvas>
