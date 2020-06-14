@@ -151,6 +151,7 @@ module.exports = {
         res.render("financas", { user });
     },
     search: async(req, res) => {
+        let user = req.session.usuario;
 		let busca = req.query.q;
 		if (busca) {
 			let result = await Aluno.findAll(
@@ -158,7 +159,8 @@ module.exports = {
                     where: {
                         nome: {
                             [Op.substring]: busca
-                        }
+                        },
+                        treinadores_id: user.id
                     }
                 });
             
