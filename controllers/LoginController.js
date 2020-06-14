@@ -31,7 +31,11 @@ module.exports = {
     showAlunos: async(req, res) => {        
         let user = req.session.usuario;
         
-        let alunos = await Aluno.findAll()
+        let alunos = await Aluno.findAll({
+            where:{
+                treinadores_id: user.id
+            }
+        })
 
         res.render("alunos", { user, alunos });
     },
@@ -40,6 +44,7 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
+        let treinadores_id = req.session.usuario.id;
         console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
@@ -50,7 +55,8 @@ module.exports = {
         nome,
         email,
         telefone,
-        meta
+        meta,
+        treinadores_id
        })
        //console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
@@ -113,13 +119,15 @@ module.exports = {
 
     },
     showUpdateAlunos: async (req, res) => {
+        let user = req.session.usuario;
         let {nome, email, telefone, meta, metaFeita } = req.body
         let edicao = await Aluno.update({
             nome,
             email,
             telefone,
             meta,
-            metaFeita
+            metaFeita,
+            treinadores_id: user.id
         },{
             where: {
                 id: req.params.id
