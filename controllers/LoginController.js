@@ -64,21 +64,21 @@ module.exports = {
 
     criarNovaAula: async (req,res) =>{
         let treinadores_id = req.session.usuario.id;
-        let {nome, observacoes, aluno_id, data_aula, horario} = req.body;
-        console.log(req.body);
-        
+        let {nome, observacoes, alunos_id, data_aula, horario} = req.body;
+ 
+      
         const resultado = await Aula.create({
             nome,
             observacoes,
             treinadores_id,
-            aluno_id,
+            alunos_id,
             data_aula,
             horario,
             status: 'a'
            })
         
-        console.log(resultado)
-        res.send(resultado)
+        
+        res.redirect("/home")	
     },
     showTreino: async (req, res) => {
         let user = req.session.usuario;

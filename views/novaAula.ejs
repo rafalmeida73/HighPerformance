@@ -10,7 +10,7 @@
 <h1 style="text-align:center;font-weight:bold;margin:0;">Criar nova Aula</H1>
 <div class="row" style="text-align: center;">
     <div class="col s12 m12">
-        <form class="formValidate" id="formCad" method="POST" action="/home/novaAula" enctype="multipart/form-data">
+        <form class="formValidate" id="formCad" method="POST" action="/home/novaAula">
             <div class="input-field">
                 <i class="material-icons prefix">account_circle</i>
                 <input name="nome" id="nome" type="text">
@@ -25,7 +25,7 @@
             </div>
             <div class="input-field">
                 <i class="material-icons prefix">account_circle</i>
-                <select name="aluno_id">
+                <select name="alunos_id">
                   <option value="" disabled selected>Aluno </option>
                   <% for(aluno of alunos) { %>
                   <option value="<%= aluno.id %>"><%= aluno.nome %></option>
