@@ -1,4 +1,4 @@
-const { Treinador, Aluno, Aula, Presenca } = require('../models');
+const { Treinador, Aluno, Aula, Presenca, Financa } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -36,7 +36,7 @@ module.exports = {
                 treinadores_id: user.id
             }
         })
-
+        console.log(alunos)
         res.render("alunos", { user, alunos });
     },
 
@@ -58,7 +58,7 @@ module.exports = {
         meta,
         treinadores_id
        })
-       //console.log(resultado)
+    //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
     },
@@ -146,9 +146,16 @@ module.exports = {
         
         return res.redirect('/home/alunos')
     },
-    showFinancas: (req, res) => {
+    showFinancas: async (req, res) => {
         let user = req.session.usuario;
-        res.render("financas", { user });
+        let financa = await Financa.findAll(
+            {
+                where: {
+                    treinadores_id: user.id
+                }
+            });
+            console.log(financa)
+        res.render("financas", {user,financa});
     },
     search: async(req, res) => {
         let user = req.session.usuario;

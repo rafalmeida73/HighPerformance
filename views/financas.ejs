@@ -7,6 +7,8 @@
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
 
+
+    <h1>oi <%=financa.jane%></h1>
     <div class="row" id="grafico">
         <div class="col s12 m12 l8">
             <canvas id="myChart" width="400" height="300"></canvas>
@@ -37,95 +39,178 @@
         </div>
     </div>
 
-    <div class="container" id="lista">
-        <div class="col s12 m12 l12 left-align">
-            <div class="nav-wrapper">
+    <div class="col s12 m12 l6">
+        <form id="form" id="form" action="?_method=PUT" method="post">
                 <div class="input-field">
-                    <input id="search" type="search" required placeholder="Pesquisar">
-                    <label class="label-icon" for="search"><i class="material-icons">search</i></label>
-                    <i class="material-icons">close</i>
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="jan" id="jan" type="number" data-error=".errorTxt1" value="1">
+                    <label for="jan">Janeiro</label>
+                    <div class="errorTxt1 right-align"></div>
                 </div>
-            </div>
 
-        </div>
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="fev" id="fev" type="number" data-error=".errorTxt2" value="">
+                    <label for="fev">Fevereiro</label>
+                    <div class="errorTxt2 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="mar" id="mar" type="number" data-error=".errorTxt3" value="">
+                    <label for="mar">Março</label>
+                    <div class="errorTxt3 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="abr" id="abr" type="number" data-error=".errorTxt4">
+                    <label for="abr">Abril</label>
+                    <div class="errorTxt4 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="mai" id="mai" type="number" data-error=".errorTxt5" value="">
+                    <label for="mai">Maio</label>
+                    <div class="errorTxt5 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="jun" id="jun" type="number" data-error=".errorTxt6" value="">
+                    <label for="jun">Junho</label>
+                    <div class="errorTxt6 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="jul" id="jul" type="number" data-error=".errorTxt7" value="">
+                    <label for="jul">Julho</label>
+                    <div class="errorTxt7 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="ago" id="ago" type="number" data-error=".errorTxt8" value="">
+                    <label for="ago">Agosto</label>
+                    <div class="errorTxt8 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="set" id="set" type="number" data-error=".errorTxt9" value="">
+                    <label for="set">Setembro</label>
+                    <div class="errorTxt9 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="out" id="out" type="number" data-error=".errorTxt10" value="">
+                    <label for="out">Outubro</label>
+                    <div class="errorTxt10 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="nov" id="nov" type="number" data-error=".errorTxt11" value="">
+                    <label for="nov">Novembro</label>
+                    <div class="errorTxt11 right-align"></div>
+                </div>
+
+                <div class="input-field">
+                    <i class="material-icons prefix">monetization_on</i>
+                    <input name="dez" id="dez" type="number" data-error=".errorTxt12" value="">
+                    <label for="dez">Dezembro</label>
+                    <div class="errorTxt12 right-align"></div>
+                </div>
+                
+                    <div class="col s12 m6 l6">
+                        <div class="input-field">
+                            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Salvar</button>
+                        </div>
+                </div>
+            </form>
     </div>
 
-
-    <!-- Lista dos alunos -->
-    <div class="container">
-        <div class="col s12 m12 l12">
-            <table class="highlight centered table" id="tabledata">
-                <thead>
-                    <tr>
-                        <th>Imagem</th>
-                        <th>Nome</th>
-                        <th>Telefone</th>
-                        <th>Pagamento</th>
-                    </tr>
-                </thead>
-
-                <tbody>
-                    <tr>
-                        <td><img src="/img/avatar.png" alt="Foto José"></td>
-                        <td>José</td>
-                        <td>0800545145</td>
-                        <td>
-                            <label>
-                                <input type="checkbox" />
-                                <span class="black-text">Pago</span>
-                            </label>
-                        </td>
-                    </tr>
-
-                    <tr>
-                        <td><img src="/img/avatar.png" alt="Foto José"></td>
-                        <td>José</td>
-                        <td>0800545145</td>
-                        <td>
-                            <label>
-                                <input type="checkbox" />
-                                <span class="black-text">Pago</span>
-                            </label>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="page-footer" id="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">HIGH PERFORMANCE</h5>
-                    <p class="white-text text-lighten-4">Monitores os seus alunos.</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <ul>
-                        <li><a class="white-text text-lighten-3" href="/home">Agenda</a></li>
-                        <li><a class="white-text text-lighten-3" href="/home/alunos">Alunos</a></li>
-                        <li><a class="white-text text-lighten-3" href="/home/financas">Finanças</a></li>
-                        <li><a class="white-text text-lighten-3" href="/logout">Sair</a></li>
-                        <li><a class="white-text text-lighten-3" href="/depoimento">Nos avalie</a></li>
-                    </ul>
-                </div>
-                <div class="col l1 s4 right">
-                    <a href="#top" class="glyphicon glyphicon-chevron-up  tooltipped" data-position="left" data-tooltip="Voltar ao topo!"><img src="/img/up.png" alt="Voltar ao topo"></a>
-                </div>
-            </div>
-        </div>
-        <div class="footer-copyright">
-            <div class="container white-text">
-                © 2020 High Performance Copyright
-                <a class="white-text text-lighten-4 right" href="https://logomakr.com">Created my free logo at
-                    LogoMakr.com</a>
-            </div>
-        </div>
-    </footer>
-
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="/js/finacas.js"></script>
 
     <%- include('partials/footer') %>
+    <script>
+        var ctx = document.getElementById("myChart").getContext("2d");
+var myChart = new Chart(ctx, {
+    type: "bar",
+    data: {
+        labels: [
+            "Janeiro",
+            "Fevereiro",
+            "Março",
+            "Abril",
+            "Maio",
+            "Junho",
+            "Julho",
+            "Agosto",
+            "Setembro",
+            "Outubro",
+            "Novembro",
+            "Dezembro",
+        ],
+        datasets: [{
+            label: "Pagamentos",
+            data: [12.20, 22, 3, 5, 2, 3, 12, 22, 3, 5, 2, 3, 1],
+            backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 206, 86, 0.2)",
+                "rgba(75, 192, 192, 0.2)",
+                "rgba(153, 102, 255, 0.2)",
+                "rgba(255, 159, 64, 0.2)",
+                "rgba(112, 128, 144, 0.2)",
+                "rgba(0, 225, 0, 0.2)",
+                "rgba(128, 0, 128, 0.2)",
+                "rgba(178, 34, 34, 0.2)",
+                "rgba(107, 66, 38, 0.2)",
+                "rgba(255, 255, 0, 0.2)",
+            ],
+            borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 206, 86, 1)",
+                "rgba(75, 192, 192, 1)",
+                "rgba(153, 102, 255, 1)",
+                "rgba(255, 159, 64, 1)",
+                "rgba(112, 128, 144, 1)",
+                "rgba(0, 225, 0, 1)",
+                "rgba(128, 0, 128, 1)",
+                "rgba(178, 34, 34, 1)",
+                "rgba(107, 66, 38, 1)",
+                "rgba(255, 255, 0, 1)",
+            ],
+            borderWidth: 1,
+        }, ],
+    },
+    options: {
+        title: {
+            display: true,
+            fontSize: 20,
+            text: "PAGAMENTOS MENSAIS",
+        },
+        labels: {
+            fontStyle: "bold",
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    // Include a dollar sign in the ticks
+                    callback: function(value, index, values) {
+                        return "R$ " + value;
+                    },
+                },
+            }, ],
+        },
+    },
+});
+    </script>
     
