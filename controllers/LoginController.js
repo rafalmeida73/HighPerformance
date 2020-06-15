@@ -46,8 +46,6 @@ module.exports = {
             for(dia of aulasArray){
                 
                 for(qtde of aulas.count){                    
-                    if (helpers.formatDate(dia[0]) === helpers.formatDate(qtde.data_aula) ){
-                        console.log(helpers.formatDate(dia[0]),helpers.formatDate(qtde.data_aula), true)
                         dia[1] = qtde.count                            
                     }
                 }                   
@@ -77,6 +75,7 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
+
         //Capturar as info enviadas pelo usuário
         img,
         nome,
@@ -208,33 +207,28 @@ module.exports = {
     showNovoFinancas: async (req, res)=>{
         let treinadores_id = req.session.usuario.id;
        let {mes, valor} = req.body;
-       console.log(mes)
-       console.log(valor)
+    //    console.log(mes);
+    //     console.log(valor);
 
        const resultado = await Financa.create({
         mes,
         valor,
         treinadores_id
        })
-    
+    //    console.log(resultado)
 		res.redirect("/home/financas")		
     },
-    showUpdateFinancas:  async(req,res)=>{
+    showDeleteFinancas: async (req, res)=>{
         let user = req.session.usuario;
-
         let {mes, valor} = req.body;
-
-        let edicao = await Financa.update({
-            valor,
-        },{
+        let resultado = await Financa.destroy({
             where: {
                 mes,
+                treinadores_id: user.id
             }
         });
-
         
-		return res.redirect('/home/financas');
-
+        return res.redirect('/home/financas')
     },
     showUpdateFinancas:  async(req,res)=>{
         let user = req.session.usuario;
@@ -246,11 +240,13 @@ module.exports = {
         },{
             where: {
                 mes,
+                treinadores_id: user.id
             }
         });
 
         
 		return res.redirect('/home/financas');
+
     },
     search: async(req, res) => {
         let user = req.session.usuario;
