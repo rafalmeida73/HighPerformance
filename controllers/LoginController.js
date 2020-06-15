@@ -75,15 +75,20 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
-
+        let treinadores_id = req.session.usuario.id;
+        console.log('=================> ' + req.file)
+        // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
+       let {nome, email, telefone, meta } = req.body
+       let img = `/img/${req.file.originalname}`;
+       const resultado = await Aluno.create({
         img,
         nome,
         email,
         telefone,
         meta,
         treinadores_id
-       
+       })
     //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
