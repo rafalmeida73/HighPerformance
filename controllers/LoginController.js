@@ -46,8 +46,6 @@ module.exports = {
             for(dia of aulasArray){
                 
                 for(qtde of aulas.count){                    
-                    if (formatDate(dia[0]) === formatDate(qtde.data_aula) ){
-                        console.log(formatDate(dia[0]),formatDate(qtde.data_aula), true)
                         dia[1] = qtde.count                            
                     }
                 }                   
@@ -77,20 +75,15 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
-        let treinadores_id = req.session.usuario.id;
-        // console.log('=================> ' + req.file)
-        //Capturar as info enviadas pelo usuário
-       let {nome, email, telefone, meta } = req.body
-       let img = `/img/${req.file.originalname}`;
 
-       const resultado = await Aluno.create({
+        //Capturar as info enviadas pelo usuário
         img,
         nome,
         email,
         telefone,
         meta,
         treinadores_id
-       })
+       
     //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
