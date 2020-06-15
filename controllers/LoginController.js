@@ -49,7 +49,7 @@ module.exports = {
                         dia[1] = qtde.count                            
                     }
                 }                   
-            }
+            
             
             //aulasArray = JSON.parse(aulasArray)
             //console.log(aulasArray)
