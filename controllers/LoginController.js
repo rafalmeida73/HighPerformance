@@ -46,8 +46,8 @@ module.exports = {
             for(dia of aulasArray){
                 
                 for(qtde of aulas.count){                    
-                    if (formatDate(dia[0]) === formatDate(qtde.data_aula) ){
-                        console.log(formatDate(dia[0]),formatDate(qtde.data_aula), true)
+                    if (helpers.formatDate(dia[0]) === helpers.formatDate(qtde.data_aula) ){
+                        console.log(helpers.formatDate(dia[0]),helpers.formatDate(qtde.data_aula), true)
                         dia[1] = qtde.count                            
                     }
                 }                   
