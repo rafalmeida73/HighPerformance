@@ -40,6 +40,21 @@ canvas {
     height: 100px;
 }
 
+#btnRemover{
+    background-color: #F44336;
+    border: none;
+    font-weight: bold;
+}
+
+#modal1{
+    margin-top: 30vh;
+}
+
+#modal1 h4{
+    font-weight: bold;
+    font-size: 25px;
+}
+
 #titulo {
     margin: 15vh 0;
 }
@@ -96,5 +111,8 @@ a[href="#top"]:hover {
     #perfil {
         margin-top: 10vh;
         margin-bottom: 26vh;
+    }
+    #modal1{
+        margin-top: 10vh;
     }
 }

@@ -12,7 +12,8 @@ module.exports = {
             img: '/img/diogo.png',
             email: 'diogo@email.com',
             telefone:'999999999',
-            nascimento: '1900-10-10',
+            meta: 39,
+            metaFeita: 20,
             treinadores_id: 1
           },
           {
@@ -20,7 +21,8 @@ module.exports = {
             img: '/img/paulo.png',
             email: 'paulo@email.com',
             telefone:'999999999',
-            nascimento: '1900-10-10',
+            meta: 39,
+            metaFeita: 20,
             treinadores_id: 2
           },
           {
@@ -28,7 +30,8 @@ module.exports = {
             img: '/img/rafael.jpg',
             email: 'rafael@email.com',
             telefone:'999999999',
-            nascimento: '1900-10-10',
+            meta: 39,
+            metaFeita: 20,
             treinadores_id: 1
           },
           {
@@ -36,7 +39,8 @@ module.exports = {
             img: '/img/roni.png',
             email: 'roni@email.com',
             telefone:'999999999',
-            nascimento: '1900-10-10',
+            meta: 39,
+            metaFeita: 20,
             treinadores_id: 3
           },
         ], {});

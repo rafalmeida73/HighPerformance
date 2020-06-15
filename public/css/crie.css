@@ -97,12 +97,9 @@ i.material-icons {
     }
 }
 
-#aulas {
-    height: 70vh;
-}
-
 .aulasContainer {
     margin-top: 30px;
+    margin-bottom: 80px;
 }
 
 #calendario {

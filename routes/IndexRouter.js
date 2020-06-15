@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const multer = require('multer');
 const path = require('path');
+const methodOverride = require('method-override')
 
 let storage = multer.diskStorage ({
     
@@ -39,6 +40,7 @@ router.post('/sobre', upload.single('file'), IndexController.facaParte);
 
 router.get('/home',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula);
+router.post('/home/novaAula',VerificaUsuarioLogado, LoginController.criarNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
 
@@ -46,10 +48,15 @@ router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, uploadImg.single('im
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
 router.get('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.editarAlunos);
 router.put('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.showUpdateAlunos);
+router.delete('/home/alunos/deletar/:id',VerificaUsuarioLogado, LoginController.showDeleteAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
+router.put('/home/financas/editar',VerificaUsuarioLogado, LoginController.showUpdateFinancas);
+router.get('/home/financas/cadastrarFinancas',VerificaUsuarioLogado, LoginController.showCadastroFinancas);
+router.post('/home/financas/cadastrarFinancas',VerificaUsuarioLogado, LoginController.showNovoFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
+router.post('/cadastrarDepoimento',VerificaUsuarioLogado, uploadImg.single('inputOpnion'), IndexController.showNovoDepoimento);
 router.get('/login', LoginController.showLogin);
 router.post('/login', LoginController.login);
 router.get('/logout', LoginController.logout);

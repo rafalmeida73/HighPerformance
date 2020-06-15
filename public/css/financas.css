@@ -26,7 +26,7 @@
 
 #grafico {
     height: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     margin-bottom: 20vh;
 }
 
@@ -44,23 +44,21 @@
     margin-top: 120px;
 }
 
-.card i,
-.card2 i {
+.card i {
     margin-left: 50px;
     margin-top: 50px;
     color: white;
 }
 
-.card p,
-.card2 p {
+.card p {
     margin-right: 32px;
     margin-top: 15px;
     font-weight: bold;
     color: white;
 }
 
-.card h5,
-.card2 h5 {
+
+.card h5{
     margin-top: -58px;
     margin-right: 29px;
     font-weight: bold;
@@ -72,11 +70,12 @@
     border-radius: 50%;
 }
 
-.card2 {
+#card2 a{
     background: #FDC830;
     background: -webkit-linear-gradient(to left, #F37335, #FDC830);
     background: linear-gradient(to right, #F37335, #FDC830);
-    height: 157px;
+    width: 100%;
+    font-weight: bold;
 }
 
 #lista {
@@ -91,6 +90,45 @@
 #alunosAtivos {
     margin-top: 100px;
     margin-bottom: 100px;
+}
+
+#formFinancas{
+    margin-bottom: 20vh;
+}
+
+#formFinancas li:focus,
+#formFinancas .input-field input[type=number]:focus  {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
+#formFinancas .input-field label {
+    color: #000;
+}
+
+#formFinancas .input-field .prefix.active {
+    color: #ff7e00;
+}
+
+.error {
+    color: red;
+}
+
+#formFinancas li>span {
+    color: #000 !important;
+  }
+
+#formFinancas button{
+    margin-top: 20px;
+    background-color: #ff7e00;
+    border-radius: 8px;
+    width: 20%;
+    font-weight: bold
+   }
+
+   #formFinancas button:hover{
+    background-color: white;
+    color: black;
 }
 
 #footer {
@@ -140,11 +178,14 @@ a[href="#top"]:hover {
     }
     canvas {
         margin-bottom: 30vh;
+        margin-top: 70px;
     }
     #lista {
         margin-bottom: 100px;
     }
     #tabledata {
         margin-bottom: 200px;
-    }
+    }#formFinancas button{
+        width: 40%;
+       }
 }

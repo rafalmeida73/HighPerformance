@@ -1,4 +1,4 @@
-const { Treinador, Aluno, Aula, Presenca } = require('../models');
+const { Treinador, Aluno, Aula, Presenca, Financa } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -67,8 +67,12 @@ module.exports = {
     showAlunos: async(req, res) => {        
         let user = req.session.usuario;
         
-        let alunos = await Aluno.findAll()
-
+        let alunos = await Aluno.findAll({
+            where:{
+                treinadores_id: user.id
+            }
+        })
+        console.log(alunos)
         res.render("alunos", { user, alunos });
     },
 
@@ -76,6 +80,7 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
+        let treinadores_id = req.session.usuario.id;
         console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
@@ -86,16 +91,37 @@ module.exports = {
         nome,
         email,
         telefone,
-        meta
+        meta,
+        treinadores_id
        })
-       //console.log(resultado)
+    //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
     },
 
-    showNovaAula: (req,res) => {
-        res.render('novaAula');
+    showNovaAula: async (req,res) => {
+        let alunos = await Aluno.findAll();
+        res.render('novaAula', { alunos });
     },  
+
+    criarNovaAula: async (req,res) =>{
+        let treinadores_id = req.session.usuario.id;
+        let {nome, observacoes, alunos_id, data_aula, horario} = req.body;
+ 
+      
+        const resultado = await Aula.create({
+            nome,
+            observacoes,
+            treinadores_id,
+            alunos_id,
+            data_aula,
+            horario,
+            status: 'a'
+           })
+        
+        
+        res.redirect("/home")	
+    },
     showTreino: async (req, res) => {
         let user = req.session.usuario;
 
@@ -129,26 +155,114 @@ module.exports = {
 
     },
     showUpdateAlunos: async (req, res) => {
-        let {nome, email, telefone, meta } = req.body
+        let user = req.session.usuario;
+        let {nome, email, telefone, meta, metaFeita } = req.body
         let edicao = await Aluno.update({
             nome,
             email,
             telefone,
             meta,
+            metaFeita,
+            treinadores_id: user.id
         },{
             where: {
                 id: req.params.id
             }
-        })
+        });
 
         
 		return res.redirect('/home/alunos');
     },
-    showFinancas: (req, res) => {
+    showDeleteAlunos: async (req, res) => {3
+        let resultado = await Aluno.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+        
+        return res.redirect('/home/alunos')
+    },
+    showFinancas: async (req, res) => {
         let user = req.session.usuario;
-        res.render("financas", { user });
+
+        
+        let financas = await Financa.findAll(
+            {
+                where: {
+                    treinadores_id: user.id
+                }
+            });
+            
+            // listar todos os meses
+            let mes = [];
+            
+            for(financa of financas){
+                mes.push(financa.mes)
+            };
+            
+             // listar todos os meses
+            let valor = [];
+            for(financa of financas){
+                valor.push(financa.valor)
+            }
+
+             //Total de dinheiro
+        let total = await Financa.sum('valor')
+
+        res.render("financas", {user,financas, mes, valor, total});
+    },
+    showCadastroFinancas:(req, res)=>{
+        res.render('cadastroFinancas.ejs')
+    },
+    showNovoFinancas: async (req, res)=>{
+        let treinadores_id = req.session.usuario.id;
+       let {mes, valor} = req.body;
+       console.log(mes)
+       console.log(valor)
+
+       const resultado = await Financa.create({
+        mes,
+        valor,
+        treinadores_id
+       })
+    
+		res.redirect("/home/financas")		
+    },
+    showUpdateFinancas:  async(req,res)=>{
+        let user = req.session.usuario;
+
+        let {mes, valor} = req.body;
+
+        let edicao = await Financa.update({
+            valor,
+        },{
+            where: {
+                mes,
+            }
+        });
+
+        
+		return res.redirect('/home/financas');
+
+    },
+    showUpdateFinancas:  async(req,res)=>{
+        let user = req.session.usuario;
+
+        let {mes, valor} = req.body;
+
+        let edicao = await Financa.update({
+            valor,
+        },{
+            where: {
+                mes,
+            }
+        });
+
+        
+		return res.redirect('/home/financas');
     },
     search: async(req, res) => {
+        let user = req.session.usuario;
 		let busca = req.query.q;
 		if (busca) {
 			let result = await Aluno.findAll(
@@ -156,7 +270,8 @@ module.exports = {
                     where: {
                         nome: {
                             [Op.substring]: busca
-                        }
+                        },
+                        treinadores_id: user.id
                     }
                 });
             

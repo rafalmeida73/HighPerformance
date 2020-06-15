@@ -1,15 +1,17 @@
-const { Treinador, EquipeAdmin, Contato } = require('../models')
+const { Treinador, EquipeAdmin, Contato, Depoimento } = require('../models')
 const nodemailer = require('nodejs-nodemailer-outlook')
 const path = require('path')
 const bcrypt = require('bcrypt')
 
 
 module.exports = {
-    index: (req, res)=>{
-		res.render("index");
+    index: async(req, res)=>{
+      let depoimentos = await Depoimento.findAll();
+      res.render("index", {depoimentos});
     },
     sobre:async (req, res)=>{
       let equipe = await EquipeAdmin.findAll();
+      
 		  res.render("sobre", {equipe});		 
     },
 
@@ -43,8 +45,21 @@ module.exports = {
       
     },
 
-    depoimentos:async (req, res)=>{
+    depoimentos: (req, res)=>{
 		  res.render("depoimentos");
+    },
+    showNovoDepoimento: async (req, res)=>{
+      let {nome, profissao, mensagem} = req.body;
+      let img = `/img/${req.file.originalname}`;
+
+      const resultado = await Depoimento.create({
+        img,
+        nome,
+        profissao,
+        mensagem,
+       })
+       
+		res.redirect("/")	
     },
     
     showCadastro: (req,res) => {
