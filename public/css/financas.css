@@ -49,11 +49,6 @@
     margin-top: 50px;
     color: white;
 }
-.card2 i {
-    margin-left: 50px;
-    margin-top: 15px;
-    color: white;
-}
 
 .card p {
     margin-right: 32px;
@@ -62,15 +57,8 @@
     color: white;
 }
 
-.card2 p {
-    margin-right: 32px;
-    margin-top: -40px;
-    font-weight: bold;
-    color: white;
-}
 
-.card h5,
-.card2 h5 {
+.card h5{
     margin-top: -58px;
     margin-right: 29px;
     font-weight: bold;
@@ -82,11 +70,12 @@
     border-radius: 50%;
 }
 
-.card2 {
+#card2 a{
     background: #FDC830;
     background: -webkit-linear-gradient(to left, #F37335, #FDC830);
     background: linear-gradient(to right, #F37335, #FDC830);
-    height: 80px;
+    width: 100%;
+    font-weight: bold;
 }
 
 #lista {
@@ -104,7 +93,7 @@
 }
 
 #formFinancas{
-    margin-bottom: 40vh;
+    margin-bottom: 20vh;
 }
 
 #formFinancas li:focus,
@@ -189,11 +178,14 @@ a[href="#top"]:hover {
     }
     canvas {
         margin-bottom: 30vh;
+        margin-top: 70px;
     }
     #lista {
         margin-bottom: 100px;
     }
     #tabledata {
         margin-bottom: 200px;
-    }
+    }#formFinancas button{
+        width: 40%;
+       }
 }
