@@ -51,9 +51,9 @@ module.exports = {
                 }                   
             
             
-            //aulasArray = JSON.parse(aulasArray)
-            //console.log(aulasArray)
-            //console.log('==================================================================')
+            // aulasArray = JSON.parse(aulasArray)
+            // console.log(aulasArray)
+            // console.log('==================================================================')
             res.render("crie", { user, aulasArray});
         });
 
