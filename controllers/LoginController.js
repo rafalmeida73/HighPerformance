@@ -2,29 +2,65 @@ const { Treinador, Aluno, Aula, Presenca } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-const multer = require('multer')
+const multer = require('multer');
+const { json } = require('sequelize');
+const { formatDate, addDias } = require('../helpers/funcoes');
+const helpers = require('../helpers/funcoes');
 
 
 module.exports = {
     showLogin: (req, res) => {
         res.render("login");
     },
+    //####################################################################################################################################
     showCrie: async(req, res) => {
         let user = req.session.usuario;
-        const aulas = await Aula.findAll({
+        let aulasArray = []
+        let dt = new Date().toLocaleDateString().split('/').reverse().join('-')
+        let dataInicio = new Date(dt).getTime()
+        let dataFinal  = addDias(dataInicio,10)
+
+        const aulas = await Aula.findAndCountAll({
+            attributes: ['data_aula'],
+            group: ['data_aula'],            
             where: {
-                treinadores_id: user.id
-            },
+                treinadores_id: user.id,
+                data_aula:{[Op.between]: ['2020-06-01', '2020-06-24']}
+            },            
             include: [{
                     model: Aluno,
                     as: 'aluno'
                 },
             ]
+        }).then(aulas => {
+
+            
+            
+            console.log('==================================================================')
+            
+            // criando array com as datas do calendário conforme período dataInicio e dataFinal definidas acima
+            while(new Date(dataInicio) <= new Date(dataFinal)) {
+                
+                aulasArray.push({data:dataInicio,qtde:0})
+                dataInicio=addDias(dataInicio,1)
+            }
+
+            // atualizando o array criado acima com as aulas cadastradas no banco EX: 16/6/2020 ---- 1 aula, 21/6/2020 ---- 2 aula
+            for(dia of aulasArray){
+                for(qtde of aulas.count){
+                    if (formatDate(dia.data) === formatDate(qtde.data_aula) ){
+                        dia.qtde = qtde.count                            
+                    }
+                }                   
+            }
+            console.log(aulasArray)
+            console.log('==================================================================')
+            res.render("crie", { user, aulasArray});
         });
 
-        let datas = await Aula.findAll()  
-
-        res.render("crie", { user, aulas, datas });
+        
+        
+        
 
 
     },

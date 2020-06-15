@@ -138,9 +138,7 @@ tr {
     .quadrado img {
         display: none;
     }
-    #alunos h2 {
-        margin-top: 40px;
-    }
+   
 }
 
 @media (max-width:443px) {

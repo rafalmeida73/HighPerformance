@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var session = require('express-session');
+const helpers = require('./helpers/funcoes')
 const flash = require('connect-flash');
 const methodOverride = require('method-override');
 
@@ -42,6 +43,10 @@ app.use(methodOverride('_method'));
 app.use(function(req, res, next) {  
   next(createError(404));
 });
+
+app.locals.helpers = helpers;
+//app.locals.formatDate = formatDate;
+//app.locals.diaDaSemana = diaDaSemana;
 
 // error handler
 app.use(function(err, req, res, next) {

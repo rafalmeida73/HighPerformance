@@ -37,9 +37,16 @@
      margin: 0px;
  }
 
- a#addAluno {
-    color: white;
+ span.totalAulas{
+    height: 50px;
+    line-height: 50px;    
+ }
+ a#addAluno span {
+    position: relative;
+    left: -30px;
+    top: -6px;
 }
+ 
 
 .quadrado {
     background-color: #ff7e00;
@@ -52,10 +59,23 @@
     width: 100%;
 }
 
+a#addAluno i{
+    position: relative;
+    top: 2px;
+    margin-right: 10px;
+    font-size: 32px;
+    color: white;
+    left: -19px;
+}
+
 i.material-icons {
     position: relative;
     top: 5px;
     margin-right: 3px;
+    width: 40px;
+    font-size: 50px;
+    color: #ff9d40;
+    left: -10px;
 }
 
 .baixoQuadrado {
@@ -160,12 +180,19 @@ a[href="#top"]:hover {
         margin-bottom: 20vh;
         transition: 0.5s;
     }
-    .aulasContainer {
-        margin-top: 30vh;
-    }
+   
 }
 
 #foto-aluno {
     height: 70px;
     border-radius: 50%;
+}
+.agendaH2{
+    text-align: center;
+}
+
+@media (max-width:443px) {
+    .quadrado h2 {
+        font-size: 34px;
+    }
 }

@@ -1,77 +1,62 @@
-   
         <%- include('partials/header') %>
         <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/crie/crie.html" />
         <link rel="stylesheet" href="/css/crie.css">
+
     </head>
 <body>
     
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %> 
+
+
 <div class="container">
-    <div class="col s12 m12 l12 quadrado">
-        <div id="alunos"><h2>Aulas agendadas</h2></div>                                    
-    </div>
-    <div class="col s12 m12 l12 baixoQuadrado">
-        <i class="material-icons">assignment_ind</i>
-        <a id="addAluno" href="/home/novaAula">ADICIONAR NOVA AULA</a>          
+    <div class="col s12 m12 quadrado">
+        <div id="alunos"><h2>Agenda</h2></div>
     </div>
 
+    <div class="col s12 m6" style="margin-top: 17px;">
+        <a id="addAluno" href="/home/novaAula" class="waves-effect waves-light btn" style="background-color:#ff7e00;font-weight: bold;"><i class="material-icons">assignment_ind</i><span>ADICIONAR AULA</span></a>
+    </div>
 
     <!-- Lista dos alunos -->
     <div id="aulas">
         <div class="aulasContainer">
 
-            <% for (data of datas) { %>
-                <div class="container">
-                    <ul class="collapsible">
+            <% for(aulaDia of aulasArray) { %>
+
+                <div class="">
+                    <ul class="collapsible" data-collapsible="accordion">
                         <li>
-                            <div class="collapsible-header">
+                        <% if(aulaDia.qtde > 0) { %> <div class="collapsible-header" style="background: aquamarine;"> <% } else { %> <div class="collapsible-header"> <% } %>                            
                                 <i class="material-icons">assignment_ind</i>
-                                <p>
-                                    <%= data.data_aula %>
-                                </p>
-                                <span class="new badge orange" data-badge-caption="aulas"><%= data.count %></span>
+                                <p><%= helpers.formatDate(aulaDia.data) %> &nbsp;</p>
+                                <p><%= helpers.diaDaSemana(aulaDia.data) %> &nbsp;</p>
+                                <span class="new badge orange totalAulas" data-badge-caption="aulas" style="font-size: 20px;font-weight: bold;"><%= aulaDia.qtde %></span>
                             </div>
-                            <div class="collapsible-body"><span>
-                            <div class="col s12 m12 l12">
-                                <table class="highlight centered table responsive-table" id="tabledata">
-                                    <thead>
-                                        <tr>
-                                            <th id="marginTh">Imagem</th>
-                                            <th>Nome</th>
-                                            <th>Aula</th>
-                                            <th>Horario</th>
-                                            <th>Contato</th>
-                                            <th>Remover</th>
-                                        </tr>
-                                    </thead>
-
-                                    <% for(aula of aulas) { %>
-                                    <% if (aula.data_aula == data.data_aula ) { %>
-                                    <tbody>
-                                        <% for (aluno of aula.aluno) { %>
-                                            <tr data-url="../treino/treino.html">
-                                            <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto José"></td>
-                                            <td><%= aluno.nome %></td>
-                                            <td><%= aula.nome %></td>
-                                            <td><%= aula.horario %></td>
-                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
-                                            <td><a href="#" class="black-text">Remover aluno</a></td>
-                                        </tr>
-                                        <% } %>
-                                        <% } %>
-                                        <% } %>
-
-                                        
-                                    </tbody>
-                                </table>
+                            <div class = "collapsible-body">
+                                <p>aula</p>
                             </div>
-                        </span>
-                            </div>
+                            
                         </li>
                     </ul>
                 </div>
                 <% } %>
+
+
+            
+                
+           
+
+      
+            
+        </div>
+    </div>
 </div>
+
+
+
+
     <%- include('partials/footer') %>
+
+
+    
