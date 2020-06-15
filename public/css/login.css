@@ -80,7 +80,7 @@ form sapn:hover {
     font-size: 30px;
     font-weight: bold;
     margin-bottom: 40px;
-    padding-top: 20px;
+    padding-top: 15vh;
 }
 
 .cadastro p {
@@ -99,6 +99,7 @@ form sapn:hover {
 
 .bannerimg {
     margin-top: 50px;
+    max-height: 100%;
 }
 
 @media (max-width:600px) {
@@ -114,5 +115,8 @@ form sapn:hover {
     }
     form .btn {
         width: 89%;
+    }
+    .bannerimg {
+        margin-top: 15vh;
     }
 }

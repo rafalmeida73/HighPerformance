@@ -54,21 +54,25 @@ form sapn:hover {
   color: black;
 }
 
-#form .input-field input[type=text]:focus {
+#inputOpnion{
+  visibility: hidden;
+}
+
+#formDepoimentos .input-field input[type=text]:focus {
   border-bottom: 1px solid #ff7e00;
   box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-#form textarea:focus {
+#formDepoimentos textarea:focus {
   border-bottom: 1px solid #ff7e00;
   box-shadow: 0 1px 0 0 #ff7e00;
 }
 
-#form .input-field label {
+#formDepoimentos .input-field label {
   color: #000;
 }
 
-#form .input-field .prefix.active {
+#formDepoimentos .input-field .prefix.active {
   color: #ff7e00;
 }
 
@@ -77,14 +81,15 @@ form sapn:hover {
 }
 
 .logo {
-  padding-top: 15vh;
+  border-radius: 100px;
+  cursor: pointer;
 }
 
 #login h1 {
   font-size: 30px;
   font-weight: bold;
   margin-bottom: 40px;
-  padding-top: 30px;
+  padding-top: 10px;
 }
 
 .bannerimg {
@@ -99,10 +104,14 @@ form sapn:hover {
   #banner h1 {
       margin-top: 50%;
   }
-  .logo {
-      padding-top: 10vh;
-  }
   form .btn {
       width: 89%;
+  }
+  #login h1 {
+    font-size: 20px;
+    text-align: center;
+  }
+  #btn{
+    margin-top: 40px;
   }
 }

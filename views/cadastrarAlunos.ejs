@@ -11,11 +11,14 @@
         <h1 style="text-align:center;font-weight:bold;margin:0;">Cadastrar Aluno</H1>
         <div class="row" style="text-align: center;">
             <div class="col s12 m12">
-                <form class="formValidate" id="formValidate" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data">
-                    <input type="file" id="imgUser" name="imgUser" accept="image/*" style="display: none;">
-                    <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance">
+                <form class="formValidate" id="formCad" method="POST" action="/home/cadastrarAlunos" enctype="multipart/form-data">
                     <div class="input-field">
-                        <i class="material-icons prefix">account_circle</i>
+                        <input type="file" id="imgUser" name="imgUser" accept="image/*" style="display: none;" data-error=".errorTxt1">
+                        <img id="inseriImagem" class="responsive-img logo" src="../../img/imgUser.png" alt="High Performance">
+                        <div class="errorTxt1"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">check</i>
                         <input name="nome" id="nome" type="text" data-error=".errorTxt1">
                         <label for="nome">Nome</label>
                         <div class="errorTxt1 right-align "></div>
@@ -28,7 +31,7 @@
                     </div>
                     <div class="input-field">
                         <i class="material-icons prefix">call</i>
-                        <input name="telefone" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
+                        <input name="telefone" type="tel" id="tel" data-error=".errorTxt3">
                         <label for="telefone">Celular</label>
                         <div class="errorTxt3 right-align "></div>
                     </div>

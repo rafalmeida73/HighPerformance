@@ -1,4 +1,112 @@
 <%- include('partials/header') %>
+<link rel=”canonical” href="https://highperformancedh.azurewebsites.net"/>
+<link rel="stylesheet" href="/css/cadastroAlunos.css">
+</head>
+<body>
+<%- include('partials/navBar') %>
+<%- include('partials/bikeGif') %> 
+
+<div class="cadastro" style="padding: 7px;">
+<h1 style="text-align:center;font-weight:bold;margin:0;">Criar nova Aula</H1>
+<div class="row" style="text-align: center;">
+    <div class="col s12 m12">
+        <form class="formValidate" id="formCad" method="POST" action="/home/novaAula">
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <input name="nome" id="nome" type="text">
+                <label for="nome">Aula</label>
+                <div class="errorTxt1 right-align "></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">directions_run</i>
+                <input name="observacoes" id="observacoes" type="text">
+                <label for="observacoes">Detalhes</label>
+                <div class="errorTxt2 right-align "></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">account_circle</i>
+                <select name="alunos_id">
+                  <option value="" disabled selected>Aluno </option>
+                  <% for(aluno of alunos) { %>
+                  <option value="<%= aluno.id %>"><%= aluno.nome %></option>
+                <% } %>
+                </select>
+
+            </div>      
+            <div class="input-field">
+                <i class="material-icons prefix">date_range</i>
+                <input name="data_aula" type="date" class="form-control" data-error=".errorTxt4">
+                <!-- <label for="date">Data</label> -->
+                <div class="errorTxt4 right-align"></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">access_time</i>
+                <input name="horario" type="time" class="form-control" data-error=".errorTxt4">
+                <!-- <label for="horario">Horário</label> -->
+                <div class="errorTxt4 right-align"></div>
+            </div>
+            <div class="input-field">
+                <button class="btn waves-effect waves-light right submit" type="submit" name="action"
+                    id="btnSubmit">Cadastrar</button>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+
+<script>
+let inserirImagem =  document.getElementById('inseriImagem')
+let imagemUser = document.getElementById('imgUser')
+inserirImagem.addEventListener('click', ()=>imagemUser.click())
+
+var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+        var output = document.getElementById('inseriImagem');
+        output.src = reader.result;
+        console.log(output.src)
+    }
+    reader.readAsDataURL(event.target.files[0]);
+}
+      
+imagemUser.addEventListener('change',loadFile)           
+
+
+</script>
+
+<%- include('partials/footer') %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+<%- include('partials/header') %>
 <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/cadastro/cadastro.html" />
 <link rel="stylesheet" href="/css/cadastroAlunos.css">
 </head>
@@ -10,7 +118,7 @@
 <div class="row">
     <!-- <div class="col s12 m12 l6 center-align" id="cadastroContainer">
         <a href="/home/">
-            <img class="responsive-img logo" src="../../img/icon512.png" alt="High Performance">
+            <img class="responsive-img logo" src="/img/icon512.png" alt="High Performance">
         </a>
         <h1>Cadastrar nova aula</h1>
     </div> -->
@@ -20,27 +128,38 @@
         <form class="formValidate" id="formValidate" method="POST" action="/home/novaAula">
             <div class="input-field">
                 <i class="material-icons prefix">account_circle</i>
-                <input name="name" id="name" type="text" data-error=".errorTxt1">
-                <label for="name">Aula</label>
+                <input name="nome" id="nome" type="text">
+                <label for="nome">Aula</label>
                 <div class="errorTxt1 right-align "></div>
             </div>
             <div class="input-field">
-                <i class="material-icons prefix">email</i>
-                <input name="email" id="email" type="email" data-error=".errorTxt2">
-                <label for="email">Meta</label>
+                <i class="material-icons prefix">directions_run</i>
+                <input name="observacoes" id="observacoes" type="text">
+                <label for="observacoes">Detalhes</label>
                 <div class="errorTxt2 right-align "></div>
             </div>
             <div class="input-field">
-                <i class="material-icons prefix">call</i>
-                <input name="cel" attrname="telephone1" type="tel" id="tel" data-error=".errorTxt3">
-                <label for="tel">Aluno</label>
-                <div class="errorTxt3 right-align "></div>
-            </div>
+                <i class="material-icons prefix">account_circle</i>
+                <select name="aluno_id" id="aluno_id">
+                    
+                  <option value="" disabled selected>Aluno </option>
+                  <% for(aluno of alunos) { %>
+                  <option value="<%= aluno.id %>"><%= aluno.nome %></option>
+                <% } %>
+                </select>
+
+            </div>      
             <div class="input-field">
                 <i class="material-icons prefix">date_range</i>
-                <input name="data" type="date" class="form-control" data-error=".errorTxt4">
-                <label for="date">Data</label>
-                <div class="errorTxt4 right-align"></div>
+                <input name="data_aula" type="date" class="form-control" data-error=".errorTxt4">
+                <label for="date">Data</label> -->
+                <!-- <div class="errorTxt4 right-align"></div>
+            </div>
+            <div class="input-field">
+                <i class="material-icons prefix">access_time</i>
+                <input name="horario" type="time" class="form-control" data-error=".errorTxt4">
+                <label for="horario">Horário</label> -->
+                <!-- <div class="errorTxt4 right-align"></div>
             </div>
             <div class="input-field">
                 <button class="btn waves-effect waves-light right submit" type="submit" name="action">CRIAR
@@ -51,4 +170,4 @@
 </div>
 </div>
 
-<%- include('partials/footer') %>
+<%- include('partials/footer') %> -->

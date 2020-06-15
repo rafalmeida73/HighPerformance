@@ -26,9 +26,13 @@ module.exports = {
             type: Sequelize.STRING(20),
             allowNull: false
         },
-        nascimento: {
-            type: Sequelize.STRING(20),
-            allowNull: false
+        meta: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+        },
+        metaFeita: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
         },
         treinadores_id:{
           type:Sequelize.INTEGER,
