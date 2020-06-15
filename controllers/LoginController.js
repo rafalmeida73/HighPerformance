@@ -84,7 +84,7 @@ module.exports = {
         telefone,
         meta,
         treinadores_id
-       })
+       
     //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
