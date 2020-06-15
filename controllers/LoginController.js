@@ -202,6 +202,7 @@ module.exports = {
         },{
             where: {
                 mes,
+                treinadores_id: user.id
             }
         });
 
