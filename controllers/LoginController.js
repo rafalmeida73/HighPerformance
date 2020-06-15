@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 const multer = require('multer');
-const { json } = require('sequelize');
+const { json, JSON } = require('sequelize');
 const { formatDate, addDias } = require('../helpers/funcoes');
 const helpers = require('../helpers/funcoes');
 
@@ -33,37 +33,34 @@ module.exports = {
                 },
             ]
         }).then(aulas => {
-
-            
-            
-            console.log('==================================================================')
-            
             // criando array com as datas do calendário conforme período dataInicio e dataFinal definidas acima
+            //cont=0
             while(new Date(dataInicio) <= new Date(dataFinal)) {
                 
-                aulasArray.push({data:dataInicio,qtde:0})
+                //aulasArray.push({data:dataInicio,qtde:0})
+                aulasArray.push([dataInicio,0])
                 dataInicio=addDias(dataInicio,1)
             }
 
             // atualizando o array criado acima com as aulas cadastradas no banco EX: 16/6/2020 ---- 1 aula, 21/6/2020 ---- 2 aula
             for(dia of aulasArray){
-                for(qtde of aulas.count){
-                    if (formatDate(dia.data) === formatDate(qtde.data_aula) ){
-                        dia.qtde = qtde.count                            
+                
+                for(qtde of aulas.count){                    
+                    if (formatDate(dia[0]) === formatDate(qtde.data_aula) ){
+                        console.log(formatDate(dia[0]),formatDate(qtde.data_aula), true)
+                        dia[1] = qtde.count                            
                     }
                 }                   
             }
-            console.log(aulasArray)
-            console.log('==================================================================')
+            
+            //aulasArray = JSON.parse(aulasArray)
+            //console.log(aulasArray)
+            //console.log('==================================================================')
             res.render("crie", { user, aulasArray});
         });
 
-        
-        
-        
-
-
     },
+
     showAlunos: async(req, res) => {        
         let user = req.session.usuario;
         
@@ -76,7 +73,7 @@ module.exports = {
         res.render('cadastrarAlunos');
     },
     showNovoAluno: async (req,res) => {
-        console.log('=================> ' + req.file)
+        //console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
        let img = `/img/${req.file.originalname}`;

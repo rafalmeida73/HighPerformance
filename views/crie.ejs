@@ -22,16 +22,16 @@
     <div id="aulas">
         <div class="aulasContainer">
 
-            <% for(aulaDia of aulasArray) { %>
+            <% for( aulaDia of JSON.parse( JSON.stringify(aulasArray) ) ) { %>
 
                 <div class="">
                     <ul class="collapsible" data-collapsible="accordion">
                         <li>
-                        <% if(aulaDia.qtde > 0) { %> <div class="collapsible-header" style="background: aquamarine;"> <% } else { %> <div class="collapsible-header"> <% } %>                            
+                        <% if(aulaDia[1] > 0) { %> <div class="collapsible-header" style="background: aquamarine;"> <% } else { %> <div class="collapsible-header"> <% } %>                            
                                 <i class="material-icons">assignment_ind</i>
-                                <p><%= helpers.formatDate(aulaDia.data) %> &nbsp;</p>
-                                <p><%= helpers.diaDaSemana(aulaDia.data) %> &nbsp;</p>
-                                <span class="new badge orange totalAulas" data-badge-caption="aulas" style="font-size: 20px;font-weight: bold;"><%= aulaDia.qtde %></span>
+                                <p><%= helpers.formatDate(aulaDia[0]) %> &nbsp;</p>
+                                <p><%= helpers.diaDaSemana(aulaDia[0]) %> &nbsp;</p>
+                                <span class="new badge orange totalAulas" data-badge-caption="aulas" style="font-size: 20px;font-weight: bold;"><%= aulaDia[1] %></span>
                             </div>
                             <div class = "collapsible-body">
                                 <p>aula</p>
@@ -40,23 +40,17 @@
                         </li>
                     </ul>
                 </div>
-                <% } %>
-
-
-            
-                
-           
-
-      
+            <% } %>
             
         </div>
     </div>
 </div>
 
-
-
+<script>    
+   let dados  ="<%= JSON.stringify(aulasArray) %>"
+   console.log(JSON.parse(dados))
+</script>
+    
 
     <%- include('partials/footer') %>
 
-
-    
