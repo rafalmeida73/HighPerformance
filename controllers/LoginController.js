@@ -12,7 +12,6 @@ module.exports = {
     showLogin: (req, res) => {
         res.render("login");
     },
-    //####################################################################################################################################
     showCrie: async(req, res) => {
         let user = req.session.usuario;
         let aulasArray = []
@@ -33,11 +32,6 @@ module.exports = {
                 },
             ]
         }).then(aulas => {
-
-            
-            
-            console.log('==================================================================')
-            
             // criando array com as datas do calendário conforme período dataInicio e dataFinal definidas acima
             while(new Date(dataInicio) <= new Date(dataFinal)) {
                 
@@ -53,26 +47,18 @@ module.exports = {
                     }
                 }                   
             }
-            console.log(aulasArray)
-            console.log('==================================================================')
+            //console.log(aulasArray)
+            //console.log('==================================================================')
             res.render("crie", { user, aulasArray});
         });
 
-        
-        
-        
-
-
     },
+
     showAlunos: async(req, res) => {        
         let user = req.session.usuario;
         
-        let alunos = await Aluno.findAll({
-            where:{
-                treinadores_id: user.id
-            }
-        })
-        console.log(alunos)
+        let alunos = await Aluno.findAll()
+
         res.render("alunos", { user, alunos });
     },
 
@@ -81,7 +67,7 @@ module.exports = {
     },
     showNovoAluno: async (req,res) => {
         let treinadores_id = req.session.usuario.id;
-        console.log('=================> ' + req.file)
+        // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
        let img = `/img/${req.file.originalname}`;
@@ -217,8 +203,8 @@ module.exports = {
     showNovoFinancas: async (req, res)=>{
         let treinadores_id = req.session.usuario.id;
        let {mes, valor} = req.body;
-       console.log(mes)
-       console.log(valor)
+    //    console.log(mes)
+    //    console.log(valor)
 
        const resultado = await Financa.create({
         mes,

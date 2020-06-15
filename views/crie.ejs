@@ -1,54 +1,61 @@
-        <%- include('partials/header') %>
-        <link rel=”canonical” href="https://highperformance.herokuapp.com/pages/crie/crie.html" />
-        <link rel="stylesheet" href="/css/crie.css">
+<%- include('partials/header') %>
+<link rel=”canonical” href="https://highperformance.herokuapp.com/pages/crie/crie.html" />
+<link rel="stylesheet" href="/css/crie.css">
 
-    </head>
+</head>
 <body>
-    
-    <%- include('partials/navBar') %>
-    <%- include('partials/bikeGif') %> 
+
+<%- include('partials/navBar') %>
+<%- include('partials/bikeGif') %> 
 
 
 <div class="container">
-    <div class="col s12 m12 quadrado">
-        <div id="alunos"><h2>Agenda</h2></div>
-    </div>
-
-    <div class="col s12 m6" style="margin-top: 17px;">
-        <a id="addAluno" href="/home/novaAula" class="waves-effect waves-light btn" style="background-color:#ff7e00;font-weight: bold;"><i class="material-icons">assignment_ind</i><span>ADICIONAR AULA</span></a>
-    </div>
-
-    <!-- Lista dos alunos -->
-    <div id="aulas">
-        <div class="aulasContainer">
-
-            <% for(aulaDia of aulasArray) { %>
-
-                <div class="">
-                    <ul class="collapsible" data-collapsible="accordion">
-                        <li>
-                        <% if(aulaDia.qtde > 0) { %> <div class="collapsible-header" style="background: aquamarine;"> <% } else { %> <div class="collapsible-header"> <% } %>                            
-                                <i class="material-icons">assignment_ind</i>
-
-                            </div>
-                            <div class = "collapsible-body">
-                                <p>aula</p>
-                            </div>
-                            
-                        </li>
-                    </ul>
-                </div>
-                <% } %>
-
-
-            
-                
-           
-
-      
-            
-        </div>
-    </div>
+<div class="col s12 m12 quadrado">
+<div id="alunos"><h2>Agenda</h2></div>
 </div>
 
+<div class="col s12 m6" style="margin-top: 17px;">
+<a id="addAluno" href="/home/novaAula" class="waves-effect waves-light btn" style="background-color:#ff7e00;font-weight: bold;"><i class="material-icons">assignment_ind</i><span>ADICIONAR AULA</span></a>
+</div>
+
+<!-- Lista dos alunos -->
+<div id="aulas">
+<div class="aulasContainer">
+
+    <% for(aulaDia of aulasArray) { %>
+
+        <div class="">
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                <% if(aulaDia.qtde > 0) { %> <div class="collapsible-header" style="background: aquamarine;"> <% } else { %> <div class="collapsible-header"> <% } %>                            
+                        <i class="material-icons">assignment_ind</i>
+                        <p><%= helpers.formatDate(aulaDia.data) %> &nbsp;</p>
+                        <p><%= helpers.diaDaSemana(aulaDia.data) %> &nbsp;</p>
+                        <span class="new badge orange totalAulas" data-badge-caption="aulas" style="font-size: 20px;font-weight: bold;"><%= aulaDia.qtde %></span>
+                    </div>
+                    <div class = "collapsible-body">
+                        <p>aula</p>
+                    </div>
+                    
+                </li>
+            </ul>
+        </div>
+    <% } %>
+
+
+    
+        
+   
+
+
+    
+</div>
+</div>
+</div>
+
+
+
+
 <%- include('partials/footer') %>
+
+
