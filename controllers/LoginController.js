@@ -56,8 +56,13 @@ module.exports = {
 
     showAlunos: async(req, res) => {        
         let user = req.session.usuario;
-        
-        let alunos = await Aluno.findAll()
+
+        let alunos = await Aluno.findAll({
+            where:{
+                treinadores_id: user.id
+            }
+        })
+        // console.log(alunos)
 
         res.render("alunos", { user, alunos });
     },
