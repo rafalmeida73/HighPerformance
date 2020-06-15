@@ -1,0 +1,43 @@
+<%- include('partials/header') %>
+<link rel=”canonical” href="https://highperformancedh.azurewebsites.net"/>
+<link rel="stylesheet" href="/css/cadastroFinancas.css">
+</head>
+<body>
+<%- include('partials/navBar') %>
+<%- include('partials/bikeGif') %> 
+
+
+    <div class="col s12 m12 l12 left-align" id="containerTitulo">
+    <h4>Adionar coluna</h4>
+    </div>
+
+
+<div class="row" id="containerCadFinancas">
+    <div class="col s12 m8 l6" id="containerForm">
+    <form class="formValidate" id="formCadFinancas" method="POST" action="/home/financas/cadastrarFinancas" enctype="multipart/form-data">
+        <div class="input-field">
+            <i class="material-icons prefix">pie_chart</i>
+            <input name="mes" id="mes" type="text" data-error=".errorTxt1">
+            <label for="mes">Nome da coluna</label>
+            <div class="errorTxt1 right-align "></div>
+        </div>
+        <div class="input-field">
+            <i class="material-icons prefix">monetization_on</i>
+            <input name="valor" id="valor" type="number" data-error=".errorTxt2">
+            <label for="valor">Valor</label>
+            <div class="errorTxt2 right-align "></div>
+        </div>
+        <div class="input-field">
+            <button class="btn waves-effect waves-light right submit" type="submit">Cadastrar</button>
+        </div>
+    </form>
+</div>
+
+<div class="col s12 m4 l6 center-align" id="containerImg">
+    <img class="responsive-img" src="/img/grafico2.png" alt="" width="600">
+</div>
+</div>
+
+
+<%- include('partials/footer') %>
+<%- include('partials/rodape') %>

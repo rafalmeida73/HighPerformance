@@ -3,191 +3,115 @@
         <link rel="stylesheet" href="/css/financas.css">
     </head>
 <body>
-    
     <%- include('partials/navBar') %>
-    <%- include('partials/bikeGif') %> 
+    <%- include('partials/bikeGif') %>
 
-    <% for (financa of financas) { %>
-    <h1>oi <%=financa.jane%></h1>
-    <% } %>
-    <div class="row" id="grafico">
-        <div class="col s12 m12 l8">
-            <canvas id="myChart" width="400" height="300"></canvas>
-        </div>
-
-        <div class="col s12 m12 l4">
-            <div class="cards">
-
-                <div class="card">
-                    <div>
-                        <i class="material-icons background-round mt-5">attach_money</i>
-                    </div>
-                    <div class="right-align">
-                        <h5 class="white-text">R$ 8.900,00</h5>
-                        <p class="white-text">Total</p>
-                    </div>
+        
+        <span id="mes" style="display: none;"><%=mes%></span>
+        <span id="valor" style="display: none;"><%=valor%></span>
+    
+              <% if(financas != ""){ %>
+                <div class="row" id="grafico">
+                    <div class="col s12 m12 l8">
+                    <canvas id="myChart" width="400" height="300"></canvas>
                 </div>
-                <div class="card2">
-                    <div>
-                        <i class="material-icons background-round mt-5">timeline</i>
+
+                    <div class="col s12 m12 l4">
+                        <div class="cards">
+            
+                            <div class="card">
+                                <div>
+                                    <i class="material-icons background-round mt-5">attach_money</i>
+                                </div>
+                                <div class="right-align">
+                                    <h5 class="white-text">R$ <%=total%></h5>
+                                    <p class="white-text">Total</p>
+                                </div>
+                            </div>
+                            <a href="/home/financas/cadastrarFinancas">
+                            <div class="card2">
+                                <div>
+                                    <i class="material-icons background-round mt-5">exposure_plus_1</i>
+                                </div>
+                                <div class="right-align">
+                                    <p class="white-text">Adicionar mais uma coluna</p>
+                                </div>
+                            </div>
+                        </a>
+                        </div>
                     </div>
-                    <div class="right-align">
-                        <h5 class="white-text">%10</h5>
-                        <p class="white-text">Crescimento</p>
-                    </div>
+                    
+                </div>
+            <div class="container">
+                <div class="col s12 m12 l6">
+                    <form id="formFinancas" id="form" action="/home/financas/editar?_method=PUT" method="post">
+                        
+                        <div class="input-field col s12">
+                            <select class="black-text" id="name" name="mes" data-error=".errorTxt1">
+                                <option value="Selecione" selected disabled>Selecione</option>
+                            <% for (financa of financas) { %>
+
+                                    <option  value="<%=financa.mes%>"><%=financa.mes%></option> 
+                            <% } %>
+                                </select>
+                                <div class="errorTxt1 right-align"></div>
+                        </div>
+            
+                            <div class="input-field">
+                                <i class="material-icons prefix">monetization_on</i>
+                                <input name="valor" id="valor" type="number" data-error=".errorTxt2">
+                                <label for="valor">Valor</label>
+                                <div class="errorTxt2 right-align"></div>
+                            </div>
+                            
+                                <div class="col s12 m6 l6">
+                                    <div class="input-field">
+                                        <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Salvar</button>
+                                    </div>
+                            </div>
+                        </form>
                 </div>
             </div>
-        </div>
-    </div>
+            </div>
+            <% } else{ %>  
+            <div style="height: 100vh;">
+                <div class="col s12 m12 l12 center-align">
+                    <img src="/img/grafico.png" class="responsive-img" alt="grafico.png" width="700">
+                </div>
+                <div class="col s12 m6 l6 center-align">
+                   <h4><a style="font-weight: bold;" href="/home/financas/cadastrarFinancas" class="black-text">Criar gráfico</a></h4>
+                </div>
+            </div>
+            <% } %>
+       
 
-    <div class="col s12 m12 l6">
-        <form id="form" id="form" action="?_method=PUT" method="post">
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="jan" id="jan" type="number" data-error=".errorTxt1" value="1">
-                    <label for="jan">Janeiro</label>
-                    <div class="errorTxt1 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="fev" id="fev" type="number" data-error=".errorTxt2" value="">
-                    <label for="fev">Fevereiro</label>
-                    <div class="errorTxt2 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="mar" id="mar" type="number" data-error=".errorTxt3" value="">
-                    <label for="mar">Março</label>
-                    <div class="errorTxt3 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="abr" id="abr" type="number" data-error=".errorTxt4">
-                    <label for="abr">Abril</label>
-                    <div class="errorTxt4 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="mai" id="mai" type="number" data-error=".errorTxt5" value="">
-                    <label for="mai">Maio</label>
-                    <div class="errorTxt5 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="jun" id="jun" type="number" data-error=".errorTxt6" value="">
-                    <label for="jun">Junho</label>
-                    <div class="errorTxt6 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="jul" id="jul" type="number" data-error=".errorTxt7" value="">
-                    <label for="jul">Julho</label>
-                    <div class="errorTxt7 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="ago" id="ago" type="number" data-error=".errorTxt8" value="">
-                    <label for="ago">Agosto</label>
-                    <div class="errorTxt8 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="set" id="set" type="number" data-error=".errorTxt9" value="">
-                    <label for="set">Setembro</label>
-                    <div class="errorTxt9 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="out" id="out" type="number" data-error=".errorTxt10" value="">
-                    <label for="out">Outubro</label>
-                    <div class="errorTxt10 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="nov" id="nov" type="number" data-error=".errorTxt11" value="">
-                    <label for="nov">Novembro</label>
-                    <div class="errorTxt11 right-align"></div>
-                </div>
-
-                <div class="input-field">
-                    <i class="material-icons prefix">monetization_on</i>
-                    <input name="dez" id="dez" type="number" data-error=".errorTxt12" value="">
-                    <label for="dez">Dezembro</label>
-                    <div class="errorTxt12 right-align"></div>
-                </div>
-                
-                    <div class="col s12 m6 l6">
-                        <div class="input-field">
-                            <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Salvar</button>
-                        </div>
-                </div>
-            </form>
-    </div>
+        
 
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="/js/finacas.js"></script>
 
     <%- include('partials/footer') %>
+    <%- include('partials/rodape') %>
     <script>
+        let mes = document.getElementById("mes").textContent;
+        let valor = document.getElementById("valor").textContent;
+        let ArrayMes = mes.split(",");
+        let ArrayValor = valor.split(",");
+
         var ctx = document.getElementById("myChart").getContext("2d");
 var myChart = new Chart(ctx, {
-    type: "bar",
+    type: "line",
     data: {
-        labels: [
-            "Janeiro",
-            "Fevereiro",
-            "Março",
-            "Abril",
-            "Maio",
-            "Junho",
-            "Julho",
-            "Agosto",
-            "Setembro",
-            "Outubro",
-            "Novembro",
-            "Dezembro",
-        ],
+        labels: ArrayMes,
         datasets: [{
             label: "Pagamentos",
-            data: [12.20, 22, 3, 5, 2, 3, 12, 22, 3, 5, 2, 3, 1],
+            data: ArrayValor,
             backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
                 "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 206, 86, 0.2)",
-                "rgba(75, 192, 192, 0.2)",
-                "rgba(153, 102, 255, 0.2)",
-                "rgba(255, 159, 64, 0.2)",
-                "rgba(112, 128, 144, 0.2)",
-                "rgba(0, 225, 0, 0.2)",
-                "rgba(128, 0, 128, 0.2)",
-                "rgba(178, 34, 34, 0.2)",
-                "rgba(107, 66, 38, 0.2)",
-                "rgba(255, 255, 0, 0.2)",
             ],
             borderColor: [
-                "rgba(255, 99, 132, 1)",
                 "rgba(54, 162, 235, 1)",
-                "rgba(255, 206, 86, 1)",
-                "rgba(75, 192, 192, 1)",
-                "rgba(153, 102, 255, 1)",
-                "rgba(255, 159, 64, 1)",
-                "rgba(112, 128, 144, 1)",
-                "rgba(0, 225, 0, 1)",
-                "rgba(128, 0, 128, 1)",
-                "rgba(178, 34, 34, 1)",
-                "rgba(107, 66, 38, 1)",
-                "rgba(255, 255, 0, 1)",
             ],
             borderWidth: 1,
         }, ],
@@ -214,4 +138,3 @@ var myChart = new Chart(ctx, {
     },
 });
     </script>
-    

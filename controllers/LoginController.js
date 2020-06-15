@@ -148,14 +148,82 @@ module.exports = {
     },
     showFinancas: async (req, res) => {
         let user = req.session.usuario;
+
+        
         let financas = await Financa.findAll(
             {
                 where: {
                     treinadores_id: user.id
                 }
             });
-            console.log(financas)
-        res.render("financas", {user,financas});
+            
+            // listar todos os meses
+            let mes = [];
+            
+            for(financa of financas){
+                mes.push(financa.mes)
+            };
+            
+             // listar todos os meses
+            let valor = [];
+            for(financa of financas){
+                valor.push(financa.valor)
+            }
+
+             //Total de dinheiro
+        let total = await Financa.sum('valor')
+
+        res.render("financas", {user,financas, mes, valor, total});
+    },
+    showCadastroFinancas:(req, res)=>{
+        res.render('cadastroFinancas.ejs')
+    },
+    showNovoFinancas: async (req, res)=>{
+        let treinadores_id = req.session.usuario.id;
+       let {mes, valor} = req.body;
+       console.log(mes)
+       console.log(valor)
+
+       const resultado = await Financa.create({
+        mes,
+        valor,
+        treinadores_id
+       })
+    
+		res.redirect("/home/financas")		
+    },
+    showUpdateFinancas:  async(req,res)=>{
+        let user = req.session.usuario;
+
+        let {mes, valor} = req.body;
+
+        let edicao = await Financa.update({
+            valor,
+        },{
+            where: {
+                mes,
+            }
+        });
+
+        
+		return res.redirect('/home/financas');
+
+    },
+    showUpdateFinancas:  async(req,res)=>{
+        let user = req.session.usuario;
+
+        let {mes, valor} = req.body;
+
+        let edicao = await Financa.update({
+            valor,
+        },{
+            where: {
+                mes,
+            }
+        });
+
+        
+		return res.redirect('/home/financas');
     },
     search: async(req, res) => {
         let user = req.session.usuario;
