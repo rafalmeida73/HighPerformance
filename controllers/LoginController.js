@@ -1,4 +1,4 @@
-const { Treinador, Aluno, Aula, Presenca, Financa } = require('../models');
+const { Treinador, Aluno, Aula, Presenca, Financa, Mensalidade } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -136,10 +136,18 @@ module.exports = {
            where:{
                id: req.params.id
            }
-       })
+        });
 
+        let mensalidades = await Mensalidade.findAll({
+            where:{
+                alunos_id: req.params.id
+            }
+        });
+        
+        console.log(mensalidades);
+        
         if (aluno) {
-			res.render("treino", {aluno});
+			res.render("treino", { aluno, mensalidades });
 		} else {
 			res.render("404")
 		}
