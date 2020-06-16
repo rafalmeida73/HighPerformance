@@ -13,7 +13,7 @@ let Mensalidade = (sequelize, DataTypes) => {
                 allowNull: false
             },
             valor: {
-                type: DataTypes.INTEGER,
+                type: DataTypes.DECIMAL(4,2),
                 allowNull: true
             },
             alunos_id: {

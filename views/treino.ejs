@@ -86,6 +86,7 @@
                 </div>
                 <div class="collapsible-body"><span>
                     <div class="col s12 m12 l12">
+                        
                         <table class="highlight centered table responsive-table" id="tabledata">
                             <thead>
                                 <tr>
@@ -98,23 +99,39 @@
                             <% for(pagamento of mensalidades) { %>
                             
                             <tbody>
-                                    <tr>
-                                    <td><%= pagamento.mes_ref %></td>
-                                    <td><%= pagamento.valor %></td>
-                                    <!-- <td><%= pagamento.status %></td> -->
-                                    <td>
-                                        <%if (pagamento.status == 1) {%>
-                                            <i class="material-icons green-text">check</i>
-                                        <% } else{ %>  
-                                            <i class="material-icons red-text">close</i>
-                                        <% } %>
-                                    </td>
+                                
+                                <tr data-url="#">
+
+                                <td><%= pagamento.mes_ref %></td>
+                                <td>R$ <%= pagamento.valor %></td>
+                                <td>
+
+                                    <% if (pagamento.status) { %>
+                                    <span>Pago</span> 
+                                    <% } else { %>
+                                    <div class="input-field col s12">
+                                        <form action="/salvar/pagamento" method="post">
+                                    <select name="pago">
+                                        <option value="0" disabled selected>Pagamento pendente</option>
+                                        <option value="1">Pago</option>
+                                        <option value="0">Pagamento pendente</option>
+                                    </select>
+                                    <input type="hidden" name="mes_ref" value="<%=pagamento.id %>">
+                                    <input type="hidden" name="aluno" value="<%=aluno.id%>">
+                        
+                                    <button class="btn waves-effect waves-light right submit" type="submit">Salvar alterações</button>
+                                </form>
+                                    </div>
+                                    <% } %>
+                                </td>
                                 </tr>
                                 <% } %>
 
                                 
                             </tbody>
                         </table>
+                        
+                    
                     </div>
                 </span>
                 </div>
