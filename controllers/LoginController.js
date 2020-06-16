@@ -35,24 +35,6 @@ module.exports = {
                 ],
              raw:true
          })
-         let aulas_alunos = await Aula.findAll({
-            //     attributes: ['data_aula'],
-         
-                 where: {
-                     treinadores_id: user.id
-    
-                 },
-                 include:
-                    [
-                        {
-                        model:Aluno,
-                        as:'aluno',
-                        include:'aula'
-                        },
-    
-                    ],
-             })
-         
          console.log(aulas)
          console.log('==================================================================')        
 
@@ -87,7 +69,7 @@ module.exports = {
     },
     showNovoAluno: async (req,res) => {
         let treinadores_id = req.session.usuario.id;
-        console.log('=================> ' + req.file)
+
         // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
@@ -115,7 +97,7 @@ module.exports = {
         let {nome, observacoes, alunos_id, data_aula, horario} = req.body;
  
       
-        const resultado = await Aula.create({
+        await Aula.create({
             nome,
             observacoes,
             treinadores_id,
@@ -144,8 +126,7 @@ module.exports = {
             }
         });
         
-        console.log(mensalidades);
-        
+
         if (aluno) {
 			res.render("treino", { aluno, mensalidades });
 		} else {

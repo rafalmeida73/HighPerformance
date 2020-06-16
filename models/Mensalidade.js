@@ -25,6 +25,10 @@ let Mensalidade = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: true,
 
+            },
+            status:{
+                type: DataTypes.STRING(10),
+                allowNull: false
             }
 
         },{
