@@ -202,7 +202,11 @@ module.exports = {
             }
 
              //Total de dinheiro
-        let total = await Financa.sum('valor')
+        let total = await Financa.sum('valor', {
+            where:{
+                treinadores_id: user.id
+            }
+        });
 
         res.render("financas", {user,financas, mes, valor, total});
     },
@@ -212,20 +216,20 @@ module.exports = {
     showNovoFinancas: async (req, res)=>{
         let treinadores_id = req.session.usuario.id;
        let {mes, valor} = req.body;
-    //    console.log(mes);
-    //     console.log(valor);
+       console.log(mes);
+        console.log(valor);
 
        const resultado = await Financa.create({
         mes,
         valor,
         treinadores_id
        })
-    //    console.log(resultado)
-		res.redirect("/home/financas")		
+       
+       return res.redirect('/home/financas')	
     },
     showDeleteFinancas: async (req, res)=>{
         let user = req.session.usuario;
-        let {mes, valor} = req.body;
+        let {mes} = req.body;
         let resultado = await Financa.destroy({
             where: {
                 mes,
