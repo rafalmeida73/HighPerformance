@@ -54,7 +54,8 @@ router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino)
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.put('/home/financas/editar',VerificaUsuarioLogado, LoginController.showUpdateFinancas);
 router.get('/home/financas/cadastrarFinancas',VerificaUsuarioLogado, LoginController.showCadastroFinancas);
-router.post('/home/financas/cadastrarFinancas',VerificaUsuarioLogado, LoginController.showNovoFinancas);
+router.post('/home/cadastrarFinancas',VerificaUsuarioLogado, LoginController.showNovoFinancas);
+router.delete('/home/deletarFinancas',VerificaUsuarioLogado, LoginController.showDeleteFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
 router.post('/cadastrarDepoimento',VerificaUsuarioLogado, uploadImg.single('inputOpnion'), IndexController.showNovoDepoimento);
 router.get('/login', LoginController.showLogin);

@@ -6,16 +6,23 @@
     width: 100%;
     height: 100%;
     background-color: white;
-}
-
-.loader.hidden {
+   }
+   
+   .loader.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
-}
-
-.loader img {
+   }
+   
+   .loader img {
     width: 400px;
-}
+   }
+   
+   @keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+   }
 
 #alunos {
     margin:0px;
@@ -90,12 +97,6 @@ i.material-icons {
     margin-right: 10px;
 }
 
-@keyframes fadeOut {
-    100% {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
 
 .aulasContainer {
     margin-top: 30px;
