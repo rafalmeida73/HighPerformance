@@ -26,15 +26,23 @@ const Aluno = (sequelize, DataTypes) => {
             meta: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-          },
-          metaFeita: {
+            },
+            metaFeita: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true,
+            },
+                treinadores_id: {
+                    type: DataTypes.INTEGER,
+                    allowNull: true,
+            },
+            plano: {
+                type: DataTypes.STRING,
+                allowNull: false
+            },
+            tempo_plano: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
-          },
-            treinadores_id: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-          }
+            },
         },{
             tableName: "alunos",
             timestamps: false
