@@ -6,6 +6,7 @@ const multer = require('multer');
 const { json, JSON } = require('sequelize');
 const { formatDate, addDias } = require('../helpers/funcoes');
 const helpers = require('../helpers/funcoes');
+const { where } = require('sequelize');
 
 
 module.exports = {
@@ -134,9 +135,21 @@ module.exports = {
 		}
     },
 
-    salvarPagamento: (req,res) =>{
+    salvarPagamento: async (req,res) =>{
+        let {pago, mes_ref, aluno} = req.body;
         console.log(req.body);
         
+        await Mensalidade.update(
+            {
+                status: pago
+            },{
+            where: {
+                id: mes_ref
+            }
+        }
+        )
+
+        return res.redirect(`/home/treino/${aluno}`)
     },
     editarAlunos: async (req, res) => {
         let user = req.session.usuario;
