@@ -101,7 +101,14 @@
                                     <tr>
                                     <td><%= pagamento.mes_ref %></td>
                                     <td><%= pagamento.valor %></td>
-                                    <td><%= pagamento.status %></td>
+                                    <!-- <td><%= pagamento.status %></td> -->
+                                    <td>
+                                        <%if (pagamento.status == 1) {%>
+                                            <i class="material-icons green-text">check</i>
+                                        <% } else{ %>  
+                                            <i class="material-icons red-text">close</i>
+                                        <% } %>
+                                    </td>
                                 </tr>
                                 <% } %>
 
