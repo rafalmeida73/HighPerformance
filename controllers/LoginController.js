@@ -33,8 +33,9 @@ module.exports = {
                     },
 
                 ],
-            //  raw:true
+             raw:true
          })
+         
          console.log(aulas)
          console.log('==================================================================')        
 

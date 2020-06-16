@@ -28,15 +28,6 @@ module.exports = {
           onUpdate:'CASCADE',
           onDelete:'CASCADE'
         },
-        alunos_id:{
-          type:Sequelize.INTEGER,
-          references:{
-            model:'alunos',
-            key:'id'
-          },
-          onUpdate:'CASCADE',
-          onDelete:'CASCADE'
-        },
         data_aula: {
             type: Sequelize.STRING(45),
             allowNull: true
