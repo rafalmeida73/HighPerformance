@@ -14,7 +14,7 @@
 
 <div class="row" id="containerCadFinancas">
     <div class="col s12 m8 l6" id="containerForm">
-    <form class="formValidate" id="formCadFinancas" method="POST" action="/home/cadastrarFinancas" enctype="multipart/form-data">
+    <form class="formValidate" id="formCadFinancas" method="POST" action="/home/cadastrarFinancas">
         <div class="input-field">
             <i class="material-icons prefix">pie_chart</i>
             <input name="mes" id="mes" type="text" data-error=".errorTxt1">
@@ -23,8 +23,8 @@
         </div>
         <div class="input-field">
             <i class="material-icons prefix">monetization_on</i>
-            <input name="preco" id="preco" type="number" data-error=".errorTxt2">
-            <label for="preco">Valor</label>
+            <input name="valor" id="preco" type="number" data-error=".errorTxt2">
+            <label for="valor">Valor</label>
             <div class="errorTxt2 right-align "></div>
         </div>
         <div class="input-field">

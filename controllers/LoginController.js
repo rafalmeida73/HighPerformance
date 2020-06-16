@@ -24,7 +24,16 @@ module.exports = {
                  treinadores_id: user.id
 
              },
-             raw:true
+             include:
+                [
+                    {
+                    model:Aluno,
+                    as:'aluno',
+                    include:'aula'
+                    },
+
+                ],
+            //  raw:true
          })
          console.log(aulas)
          console.log('==================================================================')        
@@ -38,7 +47,9 @@ module.exports = {
                         dia.qtde = await parseInt(qtde.count)
                     }
                 }     
-            }              
+            }        
+            
+            res.render("crie", { user, periodo, aulas });
     },
 
     showAlunos: async(req, res) => {        
