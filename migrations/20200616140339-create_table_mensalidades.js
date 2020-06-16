@@ -16,7 +16,7 @@ module.exports = {
             allowNull: true
         },
         valor: {
-            type: Sequelize.INTEGER,
+            type: Sequelize.DECIMAL(4,2),
             allowNull: true
         },
         treinadores_id:{

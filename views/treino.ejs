@@ -104,17 +104,14 @@
                                 <td><%= pagamento.mes_ref %></td>
                                 <td><%= pagamento.valor %></td>
                                 <td>
-                                    <form action="/salvar/pagamento" method="post">      
-                                    <div class="switch">
-                                        <% let genreChk = pagamento.status ? 'checked' : '' %>
-                                        <% let genPago = pagamento.status ? 'Pago' : '' %>
-                                        <label>
-                                        <input name="pago" type="checkbox" <%=genreChk%>>
-                                        <span class="lever"></span>
-                                        <%=genPago%>
-                                        </label>
-                                    </div>
+                                    <% if (pagamento.status) { %>
+                                    <span>Pago</span> 
+                                    <% } else { %>
+                                    <form action="/salvar/pagamento" method="post">
+                                        <input type="hidden" name="pago" value=1>
+                                    <button  type="submit">Realizar pagamento</button>
                                     </form>
+                                    <% } %>
                                 </td>
                                 </tr>
                                 <% } %>
