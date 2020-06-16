@@ -38,11 +38,7 @@ module.exports = {
                         dia.qtde = await parseInt(qtde.count)
                     }
                 }                   
-            }
-            //console.log(periodo)
-            //console.log('================================================> '+ )
-            res.render("crie", { user, periodo});
-       
+
 
     },
 
