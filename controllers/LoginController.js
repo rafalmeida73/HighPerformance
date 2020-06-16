@@ -133,6 +133,11 @@ module.exports = {
 			res.render("404")
 		}
     },
+
+    salvarPagamento: (req,res) =>{
+        console.log(req.body);
+        
+    },
     editarAlunos: async (req, res) => {
         let user = req.session.usuario;
         
