@@ -43,6 +43,15 @@ module.exports = {
             metaFeita: 20,
             treinadores_id: 3
           },
+          {
+            nome: 'João',
+            img: '/img/roni.png',
+            email: 'roni@email.com',
+            telefone:'999999999',
+            meta: 39,
+            metaFeita: 20,
+            treinadores_id: 4
+          },
         ], {});
 
   },
