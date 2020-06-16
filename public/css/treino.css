@@ -24,6 +24,11 @@
     }
 }
 
+.pagamentosContainer {
+    margin-top: 30px;
+    margin-bottom: 80px;
+}
+
 #perfil {
     border: 1px solid #ddd;
     border-bottom: none;

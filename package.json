@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node ./bin/www",
-    "restart": "pkill -9 node && start",
-    "kill": "pkill -9 node"
+    "restart": "npx kill-port 3000 && start",
+    "kill": "npx kill-port 3000"
   },
   "dependencies": {
     "bcrypt": "^4.0.1",

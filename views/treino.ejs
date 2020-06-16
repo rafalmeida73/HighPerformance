@@ -78,6 +78,44 @@
         </div>
     </div>
 
+    <div class="container">
+        <ul class="collapsible">
+            <li>
+                <div class="collapsible-header">
+                    <i class="material-icons">assignment_ind</i> <p>Pagamentos</p>
+                </div>
+                <div class="collapsible-body"><span>
+                    <div class="col s12 m12 l12">
+                        <table class="highlight centered table responsive-table" id="tabledata">
+                            <thead>
+                                <tr>
+                                    <th>Referente</th>
+                                    <th>Valor</th>
+                                    <th>Situação</th>
+                                </tr>
+                            </thead>
+
+                            <% for(pagamento of mensalidades) { %>
+                            
+                            <tbody>
+                                    <tr>
+                                    <td><%= pagamento.mes_ref %></td>
+                                    <td><%= pagamento.valor %></td>
+                                    <td><%= pagamento.status %></td>
+                                </tr>
+                                <% } %>
+
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </span>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    
     <script src="/js/treino.js"></script>
     
     <%- include('partials/footer') %>
