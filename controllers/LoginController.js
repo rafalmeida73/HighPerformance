@@ -1,4 +1,4 @@
-const { Treinador, Aluno, Aula, Presenca, Financa } = require('../models');
+const { Treinador, Aluno, Aula, Presenca, Financa, Mensalidade } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -24,6 +24,15 @@ module.exports = {
                  treinadores_id: user.id
 
              },
+             include:
+                [
+                    {
+                    model:Aluno,
+                    as:'aluno',
+                    include:'aula'
+                    },
+
+                ],
              raw:true
          })
          console.log(aulas)
@@ -38,7 +47,9 @@ module.exports = {
                         dia.qtde = await parseInt(qtde.count)
                     }
                 }     
-            }              
+            }        
+            
+            res.render("crie", { user, periodo, aulas });
     },
 
     showAlunos: async(req, res) => {        
@@ -58,7 +69,7 @@ module.exports = {
     },
     showNovoAluno: async (req,res) => {
         let treinadores_id = req.session.usuario.id;
-        console.log('=================> ' + req.file)
+
         // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
        let {nome, email, telefone, meta } = req.body
@@ -86,7 +97,7 @@ module.exports = {
         let {nome, observacoes, alunos_id, data_aula, horario} = req.body;
  
       
-        const resultado = await Aula.create({
+        await Aula.create({
             nome,
             observacoes,
             treinadores_id,
@@ -107,10 +118,17 @@ module.exports = {
            where:{
                id: req.params.id
            }
-       })
+        });
+
+        let mensalidades = await Mensalidade.findAll({
+            where:{
+                alunos_id: req.params.id
+            }
+        });
+        
 
         if (aluno) {
-			res.render("treino", {aluno});
+			res.render("treino", { aluno, mensalidades });
 		} else {
 			res.render("404")
 		}

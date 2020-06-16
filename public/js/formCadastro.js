@@ -20,7 +20,7 @@ $("#formCad").validate({
         repSenha: {
             required: true,
             minlength: 5,
-            equalTo: "#password"
+            equalTo: "#senha"
         }
     },
     errorElement: 'div',

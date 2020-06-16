@@ -71,6 +71,7 @@ module.exports = {
     storeCadastro: async(req, res) =>{
         let {name, email, cel, senha, repSenha} = req.body;
         // res.send(req.body)
+ 
         console.log('passei aqui => ' + name +' '+email+' '+cel+' '+senha+' '+repSenha)
         if (senha !== repSenha){
           return res.render('cadastro', {error: "As senhas devem ser iguais"});

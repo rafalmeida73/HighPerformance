@@ -22,6 +22,10 @@ module.exports = {
             alunos_id: 3,
             aulas_id: 1,
           },
+          {
+            alunos_id: 4,
+            aulas_id: 2,
+          },
         ], {});
 
   },

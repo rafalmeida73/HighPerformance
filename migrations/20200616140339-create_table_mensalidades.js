@@ -3,7 +3,7 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable(
-      'aulas', 
+      'mensalidades', 
       {
         id: {
             type: Sequelize.INTEGER,
@@ -11,12 +11,12 @@ module.exports = {
             autoIncrement: true,
             allowNull:false
         },
-        nome: {
-            type: Sequelize.STRING(100),
-            allowNull: false
+        mes_ref: {
+            type: Sequelize.STRING(45),
+            allowNull: true
         },
-        observacoes: {
-            type: Sequelize.STRING(400),
+        valor: {
+            type: Sequelize.INTEGER,
             allowNull: true
         },
         treinadores_id:{
@@ -28,16 +28,17 @@ module.exports = {
           onUpdate:'CASCADE',
           onDelete:'CASCADE'
         },
-        data_aula: {
-            type: Sequelize.STRING(45),
-            allowNull: true
-        },
-        horario: {
-            type: Sequelize.STRING(45),
-            allowNull: true
+        alunos_id:{
+          type:Sequelize.INTEGER,
+          references:{
+            model:'alunos',
+            key:'id'
+          },
+          onUpdate:'CASCADE',
+          onDelete:'CASCADE'
         },
         status: {
-          type: Sequelize.STRING(45),
+          type: Sequelize.STRING(10),
           allowNull: true
       }
 
@@ -46,7 +47,7 @@ module.exports = {
 
   down: (queryInterface, Sequelize) => {
 
-      return queryInterface.dropTable('aulas');
+      return queryInterface.dropTable('mensalidades');
 
   }
 };
