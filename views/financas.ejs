@@ -12,7 +12,7 @@
 
         <div class="container">
         <div class="col s12 m12 quadrado" style="margin-bottom: 0;">
-            <div id="alunos"><h2>JUNHO/2020</h2></div>                                    
+            <div id="alunos"><h2><%=mes%>/<%=ano%></h2></div>                                    
         </div>
    
 
@@ -58,6 +58,10 @@
     <%- include('partials/footer') %>
     <%- include('partials/rodape') %>
 
+<script>
+    var sla = new Date();
+    var sla2 = sla.getMonth();// 11
+</script>
 
     <script>
          $('.dropdown-trigger').dropdown();
