@@ -35,12 +35,37 @@
                         <label for="telefone">Celular</label>
                         <div class="errorTxt3 right-align "></div>
                     </div>
+                    
                     <div class="input-field">
                         <i class="material-icons prefix">directions_run</i>
                         <input name="meta" type="text" class="form-control" data-error=".errorTxt4">
                         <label for="meta">Meta</label>
                         <div class="errorTxt4 right-align"></div>
                     </div>
+
+                    <div class="input-field">
+                        <i class="material-icons prefix">format_list_bulleted</i>
+                        <select name="plano" >
+                            <option value="" disabled selected>Plano</option>
+                            <option value="Mensal">Mensal</option>
+                            <option value="Avulso">Avulso</option>
+                        </select>
+                        <div class="errorTxt4 right-align"></div>
+                    </div>
+                    
+                    <div class="input-field">
+                        <i class="material-icons prefix">arrow_forward</i>
+                        <input name="tempo_plano" type="number" class="form-control">
+                        <label for="tempo_plano">Meses/Aulas</label>
+                        <div class="errorTxt4 right-align"></div>
+                    </div>
+                    <div class="input-field">
+                        <i class="material-icons prefix">arrow_forward</i>
+                        <input name="valor" type="number" class="form-control">
+                        <label for="valor">Valor</label>
+                        <div class="errorTxt4 right-align"></div>
+                    </div>
+                    
                     <div class="input-field">
                         <button class="btn waves-effect waves-light right submit" type="submit" name="action"
                             id="btnSubmit">Cadastrar</button>

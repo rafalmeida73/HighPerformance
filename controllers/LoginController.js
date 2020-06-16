@@ -73,7 +73,7 @@ module.exports = {
 
         // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
-       let {nome, email, telefone, meta } = req.body
+       let {nome, email, telefone, meta, plano, tempo_plano, valor } = req.body
        let img = `/img/${req.file.originalname}`;
        const resultado = await Aluno.create({
         img,
@@ -81,8 +81,39 @@ module.exports = {
         email,
         telefone,
         meta,
-        treinadores_id
+        treinadores_id,
+        plano,
+        tempo_plano,
+        valor
        })
+
+       
+       var months    = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro','Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro', 'Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro']
+       if (plano == "Mensal") {
+           let hoje = parseInt(new Date().getMonth());
+           let intervalo = hoje + parseInt(tempo_plano)
+        for (var i=hoje; i < intervalo; i++){
+
+            await Mensalidade.create({
+                mes_ref: months[i],
+                valor,
+                alunos_id: resultado.id,
+                treinadores_id,
+                status: 0
+            })
+          }
+       }else {
+        let intervalo = 1 + parseInt(tempo_plano)
+        for (let i=1; i < intervalo; i++){
+            await Mensalidade.create({
+                mes_ref: `Dia ${i}`,
+                valor,
+                alunos_id: resultado.id,
+                treinadores_id,
+                status: 0
+            })
+          }
+       }
     //    console.log(resultado)
 		//Redirecionar o usuário para a lista de alunos
 		res.redirect("/home/alunos")		
