@@ -67,7 +67,7 @@ module.exports = {
                 }     
             }        
             
-            res.render("crie", { user, periodo, aulas_alunos });
+            res.render("crie", { user, periodo, aulas });
     },
 
     showAlunos: async(req, res) => {        
