@@ -98,10 +98,21 @@
                             <% for(pagamento of mensalidades) { %>
                             
                             <tbody>
-                                    <tr>
+                                    <tr data-url="/home/treino/<%= aluno.id %>">
                                     <td><%= pagamento.mes_ref %></td>
                                     <td><%= pagamento.valor %></td>
-                                    <td><%= pagamento.status %></td>
+                                    <td>
+                                        <form action="/home/treino/<%=aluno.id%>/pago" method="post">
+                                            <div class="switch">
+                                                <label>
+                                                Off
+                                                <input name="pago" type="checkbox">
+                                                <span class="lever"></span>
+                                                On
+                                                </label>
+                                            </div>
+                                        </form>
+                                    </td>
                                 </tr>
                                 <% } %>
 
