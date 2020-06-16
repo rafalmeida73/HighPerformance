@@ -23,11 +23,28 @@ const helpers = {
     addDias: function (data, dias) {
         let nDate = new Date(data);
         return nDate.setUTCDate(nDate.getUTCDate() + dias);
+    },
+
+    periodo: async function(){
+        //let dt = new Date().toLocaleDateString().split('/').reverse().join('-')
+        let dt = new Date()
+        let dataInicio = new Date(dt).getTime()
+        let dataFinal  = this.addDias(dataInicio,10)
+        let a = []
+
+        // criando array com as datas do calendário conforme período dataInicio e dataFinal definidas acima     
+       for (let i=0; i < 10; i++) {
+            console.log(helpers.formatDate(dataInicio),helpers.diaDaSemana(dataInicio))
+            a.push({data:helpers.formatDate(dataInicio),diaSemana:helpers.diaDaSemana(dataInicio), qtde:0})
+            dataInicio =  helpers.addDias(dataInicio,1)
+        }
+        return await a
     }
 
 }
   module.exports = helpers
 
+//console.log(helpers.periodo())
 // dt = '2020-06-14'
 // data = new Date(dt)
 // console.log(data)
