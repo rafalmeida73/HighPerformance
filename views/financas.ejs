@@ -7,16 +7,22 @@
     <%- include('partials/bikeGif') %>
 
         
-        <span id="mes" style="display: none;"><%=mes%></span>
-        <span id="valor" style="display: none;"><%=valor%></span>
-    
-              <% if(financas != ""){ %>
+        <span id="pagos" style="display: none;"><%=pagos%></span>
+        <span id="pendentes" style="display: none;"><%=pendentes%></span>
+
+        <div class="container">
+        <div class="col s12 m12 quadrado" style="margin-bottom: 0;">
+            <div id="alunos"><h2>JUNHO/2020</h2></div>                                    
+        </div>
+   
+
                 <div class="row" id="grafico">
-                    <div class="col s12 m12 l8">
-                    <canvas id="myChart" width="400" height="300"></canvas>
+                    <div class="col s12 m12 l7">
+                    <!-- <canvas id="myChart" width="400" height="300"></canvas> -->
+                    <canvas id="doughnut-chart" width="800" height="700"></canvas>
                 </div>
 
-                    <div class="col s12 m12 l4">
+                    <div class="col s12 m12 l5">
                         <div class="cards">
             
                             <div class="card">
@@ -24,161 +30,35 @@
                                     <i class="material-icons background-round mt-5">attach_money</i>
                                 </div>
                                 <div class="right-align">
-                                    <h5 class="white-text">R$ <%=total%></h5>
-                                    <p class="white-text">Total</p>
+                                    <h5 class="white-text">R$ <%=pagos%></h5>
+                                    <p class="white-text">Recebido</p>
                                 </div>
                             </div>
-                        <div id="card2">
-                            <a class='btn' href='/home/financas/cadastrarFinancas'>Adicionar colunas</a>
+                        <div class="card2">
+                            <div>
+                                <i class="material-icons background-round mt-5">attach_money</i>
+                            </div>
+                            <div class="right-align">
+                                <h5 class="white-text">R$ <%=pendentes%></h5>
+                                <p class="white-text">A Receber</p>
+                            </div>
                         </div>
                         </div>
                     </div>
                     
                 </div>
-                
-                <div class="container">
-                    <ul class=" collapsible popout">
-                        <li>
-                          <div class="collapsible-header"><i class="material-icons">create</i>Alterar</div>
-                          <div class="collapsible-body">
-        
-                            <div class="container">
-                                <div class="col s12 m12 l6">
-                                    <form id="formFinancas" id="form" action="/home/financas/editar?_method=PUT" method="post">
-                                        
-                                        <div class="input-field col s12">
-                                            <select class="black-text" id="name" name="mes" data-error=".errorTxt1">
-                                                <option value="Selecione" selected disabled>Selecione</option>
-                                            <% for (financa of financas) { %>
-                
-                                                    <option  value="<%=financa.mes%>"><%=financa.mes%></option> 
-                                            <% } %>
-                                                </select>
-                                                <div class="errorTxt1 right-align"></div>
-                                        </div>
-                            
-                                            <div class="input-field">
-                                                <i class="material-icons prefix">monetization_on</i>
-                                                <input name="valor" id="valor" type="number" data-error=".errorTxt2">
-                                                <label for="valor">Valor</label>
-                                                <div class="errorTxt2 right-align"></div>
-                                            </div>
-                                            
-                                                <div class="col s12 m6 l6">
-                                                    <div class="input-field">
-                                                        <button id="btn" class="btn waves-effect waves-light right submit" type="submit" name="action">Salvar</button>
-                                                    </div>
-                                            </div>
-                                        </form>
-                                </div>
-                            </div>
-        
-                          </div>
-                        </li>
-        
-        
-                        <li>
-                          <div class="collapsible-header"><i class="material-icons">clear</i>Deletar</div>
-                          <div class="collapsible-body">
-        
-                            <div class="container">
-                                <div class="col s12 m12 l6">
-                                    <form id="formFinancasDelete" id="form" action="/home/deletarFinancas?_method=DELETE" method="post">
-                                        
-                                        <div class="input-field col s12">
-                                            <select class="black-text" id="name" name="mes" data-error=".errorTxt1">
-                                                <option value="Selecione" selected disabled>Selecione</option>
-                                            <% for (financa of financas) { %>
-                
-                                                    <option  value="<%=financa.mes%>"><%=financa.mes%></option> 
-                                            <% } %>
-                                                </select>
-                                                <div class="errorTxt1 right-align"></div>
-                                        </div>
-                        
-                                            
-                                                <div class="col s12 m6 l6">
-                                                    <div class="input-field">
-                                                        <button id="btn red" class="btn waves-effect waves-light right submit" type="submit" name="action">Deletar</button>
-                                                    </div>
-                                            </div>
-                                        </form>
-                                </div>
-                            </div>
-        
-                          </div>
-                        </li>
-                      </ul>
                 </div>
-
-            </div>
-            <% } else{ %>  
-            <div style="height: 100vh;">
-                <div class="col s12 m12 l12 center-align">
-                    <img src="/img/grafico.png" class="responsive-img" alt="grafico.png" width="700">
-                </div>
-                <div class="col s12 m6 l6 center-align">
-                   <h4><a style="font-weight: bold;" href="/home/financas/cadastrarFinancas" class="black-text">Criar gráfico</a></h4>
-                </div>
-            </div>
-            <% } %>
-
-            
-       
-
-        
-
+         
+                
+               
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
     <script src="/js/finacas.js"></script>
 
     <%- include('partials/footer') %>
     <%- include('partials/rodape') %>
-    <script>
-        let mes = document.getElementById("mes").textContent;
-        let valor = document.getElementById("valor").textContent;
-        let ArrayMes = mes.split(",");
-        let ArrayValor = valor.split(",");
 
-        var ctx = document.getElementById("myChart").getContext("2d");
-var myChart = new Chart(ctx, {
-    type: "line",
-    data: {
-        labels: ArrayMes,
-        datasets: [{
-            label: "Pagamentos",
-            data: ArrayValor,
-            backgroundColor: [
-                "rgba(54, 162, 235, 0.2)",
-            ],
-            borderColor: [
-                "rgba(54, 162, 235, 1)",
-            ],
-            borderWidth: 1,
-        }, ],
-    },
-    options: {
-        title: {
-            display: true,
-            fontSize: 20,
-            text: "PAGAMENTOS MENSAIS",
-        },
-        labels: {
-            fontStyle: "bold",
-        },
-        scales: {
-            yAxes: [{
-                ticks: {
-                    // Include a dollar sign in the ticks
-                    callback: function(value, index, values) {
-                        return "R$ " + value;
-                    },
-                },
-            }, ],
-        },
-    },
-});
-    </script>
+
     <script>
          $('.dropdown-trigger').dropdown();
     </script>
