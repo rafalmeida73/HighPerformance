@@ -37,9 +37,8 @@ module.exports = {
                         console.log(dia.data,helpers.formatDate(qtde.data_aula), true) 
                         dia.qtde = await parseInt(qtde.count)
                     }
-                }                   
-
-
+                }     
+            }              
     },
 
     showAlunos: async(req, res) => {        
