@@ -10,7 +10,7 @@ module.exports = {
         [
           {
             nome: 'Diogo',
-            email: 'diogo@email.com',
+            email: 'diogofcar@gmail.com',
             funcao:'dev',
             site: 'https://github.com/Dogix11',
             location: 'Brasil',
@@ -20,7 +20,7 @@ module.exports = {
           },
           {
             nome: 'Paulo Ernesto',
-            email: 'paulo@email.com',
+            email: 'pauloernestom@gmail.com',
             funcao:'dev',
             site: 'https://github.com/pauloernestom',
             location: 'Brasil',
@@ -30,7 +30,7 @@ module.exports = {
           },
           {
             nome: 'Rafael Santana',
-            email: 'rafael@email.com',
+            email: 'rafaelsantana7213@gmail.com',
             funcao:'dev',
             site: 'https://github.com/rafalmeida73',
             location: 'Brasil',
@@ -40,7 +40,7 @@ module.exports = {
           },
           {
             nome: 'Roni Cleber',
-            email: 'roni@email.com',
+            email: 'ronycleber_pm@hotmail.com',
             funcao:'Scrum Master',
             site: 'https://github.com/ronycleber',
             location: 'Brasil',

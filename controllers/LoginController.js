@@ -35,6 +35,23 @@ module.exports = {
                 ],
              raw:true
          })
+         let aulas_alunos = await Aula.findAll({
+            //     attributes: ['data_aula'],
+         
+                 where: {
+                     treinadores_id: user.id
+    
+                 },
+                 include:
+                    [
+                        {
+                        model:Aluno,
+                        as:'aluno',
+                        include:'aula'
+                        },
+    
+                    ],
+             })
          
          console.log(aulas)
          console.log('==================================================================')        
@@ -50,7 +67,7 @@ module.exports = {
                 }     
             }        
             
-            res.render("crie", { user, periodo, aulas });
+            res.render("crie", { user, periodo, aulas_alunos });
     },
 
     showAlunos: async(req, res) => {        
