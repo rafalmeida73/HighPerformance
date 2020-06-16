@@ -89,7 +89,7 @@ module.exports = {
             valor: 50,
             alunos_id: 3,
             treinadores_id:2,
-            status:'0
+            status:0
           },
           {
             mes_ref: 'Janeiro',
