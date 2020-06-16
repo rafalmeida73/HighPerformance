@@ -42,7 +42,19 @@ module.exports = {
           },
           onUpdate:'CASCADE',
           onDelete:'CASCADE'
-        }
+        },
+        plano: {
+          type: Sequelize.STRING(45),
+          allowNull: false
+        },
+        tempo_plano: {
+          type: Sequelize.INTEGER,
+          allowNull: true,
+        },
+        valor: {
+          type: Sequelize.DECIMAL(4,2),
+          allowNull: true,
+        },
     });
   },
 

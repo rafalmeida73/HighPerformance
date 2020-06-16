@@ -43,6 +43,10 @@ const Aluno = (sequelize, DataTypes) => {
                 type: DataTypes.INTEGER,
                 allowNull: true,
             },
+            valor: {
+                type: DataTypes.DECIMAL,
+                allowNull: true,
+            },
         },{
             tableName: "alunos",
             timestamps: false
