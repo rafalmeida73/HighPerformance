@@ -106,7 +106,7 @@
                                 <td>R$ <%= pagamento.valor %></td>
                                 <td>
 
-                                    <% if (pagamento.status) { %>
+                                    <% if (!pagamento.status) { %>
                                     <span>Pago</span> 
                                     <% } else { %>
                                     <div class="input-field col s12">
