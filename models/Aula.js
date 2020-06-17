@@ -21,11 +21,6 @@ let Aula = (sequelize, DataTypes) => {
                 allowNull: true,
 
             },
-            alunos_id: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-
-            },
             data_aula: {
                 type: Date(),
                 allowNull: true
