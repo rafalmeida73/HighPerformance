@@ -5,3 +5,4 @@ testes
 .vscode
 curriculos
 yarn.lock
+helpers/teste.js

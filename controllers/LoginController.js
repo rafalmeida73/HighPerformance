@@ -88,14 +88,17 @@ module.exports = {
         })
 
 
-        var months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    
         if (plano == "Mensal") {
-            let hoje = parseInt(new Date().getMonth());
-            let intervalo = hoje + parseInt(tempo_plano)
-            for (var i = hoje; i < intervalo; i++) {
+            let hoje = new Date();
+            let objPags = helpers.diasMeses(hoje,tempo_plano)
+
+            console.log(objPags);
+            
+            for (data of objPags.data) {
 
                 await Mensalidade.create({
-                    mes_ref: months[i],
+                    mes_ref: data,
                     valor,
                     alunos_id: resultado.id,
                     treinadores_id,
