@@ -201,7 +201,6 @@ module.exports = {
         );
         let mes = meses[data.getMonth()];
         let ano = data.getFullYear();
-console.log(req.body)
 
         await Mensalidade.create({
             valor,
@@ -299,7 +298,7 @@ console.log(req.body)
                 treinadores_id: user.id,
                 pago: 0,
                 mes_ref: mes,
-                ano
+                // ano
             }
         });
 
@@ -308,7 +307,7 @@ console.log(req.body)
                 treinadores_id: user.id,
                 pago: 1,
                 mes_ref: mes,
-                ano
+                // ano
             }
         });
 

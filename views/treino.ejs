@@ -102,30 +102,12 @@
                                 <td><%=mensalidade.mes_ref%>/<%=mensalidade.ano%></td>
                                 <td><%=mensalidade.valor%></td>
                                 <td>
-<<<<<<< HEAD
+
                                     <% if(mensalidade.pago == 0){ %>
                                         <i class="material-icons red-text">close</i>
                                     <% } else{ %>  
                                         <i class="material-icons green-text">check</i>
-=======
-
-                                    <% if (!pagamento.status) { %>
-                                    <span>Pago</span> 
-                                    <% } else { %>
-                                    <div class="input-field col s12">
-                                        <form action="/salvar/pagamento" method="post">
-                                    <select name="pago">
-                                        <option value="0" disabled selected>Pagamento pendente</option>
-                                        <option value="1">Pago</option>
-                                        <option value="0">Pagamento pendente</option>
-                                    </select>
-                                    <input type="hidden" name="mes_ref" value="<%=pagamento.id %>">
-                                    <input type="hidden" name="aluno" value="<%=aluno.id%>">
-                        
-                                    <button class="btn waves-effect waves-light right submit" type="submit">Salvar alterações</button>
-                                </form>
-                                    </div>
->>>>>>> f550871f38f6ee319b0294ecdd94ef7e9a2cf7b4
+                                    </td>
                                     <% } %>
                                 </td>
                                 <td>

@@ -13,7 +13,7 @@ let Mensalidade = (sequelize, DataTypes) => {
                 allowNull: false
             },
             ano: {
-                type: DataTypes.STRING(45),
+                type: DataTypes.INTEGER,
                 allowNull: false
             },
             valor: {
