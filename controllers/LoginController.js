@@ -144,7 +144,12 @@ module.exports = {
     },
     showTreino: async (req, res) => {
         let user = req.session.usuario;
-
+        let data = new Date();
+        let meses = new Array(
+            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        );
+        let mes = meses[data.getMonth()];
+        let ano = data.getFullYear();
 
         let aluno = await Aluno.findOne({
             where: {
@@ -154,18 +159,51 @@ module.exports = {
 
         let mensalidades = await Mensalidade.findAll({
             where: {
-                alunos_id: req.params.id
+                alunos_id: req.params.id,
+                treinadores_id: user.id
             }
         });
 
 
         if (aluno) {
-            res.render("treino", { aluno, mensalidades });
+            res.render("treino", { aluno, mensalidades, mes, ano });
         } else {
             res.render("404")
         }
     },
+    showMensalidades: async (req, res) => {
+        let treinadores_id = req.session.usuario.id;
+        let alunos_id = req.params.id;
+        let { valor, pago } = req.body;
+        let data = new Date();
+        let meses = new Array(
+            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
+        );
+        let mes = meses[data.getMonth()];
+        let ano = data.getFullYear();
+console.log(req.body)
 
+        await Mensalidade.create({
+            valor,
+            pago,
+            mes_ref: mes,
+            ano,
+            treinadores_id,
+            alunos_id
+        })
+
+
+        res.redirect('/home/treino/' + alunos_id)
+    },
+    showDelMensalidades: async (req, res) => {
+        let resultado = await Mensalidade.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        return res.redirect('/home/alunos')
+    },
     salvarPagamento: async (req, res) => {
         let { pago, mes_ref, aluno } = req.body;
         console.log(req.body);
@@ -215,7 +253,7 @@ module.exports = {
         });
 
 
-        return res.redirect('/home/alunos');
+        return res.redirect('/home/alunos/' + req.params.id);
     },
     showDeleteAlunos: async (req, res) => {
         3
@@ -239,16 +277,18 @@ module.exports = {
         let pendentes = await Mensalidade.sum('valor', {
             where: {
                 treinadores_id: user.id,
-                status: 0,
-                mes_ref: mes
+                pago: 0,
+                mes_ref: mes,
+                ano
             }
         });
 
         let pagos = await Mensalidade.sum('valor', {
             where: {
                 treinadores_id: user.id,
-                status: 1,
-                mes_ref: mes
+                pago: 1,
+                mes_ref: mes,
+                ano
             }
         });
 

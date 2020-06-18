@@ -34,19 +34,19 @@
                             <a class="waves-effect waves-light btn red modal-trigger" href="#modal1">Deletar aluno</a>
 
                             <div id="modal1" class="modal">
-                                <div class="modal-content center-align">
-                                  <h4>Tem certeza que deseja excluir <%= aluno.nome %></h4>
+                               <div class="modal-content center-align">
+                                  <h4>Tem certeza que deseja excluir <%= aluno.nome %>?</h4>
                                   <p>Ao clicar em confirmar o aluno vai ser removido definitivamente do sistema!</p>
                                 </div>
                                 <div class="modal-footer">
                                     
                                   <a href="#!" class="modal-close waves-effect waves-green btn-flat red-text">
                                       <form action="/home/alunos/deletar/<%=aluno.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                                          <button id="btnRemover" class="white-text" type="submit">Confirmar</button>
+                                          <button class="white-text btnRemover" type="submit">Confirmar</button>
                                       </form>
                                   </a>
-                                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cancelar</a>
                                 </div>
+                              </div>
                               </div>
                         </div>
                     </li>
@@ -79,64 +79,98 @@
     </div>
 
     <div class="container">
-        <ul class="collapsible" style="margin-bottom: 100px;">
-            <li>
-                <div class="collapsible-header">
-                    <i class="material-icons" style="margin-top: 15px;">assignment_ind</i> <p>Pagamentos</p>
-                </div>
-                <div class="collapsible-body"><span>
-                    <div class="col s12 m12 l12">
-                        
-                        <table class="highlight centered table responsive-table" id="tabledata">
+        <ul class="collapsible popout" id="mensalidade">
+            <% if(mensalidades == ""){ %>
+                    <li></li>
+              <% } else{ %>  
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">event</i>Mensalidades</div>
+                    <div class="collapsible-body">
+                        <table class="striped highlight centered">
                             <thead>
-                                <tr>
-                                    <th>Referente</th>
-                                    <th>Valor</th>
-                                    <th>Situação</th>
-                                </tr>
+                              <tr>
+                                  <th>Data</th>
+                                  <th>Valor</th>
+                                  <th>Status</th>
+                                  <th>Deletar</th>
+                              </tr>
                             </thead>
-
-                            <% for(pagamento of mensalidades) { %>
-                            
+                    
                             <tbody>
-                                
-                                <tr data-url="#">
-
-                                <td><%= pagamento.mes_ref %></td>
-                                <td>R$ <%= pagamento.valor %></td>
+                            <% for (mensalidade of mensalidades) { %>
+                              <tr>
+                                <td><%=mensalidade.mes_ref%>/<%=mensalidade.ano%></td>
+                                <td><%=mensalidade.valor%></td>
                                 <td>
-
-                                    <% if (pagamento.status) { %>
-                                    <span>Pago</span> 
-                                    <% } else { %>
-                                    <div class="input-field col s12">
-                                        <form action="/salvar/pagamento" method="post">
-                                    <select name="pago">
-                                        <option value="0" disabled selected>Pagamento pendente</option>
-                                        <option value="1">Pago</option>
-                                        <option value="0">Pagamento pendente</option>
-                                    </select>
-                                    <input type="hidden" name="mes_ref" value="<%=pagamento.id %>">
-                                    <input type="hidden" name="aluno" value="<%=aluno.id%>">
-                        
-                                    <button class="btn waves-effect waves-light right submit" type="submit">Salvar alterações</button>
-                                </form>
-                                    </div>
+                                    <% if(mensalidade.pago == 0){ %>
+                                        <i class="material-icons red-text">close</i>
+                                    <% } else{ %>  
+                                        <i class="material-icons green-text">check</i>
                                     <% } %>
                                 </td>
-                                </tr>
-                                <% } %>
-
-                                
+                                <td>
+                                    <form action="<%=mensalidade.id%>">
+                                       <a class="black-text  modal-trigger" href="#modal2"><i class="material-icons">delete</i></a> 
+                                    </form>   
+                                </td>
+                              </tr>
+                              <% } %>
+                              
                             </tbody>
-                        </table>
-                        
-                    
+                          </table>
+                          <div id="modal2" class="modal">
+                            <div class="modal-content center-align">
+                                <h4>Tem certeza que deseja excluir?</h4>
+                                <p>Ao clicar em confirmar a mensalidade vai ser removido definitivamente do sistema!</p>
+                              </div>
+                              <div class="modal-footer">
+                                  
+                                <a href="#!" class="modal-close waves-effect waves-green btn-flat red-text">
+                                    <form action="/home/mensalidade/<%=mensalidade.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                                        <button  class="white-text btnRemover" type="submit">Confirmar</button>
+                                    </form>
+                                </a>
+                              </div>
+                          </div>
                     </div>
-                </span>
+                  </li>
+              <% } %>
+            <li>
+
+              <div class="collapsible-header"><i class="material-icons">create</i>Cadastra nova mensalidade</div>
+              <div class="collapsible-body">
+                  <form action="/home/mensalidade/<%=aluno.id%>" method="POST" id="formCadMensal">
+                      <div class="row">
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">date_range</i>
+                        <input name="mes_ref" id="mes_ref" disabled  type="text" value="<%=mes%>">
+                        <label for="mes_ref">Referente</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <i class="material-icons prefix">attach_money</i>
+                        <input name="valor" id="valor" type="number" data-error=".errorTxt1">
+                        <label for="valor">Valor</label>
+                        <div class="errorTxt1 right-align "></div>
+                    </div>
                 </div>
+                <div class="col s12">
+                    <select class="browser-default" id="pago" name="pago" data-error=".errorTxt2">
+                        <option value="" disabled selected>Selecione o status</option>
+                        <option value="1">Recebido</option>
+                        <option value="0">A receber</option>
+                    </select>
+                    <div class="input-field">
+                        <div class="errorTxt2 right-align"></div>
+                    </div>
+                </div> 
+                  <div class="input-field">
+                    <button class="btn waves-effect waves-light right submit" type="submit" 
+                        id="btnSubmit">Cadastrar</button>
+                </div>
+                  </form>
+            </div>
             </li>
-        </ul>
+          </ul>
     </div>
 
     
@@ -144,3 +178,8 @@
     
     <%- include('partials/footer') %>
     <%- include('partials/rodape') %>
+    <script>
+       $(document).ready(function(){
+    $('.modal').modal();
+  });
+    </script>

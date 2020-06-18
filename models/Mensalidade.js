@@ -12,6 +12,10 @@ let Mensalidade = (sequelize, DataTypes) => {
                 type: DataTypes.STRING(45),
                 allowNull: false
             },
+            ano: {
+                type: DataTypes.STRING(45),
+                allowNull: false
+            },
             valor: {
                 type: DataTypes.DECIMAL(4,2),
                 allowNull: true
@@ -26,7 +30,7 @@ let Mensalidade = (sequelize, DataTypes) => {
                 allowNull: true,
 
             },
-            status:{
+            pago:{
                 type: DataTypes.STRING(10),
                 allowNull: false
             }

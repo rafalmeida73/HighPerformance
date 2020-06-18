@@ -45,13 +45,19 @@ canvas {
     height: 100px;
 }
 
-#btnRemover{
+.btnRemover{
     background-color: #F44336;
     border: none;
     font-weight: bold;
 }
 
-#modal1{
+.btnRemover:active{
+    background-color: #F44336;
+    border: none;
+    font-weight: bold;
+}
+
+#modal1, #modal2{
     margin-top: 30vh;
 }
 
@@ -74,6 +80,58 @@ canvas {
 
 span {
     color: black;
+}
+
+
+#formCadMensal{
+    margin-bottom: 7vh;
+}
+
+#mensalidade{
+    margin-bottom: 15vh;
+}
+.btn{
+     background-color: #ff7e00;
+     font-weight: bold;
+}
+.btn:hover{
+     background-color: white;
+     color: black;
+     border: 1px solid #ff7e00;
+}
+
+#mensalidade form .input-field input[type=number]:focus,
+#mensalidade form li:focus {
+    border-bottom: 1px solid #ff7e00;
+    box-shadow: 0 1px 0 0 #ff7e00;
+}
+
+#mensalidade form .input-field label {
+    color: #000;
+}
+
+#mensalidade form .input-field .prefix.active {
+    color: #ff7e00;
+}
+
+.dropdown-content li>span {
+  color: #000 !important;
+}
+
+.dropdown-content li>a {
+  color: #000 !important;
+}
+
+.select-content li>span {
+  color: #000 !important;
+}
+
+.select-content li>a {
+  color: #000 !important;
+}
+
+.error {
+    color: red;
 }
 
 #footer {

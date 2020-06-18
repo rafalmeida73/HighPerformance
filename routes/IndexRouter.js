@@ -51,6 +51,8 @@ router.put('/home/alunos/editar/:id',VerificaUsuarioLogado, LoginController.show
 router.delete('/home/alunos/deletar/:id',VerificaUsuarioLogado, LoginController.showDeleteAlunos);
 router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
+router.post('/home/mensalidade/:id',VerificaUsuarioLogado, LoginController.showMensalidades);
+router.delete('/home/mensalidade/:id',VerificaUsuarioLogado, LoginController.showDelMensalidades);
 router.post('/salvar/pagamento',VerificaUsuarioLogado, LoginController.salvarPagamento)
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)
