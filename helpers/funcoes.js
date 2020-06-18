@@ -20,26 +20,64 @@ const helpers = {
         return '(' + diaSemana + ')'
     },
 
+    isLeapYear(year) { 
+        return (((year % 4 === 0) && (year % 100 !== 0)) || (year % 400 === 0)); 
+    },
+
+    getDaysInMonth(year, month) {
+        return [31, (this.isLeapYear(year) ? 29 : 28), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31][month];
+    },
+
+
     addDias: function (data, dias) {
         let nDate = new Date(data);
         return nDate.setUTCDate(nDate.getUTCDate() + dias);
     },
 
-    periodo: async function(){
+    diasMeses(hoje, nMeses){
+        var date = new Date(hoje)
+
+        var dias = 0
+
+        var objDatas = {data:[], diaSemana:[], dias:"" }
+
+
+        for(let i=0; i< nMeses; i++){
+
+            objDatas.data.push(this.formatDate(date));
+            objDatas.diaSemana.push(this.diaDaSemana(date));
+            objDatas.dias = dias;
+            
+            var diasNoMes = this.getDaysInMonth(date.getFullYear(), date.getMonth())
+            dias = dias + diasNoMes;
+            date = new Date(this.addDias(date, diasNoMes))
+
+            
+            
+            
+        }
+
+
+        return objDatas;
+        
+    },
+
+    periodo: async function(periodo=10){
         //let dt = new Date().toLocaleDateString().split('/').reverse().join('-')
         let dt = new Date()
         let dataInicio = new Date(dt).getTime()
-        let dataFinal  = this.addDias(dataInicio,10)
+        let dataFinal  = this.addDias(dataInicio,periodo)
         let a = []
 
         // criando array com as datas do calendário conforme período dataInicio e dataFinal definidas acima     
-       for (let i=0; i < 10; i++) {
+       for (let i=0; i < periodo; i++) {
             console.log(helpers.formatDate(dataInicio),helpers.diaDaSemana(dataInicio))
             a.push({data:helpers.formatDate(dataInicio),diaSemana:helpers.diaDaSemana(dataInicio), qtde:0})
             dataInicio =  helpers.addDias(dataInicio,1)
         }
         return await a
-    }
+    },
+    
 
 }
   module.exports = helpers

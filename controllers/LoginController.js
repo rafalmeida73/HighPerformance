@@ -1,4 +1,4 @@
-const { Treinador, Aluno, Aula, Presenca, Financa, Mensalidade } = require('../models');
+const { Treinador, Aluno, Aula, Presenca, Financa, Mensalidade, AulaHasAluno } = require('../models');
 const bcrypt = require('bcrypt')
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
@@ -32,13 +32,11 @@ module.exports = {
                         as: 'aluno',
                         include: 'aula'
                     },
-
                 ],
             raw: true
         })
-        console.log(aulas)
-        console.log('==================================================================')
-
+        
+        
         let periodo = await helpers.periodo()
         // atualizando o array criado acima com as aulas cadastradas no banco EX: 16/6/2020 ---- 1 aula, 21/6/2020 ---- 2 aula
         for await (dia of periodo) {
@@ -50,7 +48,26 @@ module.exports = {
             }
         }
 
-        res.render("crie", { user, periodo, aulas });
+        let aulas_alunos = await Aula.findAndCountAll({
+            //     attributes: ['data_aula'],
+            where: {
+                treinadores_id: user.id
+
+            },
+            include:
+                [
+                    {
+                        model: Aluno,
+                        as: 'aluno',
+                        include: 'aula'
+                    },
+                ],
+            raw: true
+        })
+        console.log(aulas_alunos.rows);
+        
+        console.log('==================================================================')
+        res.render("crie", { user, periodo, aulas:aulas_alunos.rows });
     },
 
     showAlunos: async (req, res) => {
@@ -88,14 +105,17 @@ module.exports = {
         })
 
 
-        var months = ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+    
         if (plano == "Mensal") {
-            let hoje = parseInt(new Date().getMonth());
-            let intervalo = hoje + parseInt(tempo_plano)
-            for (var i = hoje; i < intervalo; i++) {
+            let hoje = new Date();
+            let objPags = helpers.diasMeses(hoje,tempo_plano)
+
+            console.log(objPags);
+            
+            for (data of objPags.data) {
 
                 await Mensalidade.create({
-                    mes_ref: months[i],
+                    mes_ref: data,
                     valor,
                     alunos_id: resultado.id,
                     treinadores_id,
