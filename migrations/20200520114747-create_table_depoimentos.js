@@ -12,11 +12,11 @@ module.exports = {
             allowNull:false
         },
         img: {
-          type: Sequelize.STRING(100),
+          type: Sequelize.STRING(50),
           allowNull: false
       },
         nome: {
-            type: Sequelize.STRING(100),
+            type: Sequelize.STRING(50),
             allowNull: false
         },
         profissao: {
@@ -24,7 +24,7 @@ module.exports = {
             allowNull: false
         },
         mensagem: {
-          type: Sequelize.STRING(300),
+          type: Sequelize.STRING(1000),
           allowNull: false
       },
     });

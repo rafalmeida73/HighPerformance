@@ -76,9 +76,9 @@ CREATE TABLE contatos (
 
 CREATE TABLE depoimentos (
     id INT PRIMARY KEY AUTO_INCREMENT, 
-    img VARCHAR(100) NOT NULL, 
-    nome VARCHAR (100) NOT NULL,
-    profissao VARCHAR (100) NOT NULL,
+    img VARCHAR(50) NOT NULL, 
+    nome VARCHAR (50) NOT NULL,
+    profissao VARCHAR (50) NOT NULL,
     mensagem VARCHAR (1000) NOT NULL
 );
 
@@ -127,6 +127,14 @@ CREATE TABLE financas (
     FOREIGN KEY (treinadores_id) REFERENCES treinadores(id)
     ON DELETE CASCADE
     ON UPDATE CASCADE
+);
+
+CREATE TABLE depoimentos (
+	id INT PRIMARY KEY AUTO_INCREMENT,
+    img VARCHAR(100),
+    nome VARCHAR(100),
+    profissao VARCHAR(100),
+    mensagem VARCHAR(1000)
 );
 
 -- ADICIONAR DADOS 
@@ -214,3 +222,12 @@ VALUES
     ('Julho', 2020, 280, 4, 1, 0),
     ('Junho', 2020, 280, 2, 3, 1),
     ('Julho', 2020, 280, 2, 3, 0);
+    
+    
+INSERT INTO depoimentos (img, nome, profissao, mensagem)
+
+VALUES 
+	('/img/diogo.png', 'Diogo', 'Educador físico', 'Dolore labore est deserunt esse do reprehenderit.'),
+    ('/img/paulo.png', 'Paulo', 'Educador físico', 'Dolore labore est deserunt esse do reprehenderit.'),
+    ('/img/rafael.jpg', 'Rafael', 'Educador físico', 'Dolore labore est deserunt esse do reprehenderit.'),
+	('/img/roni.png', 'Roni', 'Educador físico', 'Dolore labore est deserunt esse do reprehenderit.');
