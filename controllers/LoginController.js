@@ -50,6 +50,7 @@ module.exports = {
 
         let aulas_alunos = await Aula.findAndCountAll({
             //     attributes: ['data_aula'],
+
             where: {
                 treinadores_id: user.id
 
@@ -62,26 +63,18 @@ module.exports = {
                         include: 'aula'
                     },
                 ],
-            raw: true
+
         })
-        // console.log(aulas_alunos.rows);
+
+
+        for (aula of aulas_alunos.rows){
+            aula.data_aula = helpers.formatDate(aula.data_aula)
+        }
         
-        let alunos = await Aluno.findAll({
-            where: {
-                treinadores_id: user.id
-
-            },
-            include:
-                [
-                    {
-                        model: Aula,
-                        as: 'aula',
-                        include: 'aluno'
-                    },
-                ],
-        })
-
-        console.log(aulas_alunos);
+        console.log(aulas_alunos.rows);
+        console.log(aulas_alunos.rows[0].dataValues.aluno);
+        console.log(periodo);
+        
         
         console.log('==================================================================')
         res.render("crie", { user, periodo, aulas:aulas_alunos.rows});

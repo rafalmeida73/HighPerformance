@@ -48,14 +48,15 @@
                                     </thead>
 
                                     <% for(aula of aulas) { %>
-                                    <% if (aula.data_aula == aulaDia ) { %>
+                                        
+                                    <% if (aula.dataValues.data_aula == aulaDia.data ) { %>
                                     <tbody>
-                                        <% for (aluno of aula.aluno) { %>
+                                        <% for (aluno of aula.dataValues.aluno) { %>
                                             <tr>
                                             <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto José"></td>
-                                            <td><%= aluno.nome %></td>
-                                            <td><%= aula.nome %></td>
-                                            <td><%= aula.horario %></td>
+                                            <td><%= aluno.dataValues.nome %></td>
+                                            <td><%= aula.dataValues.nome %></td>
+                                            <td><%= aula.dataValues.horario %></td>
                                             <td> <i class="material-icons prefix tooltipped" data-position="bottom"
                                                     data-tooltip="Enviar SMS">contact_mail</i></td>
                                             <td><a href="#" class="black-text">Remover aluno</a></td>
