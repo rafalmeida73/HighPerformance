@@ -6,6 +6,7 @@
 
     <%- include('partials/navBar') %>
     <%- include('partials/bikeGif') %>
+    <span id="nomes" style="display: none;"><%=nomes%></span>
  
     <!-- Alunos -->
     <div class="container">
@@ -22,7 +23,7 @@
                     <div class="nav-wrapper">                        
                         <form id="formSearch" action="/busca" method="get">
                             <div class="input-field">
-                                <input id="search" type="text" name="q" placeholder="Pesquisar Alunos" autocomplete="off">
+                                <input id="search" type="text" name="q" id="autocomplete-input" placeholder="Pesquisar Alunos" class="autocomplete">
                             </div>                            
                         </form>
                     </div>
@@ -74,9 +75,25 @@
         
     </div>
 
+
     
     <%- include('partials/footer') %>
     <script src="/js/linktr.js"></script>
+    <script>
+let nomes = document.getElementById("nomes").textContent;
+var names = nomes.split(",")
+let opcoes = {};
+names.forEach(function(v) {
+    opcoes[v] = null
+});
+
+$(document).ready(function(){
+    $('input.autocomplete').autocomplete({
+      data: opcoes,
+    });
+  });
+    </script>
     <%- include('partials/rodape') %>
+    
 
    

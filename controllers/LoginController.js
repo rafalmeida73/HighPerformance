@@ -71,6 +71,7 @@ module.exports = {
     },
 
     showAlunos: async (req, res) => {
+       
         let user = req.session.usuario;
 
         let alunos = await Aluno.findAll({
@@ -78,8 +79,13 @@ module.exports = {
                 treinadores_id: user.id
             }
         })
-        console.log(alunos)
-        res.render("alunos", { user, alunos });
+       
+        let nomes = [];
+        for (alun  of alunos) {
+            nomes.push(alun.nome)
+        }
+
+        res.render("alunos", { user, alunos, nomes });
     },
 
     showCadastroAluno: (req, res) => {
@@ -272,7 +278,7 @@ module.exports = {
         });
 
 
-        return res.redirect('/home/alunos/' + req.params.id);
+        return res.redirect('/home/treino/' + req.params.id);
     },
     showDeleteAlunos: async (req, res) => {
         3
@@ -327,7 +333,19 @@ module.exports = {
                     }
                 });
 
-            return res.render('alunos', { alunos: result });
+                let names = await Aluno.findAll({
+                    where: {
+                        treinadores_id: user.id
+                    }
+                })
+               
+                let nomes = [];
+                for (name  of names) {
+                    nomes.push(name.nome)
+                }
+               
+
+            return res.render('alunos', { alunos: result, nomes:nomes });
         } else {
             return res.redirect('/home/alunos');
         }
