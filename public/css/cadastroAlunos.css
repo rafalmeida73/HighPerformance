@@ -65,6 +65,7 @@ form .btn:hover {
 }
 
 #formCad .input-field input[type=date]:focus,
+#formCad .input-field input[type=number]:focus,
 #formCad .input-field input[type=email]:focus,
 #formCad .input-field input[type=tel]:focus,
 #formCad .input-field input[type=text]:focus {

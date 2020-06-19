@@ -1,6 +1,6 @@
-$("#formCad").validate({
+$("#formCadastro").validate({
     rules: {
-        imgUser: {
+        teste: {
             required: true,
         },
         nome: {
@@ -19,6 +19,17 @@ $("#formCad").validate({
         meta: {
             required: true,
         },
+        plano:{
+            required: true,
+        },
+        tempo_plano:{
+            required: true,
+            number: true
+        },
+        valor:{
+            required: true,
+            number: true
+        }
     },
     errorElement: 'div',
     errorPlacement: function(error, element) {

@@ -48,7 +48,7 @@
                 <tbody>
                     <% for (aluno of alunos) { %>
                     <tr data-url="/home/treino/<%= aluno.id %>">
-                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="Foto <%= aluno.nome %>" style="width:80px;height:80px;border-radius:50%;"></td>
+                        <td><img id="foto-aluno" src="<%= aluno.img %>" alt="<%= aluno.nome %>" style="width:80px;height:80px;border-radius:50%;"></td>
                         <td><%= aluno.nome %></td>
                         <td><%= aluno.telefone %></td>
                         <td><%= aluno.meta%> km</td>
