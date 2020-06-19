@@ -55,6 +55,7 @@ CREATE TABLE aulas (
 );
 
 CREATE TABLE aulas_has_alunos (
+	id INT PRIMARY KEY AUTO_INCREMENT,
     aulas_id INT,
     alunos_id INT,
     FOREIGN KEY (aulas_id) REFERENCES aulas(id)

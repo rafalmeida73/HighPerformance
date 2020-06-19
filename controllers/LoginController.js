@@ -71,9 +71,8 @@ module.exports = {
             aula.data_aula = helpers.formatDate(aula.data_aula)
         }
         
-        console.log(aulas_alunos.rows);
-        console.log(aulas_alunos.rows[0].dataValues.aluno);
-        console.log(periodo);
+        // console.log(aulas_alunos.rows);
+        // console.log(periodo);
         
         
         console.log('==================================================================')
@@ -164,6 +163,7 @@ module.exports = {
         let treinadores_id = req.session.usuario.id;
         let { nome, observacoes, alunos_id, data_aula, horario } = req.body;
 
+        
 
         let aulas = await Aula.create({
             nome,
@@ -171,15 +171,16 @@ module.exports = {
             treinadores_id,
             data_aula,
             horario,
-            status: 'a'
-        })
+            status: 'a',
+        }
+        )
 
-        let aula_has_alunos = AulaHasAluno.create({
+        let aula_has_alunos = await AulaHasAluno.create({
             aulas_id: aulas.id,
-            alunos_id
+            alunos_id:alunos_id
         })
         
-        // console.log(aulas.id);
+        console.log(aula_has_alunos.sequelize);
         
 
         res.redirect("/home")
