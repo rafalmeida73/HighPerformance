@@ -50,6 +50,7 @@ module.exports = {
 
         let aulas_alunos = await Aula.findAndCountAll({
             //     attributes: ['data_aula'],
+
             where: {
                 treinadores_id: user.id
 
@@ -62,12 +63,20 @@ module.exports = {
                         include: 'aula'
                     },
                 ],
-            raw: true
+
         })
-        console.log(aulas_alunos.rows);
+
+
+        for (aula of aulas_alunos.rows){
+            aula.data_aula = helpers.formatDate(aula.data_aula)
+        }
+        
+        // console.log(aulas_alunos.rows);
+        // console.log(periodo);
+        
         
         console.log('==================================================================')
-        res.render("crie", { user, periodo, aulas:aulas_alunos.rows });
+        res.render("crie", { user, periodo, aulas:aulas_alunos.rows});
     },
 
     showAlunos: async (req, res) => {
@@ -154,17 +163,25 @@ module.exports = {
         let treinadores_id = req.session.usuario.id;
         let { nome, observacoes, alunos_id, data_aula, horario } = req.body;
 
+        
 
-        await Aula.create({
+        let aulas = await Aula.create({
             nome,
             observacoes,
             treinadores_id,
-            alunos_id,
             data_aula,
             horario,
-            status: 'a'
-        })
+            status: 'a',
+        }
+        )
 
+        let aula_has_alunos = await AulaHasAluno.create({
+            aulas_id: aulas.id,
+            alunos_id:alunos_id
+        })
+        
+        console.log(aula_has_alunos.sequelize);
+        
 
         res.redirect("/home")
     },

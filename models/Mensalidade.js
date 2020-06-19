@@ -10,11 +10,11 @@ let Mensalidade = (sequelize, DataTypes) => {
             },
             mes_ref: {
                 type: DataTypes.STRING(45),
-                allowNull: false
+                allowNull: true
             },
             ano: {
                 type: DataTypes.INTEGER,
-                allowNull: false
+                allowNull: true
             },
             valor: {
                 type: DataTypes.DECIMAL(4,2),
