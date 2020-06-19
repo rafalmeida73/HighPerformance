@@ -64,10 +64,27 @@ module.exports = {
                 ],
             raw: true
         })
-        console.log(aulas_alunos.rows);
+        // console.log(aulas_alunos.rows);
+        
+        let alunos = await Aluno.findAll({
+            where: {
+                treinadores_id: user.id
+
+            },
+            include:
+                [
+                    {
+                        model: Aula,
+                        as: 'aula',
+                        include: 'aluno'
+                    },
+                ],
+        })
+
+        console.log(aulas_alunos);
         
         console.log('==================================================================')
-        res.render("crie", { user, periodo, aulas:aulas_alunos.rows });
+        res.render("crie", { user, periodo, aulas:aulas_alunos.rows});
     },
 
     showAlunos: async (req, res) => {
@@ -155,16 +172,22 @@ module.exports = {
         let { nome, observacoes, alunos_id, data_aula, horario } = req.body;
 
 
-        await Aula.create({
+        let aulas = await Aula.create({
             nome,
             observacoes,
             treinadores_id,
-            alunos_id,
             data_aula,
             horario,
             status: 'a'
         })
 
+        let aula_has_alunos = AulaHasAluno.create({
+            aulas_id: aulas.id,
+            alunos_id
+        })
+        
+        // console.log(aulas.id);
+        
 
         res.redirect("/home")
     },
