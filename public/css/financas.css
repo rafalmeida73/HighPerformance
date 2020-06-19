@@ -35,6 +35,10 @@
     width: 100%;
 }
 
+#alunos{
+    margin-top: 7vh;
+}
+
 #alunos h2 {
     color: white;
     font-weight: bold;
@@ -64,10 +68,10 @@
 }
 
 .card2{
-    background: #F00000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #DC281E, #F00000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #DC281E, #F00000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  height: 157px;
+    background: #e52d27;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #b31217, #e52d27);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #b31217, #e52d27); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */    
+    height: 157px;
 }
 
 .card i, .card2 i {
