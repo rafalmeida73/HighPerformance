@@ -35,6 +35,40 @@
     width: 100%;
 }
 
+select{
+    width: 260px;
+    background-color: #ff7e00;
+    color: white;
+    font-weight: bold;
+}
+
+#selectGrafico{
+    width: 315px;
+    background-color: #ff7e00;
+}
+
+.select-wrapper input.select-dropdown{
+    color: white;
+    font-weight: bold;
+    border-bottom: none;
+}
+
+.dropdown-content li>a, .dropdown-content li>span {
+    font-size: 16px;
+    color: black;
+    display: block;
+    line-height: 22px;
+    padding: 6.5px 16px;
+}
+
+i{
+    margin-left: 9px;
+}
+
+.select-wrapper .caret{
+    fill: white;
+}
+
 #alunos{
     margin-top: 7vh;
 }
@@ -237,5 +271,8 @@ a[href="#top"]:hover {
     }
     .quadrado h2 {
         font-size: 38px;
+    }
+    #selectGrafico{
+        width: 100%;
     }
 }
