@@ -64,11 +64,11 @@ form .btn:hover {
     color: black;
 }
 
-#formCad .input-field input[type=date]:focus,
-#formCad .input-field input[type=number]:focus,
-#formCad .input-field input[type=email]:focus,
-#formCad .input-field input[type=tel]:focus,
-#formCad .input-field input[type=text]:focus {
+#formCadastro .input-field input[type=date]:focus,
+#formCadastro .input-field input[type=number]:focus,
+#formCadastro .input-field input[type=email]:focus,
+#formCadastro .input-field input[type=tel]:focus,
+#formCadastro .input-field input[type=text]:focus {
     border-bottom: 1px solid #ff7e00;
     box-shadow: 0 1px 0 0 #ff7e00;
 }
@@ -77,11 +77,11 @@ form .btn:hover {
     color: red;
 }
 
-#formCad .input-field .prefix.active {
+#formCadastro .input-field .prefix.active {
     color: #ff7e00;
 }
 
-#formCad .input-field label {
+#formCadastro .input-field label {
     color: #000;
 }
 
