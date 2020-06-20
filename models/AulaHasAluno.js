@@ -2,11 +2,12 @@ let AulaHasAluno = (sequelize, DataTypes) => {
     AulaHasAluno =  sequelize.define(
         'AulaHasAluno',
         {
-            aulas_id: {
+            
+            alunos_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
             },
-            alunos_id: {
+            aulas_id: {
                 type: DataTypes.INTEGER,
                 allowNull: true,
             }

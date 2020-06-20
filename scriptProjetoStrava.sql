@@ -129,13 +129,7 @@ CREATE TABLE financas (
     ON UPDATE CASCADE
 );
 
-CREATE TABLE depoimentos (
-	id INT PRIMARY KEY AUTO_INCREMENT,
-    img VARCHAR(100),
-    nome VARCHAR(100),
-    profissao VARCHAR(100),
-    mensagem VARCHAR(1000)
-);
+
 
 -- ADICIONAR DADOS 
 INSERT INTO treinadores (nome, email, telefone, senha)
@@ -157,11 +151,11 @@ VALUES
 INSERT INTO aulas (nome, observacoes, treinadores_id, data_aula, horario, status)
 
 VALUES
-    ('Corrida', '5k', 1, '2020-06-17','13:00', 'a'),
-	('Corrida', '20k', 1, '2020-06-18','13:00', 'a'),
-	('Bike', '50k', 1, '2020-06-17','19:00', 'a'),
-    ('Bike', '20k', 2, '2020-06-19','13:00', 'a'),
-    ('Bike', '20k', 3, '2020-06-20','13:00', 'a');
+    ('Corrida', '5k', 1, '2020-06-23','13:00', 'a'),
+	('Corrida', '20k', 1, '2020-06-23','13:00', 'a'),
+	('Bike', '50k', 4, '2020-06-23','19:00', 'a'),
+    ('Bike', '20k', 2, '2020-06-23','13:00', 'a'),
+    ('Bike', '20k', 3, '2020-06-23','13:00', 'a');
     
 INSERT INTO aulas_has_alunos (aulas_id, alunos_id)
 
