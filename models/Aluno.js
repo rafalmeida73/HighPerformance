@@ -35,14 +35,14 @@ const Aluno = (sequelize, DataTypes) => {
                     type: DataTypes.INTEGER,
                     allowNull: true,
             },
-            plano: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            tempo_plano: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-            },
+            // plano: {
+            //     type: DataTypes.STRING,
+            //     allowNull: false
+            // },
+            // tempo_plano: {
+            //     type: DataTypes.INTEGER,
+            //     allowNull: true,
+            // },
             valor: {
                 type: DataTypes.DECIMAL,
                 allowNull: true,
@@ -56,7 +56,7 @@ const Aluno = (sequelize, DataTypes) => {
 
     Aluno.associate = (modelos) =>{
         Aluno.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
-        Aluno.belongsToMany(modelos.Aula, {foreignKey:'aulas_id', as: 'aula', through: modelos.AulaHasAluno})
+        Aluno.belongsToMany(modelos.Aula, {through: 'AulaHasAluno', as: 'aula', foreignKey:'aulas_id'})
     }
 
 

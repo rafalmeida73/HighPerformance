@@ -22,7 +22,7 @@ module.exports = {
             //     attributes: ['data_aula'],
             group: ['data_aula'],
             where: {
-                treinadores_id: user.id
+                treinadores_id: 1
 
             },
             include:
@@ -52,7 +52,7 @@ module.exports = {
             //     attributes: ['data_aula'],
 
             where: {
-                treinadores_id: user.id
+                treinadores_id: 1
 
             },
             include:
@@ -60,6 +60,7 @@ module.exports = {
                     {
                         model: Aluno,
                         as: 'aluno',
+                        through:{attributes: []},
                         include: 'aula'
                     },
                 ],
@@ -69,13 +70,16 @@ module.exports = {
 
         for (aula of aulas_alunos.rows){
             aula.data_aula = helpers.formatDate(aula.data_aula)
+            // console.log("Nova Aula");
+            // console.log(aula.dataValues)
         }
         
+        // return res.status(200).json(aulas_alunos);
         // console.log(aulas_alunos.rows);
         // console.log(periodo);
         
         
-        console.log('==================================================================')
+        // console.log('==================================================================')
         res.render("crie", { user, periodo, aulas:aulas_alunos.rows});
     },
 
@@ -160,29 +164,25 @@ module.exports = {
     },
 
     criarNovaAula: async (req, res) => {
-        let treinadores_id = req.session.usuario.id;
-        let { nome, observacoes, alunos_id, data_aula, horario } = req.body;
+        // let treinadores_id = req.session.usuario.id;
+        // nome, observacoes,treinadores_id, data_aula, horario, alunos_id
+        let { alunos_id, ...data } = req.body;
 
+        // console.log(alunos_id);
         
 
-        let aulas = await Aula.create({
-            nome,
-            observacoes,
-            treinadores_id,
-            data_aula,
-            horario,
-            status: 'a',
-        }
-        )
-
-        let aula_has_alunos = await AulaHasAluno.create({
-            aulas_id: aulas.id,
-            alunos_id:alunos_id
-        })
+        let aulas = await Aula.create(data)
+        // let aula_id = aulas.id
+        // await AulaHasAluno.create({alunos_id, aulas_id:aula_id})
         
-        console.log(aula_has_alunos.sequelize);
-        
+        await aulas.addAluno(alunos_id)
 
+
+        // let aulas_has_alunos = await AulaHasAluno.create(aula_alunos)
+        
+        // console.log(aulas);
+        
+        // return res.status(200).json(aulas);
         res.redirect("/home")
     },
     showTreino: async (req, res) => {

@@ -10,39 +10,39 @@
 <h1 style="text-align:center;font-weight:bold;margin:0; margin-top: 7vh;">Criar nova Aula</H1>
 <div class="row" style="text-align: center;">
     <div class="col s12 m12">
-        <form id="formCadAula" method="GET" action="/home/novaAula">
+        <form id="formCadAula" method="POST" action="/home/novaAula">
             <div class="input-field">
                 <i class="material-icons prefix">account_circle</i>
-                <input name="nome" id="nome" type="text" data-error=".errorTxt1">
+                <input name="nome" id="nome" type="text">
                 <label for="nome">Aula</label>
-                <div class="errorTxt1 right-align "></div>
+               
             </div>
             <div class="input-field">
                 <i class="material-icons prefix">directions_run</i>
-                <input name="observacoes" id="observacoes" type="text" data-error=".errorTxt2">
+                <input name="observacoes" id="observacoes" type="text">
                 <label for="observacoes">Detalhes</label>
-                <div class="errorTxt2 right-align "></div>
+                
             </div>
             <div class="input-field">
-                <select class="browser-default" id="alunos_id" name="alunos_id" data-error=".errorTxt3">
+                <select class="browser-default" id="alunos_id" name="alunos_id">
                     <option value="" disabled selected>Aluno </option>
                     <% for(aluno of alunos) { %>
                     <option value="<%= aluno.id %>"><%= aluno.nome %></option>
                   <% } %>
                 </select>
                 <div class="input-field">
-                    <div class="errorTxt3 right-align"></div>
+                    
                 </div>
             </div>     
             <div class="input-field">
                 <i class="material-icons prefix">date_range</i>
-                <input name="data_aula" id="data_aula" type="date" class="form-control" data-error=".errorTxt4">
+                <input name="data_aula" id="data_aula" type="date" class="form-control" >
                 <!-- <label for="date">Data</label> -->
                 <div class="errorTxt4 right-align"></div>
             </div>
             <div class="input-field">
                 <i class="material-icons prefix">access_time</i>
-                <input name="horario" id="horario" type="time" class="form-control" data-error=".errorTxt5">
+                <input name="horario" id="horario" type="time" class="form-control">
                 <!-- <label for="horario">Horário</label> -->
                 <div class="errorTxt5 right-align"></div>
             </div>

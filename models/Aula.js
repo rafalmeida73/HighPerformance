@@ -42,7 +42,7 @@ let Aula = (sequelize, DataTypes) => {
     );
     Aula.associate = (modelos) =>{
         Aula.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
-        Aula.belongsToMany(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno', through: modelos.AulaHasAluno})
+        Aula.belongsToMany(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno', through: 'AulaHasAluno'})
     }
 
     return Aula;
