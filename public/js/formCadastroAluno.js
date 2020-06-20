@@ -19,13 +19,6 @@ $("#formCadastro").validate({
         meta: {
             required: true,
         },
-        plano:{
-            required: true,
-        },
-        tempo_plano:{
-            required: true,
-            number: true
-        },
         valor:{
             required: true,
             number: true

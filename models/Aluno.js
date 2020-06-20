@@ -35,14 +35,6 @@ const Aluno = (sequelize, DataTypes) => {
                     type: DataTypes.INTEGER,
                     allowNull: true,
             },
-            plano: {
-                type: DataTypes.STRING,
-                allowNull: false
-            },
-            tempo_plano: {
-                type: DataTypes.INTEGER,
-                allowNull: true,
-            },
             valor: {
                 type: DataTypes.DECIMAL,
                 allowNull: true,

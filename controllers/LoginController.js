@@ -105,7 +105,7 @@ module.exports = {
 
         // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
-        let { nome, email, telefone, meta, plano, tempo_plano, valor } = req.body
+        let { nome, email, telefone, meta, valor } = req.body
         let img = `/img/${req.file.originalname}`;
         const resultado = await Aluno.create({
             img,
@@ -114,41 +114,8 @@ module.exports = {
             telefone,
             meta,
             treinadores_id,
-            plano,
-            tempo_plano,
             valor
         })
-
-
-    
-        if (plano == "Mensal") {
-            let hoje = new Date();
-            let objPags = helpers.diasMeses(hoje,tempo_plano)
-
-            console.log(objPags);
-            
-            for (data of objPags.data) {
-
-                await Mensalidade.create({
-                    mes_ref: data,
-                    valor,
-                    alunos_id: resultado.id,
-                    treinadores_id,
-                    status: 0
-                })
-            }
-        } else {
-            let intervalo = 1 + parseInt(tempo_plano)
-            for (let i = 1; i < intervalo; i++) {
-                await Mensalidade.create({
-                    mes_ref: `Dia ${i}`,
-                    valor,
-                    alunos_id: resultado.id,
-                    treinadores_id,
-                    status: 0
-                })
-            }
-        }
         //    console.log(resultado)
         //Redirecionar o usuário para a lista de alunos
         res.redirect("/home/alunos")
