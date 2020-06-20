@@ -92,12 +92,13 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">event</i>Mensalidades</div>
                     <div class="collapsible-body">
-                        <table class="striped highlight centered">
+                        <table class="striped highlight centered responsive-table">
                             <thead>
                               <tr>
                                   <th>Data</th>
                                   <th>Valor</th>
                                   <th>Status</th>
+                                  <th>Editar</th>
                                   <th>Deletar</th>
                               </tr>
                             </thead>
@@ -110,11 +111,16 @@
                                 <td>
 
                                     <% if(mensalidade.pago == 0){ %>
-                                        <i class="material-icons red-text">close</i>
+                                            <i class="material-icons red-text">close</i>
                                     <% } else{ %>  
-                                        <i class="material-icons green-text">check</i>
+                                            <i class="material-icons green-text">check</i>
                                     </td>
                                     <% } %>
+                                </td>
+                                <td>
+                                    <a href="/home/mensalidade/editar/<%=mensalidade.id%>"> 
+                                        <i class="material-icons black-text">create</i>
+                                    </a>
                                 </td>
                                 <td>
                                     <form action="<%=mensalidade.id%>">

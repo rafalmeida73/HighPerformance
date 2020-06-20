@@ -53,6 +53,8 @@ router.get('/busca', VerificaUsuarioLogado, LoginController.search);
 router.get('/home/treino/:id',VerificaUsuarioLogado, LoginController.showTreino);
 router.post('/home/mensalidade/:id',VerificaUsuarioLogado, LoginController.showMensalidades);
 router.delete('/home/mensalidade/:id',VerificaUsuarioLogado, LoginController.showDelMensalidades);
+router.get('/home/mensalidade/editar/:id',VerificaUsuarioLogado, LoginController.editarMensalidades);
+router.put('/home/mensalidade/editar/:id',VerificaUsuarioLogado, LoginController.showUpdateMensalidade);
 router.post('/salvar/pagamento',VerificaUsuarioLogado, LoginController.salvarPagamento)
 router.get('/home/financas',VerificaUsuarioLogado, LoginController.showFinancas);
 router.get('/depoimento',VerificaUsuarioLogado, IndexController.depoimentos)

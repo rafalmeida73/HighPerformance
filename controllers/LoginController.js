@@ -213,6 +213,37 @@ module.exports = {
 
         return res.redirect('/home/alunos')
     },
+    editarMensalidades: async (req, res) => {
+        let user = req.session.usuario;
+
+        let mensalidade = await Mensalidade.findOne({
+            where: {
+                id: req.params.id
+            }
+        })
+
+        if (mensalidade) {
+            res.render("editarMensalidade", { mensalidade });
+        } else {
+            res.render("404")
+        }
+
+    },
+    showUpdateMensalidade: async (req, res) => {
+        let user = req.session.usuario;
+        let { valor, pago, alunos_id } = req.body
+        let edicao = await Mensalidade.update({
+            valor,
+            pago
+        }, {
+            where: {
+                id: req.params.id
+            }
+        });
+
+
+        return res.redirect('/home/treino/' + alunos_id);
+    },
     salvarPagamento: async (req, res) => {
         let { pago, mes_ref, aluno } = req.body;
         console.log(req.body);
