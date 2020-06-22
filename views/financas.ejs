@@ -14,15 +14,6 @@
         <div class="col s12 m12 quadrado" style="margin-bottom: 0;">
             <div id="alunos"><h2><%=mes%>/<%=ano%></h2></div>                                    
         </div>
-        <!-- <div class="col s12 m12 l12" style="margin-top: 17px;">
-            <select  name="chartType" id="chartType" onchange="updateChartType()">
-                <option value="doughnut">Gráfico em rosca</option>
-                <option value="pie">Gráfico de torta</option>
-                <option value="line">Gráficos de linhas</option>
-                <option value="bar">Gráficos de barras</option>
-                <option value="polarArea"> Gráfico em coordenadas polares</option>
-              </select>
-        </div> -->
         <div class="input-field col s12" id="selectGrafico">
             <i class="material-icons prefix white-text">insert_chart</i>
             <select name="chartType" id="chartType" onchange="updateChartType()">
@@ -38,7 +29,7 @@
                 <div class="row" id="grafico">
                     <div class="col s12 m12 l7">
                     <!-- <canvas id="myChart" width="400" height="300"></canvas> -->
-                    <canvas id="my_Chart" width="800" height="700"></canvas>
+                    <canvas id="my_Chart" width="800" height="600"></canvas>
                 </div>
 
                     <div class="col s12 m12 l5">
