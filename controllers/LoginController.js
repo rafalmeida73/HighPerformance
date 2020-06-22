@@ -101,6 +101,15 @@ module.exports = {
     showCadastroAluno: (req, res) => {
         res.render('cadastrarAlunos');
     },
+    showDeleteAluno: async (req, res) => {
+        let resultado = await Aula.destroy({
+            where: {
+                id: req.params.id
+            }
+        });
+
+        return res.redirect('/home')
+    },
     showNovoAluno: async (req, res) => {
         let treinadores_id = req.session.usuario.id;
 
@@ -303,7 +312,6 @@ module.exports = {
         return res.redirect('/home/treino/' + req.params.id);
     },
     showDeleteAlunos: async (req, res) => {
-        3
         let resultado = await Aluno.destroy({
             where: {
                 id: req.params.id

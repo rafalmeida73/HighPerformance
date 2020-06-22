@@ -60,7 +60,11 @@
                                             <td><%= aula.dataValues.horario %></td>
                                             <td> <i class="material-icons prefix tooltipped" data-position="bottom"
                                                     data-tooltip="Enviar SMS">contact_mail</i></td>
-                                            <td><a href="#" class="black-text">Remover aluno</a></td>
+                                                    <td>
+                                            <form id="formDelAula" action="/home/cadastrarAlunos/deletar/<%= aula.dataValues.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+                                                <button type="submit">Remover aluno</button>
+                                             </form>   
+                                            </td>
                                         </tr>
                                         <% } %>
                                         <% } %>

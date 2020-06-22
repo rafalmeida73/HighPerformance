@@ -93,6 +93,12 @@ i.material-icons {
     text-align: right;
 }
 
+#formDelAula button{
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
 .baixoQuadrado p {
     margin-right: 10px;
 }

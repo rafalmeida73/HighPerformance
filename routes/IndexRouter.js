@@ -43,6 +43,7 @@ router.get('/home/novaAula',VerificaUsuarioLogado, LoginController.showNovaAula)
 router.post('/home/novaAula',VerificaUsuarioLogado, LoginController.criarNovaAula);
 router.get('/home/agenda',VerificaUsuarioLogado, LoginController.showCrie);
 router.get('/home/cadastrarAlunos', VerificaUsuarioLogado, LoginController.showCadastroAluno);
+router.delete('/home/cadastrarAlunos/deletar/:id', VerificaUsuarioLogado, LoginController.showDeleteAluno);
 
 router.post('/home/cadastrarAlunos', VerificaUsuarioLogado, uploadImg.single('imgUser'), LoginController.showNovoAluno)
 router.get('/home/alunos',VerificaUsuarioLogado, LoginController.showAlunos);
