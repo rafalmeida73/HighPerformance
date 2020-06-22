@@ -1,6 +1,6 @@
 $("#formCadastro").validate({
     rules: {
-        teste: {
+        imgUser: {
             required: true,
         },
         nome: {
