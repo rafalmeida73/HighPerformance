@@ -4,7 +4,6 @@ $("#formCadAula").validate({
          required: true,
          maxlength: 100,
          minlength: 5,
-         minWords: 2
      },
      observacoes: {
       required: true,
