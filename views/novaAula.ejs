@@ -27,8 +27,10 @@
                 <select class="browser-default" id="alunos_id" name="alunos_id">
                     <option value="" disabled selected>Aluno </option>
                     <% for(aluno of alunos) { %>
-                    <option value="<%= aluno.id %>"><%= aluno.nome %></option>
-                  <% } %>
+                        <% if (aluno.treinadores_id == user) { %>
+                            <option value="<%= aluno.id %>"><%= aluno.nome %></option>
+                        <% } %>
+                    <% } %>
                 </select>
                 <div class="input-field">
                     

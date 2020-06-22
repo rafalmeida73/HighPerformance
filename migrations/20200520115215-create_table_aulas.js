@@ -39,8 +39,16 @@ module.exports = {
         status: {
           type: Sequelize.STRING(45),
           allowNull: true
-      }
-
+        },
+        alunos_id:{
+          type:Sequelize.INTEGER,
+          references:{
+            model:'alunos',
+            key:'id'
+          },
+          onUpdate:'CASCADE',
+          onDelete:'CASCADE'
+        }
     });
   },
 

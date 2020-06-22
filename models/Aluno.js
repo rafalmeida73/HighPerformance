@@ -31,9 +31,9 @@ const Aluno = (sequelize, DataTypes) => {
                     type: DataTypes.INTEGER,
                     allowNull: true,
             },
-                treinadores_id: {
-                    type: DataTypes.INTEGER,
-                    allowNull: true,
+            treinadores_id: {
+                type: DataTypes.INTEGER,
+                allowNull: true,
             },
             valor: {
                 type: DataTypes.DECIMAL,
