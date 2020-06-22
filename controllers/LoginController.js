@@ -112,7 +112,7 @@ module.exports = {
     },
     showNovoAluno: async (req, res) => {
         let treinadores_id = req.session.usuario.id;
-
+        
         // console.log('=================> ' + req.file)
         //Capturar as info enviadas pelo usuário
         let { nome, email, telefone, meta, valor } = req.body
@@ -126,7 +126,7 @@ module.exports = {
             treinadores_id,
             valor
         })
-        //    console.log(resultado)
+           
         //Redirecionar o usuário para a lista de alunos
         res.redirect("/home/alunos")
     },
