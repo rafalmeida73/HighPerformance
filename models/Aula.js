@@ -32,6 +32,10 @@ let Aula = (sequelize, DataTypes) => {
             status: {
                 type: DataTypes.STRING(45),
                 allowNull: true
+            },
+            alunos_id:{
+                type: DataTypes.INTEGER,
+                allowNull: true,
             }
 
         },{
@@ -43,6 +47,7 @@ let Aula = (sequelize, DataTypes) => {
     Aula.associate = (modelos) =>{
         Aula.belongsTo(modelos.Treinador, {foreignKey:'treinadores_id', as: 'treinador'}),
         Aula.belongsToMany(modelos.Aluno, {foreignKey:'alunos_id', as: 'aluno', through: 'AulaHasAluno'})
+        Aula.belongsTo(modelos.Aluno, {foreignKey:'alunos_id', as: 'alunos'})
     }
 
     return Aula;

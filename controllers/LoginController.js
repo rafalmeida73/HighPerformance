@@ -22,7 +22,7 @@ module.exports = {
             //     attributes: ['data_aula'],
             group: ['data_aula'],
             where: {
-                treinadores_id: 1
+                treinadores_id: user.id
 
             },
             include:
@@ -52,21 +52,18 @@ module.exports = {
             //     attributes: ['data_aula'],
 
             where: {
-                treinadores_id: 1
+                treinadores_id: user.id
 
             },
-            include:
-                [
-                    {
-                        model: Aluno,
-                        as: 'aluno',
-                        through:{attributes: []},
-                        include: 'aula'
-                    },
-                ],
+           
 
         })
 
+        let alunos = await Aluno.findAndCountAll({
+            where: {    
+                treinadores_id: user.id
+            },
+        })
 
         for (aula of aulas_alunos.rows){
             aula.data_aula = helpers.formatDate(aula.data_aula)
@@ -75,12 +72,12 @@ module.exports = {
         }
         
         // return res.status(200).json(aulas_alunos);
-        // console.log(aulas_alunos.rows);
-        // console.log(periodo);
+        console.log(alunos.rows);
+        
         
         
         // console.log('==================================================================')
-        res.render("crie", { user, periodo, aulas:aulas_alunos.rows});
+        res.render("crie", { user, periodo, aulas:aulas_alunos.rows, alunos:alunos.rows});
     },
 
     showAlunos: async (req, res) => {
@@ -145,12 +142,14 @@ module.exports = {
             treinadores_id,
             data_aula,
             horario,
-            status:'a'
+            status:'a',
+            alunos_id
         })
-        // let aula_id = aulas.id
-        // await AulaHasAluno.create({alunos_id, aulas_id:aula_id})
+    
+
+        // let aula_alunos = await AulaHasAluno.create({alunos_id, aulas_id:aulas.id})
         
-        await aulas.addAluno(alunos_id)
+        // await aulas.addAluno(alunos_id)
 
 
         // let aulas_has_alunos = await AulaHasAluno.create(aula_alunos)
