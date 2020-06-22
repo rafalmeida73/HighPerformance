@@ -1,5 +1,8 @@
 $("#formCadMensal").validate({
  rules: {
+     mes: {
+         required: true,
+     },
      valor: {
          required: true,
          number: true

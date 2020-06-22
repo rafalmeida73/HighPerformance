@@ -200,12 +200,8 @@ module.exports = {
     showMensalidades: async (req, res) => {
         let treinadores_id = req.session.usuario.id;
         let alunos_id = req.params.id;
-        let { valor, pago } = req.body;
+        let { valor, pago, mes } = req.body;
         let data = new Date();
-        let meses = new Array(
-            'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
-        );
-        let mes = meses[data.getMonth()];
         let ano = data.getFullYear();
 
         await Mensalidade.create({

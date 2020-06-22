@@ -155,26 +155,41 @@
               <div class="collapsible-body">
                   <form action="/home/mensalidade/<%=aluno.id%>" method="POST" id="formCadMensal">
                       <div class="row">
-                    <div class="input-field col s6">
-                        <i class="material-icons prefix">date_range</i>
-                        <input name="mes_ref" id="mes_ref" disabled  type="text" value="<%=mes%>">
-                        <label for="mes_ref">Referente</label>
-                    </div>
+                        <div class="col s6">
+                            <select class="browser-default" id="mes" name="mes" data-error=".errorTxt1">
+                                <option value="" disabled selected>Selecione o mês</option>
+                                <option value="Janeiro">Janeiro</option>
+                                <option value="Fevereiro">Fevereiro</option>
+                                <option value="Março">Março</option>
+                                <option value="Abril">Abril</option>
+                                <option value="Maio">Maio</option>
+                                <option value="Junho">Junho</option>
+                                <option value="Julho">Julho</option>
+                                <option value="Agosto">Agosto</option>
+                                <option value="Setembro">Setembro</option>
+                                <option value="Outubro">Outubro</option>
+                                <option value="Novembro">Fevereiro</option>
+                                <option value="Fevereiro">Dezembro</option>
+                            </select>
+                            <div class="input-field">
+                                <div class="errorTxt1 left-align"></div>
+                            </div>
+                        </div> 
                     <div class="input-field col s6">
                         <i class="material-icons prefix">attach_money</i>
-                        <input name="valor" id="valor" type="number" data-error=".errorTxt1">
+                        <input name="valor" id="valor" type="number" data-error=".errorTxt2">
                         <label for="valor">Valor</label>
-                        <div class="errorTxt1 right-align "></div>
+                        <div class="errorTxt2 left-align "></div>
                     </div>
                 </div>
                 <div class="col s12">
-                    <select class="browser-default" id="pago" name="pago" data-error=".errorTxt2">
+                    <select class="browser-default" id="pago" name="pago" data-error=".errorTxt3">
                         <option value="" disabled selected>Selecione o status</option>
                         <option value="1">Recebido</option>
                         <option value="0">A receber</option>
                     </select>
                     <div class="input-field">
-                        <div class="errorTxt2 right-align"></div>
+                        <div class="errorTxt3 right-align"></div>
                     </div>
                 </div> 
                   <div class="input-field">
