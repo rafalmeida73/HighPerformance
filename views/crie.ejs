@@ -51,7 +51,8 @@
                                         
                                     <% if (aula.dataValues.data_aula == aulaDia.data ) { %>
                                     <tbody>
-                                        <% for (aluno of aula.dataValues.aluno) { %>
+                                        <% for (aluno of alunos) { %>
+                                            <% if (aula.dataValues.alunos_id == aluno.dataValues.id) { %>
                                             <tr>
                                             <td><img id="foto-aluno" src="<%= aluno.dataValues.img %>" alt="Foto José"></td>
                                             <td><%= aluno.dataValues.nome %></td>
@@ -61,6 +62,7 @@
                                                     data-tooltip="Enviar SMS">contact_mail</i></td>
                                             <td><a href="#" class="black-text">Remover aluno</a></td>
                                         </tr>
+                                        <% } %>
                                         <% } %>
                                         <% } %>
                                         <% } %>

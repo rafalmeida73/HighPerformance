@@ -22,7 +22,7 @@ module.exports = {
             //     attributes: ['data_aula'],
             group: ['data_aula'],
             where: {
-                treinadores_id: 1
+                treinadores_id: user.id
 
             },
             include:
@@ -52,21 +52,18 @@ module.exports = {
             //     attributes: ['data_aula'],
 
             where: {
-                treinadores_id: 1
+                treinadores_id: user.id
 
             },
-            include:
-                [
-                    {
-                        model: Aluno,
-                        as: 'aluno',
-                        through:{attributes: []},
-                        include: 'aula'
-                    },
-                ],
+           
 
         })
 
+        let alunos = await Aluno.findAndCountAll({
+            where: {    
+                treinadores_id: user.id
+            },
+        })
 
         for (aula of aulas_alunos.rows){
             aula.data_aula = helpers.formatDate(aula.data_aula)
@@ -75,12 +72,12 @@ module.exports = {
         }
         
         // return res.status(200).json(aulas_alunos);
-        // console.log(aulas_alunos.rows);
-        // console.log(periodo);
+        console.log(alunos.rows);
+        
         
         
         // console.log('==================================================================')
-        res.render("crie", { user, periodo, aulas:aulas_alunos.rows});
+        res.render("crie", { user, periodo, aulas:aulas_alunos.rows, alunos:alunos.rows});
     },
 
     showAlunos: async (req, res) => {
@@ -112,8 +109,8 @@ module.exports = {
         let { nome, email, telefone, meta, valor } = req.body
         let img = `/img/${req.file.originalname}`;
         const resultado = await Aluno.create({
-            img,
             nome,
+            img,
             email,
             telefone,
             meta,
@@ -126,23 +123,33 @@ module.exports = {
     },
 
     showNovaAula: async (req, res) => {
+        let user = req.session.usuario.id;
         let alunos = await Aluno.findAll();
-        res.render('novaAula', { alunos });
+        res.render('novaAula', { user, alunos });
     },
 
     criarNovaAula: async (req, res) => {
-        // let treinadores_id = req.session.usuario.id;
+        let treinadores_id = req.session.usuario.id;
         // nome, observacoes,treinadores_id, data_aula, horario, alunos_id
-        let { alunos_id, ...data } = req.body;
-
+        let { alunos_id, nome, observacoes, data_aula, horario  } = req.body;
+        alunos_id = parseInt(alunos_id)
         // console.log(alunos_id);
         
 
-        let aulas = await Aula.create(data)
-        // let aula_id = aulas.id
-        // await AulaHasAluno.create({alunos_id, aulas_id:aula_id})
+        let aulas = await Aula.create({
+            nome, 
+            observacoes,
+            treinadores_id,
+            data_aula,
+            horario,
+            status:'a',
+            alunos_id
+        })
+    
+
+        // let aula_alunos = await AulaHasAluno.create({alunos_id, aulas_id:aulas.id})
         
-        await aulas.addAluno(alunos_id)
+        // await aulas.addAluno(alunos_id)
 
 
         // let aulas_has_alunos = await AulaHasAluno.create(aula_alunos)
