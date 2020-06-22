@@ -112,8 +112,8 @@ module.exports = {
         let { nome, email, telefone, meta, valor } = req.body
         let img = `/img/${req.file.originalname}`;
         const resultado = await Aluno.create({
-            img,
             nome,
+            img,
             email,
             telefone,
             meta,
@@ -126,19 +126,27 @@ module.exports = {
     },
 
     showNovaAula: async (req, res) => {
+        let user = req.session.usuario.id;
         let alunos = await Aluno.findAll();
-        res.render('novaAula', { alunos });
+        res.render('novaAula', { user, alunos });
     },
 
     criarNovaAula: async (req, res) => {
-        // let treinadores_id = req.session.usuario.id;
+        let treinadores_id = req.session.usuario.id;
         // nome, observacoes,treinadores_id, data_aula, horario, alunos_id
-        let { alunos_id, ...data } = req.body;
-
+        let { alunos_id, nome, observacoes, data_aula, horario  } = req.body;
+        alunos_id = parseInt(alunos_id)
         // console.log(alunos_id);
         
 
-        let aulas = await Aula.create(data)
+        let aulas = await Aula.create({
+            nome, 
+            observacoes,
+            treinadores_id,
+            data_aula,
+            horario,
+            status:'a'
+        })
         // let aula_id = aulas.id
         // await AulaHasAluno.create({alunos_id, aulas_id:aula_id})
         
