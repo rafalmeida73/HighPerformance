@@ -5,7 +5,7 @@
 #### Equipe:
 * Diego Carvalho | diogofcar@gmail.com
 * Paulo Ernesto Marchezi | pauloernestom@gmail.com
-* Rafael Santana | rafaelsantana7213@gmail.com
+* Rafael Santana de Almeida | rafaelsantana7213@gmail.com
 * Roni Cleber | ronycleber_pm@hotmail.com
 
 #### App demo no heroku:
