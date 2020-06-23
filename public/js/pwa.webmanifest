@@ -1,7 +1,7 @@
 {
     "name": "High Performance",
     "short_name": "High Performance",
-    "start_url": "https://highperformance.herokuapp.com/",
+    "start_url": "/",
     "display": "standalone",
     "orientation": "portrait",
     "background_color": "#fff",
