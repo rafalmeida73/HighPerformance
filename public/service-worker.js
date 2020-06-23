@@ -2,7 +2,6 @@ const CACHE_NAME = 'sw-cache-example';
 const toCache = [
   '/',
   '/index.html',
-  '/js/status.js',
 ];
 
 self.addEventListener('install', function(event) {
@@ -15,17 +14,6 @@ self.addEventListener('install', function(event) {
   )
 })
 
-self.addEventListener('fetch', function(event) {
-  event.respondWith(
-    fetch(event.request)
-      .catch(() => {
-        return caches.open(CACHE_NAME)
-          .then((cache) => {
-            return cache.match(event.request)
-          })
-      })
-  )
-})
 
 self.addEventListener('activate', function(event) {
   event.waitUntil(
@@ -41,3 +29,16 @@ self.addEventListener('activate', function(event) {
       .then(() => self.clients.claim())
   )
 })
+
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request)
+      .catch(() => {
+        return caches.open(CACHE_NAME)
+          .then((cache) => {
+            return cache.match(event.request)
+          })
+      })
+  )
+})
+
