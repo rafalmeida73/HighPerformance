@@ -1,67 +1,43 @@
-self.addEventListener("install", function(e) {
-  console.log("Alloy service worker installation");
-  e.waitUntil(
-      caches.open(cacheName).then(function(cache) {
-          console.log("Alloy service worker caching dependencies");
-          initialCache.map(function(url) {
-              return cache.add(url).catch(function(reason) {
-                  return console.log(
-                      "Alloy: " + String(reason) + " " + url
-                  );
-              });
-          });
+const CACHE_NAME = 'sw-cache-example';
+const toCache = [
+  '/',
+  '/index.ejs',
+  '/js/status.js',
+];
+
+self.addEventListener('install', function(event) {
+  event.waitUntil(
+    caches.open(CACHE_NAME)
+      .then(function(cache) {
+        return cache.addAll(toCache)
       })
-  );
-});
+      .then(self.skipWaiting())
+  )
+})
 
-self.addEventListener("activate", function(e) {
-  console.log("Alloy service worker activation");
-  e.waitUntil(
-      caches.keys().then(function(keyList) {
-          return Promise.all(
-              keyList.map(function(key) {
-                  if (key !== cacheName) {
-                      console.log("Alloy old cache removed", key);
-                      return caches.delete(key);
-                  }
-              })
-          );
+self.addEventListener('fetch', function(event) {
+  event.respondWith(
+    fetch(event.request)
+      .catch(() => {
+        return caches.open(CACHE_NAME)
+          .then((cache) => {
+            return cache.match(event.request)
+          })
       })
-  );
-  return self.clients.claim();
-});
+  )
+})
 
-self.addEventListener("fetch", function(e) {
-  if (new URL(e.request.url).origin !== location.origin) return;
-
-  if (e.request.mode === "navigate" && navigator.onLine) {
-      e.respondWith(
-          fetch(e.request).then(function(response) {
-              return caches.open(cacheName).then(function(cache) {
-                  cache.put(e.request, response.clone());
-                  return response;
-              });
-          })
-      );
-      return;
-  }
-
-  e.respondWith(
-      caches
-          .match(e.request)
-          .then(function(response) {
-              return (
-                  response ||
-                  fetch(e.request).then(function(response) {
-                      return caches.open(cacheName).then(function(cache) {
-                          cache.put(e.request, response.clone());
-                          return response;
-                      });
-                  })
-              );
-          })
-          .catch(function() {
-              return caches.match(offlinePage);
-          })
-  );
-});
+self.addEventListener('activate', function(event) {
+  event.waitUntil(
+    caches.keys()
+      .then((keyList) => {
+        return Promise.all(keyList.map((key) => {
+          if (key !== CACHE_NAME) {
+            console.log('[ServiceWorker] Removing old cache', key)
+            return caches.delete(key)
+          }
+        }))
+      })
+      .then(() => self.clients.claim())
+  )
+})
