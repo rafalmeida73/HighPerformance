@@ -21,12 +21,12 @@
 - expressJS
 - javaScript
 - HTML5 - ejs
-- bcrypt
-- multer
+- Bcrypt
+- Multer
 - mySQL
-- dotenv
-- sequelize
-- bootstrap
+- Dotenv
+- Sequelize
+- Materialize
 - CSS
 
 
