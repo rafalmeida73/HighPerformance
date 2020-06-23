@@ -3,16 +3,15 @@
 ### Projeto integrador desenvolvido como parte do curso de Desenvolvimento Web Full-Stack da Digital House e do programa Santander Coders.  
 
 #### Equipe:
-* Diego | diogofcar@gmail.com
+* Diego Carvalho | diogofcar@gmail.com
 * Paulo Ernesto Marchezi | pauloernestom@gmail.com
-* Rafael | rafaelsantana7213@gmail.com
-* Roni | ronycleber_pm@hotmail.com
+* Rafael Santana | rafaelsantana7213@gmail.com
+* Roni Cleber | ronycleber_pm@hotmail.com
 
 ##### App demo no heroku:
 [Clique e aqui](https://highperformance.herokuapp.com)
 
 ------------
-
 
    O projeto **High Performance** é um app voltado para educadores físicos que desejam uma ferramenta de interação com seus alunos de uma maneira simples. O ojetivo é a construção de uma plataforma onde o usuário tenha total controle dos seus alunos, com uma agenda de aulas, além de uma plataforma onde seja possível também um controle financeiro.
 
