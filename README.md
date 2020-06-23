@@ -28,6 +28,7 @@
 - Sequelize
 - Materialize
 - CSS
+- PWA
 
 
 ------------
