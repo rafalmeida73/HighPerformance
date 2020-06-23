@@ -1,6 +1,6 @@
 # Projeto Integrador - HighPerformance
 
-### Projeto integrador desenvolvido como parte do curso de Desenvolvimento Web Full-Stack da Digital House e do programa Santander Coders.  
+### Projeto integrador desenvolvido como parte do curso de Desenvolvimento Web Full-Stack da Digital House, em parceria com o programa Santander Coders.  
 
 #### Equipe:
 * Diego Carvalho | diogofcar@gmail.com
