@@ -7,7 +7,6 @@ $("#formDepoimentos").validate({
          required: true,
          maxlength: 100,
          minlength: 5,
-         minWords: 2
      },
      profissao: {
          required: true,
