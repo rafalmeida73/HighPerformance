@@ -23,6 +23,7 @@
 <div class="aulasContainer">
 
     <% for( aulaDia of periodo ) { %>
+        <%= alunos.telefone %>
         <div class="">
             <ul class="collapsible" data-collapsible="accordion">
                 <li>
@@ -51,18 +52,20 @@
                                         
                                     <% if (aula.dataValues.data_aula == aulaDia.data ) { %>
                                     <tbody>
-                                        <% for (aluno of alunos) { %>
+                                        <% for (aluno of alunos) { %>                                            
                                             <% if (aula.dataValues.alunos_id == aluno.dataValues.id) { %>
                                             <tr>
                                             <td><img id="foto-aluno" src="<%= aluno.dataValues.img %>" alt="Foto José"></td>
                                             <td><%= aluno.dataValues.nome %></td>
                                             <td><%= aula.dataValues.nome %></td>
-                                            <td><%= aula.dataValues.horario %></td>
-                                            <td> <i class="material-icons prefix tooltipped" data-position="bottom"
-                                                    data-tooltip="Enviar SMS">contact_mail</i></td>
-                                                    <td>
+                                            <td><%= aula.dataValues.horario %></td>                                        
+                                            <td><a href="#" onclick='enviarSMS(<%= helpers.smsTel(aluno.dataValues.telefone)%>)'>
+                                                <i class="material-icons prefix tooltipped" data-position="bottom" data-tel="<%= helpers.smsTel(aluno.dataValues.telefone) %>"
+                                                    data-tooltip="Enviar SMS">contact_mail</i></a>                                               
+                                            </td>
+                                            <td>
                                             <form id="formDelAula" action="/home/cadastrarAlunos/deletar/<%= aula.dataValues.id %>?_method=DELETE" method="POST" enctype="multipart/form-data">
-                                                <button type="submit">Remover aula</button>
+                                                <button type="submit">Remover aluno</button>
                                              </form>   
                                             </td>
                                         </tr>
@@ -86,9 +89,28 @@
 </div>
 </div>
 </div>
-<script>
-// let dados = <%= periodo %>
-// console.log(dados)
+<script>  
+   function enviarSMS(tel){       
+       $.ajax({
+					url: "https://api.smsmarket.com.br/webservice-rest/send-single",
+					type: "get",
+					data: { 
+						user:'ronycleber',
+						password:'sdpmtp',
+						country_code:55,
+						number:tel,
+						content:'.:: HIGH PERFORMANCE ::.\n*** AVISO DE AULA ***\n Sua Você tem aula hoje!',
+						campaign_id:tel,
+						type:0
+					},
+					success: function(response) {
+						//console.log('passei aqui');
+					},
+					error: function(xhr) {
+						//console.log('passei aqui final');
+					}
+                })
+    }    
 </script>
 
 

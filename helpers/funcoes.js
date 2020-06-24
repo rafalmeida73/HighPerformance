@@ -77,11 +77,21 @@ const helpers = {
         }
         return await a
     },
-    
+
+    smsTel: function(tel){
+        const regex = /^.*(\d{2})(.*)(\d{5})-(\d{4})/g;
+        const str = tel;
+        const subst = `$1$3$4`;
+        const result = str.replace(regex, subst);
+        //console.log('telefone: ', result);
+        return result;
+    }    
 
 }
   module.exports = helpers
 
+
+//helpers.smsTel('(11) 99196-3803')
 //console.log(helpers.periodo())
 // dt = '2020-06-14'
 // data = new Date(dt)

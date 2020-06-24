@@ -80,22 +80,24 @@
 
     
     
+    
+   
+    <%- include('partials/footer') %>
     <script src="/js/linktr.js"></script>
     <script>
-let nomes = document.getElementById("nomes").textContent;
-var names = nomes.split(",")
-let opcoes = {};
-names.forEach(function(v) {
-    opcoes[v] = null
-});
-
-$(document).ready(function(){
-    $('input.autocomplete').autocomplete({
-      data: opcoes,
-    });
-  });
-    </script>
-    <%- include('partials/footer') %>
+        let nomes = document.getElementById("nomes").textContent;
+        var names = nomes.split(",")
+        let opcoes = {};
+        names.forEach(function(v) {
+            opcoes[v] = null
+        });
+        
+        $(document).ready(function(){
+            $('input.autocomplete').autocomplete({
+              data: opcoes,
+            });
+          });
+            </script>
     <%- include('partials/rodape') %>
     
 
