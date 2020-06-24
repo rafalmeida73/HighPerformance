@@ -9,7 +9,7 @@
 * Roni Cleber | ronycleber_pm@hotmail.com
 
 #### App demo no heroku:
-[Clique e aqui](https://highperformance.herokuapp.com)
+[Clique e aqui](https://highperformancedh.azurewebsites.net/)
 
 ------------
 
