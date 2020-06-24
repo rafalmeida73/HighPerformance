@@ -89,7 +89,22 @@
 </div>
 </div>
 </div>
-<script>  
+
+
+<%- include('partials/footer') %>
+<%- include('partials/rodape') %>
+
+<!-- Modal Trigger -->
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet" style="background: green;color: white;">
+    <div class="modal-content">
+      <h4 style="text-align: center;">Mensagem enviada!</h4>    
+  </div>
+</div>
+
+
+  <script>
+        
    function enviarSMS(tel){       
        $.ajax({
 					url: "https://api.smsmarket.com.br/webservice-rest/send-single",
@@ -99,11 +114,15 @@
 						password:'sdpmtp',
 						country_code:55,
 						number:tel,
-						content:'.:: HIGH PERFORMANCE ::.\n*** AVISO DE AULA ***\n Sua Você tem aula hoje!',
+						content:'.:: HIGH PERFORMANCE ::.\n*** AVISO DE AULA ***\n Você tem aula hoje!',
 						campaign_id:tel,
 						type:0
 					},
 					success: function(response) {
+                        $("#modal1").modal('open')
+                        setTimeout(function(){
+                            $("#modal1").modal('close')
+                        }, 2000)
 						//console.log('passei aqui');
 					},
 					error: function(xhr) {
@@ -112,7 +131,3 @@
                 })
     }    
 </script>
-
-
-<%- include('partials/footer') %>
-<%- include('partials/rodape') %>
