@@ -18,9 +18,6 @@ $("#formValidate").validate({
             required: true,
             minlength: 5
         },
-        file: {
-            required: true,
-        }
     },
     errorElement: 'div',
     errorPlacement: function(error, element) {
