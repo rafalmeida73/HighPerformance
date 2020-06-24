@@ -98,7 +98,7 @@ p {
     background-size: cover;
     /* background by SVGBackgrounds.com */
     border-top: 5px solid white;
-    margin-top: 120px;
+    margin-top: 40px;
 }
 
 
@@ -159,7 +159,7 @@ tr {
         display: none;
     }
     #footer {
-        margin-top: 40vh;
+        margin-top: 15vh;
     }
    
 }
