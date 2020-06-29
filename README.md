@@ -9,7 +9,7 @@
 * Roni Cleber | ronycleber_pm@hotmail.com
 
 #### App demo:
-[Clique e aqui](https://highperformancedh.azurewebsites.net/)
+[Clique aqui](https://highperformancedh.azurewebsites.net/)
 
 ------------
 
