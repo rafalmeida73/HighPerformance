@@ -24,7 +24,6 @@
 - Bcrypt
 - Multer
 - mySQL
-- Dotenv
 - Sequelize
 - Materialize
 - CSS
@@ -35,7 +34,6 @@
 ####  Como clonar este projeto
 - realize o clone git clone link....
 - instale as dependências do projeto (npm install ou yarn install)
-- configure o arquivo .env de acordo com as variáveis do .env-exemple
 - execute as migrations (npx sequelize db:migrate)
 - execute as seeders (npx sequelize seed:all)
 - inicialize o servidor local (npm start)
