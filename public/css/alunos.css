@@ -11,6 +11,10 @@
     align-items: center;
 }
 
+#alunosContainer{
+    height: 100vh;
+}
+
 .loader.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;

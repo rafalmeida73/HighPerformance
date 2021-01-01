@@ -20,6 +20,10 @@
     width: 400px;
 }
 
+#finance{
+    height: 100vh;
+}
+
 @keyframes fadeOut {
     100% {
         opacity: 0;
